@@ -195,6 +195,82 @@ export const caseStudies = [
   },
 ]
 
+export const northSection = {
+  brand: 'North',
+  websiteUrl: 'https://thenorthstudio.com/',
+  title: {
+    es: 'Trabajo en North',
+    en: 'Work at North',
+  },
+  summary: {
+    es: 'Una selección de proyectos donde producto, lógica de negocio, documentación y calidad visual se movieron como un mismo sistema.',
+    en: 'A selection of projects where product, business logic, documentation, and interface quality moved as one system.',
+  },
+  description: {
+    es: 'Actualmente lidero diseño de producto en North. Mi trabajo se mueve entre banca, retail y servicios digitales con foco en claridad operativa, métricas, accesibilidad y entrega real junto a producto y desarrollo.',
+    en: 'I currently lead product design at North. My work spans banking, retail, and digital services with a strong focus on operational clarity, metrics, accessibility, and real delivery alongside product and engineering.',
+  },
+  workflowImage: '/north/page-04.jpg',
+  projects: [
+    {
+      slug: 'inone-revamp',
+      title: 'InOne Revamp',
+      image: '/north/page-12.jpg',
+      metric: '+16K prescriptores · +1.5M usuarios · rating 2.3 → 4.4',
+      summary: {
+        es: 'Rediseño de una app financiera con alta presión operativa. El foco estuvo en simplificar la interfaz, priorizar funciones con impacto real y alinear la experiencia con el ecosistema de CaixaBank.',
+        en: 'Redesign of a financial app operating under high pressure. The focus was on simplifying the interface, prioritising high-impact functionality, and aligning the experience with the wider CaixaBank ecosystem.',
+      },
+      detail: {
+        es: 'Organicé el trabajo desde deuda técnica, journeys y benchmark hasta UI kit, roadmap por entregables y handoff con variables, estados y accesibilidad documentada.',
+        en: 'I structured the work from technical debt, journeys, and benchmark analysis to UI kit definition, milestone-based roadmap, and handoff with variables, states, and documented accessibility.',
+      },
+    },
+    {
+      slug: 'prescriptor-unification',
+      title: 'Unificación canales Prescriptor',
+      image: '/north/page-18.jpg',
+      metric: '+16K prescriptores · menos duplicidad · menos pasos',
+      summary: {
+        es: 'Proyecto de consolidación de canales para una red extensa de prescriptores. El objetivo fue detectar diferencias operativas, unificar patrones y reducir complejidad en flujos equivalentes.',
+        en: 'A channel consolidation project for a large prescriber network. The goal was to identify operational differences, unify patterns, and reduce complexity across equivalent flows.',
+      },
+      detail: {
+        es: 'La base fue analítica, comparativa de journeys y documentación detallada por canal. A partir de ahí, definí una estructura común, UI kit y criterios de priorización para limpieza de datos y funnels.',
+        en: 'The work started with analytics, journey comparison, and detailed channel-by-channel documentation. From there I defined a shared structure, UI kit, and prioritisation criteria for cleaner data and funnels.',
+      },
+    },
+    {
+      slug: 'm2p-chatbot',
+      title: 'M2P ChatBot',
+      image: '/north/page-29.jpg',
+      metric: '+2M tarjetas emitidas · +1M clientes únicos · canal 100% digital',
+      summary: {
+        es: 'Diseño de una experiencia conversacional para soporte financiero dentro de una plataforma de tarjetas prepago. El reto fue integrar ayuda contextual sin romper el flujo del producto.',
+        en: 'Design of a conversational support experience for a prepaid-card platform. The challenge was to integrate contextual help without breaking the product flow.',
+      },
+      detail: {
+        es: 'Trabajé acceso, arquitectura, comportamiento del asistente y casuística, detectando edge cases desde UX y preparando una base escalable para una evolución futura con IA.',
+        en: 'I worked on entry points, architecture, assistant behaviour, and case coverage, identifying edge cases from UX and preparing a scalable base for future AI evolution.',
+      },
+    },
+    {
+      slug: 'facilitea-accessibility',
+      title: 'Accesibilidad Facilitea',
+      image: '/north/page-38.jpg',
+      metric: 'Documentación en 1 semana · base reutilizable · foco WCAG',
+      summary: {
+        es: 'Replanteamiento de la documentación de accesibilidad para un ecosistema ecommerce. El objetivo fue convertir criterios dispersos en un sistema claro, accionable y útil para diseño y desarrollo.',
+        en: 'A redesign of accessibility documentation for an ecommerce ecosystem. The goal was to turn scattered criteria into a clear, actionable system for both design and development.',
+      },
+      detail: {
+        es: 'Definí un formato integrado en Figma, reglas por comportamiento, tarjetas reutilizables y una base de documentación preparada para escalar con plugin interno y handoff más rápido.',
+        en: 'I defined a Figma-integrated format, behaviour-based rules, reusable cards, and a documentation base ready to scale through an internal plugin and faster handoff.',
+      },
+    },
+  ],
+}
+
 export const conceptDesigns = [
   {
     slug: 'meeting-room-booking-app',
@@ -549,12 +625,40 @@ const workDetailContent = {
         paragraphs: [
           'The next step was the creation of wireframes, which then evolved into interactive prototypes. During this phase, the focus was on designing a minimalist interface, ensuring that each component was functional and easy to use without overwhelming the user with unnecessary options or complexity.',
         ],
+        gallery: [
+          {
+            src: 'https://framerusercontent.com/images/J7Q8sihe1aKJ2hSSyxDzvkPpww.png',
+            alt: 'Lowerton dashboard exploration for innovation tracking',
+          },
+          {
+            src: 'https://framerusercontent.com/images/rGwBAfoVspWLP6x4aonAo2m7sY.png',
+            alt: 'Lowerton company overview prototype',
+          },
+          {
+            src: 'https://framerusercontent.com/images/65c6LtOL0wuNZj9OycQKwmszMQ.png',
+            alt: 'Lowerton challenge table and management layout',
+          },
+        ],
       },
       {
         title: 'Iteration and Testing',
         paragraphs: [
           'Once the first prototypes were created, we went through several iterations, validating the designs with various clients and within the team to ensure feasibility for the MVP.',
           'One of the key insights from this process was the need to clearly display project progress through an integrated KPI and milestones system. We made significant changes to dashboards and forms until each feature was accessible, easy to use, and aligned with the rest of the MVP.',
+        ],
+        gallery: [
+          {
+            src: 'https://framerusercontent.com/images/asMdlyPPQzltIp4Qqc5voNFko.png',
+            alt: 'Lowerton screen refinement focused on project detail',
+          },
+          {
+            src: 'https://framerusercontent.com/images/9MqkYmWeW9sCmwk2UtcsO0ZwZU.png',
+            alt: 'Lowerton workspace refinement for project management',
+          },
+          {
+            src: 'https://framerusercontent.com/images/4aoZz1IpALolHJgsbKZ6YO1Co.png',
+            alt: 'Lowerton iteration of the company module',
+          },
         ],
       },
       {
@@ -656,6 +760,12 @@ const workDetailContent = {
           'The User Persona was created by combining competitor analysis with survey responses, generating a data-driven profile rather than a pure proto-persona.',
           'This helped define both the motivations and needs of the target audience, which later guided the ideation and development phases of the project.',
         ],
+        gallery: [
+          {
+            src: 'https://framerusercontent.com/images/EnH3IByvEWm28OWi9vaTt9M3k.png',
+            alt: 'VWorld data-driven user persona',
+          },
+        ],
       },
       {
         title: 'How Might We...?',
@@ -664,6 +774,12 @@ const workDetailContent = {
           'The HMW strategy helped explore alternatives before deciding to integrate the gamification system directly within the BeReal logic.',
           'That decision aligned with the goal of encouraging continuous and meaningful engagement while avoiding the superficiality typical of conventional notifications.',
           'Gamified challenges were meant not only to be fun, but also to promote deeper, more authentic interactions and mutual support inside the community.',
+        ],
+        gallery: [
+          {
+            src: 'https://framerusercontent.com/images/3PgSiZ0RW6W0yFDJ3Ivr08CDm8.png',
+            alt: 'VWorld ideation board for reframing BeReal into daily challenges',
+          },
         ],
       },
       {
@@ -705,6 +821,10 @@ const workDetailContent = {
           {
             src: 'https://framerusercontent.com/images/aRe5ithZliEmF4plqvvhSCeUn9E.png',
             alt: 'Brand exploration connecting BeReal and VWorld',
+          },
+          {
+            src: 'https://framerusercontent.com/images/c3PxML3VzSQi3y2A9xQ9FPMGZ8o.png',
+            alt: 'VWorld high-fidelity mobile screens and interface evolution',
           },
         ],
       },
@@ -822,6 +942,16 @@ const workDetailContent = {
           'Many users do not keep track of the contacts they need to communicate with.',
           'A considerable proportion of participants experience guilt for not keeping in touch with people close to them.',
         ],
+        gallery: [
+          {
+            src: 'https://framerusercontent.com/images/KoTEDUKgLKe3wK8fTKXBCOW1fw.png',
+            alt: 'Closy survey synthesis around loneliness and relationships',
+          },
+          {
+            src: 'https://framerusercontent.com/images/89mP579tN3c8Ze8Efjab7bwi0g.png',
+            alt: 'Closy insight board built from questionnaire responses',
+          },
+        ],
       },
       {
         title: 'The 5 Whys and Value Proposition',
@@ -891,6 +1021,16 @@ const workDetailContent = {
           'Participant 2: 25-year-old UX designer living in Barcelona, small social circle, diagnosed with autism.',
           'Participant 3: 30-year-old UX/UI designer from Barcelona, usually limited by work stress and accidental social encounters.',
         ],
+        gallery: [
+          {
+            src: 'https://framerusercontent.com/images/3xiK72Tkz6eyBkbbZCFeGDp1TE.png',
+            alt: 'Closy testing summary board',
+          },
+          {
+            src: 'https://framerusercontent.com/images/VfgVpVv8Ky2RQAVCYIi6K1VbGYE.png',
+            alt: 'Closy validation notes collected after user interviews',
+          },
+        ],
       },
       {
         title: 'Insights and Revisions',
@@ -908,6 +1048,16 @@ const workDetailContent = {
           'The watering tutorial was redesigned so users understand what to do and why they should do it.',
           'The home screen added filtering by level, name, type, and status, plus a weekly-actions count for each plant.',
         ],
+        gallery: [
+          {
+            src: 'https://framerusercontent.com/images/TRT2IA0pB9DtNunIVAjadjB5Fs.png',
+            alt: 'Closy revised home and relationship-management screens',
+          },
+          {
+            src: 'https://framerusercontent.com/images/lvaia1YEoFtnNYzakM00MYVlWcQ.png',
+            alt: 'Closy iteration pass after testing and onboarding revisions',
+          },
+        ],
       },
     ],
   },
@@ -919,6 +1069,29 @@ const workDetailContent = {
       { label: 'Entorno', value: 'Large offices with multiple rooms and urgent short-term reservations' },
     ],
     highlights: ['Real-time availability', 'Quick Book shortcut', 'Reservation management'],
+    visualDeckLayout: 'phones',
+    visualDeck: [
+      {
+        src: 'https://framerusercontent.com/images/LmJiUXQypLANnGYtQHtX4LUYDNw.png',
+        alt: 'Meeting Room Booking sitemap and booking logic overview',
+        ratio: '1 / 1',
+      },
+      {
+        src: 'https://framerusercontent.com/images/jXYgfPr4fNHsJO9NCkbg5d3jMI.png',
+        alt: 'Meeting Room Booking room list and upcoming reservations',
+        ratio: '390 / 929',
+      },
+      {
+        src: 'https://framerusercontent.com/images/v8hGuWvoJnTNR35OTNaheeH9M.png',
+        alt: 'Meeting Room Booking room selection and duration step',
+        ratio: '390 / 929',
+      },
+      {
+        src: 'https://framerusercontent.com/images/RGLyFKbQmClRaXXID9ecq4Zg48g.png',
+        alt: 'Meeting Room Booking confirmation screen with facilities and controls',
+        ratio: '390 / 929',
+      },
+    ],
     detailSections: [
       {
         title: 'Overview',
@@ -927,6 +1100,38 @@ const workDetailContent = {
           'The app supports both urgent and short-term reservations, around 10 to 15 minutes, while managing multiple meeting rooms across different locations.',
           'Flexibility and simplicity were central: users can filter by availability, book instantly, manage reservations, and review details such as room location and alternative spaces.',
           'The MVP was designed to cover the immediate needs of large organizations while leaving room for future scalability.',
+        ],
+      },
+      {
+        title: 'Low-fi framing',
+        body:
+          'Before going into polished UI, the structure was blocked as a narrow set of screens focused on one operational promise: see availability, reserve fast, and manage the booking with almost no ambiguity.',
+        paragraphs: [
+          'The early wireframes already prioritized room lists, proximity, duration, and current reservations. That kept the scope grounded in the real pressure of office life, where many bookings happen on the fly and users need speed more than exploration.',
+          'This first layer also made it easier to decide what should live on the home screen, what should be progressive, and what should only appear once a room is already selected.',
+        ],
+        galleryLayout: 'phones',
+        gallery: [
+          {
+            src: 'https://framerusercontent.com/images/23wUpuSa8kFMrqs1sApLPQIE.png',
+            alt: 'Meeting Room Booking low-fidelity home wireframe',
+            ratio: '393 / 852',
+          },
+          {
+            src: 'https://framerusercontent.com/images/ZB6vcoADM7h7TzvnoOh6kQXHXk.png',
+            alt: 'Meeting Room Booking low-fidelity room list wireframe',
+            ratio: '393 / 852',
+          },
+          {
+            src: 'https://framerusercontent.com/images/ODmOJRtEf8LJeHvWdkke3BlrvQo.png',
+            alt: 'Meeting Room Booking low-fidelity booking wireframe',
+            ratio: '393 / 852',
+          },
+          {
+            src: 'https://framerusercontent.com/images/5wQXLmgnAV4yXWUUP54oO5Goq80.png',
+            alt: 'Meeting Room Booking low-fidelity detail wireframe',
+            ratio: '393 / 852',
+          },
         ],
       },
       {
@@ -942,14 +1147,104 @@ const workDetailContent = {
           'Search Rooms: filter by availability or equipment.',
           'Booking Details: room info and options to modify the reservation.',
         ],
+        galleryLayout: 'feature',
+        gallery: [
+          {
+            src: 'https://framerusercontent.com/images/LmJiUXQypLANnGYtQHtX4LUYDNw.png',
+            alt: 'Meeting Room Booking sitemap connecting list, detail, active bookings and confirmation',
+            ratio: '1 / 1',
+          },
+        ],
+      },
+      {
+        title: 'Quick booking flow',
+        paragraphs: [
+          'The core interaction of the product is speed. The central navigation action is dedicated to booking a nearby room on the current floor, reducing time to action in urgent situations and short internal meetings.',
+          'From the room list, the user moves through a progressive sequence: selected room, duration, hour, and confirmation. That breaks a potentially heavy process into lightweight decisions that are easy to scan on mobile.',
+          'This flow also makes room cards do real work: they carry location, capacity, equipment, and availability status before the user even opens the detail view.',
+        ],
+        points: [
+          'Upcoming bookings and rooms available now are visible from the first screen.',
+          'Duration and hour are split into two consecutive decisions.',
+          'The central CTA remains stable across the booking sequence.',
+          'Urgent reservations stay possible without browsing the full inventory.',
+        ],
+        galleryLayout: 'phones',
+        gallery: [
+          {
+            src: 'https://framerusercontent.com/images/jXYgfPr4fNHsJO9NCkbg5d3jMI.png',
+            alt: 'Meeting Room Booking home screen with room cards',
+            ratio: '390 / 929',
+          },
+          {
+            src: 'https://framerusercontent.com/images/v8hGuWvoJnTNR35OTNaheeH9M.png',
+            alt: 'Meeting Room Booking room selection and duration screen',
+            ratio: '390 / 929',
+          },
+          {
+            src: 'https://framerusercontent.com/images/IR0La6jp8Z6cgcuVRFiglfkAr7s.png',
+            alt: 'Meeting Room Booking duration selector',
+            ratio: '390 / 929',
+          },
+          {
+            src: 'https://framerusercontent.com/images/D4pkFIiXhXN8Tf7BebWkGyy5Ls.png',
+            alt: 'Meeting Room Booking hour selection screen',
+            ratio: '390 / 929',
+          },
+        ],
+      },
+      {
+        title: 'Room details and reservation management',
+        paragraphs: [
+          'Once the booking is confirmed, the room-detail view becomes the operational layer of the product. It answers what matters next: where the room is, what equipment it has, how long the booking lasts, and what can still be changed.',
+          'This makes the app useful after the booking moment itself. It is not just a reservation flow; it is also a lightweight management tool for busy office routines.',
+          'The combination of image, facilities, location text, and explicit actions reduces uncertainty and gives the user enough context to make fast decisions if a change is needed.',
+        ],
+        points: [
+          'Room photo and capacity are immediately visible.',
+          'Facilities are grouped into simple icon cards.',
+          'Location and usage context reduce wayfinding friction.',
+          'Cancel and reschedule actions stay visible instead of hidden behind menus.',
+        ],
+        galleryLayout: 'phones',
+        gallery: [
+          {
+            src: 'https://framerusercontent.com/images/RGLyFKbQmClRaXXID9ecq4Zg48g.png',
+            alt: 'Meeting Room Booking confirmation and facilities view',
+            ratio: '390 / 929',
+          },
+          {
+            src: 'https://framerusercontent.com/images/V9kizm9pNjJMLwsLDy12nNxozew.png',
+            alt: 'Meeting Room Booking room detail state',
+            ratio: '390 / 929',
+          },
+          {
+            src: 'https://framerusercontent.com/images/051WEA05nZc8WDJmSoSqjB7i6M.png',
+            alt: 'Meeting Room Booking reservation management screen',
+            ratio: '390 / 929',
+          },
+          {
+            src: 'https://framerusercontent.com/images/JBMPkpeXnT8fzVXTIDuiimsE4nY.png',
+            alt: 'Meeting Room Booking booking confirmed interface',
+            ratio: '390 / 929',
+          },
+        ],
       },
       {
         title: 'Final Design',
+        tone: 'blue',
         paragraphs: [
           'The middle button in the navigation bar is dedicated to quickly booking a nearby room on the current floor, reducing time to action in urgent situations.',
           'On the home page, users can view upcoming bookings, rooms available now, and a complete list of meeting rooms. Each room displays location, maximum capacity, and available features.',
           'To book a room, users select duration, date, and time, and a reminder is sent 15 minutes before the meeting.',
           'For booking management, reservations can be canceled by swiping left or from the room information page, and users can modify date and time from the same flow.',
+        ],
+        galleryLayout: 'feature',
+        gallery: [
+          {
+            src: 'https://framerusercontent.com/images/5JC1cCAp9eoEtQVR7tftMRUR8Ew.png',
+            alt: 'Meeting Room Booking presentation board with final UI',
+          },
         ],
       },
     ],
@@ -966,6 +1261,14 @@ const workDetailContent = {
       {
         src: 'https://framerusercontent.com/images/ttcZG47EmCvxu3r3xpD7YYCmSKE.png',
         alt: 'Inventory sharing screen in the final pixel-art design',
+      },
+      {
+        src: 'https://framerusercontent.com/images/E56bMmXBLOCBrhvzp6swJJpBDe4.png',
+        alt: 'Inventory equipment screen with character and item grid',
+      },
+      {
+        src: 'https://framerusercontent.com/images/7FPE5y8YCmS4o0TuPgyUM3BkzM.png',
+        alt: 'Inventory chest screen with opening flow',
       },
     ],
     detailSections: [
@@ -984,6 +1287,12 @@ const workDetailContent = {
           'The challenge required careful attention to user experience principles, including user flows, wireframes, and a final high-fidelity design that solved several UX problems.',
           'The interface had to keep fluidity in interactions, clear hierarchy, and flexibility for different inventory actions without losing readability under load.',
         ],
+        points: [
+          'The screen had to stay readable despite high information density.',
+          'Different tabs required distinct interaction logic inside one shell.',
+          'Crafting, opening, equipping, and sharing needed different affordances.',
+          'Pixel-art aesthetics had to coexist with modern usability patterns.',
+        ],
       },
       {
         title: 'Research',
@@ -993,8 +1302,68 @@ const workDetailContent = {
         ],
         gallery: [
           {
+            src: 'https://framerusercontent.com/images/GTGcxxzWHFzyndxXFS4LjzNWO4.png',
+            alt: 'Wireframe reference for inventory tabs and item grid',
+            ratio: '852 / 394',
+          },
+          {
+            src: 'https://framerusercontent.com/images/V7SaqEXS4UTbMQdXrsiwttBsyl4.png',
+            alt: 'Wireframe reference for equipment distribution',
+            ratio: '852 / 394',
+          },
+          {
+            src: 'https://framerusercontent.com/images/wEzr1S44TF5kLR4gTy2Kfpf9eA.png',
+            alt: 'Wireframe reference for chest interaction',
+            ratio: '852 / 394',
+          },
+          {
+            src: 'https://framerusercontent.com/images/PkRpdfIBmndGkLIu9nfK2MgARhk.png',
+            alt: 'Animal Crossing inventory reference used during benchmark analysis',
+            ratio: '564 / 372',
+          },
+        ],
+      },
+      {
+        title: 'Inventory architecture',
+        paragraphs: [
+          'The final interface is organized as a stable shell with persistent navigation across character, equipment, chests, friends, and settings. That keeps the mental model simple even though each tab solves a different kind of task.',
+          'Within that shell, each state is optimized for a specific action: equipment focuses on the avatar and active slots, chests prioritize opening and collecting, crafting explains item combinations, and sharing splits owned items from transferred items.',
+          'This separation helps preserve clarity while making the whole system feel cohesive and game-native.',
+        ],
+        gallery: [
+          {
+            src: 'https://framerusercontent.com/images/E56bMmXBLOCBrhvzp6swJJpBDe4.png',
+            alt: 'Pixel-art inventory equipment tab',
+          },
+          {
+            src: 'https://framerusercontent.com/images/7FPE5y8YCmS4o0TuPgyUM3BkzM.png',
+            alt: 'Pixel-art inventory chest tab',
+          },
+          {
+            src: 'https://framerusercontent.com/images/NjffoJ0ZzHjsFzKMWbqXZT5KYM.png',
+            alt: 'Pixel-art inventory craft tab',
+          },
+          {
+            src: 'https://framerusercontent.com/images/A6mT7jJGAbrjYsZf2oDSHHEKDOY.png',
+            alt: 'Pixel-art inventory luxury chest interaction',
+          },
+        ],
+      },
+      {
+        title: 'Final UI and interaction logic',
+        tone: 'blue',
+        paragraphs: [
+          'The final UI keeps strong fantasy references but avoids ornamental overload. Each action is large enough to read quickly, the hierarchy between tabs and items is explicit, and the active task is always easy to understand.',
+          'That balance between nostalgia and usability is the central value of the project: the inventory feels playful and game-like, but it still behaves like a structured product system.',
+        ],
+        gallery: [
+          {
             src: 'https://framerusercontent.com/images/ttcZG47EmCvxu3r3xpD7YYCmSKE.png',
             alt: 'Pixel-art inventory and item sharing interface',
+          },
+          {
+            src: 'https://framerusercontent.com/images/a25SWw0LUgkjLCAqdr0hnYmzOg.png',
+            alt: 'Inventory screen presentation board',
           },
         ],
       },
@@ -1050,7 +1419,102 @@ const workDetailContent = {
   },
 }
 
+function deriveLinkedInPublishedAt(url) {
+  const match = typeof url === 'string' ? url.match(/activity-(\d{10,})/) : null
+  if (!match) return null
+
+  const activityId = Number(match[1])
+  if (!Number.isFinite(activityId)) return null
+
+  const timestamp = activityId >> 22
+  return Number.isFinite(timestamp) ? new Date(timestamp).toISOString() : null
+}
+
 const articleEntries = [
+  {
+    slug: 'en-north-estamos-impulsando-un-cambio-radical',
+    title: 'En North estamos impulsando un cambio radical',
+    excerpt:
+      'Una mirada breve al cambio de producto que estáis impulsando en North, con foco en dirección, ejecución y aprendizaje continuo.',
+    description:
+      'Post sobre evolución de producto en North, cambio de enfoque y trabajo transversal entre diseño, negocio y entrega.',
+    externalUrl:
+      'https://www.linkedin.com/posts/victorsaizalfageme_en-north-estamos-impulsando-un-cambio-radical-activity-7440803920211267584-9E7Z?utm_source=share&utm_medium=member_desktop&rcm=ACoAADbZZa4BKXYhxOlxac-Ze04Tkk7CX2Vvaa8',
+    source: 'linkedin',
+    topic: 'Producto',
+  },
+  {
+    slug: 'trabajar-fuera-de-casa-yo-tengo-una-rutina',
+    title: 'Trabajar fuera de casa: la rutina que me funciona',
+    excerpt:
+      'Una nota corta sobre hábitos, foco y energía cuando trabajas fuera de casa y quieres mantener criterio y continuidad.',
+    description:
+      'Reflexión sobre rutina personal, concentración y entorno de trabajo para sostener un ritmo creativo y analítico.',
+    externalUrl:
+      'https://www.linkedin.com/posts/victorsaizalfageme_trabajar-fuera-de-casa-yo-tengo-una-rutina-activity-7443648194065874944-SXmO?utm_source=share&utm_medium=member_desktop&rcm=ACoAADbZZa4BKXYhxOlxac-Ze04Tkk7CX2Vvaa8',
+    source: 'linkedin',
+    topic: 'Rutina',
+  },
+  {
+    slug: 'sabado-que-suma-dos-cafes-dos-portatiles',
+    title: 'Sábado que suma',
+    excerpt:
+      'Una publicación corta sobre energía compartida, foco y la importancia de rodearte de personas con ambición tranquila y consistente.',
+    description:
+      'Post personal sobre ritmo de trabajo, proyectos en paralelo y el valor de construir al lado de gente con buena energía.',
+    externalUrl:
+      'https://www.linkedin.com/posts/victorsaizalfageme_s%C3%A1bado-que-suma-dos-caf%C3%A9s-dos-port%C3%A1tiles-activity-7433572626150612992-e8t0?utm_source=share&utm_medium=member_desktop&rcm=ACoAADbZZa4BKXYhxOlxac-Ze04Tkk7CX2Vvaa8',
+    source: 'linkedin',
+    topic: 'Carrera',
+  },
+  {
+    slug: 'cada-dia-veo-en-linkedin-3-4-publicaciones',
+    title: 'Cada día veo en LinkedIn 3 o 4 publicaciones',
+    excerpt:
+      'Una observación directa sobre el contenido que circula en LinkedIn y cómo separar señal real de ruido y repetición.',
+    description:
+      'Reflexión sobre contenido, criterio y saturación en LinkedIn desde una mirada crítica orientada a producto y aprendizaje.',
+    externalUrl:
+      'https://www.linkedin.com/posts/victorsaizalfageme_cada-d%C3%ADa-veo-en-linkedin-3-4-publicaciones-activity-7426607053583994880-XETF?utm_source=share&utm_medium=member_desktop&rcm=ACoAADbZZa4BKXYhxOlxac-Ze04Tkk7CX2Vvaa8',
+    source: 'linkedin',
+    topic: 'Opinión',
+  },
+  {
+    slug: 'opinion-rapida-sobre-como-va-a-evolucionar-un-equipo-de-producto',
+    title: 'Cómo creo que va a evolucionar un equipo de producto',
+    excerpt:
+      'Una opinión breve sobre equipos más pequeños, perfiles más transversales y una práctica de producto cada vez más apoyada en IA.',
+    description:
+      'Post sobre evolución de equipos de producto, nuevos perfiles híbridos y cambios en la relación entre diseño, estrategia y ejecución.',
+    externalUrl:
+      'https://www.linkedin.com/posts/victorsaizalfageme_opini%C3%B3n-r%C3%A1pida-sobre-c%C3%B3mo-creo-que-va-a-evolucionar-activity-7424580998237138946-avn3?utm_source=share&utm_medium=member_desktop&rcm=ACoAADbZZa4BKXYhxOlxac-Ze04Tkk7CX2Vvaa8',
+    source: 'linkedin',
+    topic: 'Producto',
+  },
+  {
+    slug: 'accesibilidad-wcag-aria',
+    title: 'Accesibilidad, WCAG y ARIA',
+    excerpt:
+      'Una publicación centrada en accesibilidad web, criterios WCAG y uso de ARIA como parte estructural del trabajo de producto y UI.',
+    description:
+      'Nota sobre accesibilidad digital, estándares WCAG y buenas prácticas de implementación en interfaces y sistemas.',
+    externalUrl:
+      'https://www.linkedin.com/posts/victorsaizalfageme_accesibilidad-wcag-aria-activity-7403705040600969217-rOD0?utm_source=share&utm_medium=member_desktop&rcm=ACoAADbZZa4BKXYhxOlxac-Ze04Tkk7CX2Vvaa8',
+    source: 'linkedin',
+    topic: 'Accesibilidad',
+  },
+  {
+    slug: 'os-presento-un-nuevo-agente-de-chatgpt',
+    title: 'Os presento un nuevo agente de ChatGPT',
+    excerpt:
+      'Una publicación sobre un agente orientado a acelerar tareas de diseño y producto, con foco en utilidad real y experimentación.',
+    description:
+      'Presentación de un nuevo agente de ChatGPT aplicado a flujos de diseño, documentación y apoyo a producto.',
+    externalUrl:
+      'https://www.linkedin.com/posts/victorsaizalfageme_os-presento-un-nuevo-agente-de-chatgpt-de-activity-7394662385124290560-09FT?utm_source=share&utm_medium=member_desktop&rcm=ACoAADbZZa4BKXYhxOlxac-Ze04Tkk7CX2Vvaa8',
+    source: 'linkedin',
+    topic: 'IA',
+  },
   {
     slug: '10-tecnicas-de-ideacion-en-diseno-ux',
     title: '10 Tecnicas de ideacion en diseno UX',
@@ -1195,7 +1659,10 @@ const articleEntries = [
   },
 ]
 
-export const articles = articleEntries
+export const articles = articleEntries.map((article) => ({
+  ...article,
+  publishedAt: article.publishedAt || deriveLinkedInPublishedAt(article.externalUrl),
+}))
 
 export const featuredArticles = articles.slice(0, 6)
 

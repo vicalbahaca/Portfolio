@@ -1,8 +1,11 @@
 import { useEffect } from 'react'
 import Head from 'next/head'
 import { articles, getArticleBySlug } from '../../data/content'
+import { useLanguage } from '../../lib/i18n'
 
 export default function ArticleRedirectPage({ article }) {
+  const { copy } = useLanguage()
+
   useEffect(() => {
     if (article?.externalUrl) {
       window.location.replace(article.externalUrl)
@@ -23,7 +26,7 @@ export default function ArticleRedirectPage({ article }) {
       </Head>
       <main style={{ minHeight: '100vh', display: 'grid', placeItems: 'center', padding: '24px' }}>
         <a href={article.externalUrl} target="_blank" rel="noreferrer">
-          Abriendo publicación...
+          {copy.articles.opening}
         </a>
       </main>
     </>

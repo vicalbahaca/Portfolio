@@ -5,16 +5,22 @@ import { motion } from 'framer-motion'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import { useGSAP } from '@gsap/react'
-import { aboutIntro, aboutPanels, caseStudies, conceptDesigns, experience, featuredArticles, siteConfig } from '../data/content'
+import { caseStudies, conceptDesigns, featuredArticles, siteConfig } from '../data/content'
+import { localizeProject, useLanguage } from '../lib/i18n'
 
 gsap.registerPlugin(ScrollTrigger, useGSAP)
 
 export default function HomeLanding() {
   const landingRef = useRef(null)
-  const highlightedProjects = caseStudies
-  const secondaryProjects = conceptDesigns.slice(0, 4)
+  const { copy, cvHref, lang } = useLanguage()
+  const highlightedProjects = caseStudies.map((entry) => localizeProject(entry, lang))
+  const secondaryProjects = conceptDesigns.slice(0, 4).map((entry) => localizeProject(entry, lang))
   const latestArticles = featuredArticles
-  const currentRole = experience[0]
+  const articleDateFormatter = new Intl.DateTimeFormat(lang === 'en' ? 'en-GB' : 'es-ES', {
+    day: 'numeric',
+    month: 'short',
+    year: 'numeric',
+  })
 
   useGSAP(
     () => {
@@ -36,6 +42,7 @@ export default function HomeLanding() {
       revealBlock('.home-work__top > *', 28)
       revealBlock('.home-secondary__top > *', 28)
       revealBlock('.home-profile__intro > *', 28)
+      revealBlock('.home-profile__workflow > *', 24)
       revealBlock('.home-notes__intro > *', 28)
       revealBlock('.home-contact-band__inner > *', 28)
 
@@ -64,7 +71,7 @@ export default function HomeLanding() {
         },
       })
 
-      ScrollTrigger.batch('.home-secondary-item, .home-point, .home-note, .home-profile__story > p, .home-profile__badge', {
+      ScrollTrigger.batch('.home-secondary-item, .home-point, .home-note, .home-profile__story > p', {
         start: 'top 84%',
         once: true,
         onEnter: (elements) => {
@@ -99,11 +106,13 @@ export default function HomeLanding() {
 
   return (
     <div ref={landingRef} className="home-flow">
-      <section id="work" className="home-section home-work">
+      <section id="work" className="home-section home-work" aria-labelledby="home-work-title">
         <div className="container home-block">
           <div className="home-work__top">
-            <p className="home-label">Casos principales</p>
-            <h2 className="home-title">Proyectos recientes</h2>
+            <p className="home-label">{copy.home.featuredLabel}</p>
+            <h2 id="home-work-title" className="home-title">
+              {copy.home.featuredTitle}
+            </h2>
           </div>
 
           <div className="home-work__grid">
@@ -115,7 +124,11 @@ export default function HomeLanding() {
                   transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
                   style={{ '--project-accent': project.accent }}
                 >
-                  <Link href={`/work/${project.slug}`} className="home-project__link">
+                  <Link
+                    href={`/work/${project.slug}`}
+                    className="home-project__link"
+                    aria-label={`${project.title}. ${project.subtitle}`}
+                  >
                     <Image src={project.image} alt={project.title} fill sizes="(max-width: 960px) 100vw, 50vw" />
 
                     <div className="home-project__content">
@@ -132,17 +145,24 @@ export default function HomeLanding() {
         </div>
       </section>
 
-      <section className="home-section home-secondary">
+      <section className="home-section home-secondary" aria-labelledby="home-secondary-title">
         <div className="container home-secondary__block">
           <div className="home-secondary__top">
-            <p className="home-label">Archivo secundario</p>
-            <h2 className="home-title home-title--compact">Otros proyectos</h2>
-            <p className="home-caption">Concepts y piezas más rápidas que completan el archivo de trabajo.</p>
+            <p className="home-label">{copy.home.secondaryLabel}</p>
+            <h2 id="home-secondary-title" className="home-title home-title--compact">
+              {copy.home.secondaryTitle}
+            </h2>
+            <p className="home-caption">{copy.home.secondaryCaption}</p>
           </div>
 
           <div className="home-secondary__list">
             {secondaryProjects.map((project) => (
-              <Link key={project.slug} href={`/work/${project.slug}`} className="home-secondary-item">
+              <Link
+                key={project.slug}
+                href={`/work/${project.slug}`}
+                className="home-secondary-item"
+                aria-label={`${project.title}. ${project.subtitle}`}
+              >
                 <div className="home-secondary-item__media">
                   <Image src={project.image} alt={project.title} fill sizes="(max-width: 960px) 100vw, 150px" />
                 </div>
@@ -160,46 +180,68 @@ export default function HomeLanding() {
         </div>
       </section>
 
-      <section id="about" className="home-section home-profile">
+      <section id="about" className="home-section home-profile" aria-labelledby="home-about-title">
         <div className="container">
           <div className="home-profile__panel">
             <div className="home-profile__content">
               <div className="home-profile__intro">
-                <p className="home-label">Sobre mí</p>
-                <h2 className="home-title">{aboutIntro.title}</h2>
-                <p className="home-profile__lede">{aboutIntro.summary}</p>
+                <p className="home-label">{copy.home.aboutLabel}</p>
+                <h2 id="home-about-title" className="home-title">
+                  {copy.home.aboutTitle}
+                </h2>
+                <p className="home-profile__lede">
+                  {copy.home.aboutSummaryPrefix}{' '}
+                  <span className="home-profile__lede-nowrap">{copy.home.aboutSummaryAccent}</span>
+                  {copy.home.aboutSummarySuffix}
+                </p>
               </div>
 
               <div className="home-profile__story">
-                {aboutIntro.body.map((paragraph) => (
+                {copy.home.aboutBody.map((paragraph) => (
                   <p key={paragraph} className="home-profile__text">
                     {paragraph}
                   </p>
                 ))}
               </div>
 
-              <div className="home-profile__points">
-                {aboutPanels.map((point) => (
-                  <article key={point.title} className="home-point">
-                    <h3>{point.title}</h3>
-                    <p>{point.text}</p>
-                  </article>
-                ))}
+              <div className="home-profile__experience" aria-labelledby="home-experience-title">
+                <p className="home-label">{copy.home.experienceLabel}</p>
+                <h3 id="home-experience-title" className="home-profile__workflow-title">
+                  {copy.home.experienceTitle}
+                </h3>
+                <p className="home-profile__workflow-caption">{copy.home.experienceCaption}</p>
+
+                <div className="home-experience__list">
+                  {copy.home.experienceItems.map((item) => (
+                    <article key={`${item.company}-${item.role}`} className="home-experience__item">
+                      <div className="home-experience__head">
+                        <div className="home-experience__title-group">
+                          <h4>{item.company}</h4>
+                          <p>{item.role}</p>
+                        </div>
+                        <span className="home-experience__period">{item.period}</span>
+                      </div>
+                      <p className="home-experience__summary">{item.summary}</p>
+                    </article>
+                  ))}
+                </div>
               </div>
 
-              <div className="home-profile__actions">
-                <div className="home-profile__downloads">
-                  <a className="btn btn--brand" href={siteConfig.extras.cvEs} download="CV_Victor Saiz_ES.pdf">
-                    Descargar CV ES
-                  </a>
-                  <a className="btn btn--outline" href={siteConfig.extras.cvEn} download="CV_Victor Saiz_EN.pdf">
-                    Download CV EN
-                  </a>
-                </div>
+              <div className="home-profile__workflow" aria-labelledby="home-workflow-title">
+                <p className="home-label">{copy.home.workflowLabel}</p>
+                <h3 id="home-workflow-title" className="home-profile__workflow-title">
+                  {copy.home.workflowTitle}
+                </h3>
+                <p className="home-profile__workflow-caption">{copy.home.workflowCaption}</p>
 
-                <a className="inline-link" href={siteConfig.social.linkedin} target="_blank" rel="noreferrer">
-                  Ir a LinkedIn
-                </a>
+                <ol className="home-profile__workflow-list">
+                  {copy.home.workflowSteps.map((step) => (
+                    <li key={step} className="home-profile__workflow-step">
+                      <span className="home-profile__workflow-step-marker" aria-hidden="true" />
+                      <span className="home-profile__workflow-step-copy">{step}</span>
+                    </li>
+                  ))}
+                </ol>
               </div>
             </div>
 
@@ -207,23 +249,27 @@ export default function HomeLanding() {
               <div className="home-profile__visual">
                 <Image src={siteConfig.avatar} alt={siteConfig.name} fill sizes="(max-width: 960px) 72vw, 24vw" />
               </div>
-
-              <div className="home-profile__badge">
-                <strong>{currentRole.role}</strong>
-                <span>{currentRole.company}</span>
-                <p>Banca, retail, producto digital y foco creciente en IA aplicada a producto.</p>
-              </div>
+              <a
+                className="btn btn--brand home-profile__aside-cta"
+                href={cvHref}
+                download={lang === 'en' ? 'CV_Victor Saiz_EN.pdf' : 'CV_Victor Saiz_ES.pdf'}
+                aria-label={lang === 'en' ? copy.home.downloadCvEn : copy.home.downloadCvEs}
+              >
+                {lang === 'en' ? copy.home.downloadCvEn : copy.home.downloadCvEs}
+              </a>
             </aside>
           </div>
         </div>
       </section>
 
-      <section id="articles" className="home-section home-notes">
+      <section id="articles" className="home-section home-notes" aria-labelledby="home-articles-title">
         <div className="container home-notes__block">
           <div className="home-notes__intro">
-            <p className="home-label">Archivo editorial</p>
-            <h2 className="home-title home-title--compact">Publicaciones</h2>
-            <p className="home-caption">Artículos y notas publicados en la versión actual del portfolio.</p>
+            <p className="home-label">{copy.home.articlesLabel}</p>
+            <h2 id="home-articles-title" className="home-title home-title--compact">
+              {copy.home.articlesTitle}
+            </h2>
+            <p className="home-caption">{copy.home.articlesCaption}</p>
           </div>
 
           <div className="home-notes__list">
@@ -233,7 +279,8 @@ export default function HomeLanding() {
                 href={article.externalUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="home-note"
+                className={`home-note${article.image ? '' : ' home-note--no-media'}`}
+                aria-label={article.title}
               >
                 {article.image ? (
                   <div className="home-note__media">
@@ -244,6 +291,9 @@ export default function HomeLanding() {
                   <span className="home-note__meta">{article.topic}</span>
                   <h3>{article.title}</h3>
                   <p>{article.excerpt}</p>
+                  {article.publishedAt ? (
+                    <span className="home-note__date">{articleDateFormatter.format(new Date(article.publishedAt))}</span>
+                  ) : null}
                 </div>
                 <span className="home-note__arrow">↗</span>
               </a>
@@ -251,18 +301,20 @@ export default function HomeLanding() {
           </div>
 
           <Link href="/articles" className="inline-link">
-            Ver todas las publicaciones
+            {copy.home.allArticles}
           </Link>
         </div>
       </section>
 
-      <section id="contact" className="home-section home-contact-band">
+      <section id="contact" className="home-section home-contact-band" aria-labelledby="home-contact-title">
         <div className="container home-contact-band__inner">
-          <h2 className="home-title home-title--compact">Contacto</h2>
-          <p className="home-caption">Si quieres hablar de producto, diseño o una colaboración puntual, escríbeme.</p>
+          <h2 id="home-contact-title" className="home-title home-title--compact">
+            {copy.home.contactTitle}
+          </h2>
+          <p className="home-caption">{copy.home.contactCaption}</p>
 
-          <a className="btn btn--primary home-contact-band__cta" href={`mailto:${siteConfig.email}`}>
-            Contáctame
+          <a className="btn btn--primary home-contact-band__cta" href={`mailto:${siteConfig.email}`} aria-label={copy.home.contactCta}>
+            {copy.home.contactCta}
           </a>
         </div>
       </section>

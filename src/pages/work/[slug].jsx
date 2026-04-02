@@ -3,14 +3,18 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Layout from '../../components/Layout'
 import { getWorkEntryBySlug, siteConfig, workEntries } from '../../data/content'
+import { localizeProject, useLanguage } from '../../lib/i18n'
 
 export default function WorkDetailPage({ entry }) {
-  if (!entry) {
+  const { copy, lang } = useLanguage()
+  const localizedEntry = entry ? localizeProject(entry, lang) : null
+
+  if (!localizedEntry) {
     return (
       <Layout>
         <section className="page-hero">
           <div className="container empty-state">
-            <h1 className="page-title">Project not found</h1>
+            <h1 className="page-title">{copy.work.notFound}</h1>
           </div>
         </section>
       </Layout>
@@ -20,24 +24,35 @@ export default function WorkDetailPage({ entry }) {
   return (
     <>
       <Head>
-        <title>{`${entry.title} | ${siteConfig.name}`}</title>
-        <meta name="description" content={entry.description || entry.summary || entry.headline} />
-        <meta property="og:image" content={entry.image} />
+        <title>{`${localizedEntry.title} | ${siteConfig.name}`}</title>
+        <meta
+          name="description"
+          content={localizedEntry.description || localizedEntry.summary || localizedEntry.headline || copy.work.metaDescriptionFallback}
+        />
+        <meta property="og:image" content={localizedEntry.image} />
       </Head>
 
       <Layout>
-        <section className="page-hero page-hero--work-detail">
+        <section className="page-hero page-hero--work-detail" aria-labelledby="work-page-title">
           <div className="container page-hero__panel page-hero__panel--work-detail">
             <Link href="/#work" className="back-link">
-              ← Volver a proyectos
+              {copy.work.back}
             </Link>
-            <span className="section-kicker">{entry.category}</span>
-            <h1 className="page-title">{entry.title}</h1>
-            <p className="section-copy">{entry.headline || entry.summary}</p>
+            <span className="section-kicker">{localizedEntry.category}</span>
+            <h1 id="work-page-title" className="page-title">
+              {localizedEntry.title}
+            </h1>
+            <p className="section-copy">{localizedEntry.headline || localizedEntry.summary}</p>
             <div className="page-hero__actions page-hero__actions--work-detail">
-              {entry.websiteUrl ? (
-                <a className="btn btn--primary" href={entry.websiteUrl} target="_blank" rel="noreferrer">
-                  Visitar web
+              {localizedEntry.websiteUrl ? (
+                <a
+                  className="btn btn--primary"
+                  href={localizedEntry.websiteUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={`${copy.work.visitWebsite}: ${localizedEntry.title}`}
+                >
+                  {copy.work.visitWebsite}
                 </a>
               ) : null}
             </div>
@@ -47,35 +62,36 @@ export default function WorkDetailPage({ entry }) {
         <section className="page-section page-section--work-detail" style={{ paddingTop: 20 }}>
           <div className="container work-detail">
             <article className="work-detail__cover">
-              {entry.videoUrl ? (
+              {localizedEntry.videoUrl ? (
                 <video
                   className="work-detail__video"
-                  src={entry.videoUrl}
-                  poster={entry.videoPoster || entry.image}
+                  src={localizedEntry.videoUrl}
+                  poster={localizedEntry.videoPoster || localizedEntry.image}
                   autoPlay
                   muted
                   loop
                   playsInline
                   controls
+                  aria-label={localizedEntry.title}
                 />
               ) : (
-                <Image src={entry.image} alt={entry.title} fill sizes="(max-width: 960px) 100vw, 58vw" />
+                <Image src={localizedEntry.image} alt={localizedEntry.title} fill sizes="(max-width: 960px) 100vw, 58vw" />
               )}
             </article>
 
             <div className="work-detail__lead">
               <aside className="work-detail__meta-column">
                 <div className="meta-list">
-                  {(entry.facts || []).map((fact) => (
-                    <div key={`${entry.slug}-${fact.label}`}>
+                  {(localizedEntry.facts || []).map((fact) => (
+                    <div key={`${localizedEntry.slug}-${fact.label}`}>
                       <span>{fact.label}</span>
                       <p>{fact.value}</p>
                     </div>
                   ))}
                 </div>
-                {entry.highlights?.length ? (
+                {localizedEntry.highlights?.length ? (
                   <div className="work-detail__highlight-list">
-                    {entry.highlights.map((item) => (
+                    {localizedEntry.highlights.map((item) => (
                       <p key={item} className="work-detail__highlight-pill">
                         {item}
                       </p>
@@ -85,21 +101,25 @@ export default function WorkDetailPage({ entry }) {
               </aside>
 
               <div className="work-detail__overview">
-                <p className="detail-copy detail-copy--lead">{entry.summary}</p>
-                <p className="detail-copy">{entry.description}</p>
+                <p className="detail-copy detail-copy--lead">{localizedEntry.summary}</p>
+                <p className="detail-copy">{localizedEntry.description}</p>
               </div>
             </div>
 
-            {entry.visualDeck?.length ? (
-              <div className={`work-detail__visual-deck work-detail__visual-deck--${Math.min(entry.visualDeck.length, 3)}`}>
-                {entry.visualDeck.map((media, index) => (
+            {localizedEntry.visualDeck?.length ? (
+              <div
+                className={`work-detail__visual-deck work-detail__visual-deck--${
+                  localizedEntry.visualDeckLayout || Math.min(localizedEntry.visualDeck.length, 3)
+                }`}
+              >
+                {localizedEntry.visualDeck.map((media, index) => (
                   <figure
-                    key={`${entry.slug}-deck-${index}`}
+                    key={`${localizedEntry.slug}-deck-${index}`}
                     className="work-detail__visual-figure"
                     style={{ '--media-ratio': media.ratio || '16 / 10' }}
                   >
                     <div className="work-detail__visual-media">
-                      <Image src={media.src} alt={media.alt || entry.title} fill sizes="(max-width: 960px) 100vw, 33vw" />
+                      <Image src={media.src} alt={media.alt || localizedEntry.title} fill sizes="(max-width: 960px) 100vw, 33vw" />
                     </div>
                     {media.caption ? <figcaption>{media.caption}</figcaption> : null}
                   </figure>
@@ -109,15 +129,18 @@ export default function WorkDetailPage({ entry }) {
           </div>
         </section>
 
-        {(entry.detailSections || []).map((section) => (
+        {(localizedEntry.detailSections || []).map((section, sectionIndex) => (
           <section
-            key={`${entry.slug}-${section.title}`}
+            key={`${localizedEntry.slug}-${section.title}`}
             className={`page-section work-story-block${section.tone === 'blue' ? ' work-story-block--blue' : ''}`}
+            aria-labelledby={`${localizedEntry.slug}-section-${sectionIndex}`}
           >
             <div className="container work-story-block__container">
               <div className="work-story-block__copy">
-                <p className="section-kicker">{section.eyebrow || section.title}</p>
-                <h2 className="section-heading">{section.title}</h2>
+                <p className="section-kicker">{section.eyebrow || String(sectionIndex + 1).padStart(2, '0')}</p>
+                <h2 id={`${localizedEntry.slug}-section-${sectionIndex}`} className="section-heading">
+                  {section.title}
+                </h2>
                 {section.body ? <p className="detail-copy detail-copy--lead">{section.body}</p> : null}
                 {section.paragraphs?.map((paragraph, paragraphIndex) => (
                   <p key={`${section.title}-paragraph-${paragraphIndex}`} className="detail-copy">
@@ -134,7 +157,11 @@ export default function WorkDetailPage({ entry }) {
               </div>
 
               {section.gallery?.length ? (
-                <div className={`work-story-block__gallery work-story-block__gallery--${Math.min(section.gallery.length, 3)}`}>
+                <div
+                  className={`work-story-block__gallery work-story-block__gallery--${
+                    section.galleryLayout || Math.min(section.gallery.length, 3)
+                  }`}
+                >
                   {section.gallery.map((media, mediaIndex) => (
                     <figure
                       key={`${section.title}-gallery-${mediaIndex}`}

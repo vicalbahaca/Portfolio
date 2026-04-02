@@ -4,11 +4,13 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import { useGSAP } from '@gsap/react'
 import { siteConfig } from '../data/content'
+import { useLanguage } from '../lib/i18n'
 
 gsap.registerPlugin(ScrollTrigger, useGSAP)
 
 export default function Hero() {
   const heroRef = useRef(null)
+  const { copy } = useLanguage()
 
   useGSAP(
     () => {
@@ -81,23 +83,25 @@ export default function Hero() {
   )
 
   return (
-    <section ref={heroRef} className="hero" id="top">
+    <section ref={heroRef} className="hero" id="top" aria-labelledby="hero-title">
       <div className="container hero__frame">
         <div className="hero__copy">
-          <span className="hero__brand">{siteConfig.heroTitle}</span>
+          <h1 id="hero-title" className="hero__brand">
+            {siteConfig.heroTitle}
+          </h1>
 
-          <p className="hero__roleline">{siteConfig.heroSubtitle}</p>
+          <p className="hero__roleline">{copy.hero.subtitle}</p>
 
           <div className="hero__actions">
-            <a className="btn btn--hero-light" href={siteConfig.social.linkedin} target="_blank" rel="noreferrer">
-              LinkedIn
+            <a className="btn btn--hero-light" href={siteConfig.social.linkedin} target="_blank" rel="noreferrer" aria-label={copy.hero.cta}>
+              {copy.hero.cta}
             </a>
           </div>
         </div>
       </div>
 
-      <Link className="hero__scroll-link" href="/#work">
-        Scroll Down
+      <Link className="hero__scroll-link" href="/#work" aria-label={copy.nav.work}>
+        {copy.hero.scroll}
       </Link>
     </section>
   )

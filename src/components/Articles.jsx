@@ -2,26 +2,39 @@ import Image from 'next/image'
 import Link from 'next/link'
 import SectionReveal from './SectionReveal'
 import { featuredArticles } from '../data/content'
+import { useLanguage } from '../lib/i18n'
 
 export default function Articles({
   items = featuredArticles.slice(0, 4),
-  title = 'Publicaciones',
-  description = 'Archivo completo de artículos y notas publicados en el portfolio.',
+  title,
+  description,
   showArchiveLink = true,
   showSectionHead = true,
   sectionId = 'articles-archive',
 }) {
+  const { copy, lang } = useLanguage()
+  const resolvedTitle = title || copy.articles.title
+  const resolvedDescription = description || copy.articles.archiveDescription
+  const headingId = `${sectionId}-title`
+  const articleDateFormatter = new Intl.DateTimeFormat(lang === 'en' ? 'en-GB' : 'es-ES', {
+    day: 'numeric',
+    month: 'short',
+    year: 'numeric',
+  })
+
   return (
-    <section id={sectionId} className="page-section">
+    <section id={sectionId} className="page-section" aria-labelledby={headingId}>
       <div className="container writing-layout">
         {showSectionHead ? (
           <SectionReveal className="section-head">
             <div>
-              <p className="section-kicker">Publicaciones</p>
-              <h2 className="section-heading">{title}</h2>
+              <p className="section-kicker">{copy.articles.sectionKicker}</p>
+              <h2 id={headingId} className="section-heading">
+                {resolvedTitle}
+              </h2>
             </div>
 
-            <p className="section-text">{description}</p>
+            <p className="section-text">{resolvedDescription}</p>
           </SectionReveal>
         ) : null}
 
@@ -32,7 +45,8 @@ export default function Articles({
                 href={article.externalUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="writing-item group"
+                className={`writing-item group${article.image ? '' : ' writing-item--no-media'}`}
+                aria-label={article.title}
               >
                 <span className="writing-item__index">0{index + 1}</span>
                 {article.image ? (
@@ -44,6 +58,9 @@ export default function Articles({
                   <p className="writing-item__meta">{article.topic}</p>
                   <h3>{article.title}</h3>
                   <p>{article.excerpt}</p>
+                  {article.publishedAt ? (
+                    <span className="writing-item__date">{articleDateFormatter.format(new Date(article.publishedAt))}</span>
+                  ) : null}
                 </div>
                 <span className="writing-item__arrow">↗</span>
               </a>
@@ -53,7 +70,7 @@ export default function Articles({
 
         {showArchiveLink ? (
           <Link className="inline-link" href="/articles">
-            Ver todas las publicaciones
+            {copy.articles.allArticles}
           </Link>
         ) : null}
       </div>

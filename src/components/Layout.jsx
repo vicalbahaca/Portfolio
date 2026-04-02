@@ -1,15 +1,19 @@
 import Navbar from './Navbar'
 import Footer from './Footer'
-import HomeAtmosphere from './HomeAtmosphere'
+import { useLanguage } from '../lib/i18n'
 
 export default function Layout({ children, shellClassName = '' }) {
-  const isHomeShell = shellClassName.includes('page-shell--home')
+  const { copy } = useLanguage()
 
   return (
     <div className={`page-shell ${shellClassName}`.trim()}>
-      {isHomeShell ? <HomeAtmosphere /> : null}
+      <a className="skip-link" href="#main-content">
+        {copy.site.skipToContent}
+      </a>
       <Navbar />
-      <main className="site-main">{children}</main>
+      <main id="main-content" className="site-main" tabIndex={-1}>
+        {children}
+      </main>
       <Footer />
     </div>
   )

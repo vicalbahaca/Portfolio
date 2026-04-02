@@ -1,15 +1,9 @@
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
 import { useRouter } from 'next/router'
 import { AnimatePresence, motion } from 'framer-motion'
 import { siteConfig } from '../data/content'
-
-const navLinks = [
-  { label: 'Work', href: '/#work', routePrefix: '/work', hash: '#work' },
-  { label: 'About', href: '/#about', hash: '#about' },
-  { label: 'Articles', href: '/articles', routePrefix: '/articles' },
-]
+import { useLanguage } from '../lib/i18n'
 
 const brandAsset = 'https://framerusercontent.com/images/mJBC1wHo4tTlycjCSQJoIBVrqRU.png'
 
@@ -24,23 +18,18 @@ function LinkedInIcon() {
   )
 }
 
-function BehanceIcon() {
-  return (
-    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-      <path
-        d="M9.34 11.03c1.5 0 2.48-.96 2.48-2.34 0-1.72-1.23-2.69-3.34-2.69H2V20h6.76c2.47 0 3.87-1.27 3.87-3.4 0-1.81-1.16-2.96-3.29-3.19v-.38Zm-3.69-3.2h2.5c1.06 0 1.62.43 1.62 1.23 0 .81-.56 1.25-1.62 1.25h-2.5V7.83Zm2.76 9.34H5.65v-3.18h2.76c1.24 0 1.9.54 1.9 1.57s-.66 1.61-1.9 1.61Zm8.43-7.9c-3.14 0-5.14 2.18-5.14 5.4 0 3.28 1.94 5.33 5.1 5.33 2.54 0 4.24-1.22 4.82-3.32h-2.57c-.24.69-.93 1.12-2.02 1.12-1.43 0-2.32-.86-2.39-2.4H21.9v-.76c0-3.22-1.89-5.37-5.06-5.37Zm0 2.04c1.25 0 2.07.8 2.14 2.18h-4.42c.14-1.33.96-2.18 2.28-2.18Zm-2.27-4.08h4.51v1.17h-4.51V7.23Z"
-        fill="currentColor"
-      />
-    </svg>
-  )
-}
-
 export default function Navbar() {
   const router = useRouter()
+  const { lang, setLang, copy } = useLanguage()
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const isHome = router.pathname === '/'
   const hasSurface = !isHome || scrolled || menuOpen
+  const navLinks = [
+    { label: copy.nav.work, href: '/#work', routePrefix: '/work', hash: '#work' },
+    { label: copy.nav.about, href: '/#about', hash: '#about' },
+    { label: copy.nav.articles, href: '/articles', routePrefix: '/articles' },
+  ]
 
   useEffect(() => {
     document.body.classList.toggle('menu-open', menuOpen)
@@ -66,57 +55,87 @@ export default function Navbar() {
     <header className={`navbar${hasSurface ? ' navbar--surface' : ''}`}>
       <div className="navbar__inner navbar__inner--unified">
         <Link href="/" className="navbar__brand navbar__brand--unified" aria-label={siteConfig.name}>
-          <span className="navbar__brand-logo">
-            <Image src={brandAsset} alt="" width={32} height={32} />
+          <span className="navbar__brand-logo" style={{ '--brand-mask': `url("${brandAsset}")` }}>
+            <span className="navbar__brand-glyph" aria-hidden="true" />
           </span>
         </Link>
 
-        <nav className="navbar__links navbar__links--unified" aria-label="Primary">
+        <nav className="navbar__links navbar__links--unified" aria-label={copy.nav.primary}>
           {navLinks.map((link) => {
             const isRouteActive = typeof link.routePrefix === 'string' && router.pathname.startsWith(link.routePrefix)
             const isHashActive = router.pathname === '/' && typeof link.hash === 'string' && router.asPath.includes(link.hash)
             const isActive = isRouteActive || isHashActive
 
             return (
-              <Link key={link.href} href={link.href} className={`navbar__link${isActive ? ' navbar__link--active' : ''}`}>
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`navbar__link${isActive ? ' navbar__link--active' : ''}`}
+                aria-current={isActive ? 'page' : undefined}
+              >
                 {link.label}
               </Link>
             )
           })}
         </nav>
 
-        <div className="navbar__socials navbar__socials--unified">
-          <a className="navbar__social-link" href={siteConfig.social.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn">
-            <LinkedInIcon />
-          </a>
-          <a className="navbar__social-link" href={siteConfig.social.behance} target="_blank" rel="noreferrer" aria-label="Behance">
-            <BehanceIcon />
-          </a>
-        </div>
+        <div className="navbar__right navbar__right--unified">
+          <div className="navbar__socials navbar__socials--unified">
+            <a
+              className="navbar__social-link"
+              href={siteConfig.social.linkedin}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={copy.nav.linkedinLabel}
+            >
+              <LinkedInIcon />
+            </a>
+          </div>
 
-        <div className="navbar__actions navbar__actions--unified">
-          <button
-            type="button"
-            className="navbar__toggle navbar__toggle--unified"
-            aria-label={menuOpen ? 'Close menu' : 'Open menu'}
-            aria-expanded={menuOpen}
-            onClick={() => setMenuOpen((open) => !open)}
-          >
-            {menuOpen ? 'Close' : 'Menu'}
-          </button>
+          <div className="navbar__actions navbar__actions--unified">
+            <div className="navbar__language">
+              <label className="sr-only" htmlFor="site-language">
+                {copy.nav.language}
+              </label>
+              <select
+                id="site-language"
+                className="navbar__language-select"
+                value={lang}
+                aria-label={copy.nav.language}
+                onChange={(event) => setLang(event.target.value)}
+              >
+                <option value="es">ES</option>
+                <option value="en">EN</option>
+              </select>
+            </div>
+            <button
+              type="button"
+              className="navbar__toggle navbar__toggle--unified"
+              aria-label={menuOpen ? copy.nav.closeMenu : copy.nav.openMenu}
+              aria-expanded={menuOpen}
+              aria-controls="site-mobile-menu"
+              onClick={() => setMenuOpen((open) => !open)}
+            >
+              {menuOpen ? copy.nav.closeMenu : copy.nav.openMenu}
+            </button>
+          </div>
         </div>
       </div>
 
       <AnimatePresence>
         {menuOpen ? (
           <motion.div
+            id="site-mobile-menu"
             className="navbar__mobile"
+            role="dialog"
+            aria-modal="true"
+            aria-label={copy.nav.mobile}
             initial={{ opacity: 0, y: -16 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -12 }}
             transition={{ duration: 0.24, ease: [0.22, 1, 0.36, 1] }}
           >
-            <nav className="navbar__mobile-links" aria-label="Mobile">
+            <nav className="navbar__mobile-links" aria-label={copy.nav.mobile}>
               {navLinks.map((link) => (
                 <Link key={link.href} href={link.href} className="navbar__mobile-link">
                   {link.label}
@@ -124,17 +143,30 @@ export default function Navbar() {
               ))}
             </nav>
 
+            <div className="navbar__mobile-language">
+              <label className="sr-only" htmlFor="site-language-mobile">
+                {copy.nav.language}
+              </label>
+              <select
+                id="site-language-mobile"
+                className="navbar__language-select navbar__language-select--mobile"
+                value={lang}
+                aria-label={copy.nav.language}
+                onChange={(event) => setLang(event.target.value)}
+              >
+                <option value="es">ES</option>
+                <option value="en">EN</option>
+              </select>
+            </div>
+
             <a className="navbar__mobile-cta" href={`mailto:${siteConfig.email}`}>
-              Abrir email
+              {copy.nav.openEmail}
             </a>
 
             <div className="navbar__mobile-meta">
-              <span>{siteConfig.location}</span>
-              <a href={siteConfig.social.linkedin} target="_blank" rel="noreferrer">
-                LinkedIn
-              </a>
-              <a href={siteConfig.social.behance} target="_blank" rel="noreferrer">
-                Behance
+              <span>{copy.site.location}</span>
+              <a href={siteConfig.social.linkedin} target="_blank" rel="noreferrer" aria-label={copy.nav.linkedinLabel}>
+                {copy.nav.linkedinLabel}
               </a>
             </div>
           </motion.div>
