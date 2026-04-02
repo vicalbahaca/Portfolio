@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import SectionReveal from './SectionReveal'
 import { featuredArticles } from '../data/content'
-import { useLanguage } from '../lib/i18n'
+import { localizeArticle, useLanguage } from '../lib/i18n'
 
 export default function Articles({
   items = featuredArticles.slice(0, 4),
@@ -15,6 +15,7 @@ export default function Articles({
   const { copy, lang } = useLanguage()
   const resolvedTitle = title || copy.articles.title
   const resolvedDescription = description || copy.articles.archiveDescription
+  const localizedItems = items.map((article) => localizeArticle(article, lang))
   const headingId = `${sectionId}-title`
   const articleDateFormatter = new Intl.DateTimeFormat(lang === 'en' ? 'en-GB' : 'es-ES', {
     day: 'numeric',
@@ -39,7 +40,7 @@ export default function Articles({
         ) : null}
 
         <div className="writing-list">
-          {items.map((article, index) => (
+          {localizedItems.map((article, index) => (
             <SectionReveal key={article.slug} delay={index * 0.04}>
               <a
                 href={article.externalUrl}

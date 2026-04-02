@@ -6,7 +6,7 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import { useGSAP } from '@gsap/react'
 import { caseStudies, conceptDesigns, featuredArticles, siteConfig } from '../data/content'
-import { localizeProject, useLanguage } from '../lib/i18n'
+import { localizeArticle, localizeProject, useLanguage } from '../lib/i18n'
 
 gsap.registerPlugin(ScrollTrigger, useGSAP)
 
@@ -15,7 +15,7 @@ export default function HomeLanding() {
   const { copy, cvHref, lang } = useLanguage()
   const highlightedProjects = caseStudies.map((entry) => localizeProject(entry, lang))
   const secondaryProjects = conceptDesigns.slice(0, 4).map((entry) => localizeProject(entry, lang))
-  const latestArticles = featuredArticles
+  const latestArticles = featuredArticles.map((entry) => localizeArticle(entry, lang))
   const articleDateFormatter = new Intl.DateTimeFormat(lang === 'en' ? 'en-GB' : 'es-ES', {
     day: 'numeric',
     month: 'short',

@@ -1,31 +1,32 @@
 import { useEffect } from 'react'
 import Head from 'next/head'
 import { articles, getArticleBySlug } from '../../data/content'
-import { useLanguage } from '../../lib/i18n'
+import { localizeArticle, useLanguage } from '../../lib/i18n'
 
 export default function ArticleRedirectPage({ article }) {
-  const { copy } = useLanguage()
+  const { copy, lang } = useLanguage()
+  const localizedArticle = article ? localizeArticle(article, lang) : null
 
   useEffect(() => {
-    if (article?.externalUrl) {
-      window.location.replace(article.externalUrl)
+    if (localizedArticle?.externalUrl) {
+      window.location.replace(localizedArticle.externalUrl)
     }
-  }, [article])
+  }, [localizedArticle])
 
-  if (!article) {
+  if (!localizedArticle) {
     return null
   }
 
   return (
     <>
       <Head>
-        <title>{article.title}</title>
-        <meta httpEquiv="refresh" content={`0;url=${article.externalUrl}`} />
+        <title>{localizedArticle.title}</title>
+        <meta httpEquiv="refresh" content={`0;url=${localizedArticle.externalUrl}`} />
         <meta name="robots" content="noindex" />
-        <link rel="canonical" href={article.externalUrl} />
+        <link rel="canonical" href={localizedArticle.externalUrl} />
       </Head>
       <main style={{ minHeight: '100vh', display: 'grid', placeItems: 'center', padding: '24px' }}>
-        <a href={article.externalUrl} target="_blank" rel="noreferrer">
+        <a href={localizedArticle.externalUrl} target="_blank" rel="noreferrer">
           {copy.articles.opening}
         </a>
       </main>

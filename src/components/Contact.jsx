@@ -1,26 +1,29 @@
 import SectionReveal from './SectionReveal'
 import { siteConfig } from '../data/content'
+import { useLanguage } from '../lib/i18n'
 
 export default function Contact() {
+  const { copy, cvHref } = useLanguage()
+
   return (
     <section id="contact" className="page-section contact-cta">
       <div className="container">
         <SectionReveal className="contact-cta__inner">
-          <p className="section-kicker">Contacto</p>
-          <h2 className="contact-cta__title">Si el producto necesita criterio visual y alguien que entienda a ingeniería, hablemos.</h2>
+          <p className="section-kicker">{copy.contactLegacy.kicker}</p>
+          <h2 className="contact-cta__title">{copy.contactLegacy.title}</h2>
           <a className="contact-cta__mail" href={`mailto:${siteConfig.email}`}>
             {siteConfig.email}
           </a>
 
           <div className="contact-cta__links">
             <a className="btn btn--primary" href={siteConfig.social.linkedin} target="_blank" rel="noreferrer">
-              LinkedIn
+              {copy.contactLegacy.linkedin}
             </a>
             <a className="btn btn--secondary" href={siteConfig.extras.mentorship} target="_blank" rel="noreferrer">
-              Mentorías
+              {copy.contactLegacy.mentorship}
             </a>
-            <a className="btn btn--secondary" href={siteConfig.extras.cv} target="_blank" rel="noreferrer">
-              Descargar CV
+            <a className="btn btn--secondary" href={cvHref} target="_blank" rel="noreferrer">
+              {copy.contactLegacy.downloadCv}
             </a>
           </div>
         </SectionReveal>

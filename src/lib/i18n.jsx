@@ -1,112 +1,16 @@
 import { createContext, useContext, useEffect, useState } from 'react'
+import { localizeArticleContent, localizeProjectContent } from './contentI18n'
 
 const LANGUAGE_STORAGE_KEY = 'victor-saiz-portfolio-language'
 
 const LanguageContext = createContext(null)
-
-const projectTranslations = {
-  aaaquest: {
-    en: {
-      subtitle: 'AI for accessibility and product documentation',
-      summary:
-        'A tool designed to detect accessibility issues, generate development-ready documentation, and speed up handoff from a screenshot or a design.',
-      description:
-        'AAAQuest combines visual analysis, WCAG criteria, and AI-assisted generation so design teams can document accessibility in seconds, learn best practices, and share clearer deliverables.',
-      headline:
-        'A product that turns accessibility review and documentation into a faster, clearer workflow for design teams.',
-    },
-  },
-  coubber: {
-    en: {
-      subtitle: 'Sports tech platform for analysis and reporting',
-      summary:
-        'A platform that automates sports performance analysis and turns highly manual assessment workflows into clear, actionable reports in seconds.',
-      description:
-        'Coubber Data Studio connects multiple devices, centralises metrics, and uses AI to help coaches, physiotherapists, and clubs make decisions faster with less operational friction.',
-      headline:
-        'A B2B product focused on making performance data easier to read, compare, and act on across technical teams.',
-    },
-  },
-  lowerton: {
-    en: {
-      subtitle: 'AI-assisted innovation management platform',
-      summary:
-        'A platform to structure innovation processes, connect with partners, and turn strategic goals into actionable workflows.',
-      description:
-        'Lowerton brings project definition, supplier relationships, and KPI tracking into one experience designed for innovation teams.',
-      headline:
-        'A platform that gives innovation teams one place to structure initiatives, coordinate partners, and track progress with clarity.',
-    },
-  },
-  closy: {
-    en: {
-      subtitle: 'Relationship wellbeing app',
-      summary:
-        'An app focused on reconnecting people and turning small everyday actions into healthier, more meaningful relationships.',
-      description:
-        'Closy is an end-to-end product that combines branding, UX/UI, and product tone to talk about human connection through a more approachable experience.',
-      headline:
-        'A concept that combines product, brand, and interface decisions to make emotional wellbeing feel close, calm, and actionable.',
-    },
-  },
-  mycoach: {
-    en: {
-      subtitle: 'Platform for personalised routines and mesocycles',
-      summary:
-        'A platform for creating personalised training plans for hypertrophy, Hyrox, and CrossFit through physical analysis, real context, and a guided progression flow.',
-      description:
-        'MyCoach combines previous analysis, a dynamic questionnaire, and Excel export so coaches can build editable mesocycles that evolve with feedback, fatigue, and available equipment.',
-      headline:
-        'A training product built around context-aware planning instead of generic templates, with room for iteration and performance tracking.',
-    },
-  },
-  vworld: {
-    en: {
-      subtitle: 'Social network built around daily challenges',
-      summary:
-        'A social concept that brings back spontaneity, play, and real connection through daily challenges shared with everyone.',
-      description:
-        'VWorld explores an alternative to over-produced social platforms: more authenticity, more play, and less friction to participate.',
-      headline:
-        'A social product concept designed to reduce performance pressure and bring back everyday participation.',
-    },
-  },
-  'meeting-room-booking-app': {
-    en: {
-      subtitle: 'Prototype',
-      summary:
-        'A clearer workflow for booking meeting rooms in large offices without wasting time between availability, proximity, and reservation management.',
-    },
-  },
-  'inventory-screen-pixel-art-game': {
-    en: {
-      subtitle: 'Feature concept design',
-      summary:
-        'An inventory experience for a mobile pixel-art game with crafting, rarity, and trading, designed to stay readable even with dense information.',
-    },
-  },
-  'joining-made-simple-private-group': {
-    en: {
-      subtitle: 'Webpage concept design',
-      summary:
-        'A landing concept published on Behance that simplifies the onboarding into private groups with a more direct and friendly message.',
-    },
-  },
-  'local-flower-shop': {
-    en: {
-      subtitle: 'Webpage concept design',
-      summary:
-        'An editorial landing page for a local flower shop with a warmer, more expressive brand-led direction.',
-    },
-  },
-}
 
 const translations = {
   es: {
     langCode: 'ES',
     langLabel: 'Español',
     site: {
-      role: 'Senior Product Designer',
+      role: 'Product Designer',
       location: 'Barcelona, España',
       skipToContent: 'Saltar al contenido',
     },
@@ -124,7 +28,7 @@ const translations = {
       behanceLabel: 'Behance',
     },
     hero: {
-      subtitle: 'Diseñador de Producto Senior',
+      subtitle: 'Product Designer',
       cta: 'Ir a LinkedIn',
       scroll: 'Ver proyectos',
     },
@@ -139,7 +43,7 @@ const translations = {
       secondaryTitle: 'Otros proyectos',
       secondaryCaption: 'Conceptos y piezas más rápidas que completan el archivo de trabajo.',
       aboutLabel: 'Sobre mí',
-      aboutTitle: 'Diseñador de Producto Senior',
+      aboutTitle: 'Product Designer',
       aboutSummaryPrefix: 'Product Designer con mindset de',
       aboutSummaryAccent: 'Product Maker',
       aboutSummarySuffix: '.',
@@ -156,7 +60,7 @@ const translations = {
         {
           role: 'AI Product Designer · Product Maker',
           company: 'Coubber',
-          period: 'Actualidad',
+          period: 'Ene 2026 — Actualidad',
           summary:
             'Trabajo en una plataforma sportstech orientada a análisis, reporting y lectura de rendimiento. Mi foco está en producto, claridad del flujo, narrativa de datos y una UI capaz de traducir información compleja en decisiones útiles.',
         },
@@ -248,6 +152,8 @@ const translations = {
       back: '← Volver a proyectos',
       visitWebsite: 'Visitar web',
       metaDescriptionFallback: 'Caso de estudio de producto, UX/UI y sistemas diseñado por Victor Saiz.',
+      expandImage: 'Ampliar imagen',
+      closeImage: 'Cerrar imagen',
     },
     redirects: {
       workTitle: 'Proyectos',
@@ -264,12 +170,35 @@ const translations = {
       submit: 'Entrar',
       error: 'La contraseña no es correcta.',
     },
+    doodlebob: {
+      title: 'ME HOY MINOY!',
+      kicker: 'Easter egg',
+      description:
+        'La versión local del portfolio mantiene a Doodlebob para conservar el lado más juguetón y menos corporativo de la web.',
+      reason: 'Por qué existe',
+      bodyOne:
+        'Las referencias a Bob Esponja forman parte del lenguaje visual de Victor y ayudan a que la marca se sienta menos corporativa y más personal.',
+      bodyTwo:
+        'También explican la mezcla de humor, color y formas exageradas que aparece en otros puntos del portfolio.',
+      back: 'Volver al inicio',
+      metaDescription: 'Rincón lúdico del portfolio, preservado como pequeño easter egg dentro de la versión en código.',
+    },
+    marquee: {
+      label: 'Highlights',
+    },
+    contactLegacy: {
+      kicker: 'Contacto',
+      title: 'Si el producto necesita criterio visual y alguien que entienda a ingeniería, hablemos.',
+      linkedin: 'LinkedIn',
+      mentorship: 'Mentorías',
+      downloadCv: 'Descargar CV',
+    },
   },
   en: {
     langCode: 'EN',
     langLabel: 'English',
     site: {
-      role: 'Senior Product Designer',
+      role: 'Product Designer',
       location: 'Barcelona, Spain',
       skipToContent: 'Skip to content',
     },
@@ -287,7 +216,7 @@ const translations = {
       behanceLabel: 'Behance',
     },
     hero: {
-      subtitle: 'Senior Product Designer',
+      subtitle: 'Product Designer',
       cta: 'Go to LinkedIn',
       scroll: 'Scroll Down',
     },
@@ -302,7 +231,7 @@ const translations = {
       secondaryTitle: 'Other projects',
       secondaryCaption: 'Faster concepts and smaller pieces that complete the body of work.',
       aboutLabel: 'About',
-      aboutTitle: 'Senior Product Designer',
+      aboutTitle: 'Product Designer',
       aboutSummaryPrefix: 'Product Designer with a',
       aboutSummaryAccent: 'Product Maker',
       aboutSummarySuffix: ' mindset.',
@@ -319,7 +248,7 @@ const translations = {
         {
           role: 'AI Product Designer · Product Maker',
           company: 'Coubber',
-          period: 'Present',
+          period: 'Jan 2026 — Present',
           summary:
             'I work on a sportstech platform focused on analysis, reporting, and performance reading. My focus is product, flow clarity, data storytelling, and a UI able to translate complex information into useful decisions.',
         },
@@ -411,6 +340,8 @@ const translations = {
       back: '← Back to projects',
       visitWebsite: 'Visit website',
       metaDescriptionFallback: 'Product, UX/UI, and systems case study designed by Victor Saiz.',
+      expandImage: 'Expand image',
+      closeImage: 'Close image',
     },
     redirects: {
       workTitle: 'Work',
@@ -426,6 +357,28 @@ const translations = {
       placeholder: 'Enter the password',
       submit: 'Enter',
       error: 'The password is not correct.',
+    },
+    doodlebob: {
+      title: 'ME HOY MINOY!',
+      kicker: 'Easter egg',
+      description: 'The local version of the portfolio keeps Doodlebob to preserve the more playful and less corporate side of the site.',
+      reason: 'Why it exists',
+      bodyOne:
+        'SpongeBob references are part of Victor’s visual language and help the brand feel less corporate and more personal.',
+      bodyTwo:
+        'They also explain the mix of humour, colour, and exaggerated shapes that appears in other parts of the portfolio.',
+      back: 'Back to home',
+      metaDescription: 'Playful corner of the portfolio preserved as a small easter egg inside the coded version of the site.',
+    },
+    marquee: {
+      label: 'Highlights',
+    },
+    contactLegacy: {
+      kicker: 'Contact',
+      title: 'If the product needs visual judgement and someone who understands engineering, let’s talk.',
+      linkedin: 'LinkedIn',
+      mentorship: 'Mentoring',
+      downloadCv: 'Download CV',
     },
   },
 }
@@ -450,15 +403,11 @@ export function detectPreferredLanguage(source) {
 }
 
 export function localizeProject(entry, lang) {
-  if (lang === 'es') return entry
+  return localizeProjectContent(entry, lang)
+}
 
-  const localized = projectTranslations[entry.slug]?.en
-  if (!localized) return entry
-
-  return {
-    ...entry,
-    ...localized,
-  }
+export function localizeArticle(entry, lang) {
+  return localizeArticleContent(entry, lang)
 }
 
 export function LanguageProvider({ children }) {

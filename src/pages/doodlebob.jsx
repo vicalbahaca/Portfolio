@@ -3,27 +3,24 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Layout from '../components/Layout'
 import { siteConfig } from '../data/content'
+import { useLanguage } from '../lib/i18n'
 
 export default function DoodlebobPage() {
+  const { copy } = useLanguage()
+
   return (
     <>
       <Head>
         <title>{`Doodlebob | ${siteConfig.name}`}</title>
-        <meta
-          name="description"
-          content="Playful corner of the portfolio preserved as a local easter egg inside the coded version of the site."
-        />
+        <meta name="description" content={copy.doodlebob.metaDescription} />
       </Head>
 
       <Layout>
         <section className="page-hero">
           <div className="container page-hero__panel">
-            <span className="section-kicker">Easter Egg</span>
-            <h1 className="page-title">ME HOY MINOY!</h1>
-            <p className="section-copy">
-              La versión local del portfolio mantiene a Doodlebob en el hero para conservar el lado más juguetón y menos
-              corporativo de la web.
-            </p>
+            <span className="section-kicker">{copy.doodlebob.kicker}</span>
+            <h1 className="page-title">{copy.doodlebob.title}</h1>
+            <p className="section-copy">{copy.doodlebob.description}</p>
           </div>
         </section>
 
@@ -36,16 +33,11 @@ export default function DoodlebobPage() {
             <aside className="detail-sidebar">
               <article className="surface-card detail-card">
                 <div className="detail-card__body">
-                  <span className="pill pill--light">Por qué existe</span>
-                  <p className="detail-copy">
-                    Las referencias a Bob Esponja forman parte del lenguaje visual de Victor, y ayudan a que la marca se sienta
-                    menos corporativa y más personal.
-                  </p>
-                  <p className="detail-copy">
-                    También explican la mezcla de color, humor y formas más exageradas que recorre el resto de la web.
-                  </p>
+                  <span className="pill pill--light">{copy.doodlebob.reason}</span>
+                  <p className="detail-copy">{copy.doodlebob.bodyOne}</p>
+                  <p className="detail-copy">{copy.doodlebob.bodyTwo}</p>
                   <Link className="btn btn--outline" href="/">
-                    Volver al inicio
+                    {copy.doodlebob.back}
                   </Link>
                 </div>
               </article>

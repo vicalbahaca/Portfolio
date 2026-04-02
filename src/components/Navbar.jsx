@@ -63,8 +63,7 @@ export default function Navbar() {
         <nav className="navbar__links navbar__links--unified" aria-label={copy.nav.primary}>
           {navLinks.map((link) => {
             const isRouteActive = typeof link.routePrefix === 'string' && router.pathname.startsWith(link.routePrefix)
-            const isHashActive = router.pathname === '/' && typeof link.hash === 'string' && router.asPath.includes(link.hash)
-            const isActive = isRouteActive || isHashActive
+            const isActive = isRouteActive
 
             return (
               <Link

@@ -1,12 +1,12 @@
 export const siteConfig = {
   name: 'Victor Saiz',
-  role: 'Senior Product Designer',
+  role: 'Product Designer',
   heroTitle: 'Victor Saiz',
-  heroSubtitle: 'Senior Product Designer',
+  heroSubtitle: 'Product Designer',
   heroEyebrow: 'Barcelona · Product Design · Design + Code',
   heroHeadline: 'Producto, interfaces y sistemas pensados para sentirse claros desde el primer scroll.',
   description:
-    'Senior Product Designer con mindset de product maker. Conecto diseño, producto y construcción para lanzar experiencias claras, accesibles y realistas.',
+    'Product Designer con mindset de product maker. Conecto diseño, producto y construcción para lanzar experiencias claras, accesibles y realistas.',
   heroMeta: [
     'UX/UI con criterio de producto',
     'Sistemas visuales escalables',
@@ -32,7 +32,7 @@ export const siteConfig = {
 }
 
 export const aboutIntro = {
-  title: 'Senior Product Designer',
+  title: 'Product Designer',
   summary: 'Product designer con mindset de product maker.',
   body: [
     'Mi carrera conecta diseño, producto y construcción. Empecé con código de muy joven y con el tiempo el foco se volvió más claro: entender bien el problema, prototipar rápido, medir mejor y convertir ideas en producto útil.',
@@ -170,7 +170,7 @@ export const caseStudies = [
       'Una plataforma para generar rutinas personalizadas de musculacion, Hyrox y CrossFit a partir de analisis fisico, contexto real y un proceso guiado orientado a progresion.',
     description:
       'MyCoach combina analisis previo, formulario dinamico y exportacion a Excel para construir mesociclos editables que evolucionan segun el feedback, la fatiga y el material disponible.',
-    image: 'https://mycoach-27z4.onrender.com/photos/bodybuilder-workout.jpg',
+    image: '/mycoach-hero.png',
     accent: '#0050CC',
     category: 'Case study',
     type: 'Plataforma de planificacion deportiva personalizada',
@@ -458,13 +458,6 @@ const workDetailContent = {
           'API key y panel de cuenta para planes, billing y facturacion.',
         ],
       },
-      {
-        title: 'Senal publica',
-        paragraphs: [
-          'En tu publicacion publica de LinkedIn anunciaste AAAQuest como una demo ya disponible y abierta a feedback, destacando dos pilares: aprendizaje de accesibilidad y documentacion automatica desde capturas.',
-          'Ese lanzamiento ya generaba conversacion y primeras respuestas cualitativas, con comentarios que valoraban la claridad de los resumentes, la utilidad del flujo y detalles como el certificado final, una buena senal para una beta temprana.',
-        ],
-      },
     ],
   },
   coubber: {
@@ -534,7 +527,7 @@ const workDetailContent = {
         ],
       },
       {
-        title: 'Senal de mercado',
+        title: 'Señal de mercado',
         paragraphs: [
           'La presencia publica del proyecto muestra una startup todavia en fase temprana pero ya muy enfocada en validacion sectorial. En su comunicacion en LinkedIn explican una vision clara: simplificar, automatizar y conectar el analisis del rendimiento deportivo.',
           'Tambien indican que ya estan haciendo tests de usuario del MVP con centros de rendimiento y readaptacion reconocidos en Europa, que existe interes por parte de clubes deportivos de referencia internacional y que la ambicion es convertirse en el estandar de analisis de datos para profesionales del rendimiento.',
@@ -1430,6 +1423,12 @@ function deriveLinkedInPublishedAt(url) {
   return Number.isFinite(timestamp) ? new Date(timestamp).toISOString() : null
 }
 
+// Public LinkedIn fallback used when a Framer article does not expose
+// a verifiable one-to-one public LinkedIn URL.
+// This keeps every publication inside LinkedIn instead of redirecting to Framer.
+// If we later recover the exact post/article URL, only the entry needs updating.
+const linkedInPublicProfileUrl = 'https://es.linkedin.com/in/victorsaizalfageme'
+
 const articleEntries = [
   {
     slug: 'en-north-estamos-impulsando-un-cambio-radical',
@@ -1522,8 +1521,9 @@ const articleEntries = [
     description:
       'Descubre 10 tecnicas de ideacion efectivas para diseno UX. Victor Saiz Alfageme comparte metodos innovadores para mejorar tu proceso creativo y colaborativo en proyectos de diseno.',
     image: 'https://framerusercontent.com/assets/IRvFMorZJkkd7mFhS0dR6BxkcHs.png',
-    externalUrl: 'https://victorsaiz.framer.website/articles/10-tecnicas-de-ideacion-en-diseno-ux',
-    source: 'framer',
+    publishedAt: '2024-05-01T10:00:08.000Z',
+    externalUrl: 'https://es.linkedin.com/pulse/10-t%C3%A9cnicas-de-ideaci%C3%B3n-en-dise%C3%B1o-ux-victor-saiz-alfageme-vppef',
+    source: 'linkedin',
     topic: 'Ideacion',
   },
   {
@@ -1532,8 +1532,8 @@ const articleEntries = [
     excerpt: 'Un plugin sencillo para limpiar decimales, acelerar decisiones y dejar los archivos de Figma mucho mas ordenados.',
     description: 'El plugin definitivo para manejar decimales en Figma. Simplifica tu diseno y enfocate en crear sin obstaculos.',
     image: 'https://framerusercontent.com/assets/t297oB9q1qOwl69cumkvsV6s.png',
-    externalUrl: 'https://victorsaiz.framer.website/articles/te-molestan-los-decimales-de-figma-necesitas-este-plugin',
-    source: 'framer',
+    externalUrl: linkedInPublicProfileUrl,
+    source: 'linkedin',
     topic: 'Figma',
   },
   {
@@ -1543,8 +1543,8 @@ const articleEntries = [
     description:
       'Descubre los 7 plugins favoritos de Victor Saiz para empezar a usar en tu trabajo en UX/UI. Herramientas que marcan la diferencia en cada proyecto.',
     image: 'https://framerusercontent.com/assets/mMpyJpfD0XbRA2zlOO3PGnGNg.png',
-    externalUrl: 'https://victorsaiz.framer.website/articles/mis-7-plugins-favoritos',
-    source: 'framer',
+    externalUrl: linkedInPublicProfileUrl,
+    source: 'linkedin',
     topic: 'Plugins',
   },
   {
@@ -1554,8 +1554,8 @@ const articleEntries = [
     description:
       'Como es la evolucion hacia un perfil T-Shaped? Es la clave para triunfar en el mundo digital. Amplia tus horizontes en UX/UI y desarrollo.',
     image: 'https://framerusercontent.com/assets/0WGVAGAoNi1BbGm752sKeIhKYI.png',
-    externalUrl: 'https://victorsaiz.framer.website/articles/la-evolucion-hacia-el-profesional-t-shaped',
-    source: 'framer',
+    externalUrl: linkedInPublicProfileUrl,
+    source: 'linkedin',
     topic: 'Carrera',
   },
   {
@@ -1565,8 +1565,8 @@ const articleEntries = [
     description:
       'Explora el poder de la IA en el diseno de soluciones tecnologicas. Innovacion y eficacia al servicio del futuro del diseno UX/UI.',
     image: 'https://framerusercontent.com/assets/61YqrWnIkbTYjQHlGdA7xVDMM.png',
-    externalUrl: 'https://victorsaiz.framer.website/articles/como-la-ia-potencia-el-diseno-de-soluciones-tecnologicas',
-    source: 'framer',
+    externalUrl: linkedInPublicProfileUrl,
+    source: 'linkedin',
     topic: 'IA',
   },
   {
@@ -1576,8 +1576,8 @@ const articleEntries = [
     description:
       'No te limites a usar una sola herramienta. Descubre como dominarlas para maximizar tu creatividad y eficiencia en el diseno UX/UI.',
     image: 'https://framerusercontent.com/assets/fJxrERFrQbx17ouPoamtZ6dmA4.png',
-    externalUrl: 'https://victorsaiz.framer.website/articles/no-te-enamores-de-una-herramienta-el-valor-de-aprender-a-usarlas',
-    source: 'framer',
+    externalUrl: linkedInPublicProfileUrl,
+    source: 'linkedin',
     topic: 'Herramientas',
   },
   {
@@ -1587,8 +1587,9 @@ const articleEntries = [
     description:
       'Como influye la cultura deportiva en el ambiente laboral y la productividad? Descubre el impacto positivo de las habilidades deportivas en el mundo laboral, inspirado en Estados Unidos.',
     image: 'https://framerusercontent.com/assets/JcQAe3UNXW8JQfV6KPTxhtIOc.jpg',
-    externalUrl: 'https://victorsaiz.framer.website/articles/cultura-deportiva-en-el-mundo-tecnologico',
-    source: 'framer',
+    publishedAt: '2024-04-24T15:38:54.000Z',
+    externalUrl: 'https://es.linkedin.com/pulse/cultura-deportiva-en-el-mundo-tecnol%C3%B3gico-c%C3%B3mo-y-la-saiz-alfageme-ip5zf',
+    source: 'linkedin',
     topic: 'Cultura',
   },
   {
@@ -1598,8 +1599,8 @@ const articleEntries = [
     description:
       'Aprende como los dibujos animados pueden inspirar innovadores disenos UX. Creatividad sin limites para experiencias de usuario memorables.',
     image: 'https://framerusercontent.com/assets/RFaUvldNVVWXJDbhD5ZYAY6th0Q.png',
-    externalUrl: 'https://victorsaiz.framer.website/articles/inspirate-en-dibujos-animados-para-un-buen-diseno-ux',
-    source: 'framer',
+    externalUrl: linkedInPublicProfileUrl,
+    source: 'linkedin',
     topic: 'Creatividad',
   },
   {
@@ -1609,8 +1610,8 @@ const articleEntries = [
     description:
       'Explora el irremplazable arte de la UI en la era de la IA. Descubre por que la creatividad humana sigue siendo insustituible en el diseno de interfaces.',
     image: 'https://framerusercontent.com/assets/gGrhGe0pW0P5cfSC0gJET4p4e4I.png',
-    externalUrl: 'https://victorsaiz.framer.website/articles/por-que-la-ia-no-puede-reemplazar-la-magia-de-la-ui',
-    source: 'framer',
+    externalUrl: linkedInPublicProfileUrl,
+    source: 'linkedin',
     topic: 'UI',
   },
   {
@@ -1620,8 +1621,8 @@ const articleEntries = [
     description:
       'Impulsa la accesibilidad en tus proyectos con Victor Saiz. Descubre la integracion de sistemas de diseno en UX para crear aplicaciones inclusivas y universales.',
     image: 'https://framerusercontent.com/assets/5v2leThZfAb3Jf6iVsVWpR2BAU.jpeg',
-    externalUrl: 'https://victorsaiz.framer.website/articles/accesibilidad-y-sistemas-de-diseno-en-ux',
-    source: 'framer',
+    externalUrl: linkedInPublicProfileUrl,
+    source: 'linkedin',
     topic: 'Accesibilidad',
   },
   {
@@ -1631,8 +1632,8 @@ const articleEntries = [
     description:
       'Sumergete en la mente del usuario con Victor Saiz y descubre como la psicologia mejora el UX Design. Aprende a crear experiencias mas intuitivas y satisfactorias.',
     image: 'https://framerusercontent.com/assets/zAVPZHc9X9CiP8r3qX9TZg3vsm0.png',
-    externalUrl: 'https://victorsaiz.framer.website/articles/la-psicologia-detras-de-un-buen-ux-design',
-    source: 'framer',
+    externalUrl: linkedInPublicProfileUrl,
+    source: 'linkedin',
     topic: 'Psicologia',
   },
   {
@@ -1642,8 +1643,8 @@ const articleEntries = [
     description:
       'Explora como Figma transforma el frontend con AutoLayout y Flexbox, facilitando disenos responsivos. Unete a Victor Saiz en este viaje tecnico que redefine las reglas del diseno web.',
     image: 'https://framerusercontent.com/assets/GBytxwP7SuUQ0XATnYcVDkL5n9o.png',
-    externalUrl: 'https://victorsaiz.framer.website/articles/autolayout-y-flexbox-como-figma-revoluciona-el-frontend',
-    source: 'framer',
+    externalUrl: linkedInPublicProfileUrl,
+    source: 'linkedin',
     topic: 'Frontend',
   },
   {
@@ -1653,8 +1654,8 @@ const articleEntries = [
     description:
       'Uxcel transforma el aprendizaje de UX/UI en una aventura tan entretenida como efectiva. Sumergite en cursos interactivos que cubren desde los fundamentos hasta tecnicas avanzadas, adaptandose a tu ritmo y convirtiendo el aprendizaje en un juego.',
     image: 'https://framerusercontent.com/assets/kQkxWmEtQ8iHrPVPGV1qN3S8Fok.png',
-    externalUrl: 'https://victorsaiz.framer.website/articles/el-duolingo-del-ux-ui',
-    source: 'framer',
+    externalUrl: linkedInPublicProfileUrl,
+    source: 'linkedin',
     topic: 'Aprendizaje',
   },
 ]
