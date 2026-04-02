@@ -1,7 +1,6 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { AnimatePresence, motion } from 'framer-motion'
 import { siteConfig } from '../data/content'
 import { useLanguage } from '../lib/i18n'
 
@@ -21,6 +20,7 @@ function LinkedInIcon() {
 export default function Navbar() {
   const router = useRouter()
   const { lang, setLang, copy } = useLanguage()
+  const detailsRef = useRef(null)
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const isHome = router.pathname === '/'
@@ -38,6 +38,9 @@ export default function Navbar() {
 
   useEffect(() => {
     setMenuOpen(false)
+    if (detailsRef.current) {
+      detailsRef.current.open = false
+    }
   }, [router.asPath])
 
   useEffect(() => {
@@ -50,6 +53,13 @@ export default function Navbar() {
 
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
+  const closeMenu = () => {
+    setMenuOpen(false)
+    if (detailsRef.current) {
+      detailsRef.current.open = false
+    }
+  }
 
   return (
     <header className={`navbar${hasSurface ? ' navbar--surface' : ''}`}>
@@ -107,70 +117,63 @@ export default function Navbar() {
                 <option value="en">EN</option>
               </select>
             </div>
-            <button
-              type="button"
-              className="navbar__toggle navbar__toggle--unified"
-              aria-label={menuOpen ? copy.nav.closeMenu : copy.nav.openMenu}
-              aria-expanded={menuOpen}
-              aria-controls="site-mobile-menu"
-              onClick={() => setMenuOpen((open) => !open)}
+            <details
+              ref={detailsRef}
+              className="navbar__mobile-disclosure"
+              onToggle={(event) => setMenuOpen(event.currentTarget.open)}
             >
-              {menuOpen ? copy.nav.closeMenu : copy.nav.openMenu}
-            </button>
+              <summary className="navbar__toggle navbar__toggle--unified" aria-label={menuOpen ? copy.nav.closeMenu : copy.nav.openMenu}>
+                <span className="navbar__hamburger" aria-hidden="true">
+                  <span />
+                  <span />
+                  <span />
+                </span>
+              </summary>
+
+              <div className="navbar__mobile" id="site-mobile-menu">
+                <nav aria-label={copy.nav.mobile}>
+                  <ul className="navbar__mobile-list">
+                    {navLinks.map((link) => (
+                      <li key={link.href}>
+                        <Link href={link.href} className="navbar__mobile-link" onClick={closeMenu}>
+                          {link.label}
+                        </Link>
+                      </li>
+                    ))}
+                    <li>
+                      <a
+                        className="navbar__mobile-link"
+                        href={siteConfig.social.linkedin}
+                        target="_blank"
+                        rel="noreferrer"
+                        onClick={closeMenu}
+                      >
+                        {copy.hero.cta}
+                      </a>
+                    </li>
+                  </ul>
+                </nav>
+
+                <div className="navbar__mobile-language">
+                  <label className="sr-only" htmlFor="site-language-mobile">
+                    {copy.nav.language}
+                  </label>
+                  <select
+                    id="site-language-mobile"
+                    className="navbar__language-select navbar__language-select--mobile"
+                    value={lang}
+                    aria-label={copy.nav.language}
+                    onChange={(event) => setLang(event.target.value)}
+                  >
+                    <option value="es">ES</option>
+                    <option value="en">EN</option>
+                  </select>
+                </div>
+              </div>
+            </details>
           </div>
         </div>
       </div>
-
-      <AnimatePresence>
-        {menuOpen ? (
-          <motion.div
-            id="site-mobile-menu"
-            className="navbar__mobile"
-            role="dialog"
-            aria-modal="true"
-            aria-label={copy.nav.mobile}
-            initial={{ opacity: 0, y: -16 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -12 }}
-            transition={{ duration: 0.24, ease: [0.22, 1, 0.36, 1] }}
-          >
-            <nav className="navbar__mobile-links" aria-label={copy.nav.mobile}>
-              {navLinks.map((link) => (
-                <Link key={link.href} href={link.href} className="navbar__mobile-link">
-                  {link.label}
-                </Link>
-              ))}
-            </nav>
-
-            <div className="navbar__mobile-language">
-              <label className="sr-only" htmlFor="site-language-mobile">
-                {copy.nav.language}
-              </label>
-              <select
-                id="site-language-mobile"
-                className="navbar__language-select navbar__language-select--mobile"
-                value={lang}
-                aria-label={copy.nav.language}
-                onChange={(event) => setLang(event.target.value)}
-              >
-                <option value="es">ES</option>
-                <option value="en">EN</option>
-              </select>
-            </div>
-
-            <a className="navbar__mobile-cta" href={`mailto:${siteConfig.email}`}>
-              {copy.nav.openEmail}
-            </a>
-
-            <div className="navbar__mobile-meta">
-              <span>{copy.site.location}</span>
-              <a href={siteConfig.social.linkedin} target="_blank" rel="noreferrer" aria-label={copy.nav.linkedinLabel}>
-                {copy.nav.linkedinLabel}
-              </a>
-            </div>
-          </motion.div>
-        ) : null}
-      </AnimatePresence>
     </header>
   )
 }

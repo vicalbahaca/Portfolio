@@ -3424,6 +3424,19 @@ body {
   gap: 14px;
 }
 
+.navbar__mobile-disclosure {
+  display: none;
+  position: relative;
+}
+
+.navbar__mobile-disclosure > summary {
+  list-style: none;
+}
+
+.navbar__mobile-disclosure > summary::-webkit-details-marker {
+  display: none;
+}
+
 .navbar__language {
   position: relative;
 }
@@ -3464,8 +3477,8 @@ body {
 .navbar__toggle--unified {
   display: none;
   min-height: 52px;
-  min-width: 88px;
-  padding: 0 20px;
+  min-width: 52px;
+  padding: 0;
   border-radius: 999px;
   border: 1px solid transparent;
   background: transparent;
@@ -3482,11 +3495,74 @@ body {
   color: #091427;
 }
 
+.navbar__hamburger {
+  display: inline-flex;
+  width: 22px;
+  height: 16px;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.navbar__hamburger span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  border-radius: 999px;
+  background: currentColor;
+  transition: transform 0.22s ease, opacity 0.22s ease;
+}
+
+.navbar__mobile-disclosure[open] .navbar__hamburger span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.navbar__mobile-disclosure[open] .navbar__hamburger span:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar__mobile-disclosure[open] .navbar__hamburger span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
 .navbar__mobile {
-  top: 92px;
-  left: 20px;
-  right: 20px;
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  width: min(320px, calc(100vw - 32px));
   z-index: 95;
+  padding: 14px;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 18px 40px rgba(7, 17, 31, 0.12);
+}
+
+.navbar__mobile-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 6px;
+}
+
+.navbar__mobile-link {
+  display: flex;
+  align-items: center;
+  min-height: 48px;
+  padding: 0 14px;
+  border-radius: 14px;
+  color: #091427;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.navbar__mobile-link:hover {
+  background: rgba(9, 20, 39, 0.06);
+}
+
+.navbar__mobile-language {
+  margin-top: 12px;
 }
 
 @media (max-width: 860px) {
@@ -3523,6 +3599,10 @@ body {
     gap: 10px;
   }
 
+  .navbar__mobile-disclosure {
+    display: block;
+  }
+
   .navbar__toggle--unified {
     display: inline-flex;
     align-items: center;
@@ -3539,6 +3619,10 @@ body {
   .navbar__brand-glyph {
     width: 36px;
     height: 36px;
+  }
+
+  .navbar__mobile {
+    width: min(300px, calc(100vw - 24px));
   }
 }
 
