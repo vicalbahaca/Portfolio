@@ -6,6 +6,7 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import { useGSAP } from '@gsap/react'
 import { caseStudies, conceptDesigns, featuredArticles, siteConfig } from '../data/content'
+import { ArrowUpRightIcon } from './Icons'
 import { localizeArticle, localizeProject, useLanguage } from '../lib/i18n'
 
 gsap.registerPlugin(ScrollTrigger, useGSAP)
@@ -173,7 +174,9 @@ export default function HomeLanding() {
                   <p>{project.summary}</p>
                 </div>
 
-                <span className="home-secondary-item__arrow">↗</span>
+                <span className="home-secondary-item__arrow" aria-hidden="true">
+                  <ArrowUpRightIcon />
+                </span>
               </Link>
             ))}
           </div>
@@ -295,7 +298,9 @@ export default function HomeLanding() {
                     <span className="home-note__date">{articleDateFormatter.format(new Date(article.publishedAt))}</span>
                   ) : null}
                 </div>
-                <span className="home-note__arrow">↗</span>
+                <span className="home-note__arrow" aria-hidden="true">
+                  <ArrowUpRightIcon />
+                </span>
               </a>
             ))}
           </div>

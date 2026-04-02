@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
+import { ArrowLeftIcon } from '../../components/Icons'
 import Layout from '../../components/Layout'
 import { getWorkEntryBySlug, siteConfig, workEntries } from '../../data/content'
 import { localizeProject, useLanguage } from '../../lib/i18n'
@@ -70,6 +71,9 @@ export default function WorkDetailPage({ entry }) {
         <section className="work-case-hero" aria-labelledby="work-page-title">
           <div className="container work-case-hero__inner">
             <Link href="/#work" className="back-link back-link--light">
+              <span className="back-link__icon" aria-hidden="true">
+                <ArrowLeftIcon />
+              </span>
               {copy.work.back}
             </Link>
 

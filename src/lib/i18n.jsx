@@ -149,7 +149,7 @@ const translations = {
     },
     work: {
       notFound: 'Proyecto no encontrado',
-      back: '← Volver a proyectos',
+      back: 'Volver a proyectos',
       visitWebsite: 'Visitar web',
       metaDescriptionFallback: 'Caso de estudio de producto, UX/UI y sistemas diseñado por Victor Saiz.',
       expandImage: 'Ampliar imagen',
@@ -337,7 +337,7 @@ const translations = {
     },
     work: {
       notFound: 'Project not found',
-      back: '← Back to projects',
+      back: 'Back to projects',
       visitWebsite: 'Visit website',
       metaDescriptionFallback: 'Product, UX/UI, and systems case study designed by Victor Saiz.',
       expandImage: 'Expand image',

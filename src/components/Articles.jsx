@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { ArrowUpRightIcon } from './Icons'
 import SectionReveal from './SectionReveal'
 import { featuredArticles } from '../data/content'
 import { localizeArticle, useLanguage } from '../lib/i18n'
@@ -63,7 +64,9 @@ export default function Articles({
                     <span className="writing-item__date">{articleDateFormatter.format(new Date(article.publishedAt))}</span>
                   ) : null}
                 </div>
-                <span className="writing-item__arrow">↗</span>
+                <span className="writing-item__arrow" aria-hidden="true">
+                  <ArrowUpRightIcon />
+                </span>
               </a>
             </SectionReveal>
           ))}

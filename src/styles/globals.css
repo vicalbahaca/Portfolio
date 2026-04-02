@@ -43,6 +43,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -53,6 +54,7 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  overflow-x: hidden;
 }
 
 body.menu-open {
@@ -184,6 +186,14 @@ img {
   max-width: 100%;
 }
 
+video,
+iframe,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
 main {
   display: block;
 }
@@ -232,6 +242,7 @@ main {
 .site-main {
   position: relative;
   z-index: 1;
+  overflow-x: clip;
 }
 
 .page-shell--home .site-main,
@@ -973,6 +984,25 @@ main {
   margin-bottom: 18px;
   color: var(--blue-deep);
   font-weight: 600;
+}
+
+.back-link__icon,
+.home-secondary-item__arrow,
+.home-note__arrow,
+.writing-item__arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+}
+
+.back-link__icon svg,
+.home-secondary-item__arrow svg,
+.home-note__arrow svg,
+.writing-item__arrow svg {
+  width: 16px;
+  height: 16px;
+  display: block;
 }
 
 .empty-state {
@@ -3575,13 +3605,14 @@ body {
   }
 
   .navbar {
-    padding: 14px 0;
+    padding: 0;
   }
 
   .navbar__inner--unified {
     grid-template-columns: auto 1fr auto;
-    width: min(calc(100% - 24px), 1160px);
-    padding: 14px 16px;
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 0;
   }
 
   .navbar__links--unified,
@@ -3607,18 +3638,20 @@ body {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    min-height: 46px;
+    min-width: 46px;
   }
 }
 
 @media (max-width: 640px) {
   .navbar__brand-logo {
-    width: 46px;
-    height: 46px;
+    width: 40px;
+    height: 40px;
   }
 
   .navbar__brand-glyph {
-    width: 36px;
-    height: 36px;
+    width: 31px;
+    height: 31px;
   }
 
   .navbar__mobile {
@@ -3824,8 +3857,6 @@ body {
 
 .home-secondary-item__arrow {
   color: rgba(13, 23, 38, 0.45);
-  font-size: 1rem;
-  font-weight: 700;
 }
 
 .home-profile {
@@ -3993,8 +4024,6 @@ body {
 
 .writing-item__arrow {
   color: rgba(13, 23, 38, 0.42);
-  font-size: 1rem;
-  font-weight: 700;
 }
 
 @media (max-width: 980px) {
@@ -4009,6 +4038,97 @@ body {
 }
 
 @media (max-width: 720px) {
+  .container {
+    width: min(calc(100% - 24px), var(--container));
+  }
+
+  .home-work__top,
+  .home-secondary__top,
+  .home-notes__intro,
+  .home-profile__intro,
+  .home-contact-band__inner {
+    justify-items: center;
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .home-work__grid,
+  .home-secondary__block,
+  .home-secondary__list,
+  .home-notes__block,
+  .home-notes__list,
+  .home-profile__panel,
+  .home-profile__content,
+  .home-profile__experience,
+  .home-profile__workflow,
+  .home-contact-band__inner {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    margin-inline: auto;
+  }
+
+  .home-profile__story,
+  .home-profile__workflow-caption,
+  .home-experience__summary,
+  .home-note__body p,
+  .home-secondary-item__body p {
+    max-width: 100%;
+  }
+
+  .home-secondary-item,
+  .home-note,
+  .writing-item {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+
+  .home-secondary-item__body,
+  .home-note__body,
+  .writing-item__body,
+  .home-profile__aside,
+  .home-profile__visual,
+  .home-note__media,
+  .writing-item__media {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .home-profile__aside {
+    justify-items: center;
+  }
+
+  .home-profile__visual {
+    justify-self: center;
+  }
+
+  .home-experience__head,
+  .footer__site-bar {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .home-experience__head {
+    display: grid;
+  }
+
+  .home-note__arrow,
+  .writing-item__arrow {
+    display: none;
+  }
+
+  .writing-item__meta {
+    white-space: normal;
+  }
+
+  .work-case-section--blue,
+  .work-story-block--blue {
+    left: auto;
+    width: 100%;
+    margin-left: 0;
+  }
+
   .page-shell--home .hero__scroll-link {
     display: inline-flex;
     bottom: 16px;
@@ -4026,12 +4146,6 @@ body {
 
   .home-secondary-item__arrow {
     display: none;
-  }
-
-  .home-note,
-  .writing-item {
-    grid-template-columns: 1fr auto;
-    gap: 10px 14px;
   }
 
   .home-note__meta,
@@ -5776,7 +5890,7 @@ body.lightbox-open .navbar {
   }
 
   .home-contact-band__inner {
-    justify-items: stretch;
+    justify-items: center;
   }
 
   .home-contact-band .home-caption {
