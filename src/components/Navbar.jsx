@@ -153,22 +153,6 @@ export default function Navbar() {
                     </li>
                   </ul>
                 </nav>
-
-                <div className="navbar__mobile-language">
-                  <label className="sr-only" htmlFor="site-language-mobile">
-                    {copy.nav.language}
-                  </label>
-                  <select
-                    id="site-language-mobile"
-                    className="navbar__language-select navbar__language-select--mobile"
-                    value={lang}
-                    aria-label={copy.nav.language}
-                    onChange={(event) => setLang(event.target.value)}
-                  >
-                    <option value="es">ES</option>
-                    <option value="en">EN</option>
-                  </select>
-                </div>
               </div>
             </details>
           </div>
