@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <mask id="logo-mask" maskUnits="userSpaceOnUse" x="0" y="0" width="64" height="64">
+      <rect width="64" height="64" fill="black"/>
+      <image href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAAHlBMVEVMaXH////////////////////////////////////Z6AnKAAAACXRSTlMAIeegEMNggT9BkuljAAAACXBIWXMAAAsTAAALEwEAmpwYAAABIElEQVR42u2WSRaEIAwFSRgk979wO0Ba5iBb/sr3NGUZNKLUzs5ON8bCYj0hrNXTCuGu/0AwJqmfJZgDj+dIUwyamXK+HjAC3FT5maAQCaEexk9iM+WHEO+vSY8QLjoHhZsQ6+E6MUJg3jVAfv7Q0z6iUFDcf+A16SKwuXD/Re0iSoVCYIBoKWgiGaKhAFSmgagraCIpoqoA1EgNUVNgAZ+rWJECC+jzOEV4URe45hZ+I6zsi3gJZB+6Fy1EKvAGWNG7UAiooy+QK0wLZAqlgMGBQKpQCCjlBwKJQinATfCiuVARCNPTikaTrgk8ffSi6UhVgasNVjigqwJXG7xSMwrzv2jXFxAE1wRShS8CicK3TYpbFDhft5i1ndrOzs5Efh8BGTjZNLopAAAAAElFTkSuQmCC" x="0" y="0" width="64" height="64" preserveAspectRatio="xMidYMid meet"/>
+    </mask>
+  </defs>
+  <rect width="64" height="64" fill="#ffffff" mask="url(#logo-mask)"/>
+</svg>

@@ -7,6 +7,9 @@ export default function Document() {
         <link rel="preconnect" href="https://api.fontshare.com" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="icon" href="/favicon-light.svg" type="image/svg+xml" media="(prefers-color-scheme: light)" />
+        <link rel="icon" href="/favicon-dark.svg" type="image/svg+xml" media="(prefers-color-scheme: dark)" />
+        <link rel="shortcut icon" href="/favicon.ico" />
         <script
           dangerouslySetInnerHTML={{
             __html: `(function(){try{var key='victor-saiz-portfolio-language';var stored=window.localStorage.getItem(key);var list=window.navigator.languages||[window.navigator.language||''];var lang=(stored==='es'||stored==='en')?stored:(list.some(function(v){var code=(v||'').toLowerCase().trim();return code.indexOf('es')===0||code.indexOf('ca')===0||code.indexOf('eu')===0||code.indexOf('val')===0;})?'es':'en');document.documentElement.lang=lang;}catch(e){}})();`,

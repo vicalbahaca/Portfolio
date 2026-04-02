@@ -170,7 +170,7 @@ export const caseStudies = [
       'Una plataforma para generar rutinas personalizadas de musculacion, Hyrox y CrossFit a partir de analisis fisico, contexto real y un proceso guiado orientado a progresion.',
     description:
       'MyCoach combina analisis previo, formulario dinamico y exportacion a Excel para construir mesociclos editables que evolucionan segun el feedback, la fatiga y el material disponible.',
-    image: '/mycoach-hero.png',
+    image: '/mycoach.png',
     accent: '#0050CC',
     category: 'Case study',
     type: 'Plataforma de planificacion deportiva personalizada',
