@@ -1423,6 +1423,10 @@ function deriveLinkedInPublishedAt(url) {
   return Number.isFinite(timestamp) ? new Date(timestamp).toISOString() : null
 }
 
+function isLinkedInProfileUrl(url) {
+  return typeof url === 'string' && /linkedin\.com\/in\//i.test(url)
+}
+
 // Public LinkedIn fallback used when a Framer article does not expose
 // a verifiable one-to-one public LinkedIn URL.
 // This keeps every publication inside LinkedIn instead of redirecting to Framer.
@@ -1662,7 +1666,9 @@ const articleEntries = [
 
 export const articles = articleEntries.map((article) => ({
   ...article,
-  publishedAt: article.publishedAt || deriveLinkedInPublishedAt(article.externalUrl),
+  publishedAt: isLinkedInProfileUrl(article.externalUrl)
+    ? null
+    : article.publishedAt || deriveLinkedInPublishedAt(article.externalUrl),
 }))
 
 export const featuredArticles = articles.slice(0, 6)
