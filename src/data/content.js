@@ -25,9 +25,9 @@ export const siteConfig = {
   extras: {
     mentorship: 'https://calendly.com/victorsaizalfageme/mentoria-privada',
     coffee: 'https://buymeacoffee.com/victorsaiz',
-    cv: '/CV_Victor_Saiz_ES.pdf',
-    cvEs: '/CV_Victor_Saiz_ES.pdf',
-    cvEn: '/CV_Victor_Saiz_EN.pdf',
+    cv: '/VictorSaiz_CV_ES.pdf',
+    cvEs: '/VictorSaiz_CV_ES.pdf',
+    cvEn: '/VictorSaiz_CV_EN.pdf',
   },
 }
 

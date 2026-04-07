@@ -298,7 +298,7 @@ export default function HomeLanding() {
               <a
                 className="btn btn--brand home-profile__aside-cta"
                 href={cvHref}
-                download={lang === 'en' ? 'CV_Victor Saiz_EN.pdf' : 'CV_Victor Saiz_ES.pdf'}
+                download={lang === 'en' ? 'VictorSaiz_CV_EN.pdf' : 'VictorSaiz_CV_ES.pdf'}
                 aria-label={lang === 'en' ? copy.home.downloadCvEn : copy.home.downloadCvEs}
               >
                 {lang === 'en' ? copy.home.downloadCvEn : copy.home.downloadCvEs}

@@ -490,7 +490,7 @@ export function LanguageProvider({ children }) {
     setLang,
     isReady,
     copy: translations[lang],
-    cvHref: lang === 'en' ? '/CV_Victor_Saiz_EN.pdf' : '/CV_Victor_Saiz_ES.pdf',
+    cvHref: lang === 'en' ? '/VictorSaiz_CV_EN.pdf' : '/VictorSaiz_CV_ES.pdf',
   }
 
   return <LanguageContext.Provider value={value}>{children}</LanguageContext.Provider>
