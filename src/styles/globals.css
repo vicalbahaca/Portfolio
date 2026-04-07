@@ -3964,7 +3964,7 @@ body {
 
 .home-contact-band__inner {
   display: grid;
-  width: min(100%, 760px);
+  width: min(100%, 800px);
   margin: 0 auto;
   justify-items: center;
   gap: 24px;
@@ -4983,7 +4983,7 @@ body {
 
 .home-contact-band__inner {
   display: grid;
-  width: min(100%, 760px);
+  width: min(100%, 800px);
   margin: 0 auto;
   justify-items: center;
   gap: 14px;
@@ -4995,7 +4995,7 @@ body {
 }
 
 .home-contact-band .home-caption {
-  max-width: 40ch;
+  max-width: 800px;
 }
 
 .home-contact-band__cta {
@@ -5431,6 +5431,7 @@ body {
   border-left: 2px solid rgba(21, 155, 254, 0.24);
   color: rgba(13, 23, 38, 0.8);
   line-height: 1.66;
+  background: transparent;
 }
 
 .work-case-section__gallery {
@@ -5472,13 +5473,8 @@ body {
 .work-case-section--blue .work-case-section__index,
 .work-case-section--blue .section-heading,
 .work-case-section--blue .detail-copy,
-.work-case-section--blue .work-case-section__points li,
 .work-case-section--blue .work-case-section__figure figcaption {
   color: #ffffff;
-}
-
-.work-case-section--blue .work-case-section__points li {
-  border-left-color: rgba(255, 255, 255, 0.42);
 }
 
 .work-case-lightbox {
