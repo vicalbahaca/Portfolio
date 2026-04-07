@@ -124,9 +124,10 @@ const translations = {
       articlesTitle: 'Publicaciones',
       articlesCaption: 'Artículos y notas publicados en la versión actual del portfolio.',
       allArticles: 'Ver todas las publicaciones',
-      contactTitle: 'Contacto',
-      contactCaption: 'Si quieres hablar de producto, diseño o una colaboración puntual, escríbeme.',
-      contactCta: 'Contáctame',
+      contactTitle: 'Contacta conmigo',
+      contactCaption:
+        'Si tienes una posición abierta en tu equipo, necesitas una colaboración puntual o simplemente quieres hablar de producto y de cómo está cambiando el mundo, puedes enviarme un correo y te responderé lo antes posible.',
+      contactCta: 'Contactar',
     },
     footer: {
       work: 'Proyectos',
@@ -312,9 +313,10 @@ const translations = {
       articlesTitle: 'Writing',
       articlesCaption: 'Articles and short posts published in the current portfolio.',
       allArticles: 'See all posts',
-      contactTitle: 'Contact',
-      contactCaption: 'If you want to talk about product, design, or a focused collaboration, send me an email.',
-      contactCta: 'Contact me',
+      contactTitle: 'Get in touch',
+      contactCaption:
+        'If you have an open role in your team, need focused collaboration, or simply want to talk about product and how the world is changing, send me an email and I will get back to you as soon as possible.',
+      contactCta: 'Contact',
     },
     footer: {
       work: 'Work',

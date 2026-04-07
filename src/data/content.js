@@ -107,7 +107,7 @@ export const caseStudies = [
     description:
       'AAAQuest combina analisis visual, criterios WCAG y generacion asistida por IA para que equipos de diseño puedan documentar accesibilidad en segundos, aprender mejores practicas y compartir entregables mas claros.',
     image: 'https://aaaquest.com/files/Analizador.png',
-    accent: '#038759',
+    accent: '#03875A',
     category: 'Case study',
     type: 'Producto IA para auditorias y documentacion de accesibilidad',
     role: 'Product Design & MVP',
@@ -124,8 +124,8 @@ export const caseStudies = [
       'Una plataforma que automatiza el analisis de datos deportivos y convierte procesos de valoracion muy manuales en informes claros y accionables en segundos.',
     description:
       'Coubber Data Studio integra multiples dispositivos, centraliza metricas y usa IA para ayudar a preparadores fisicos, fisioterapeutas y clubes a decidir con mas rapidez y menos friccion operativa.',
-    image: 'https://coubber.com/lovable-uploads/e4525fae-83b0-4ea3-8fd9-a4e72dc73658.png',
-    accent: '#159BFE',
+    image: 'https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/331b815d-3626-4d68-b713-4c859fcd9508/id-preview-9cc74aff--f6bd7479-71e4-43f1-ac14-809fe4648e9e.lovable.app-1768241033888.png',
+    accent: '#1052FE',
     category: 'Case study',
     type: 'Plataforma B2B de analisis de rendimiento deportivo',
     role: 'Product Design',
@@ -141,7 +141,7 @@ export const caseStudies = [
     description:
       'Lowerton centraliza la definición de proyectos, la relación con proveedores y el seguimiento de KPIs dentro de una experiencia pensada para equipos de innovación.',
     image: 'https://framerusercontent.com/images/KZmynPqvl2C96VmSjiyTZ1OWA.png',
-    accent: '#533BE9',
+    accent: '#573FE6',
     category: 'Case study',
     type: 'Spin-off project developed for Lowerton, a startup specializing in innovation management',
     role: 'UX/UI & Product Designer',
@@ -156,7 +156,7 @@ export const caseStudies = [
     description:
       'Closy es un proyecto end-to-end que une branding, UX/UI y tono de producto para hablar de vínculos humanos desde un lenguaje más cercano.',
     image: 'https://framerusercontent.com/images/IP36ICprEQruHirW42Xr4w2Fms.png',
-    accent: '#3D8324',
+    accent: '#40732E',
     category: 'Case study',
     type: 'End-to-end app + branding',
     role: 'UX/UI Designer',
@@ -171,7 +171,7 @@ export const caseStudies = [
     description:
       'MyCoach combina analisis previo, formulario dinamico y exportacion a Excel para construir mesociclos editables que evolucionan segun el feedback, la fatiga y el material disponible.',
     image: '/mycoach.png',
-    accent: '#0050CC',
+    accent: '#0944A9',
     category: 'Case study',
     type: 'Plataforma de planificacion deportiva personalizada',
     role: 'Product Design & MVP',
@@ -187,7 +187,7 @@ export const caseStudies = [
     description:
       'VWorld explora una alternativa a las redes hiperproducidas: más autenticidad, más juego y menos fricción para participar.',
     image: 'https://framerusercontent.com/images/qus3Gsdn4lwA3eOT9OgSrB7iE2Y.png',
-    accent: '#FFD200',
+    accent: '#C3A51B',
     category: 'Case study',
     type: 'Spin-off application project',
     role: 'UX/UI & Product Designer',
@@ -656,7 +656,6 @@ const workDetailContent = {
       },
       {
         title: 'The MVP',
-        tone: 'blue',
         paragraphs: [
           'The final solution of Lowerton is an integrated innovation management platform that allows companies to efficiently, accessibly, and scalably manage the entire innovation cycle.',
           'From identifying business needs to implementing solutions, Lowerton helps companies at every stage of the innovation process by automating key tasks and centralizing all information in one place.',

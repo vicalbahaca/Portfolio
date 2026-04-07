@@ -16,12 +16,80 @@ function getStorySections(entry) {
   }))
 }
 
+function getRgbChannels(hex) {
+  const normalized = `${hex || ''}`.replace('#', '').trim()
+  if (normalized.length !== 6) return null
+
+  const value = Number.parseInt(normalized, 16)
+  if (Number.isNaN(value)) return null
+
+  return {
+    r: (value >> 16) & 255,
+    g: (value >> 8) & 255,
+    b: value & 255,
+  }
+}
+
+function getHeroTheme(accent) {
+  const rgb = getRgbChannels(accent)
+  if (!rgb) {
+    return {
+      accent: '#07111f',
+      ink: '#ffffff',
+      muted: 'rgba(255, 255, 255, 0.82)',
+      subtle: 'rgba(255, 255, 255, 0.62)',
+      border: 'rgba(255, 255, 255, 0.2)',
+      panel: 'rgba(255, 255, 255, 0.08)',
+      ctaBg: '#ffffff',
+      ctaText: '#091427',
+      ctaHover: 'rgba(255, 255, 255, 0.9)',
+    }
+  }
+
+  const luminance = (0.2126 * rgb.r + 0.7152 * rgb.g + 0.0722 * rgb.b) / 255
+  const useDarkInk = luminance > 0.58
+
+  return {
+    accent,
+    ink: useDarkInk ? '#091427' : '#ffffff',
+    muted: useDarkInk ? 'rgba(13, 23, 38, 0.82)' : 'rgba(255, 255, 255, 0.86)',
+    subtle: useDarkInk ? 'rgba(13, 23, 38, 0.62)' : 'rgba(255, 255, 255, 0.62)',
+    border: useDarkInk ? 'rgba(13, 23, 38, 0.18)' : 'rgba(255, 255, 255, 0.2)',
+    panel: useDarkInk ? 'rgba(13, 23, 38, 0.08)' : 'rgba(255, 255, 255, 0.08)',
+    ctaBg: useDarkInk ? '#091427' : '#ffffff',
+    ctaText: useDarkInk ? '#ffffff' : '#091427',
+    ctaHover: useDarkInk ? 'rgba(9, 20, 39, 0.9)' : 'rgba(255, 255, 255, 0.9)',
+  }
+}
+
+function getMediaDimensions(ratio, fallbackWidth = 1600, fallbackHeight = 1000) {
+  if (typeof ratio !== 'string') {
+    return { width: fallbackWidth, height: fallbackHeight }
+  }
+
+  const [rawWidth, rawHeight] = ratio.split('/').map((value) => Number.parseFloat(value.trim()))
+
+  if (!Number.isFinite(rawWidth) || !Number.isFinite(rawHeight) || rawWidth <= 0 || rawHeight <= 0) {
+    return { width: fallbackWidth, height: fallbackHeight }
+  }
+
+  const needsScaling = rawWidth <= 20 && rawHeight <= 20
+  const scale = needsScaling ? 100 : 1
+
+  return {
+    width: Math.round(rawWidth * scale),
+    height: Math.round(rawHeight * scale),
+  }
+}
+
 export default function WorkDetailPage({ entry }) {
   const { copy, lang } = useLanguage()
   const localizedEntry = entry ? localizeProject(entry, lang) : null
   const storySections = getStorySections(localizedEntry)
   const [lightboxMedia, setLightboxMedia] = useState(null)
   const closeLightbox = () => setLightboxMedia(null)
+  const heroMediaDimensions = getMediaDimensions(localizedEntry?.heroRatio || localizedEntry?.imageRatio)
+  const heroTheme = getHeroTheme(localizedEntry?.accent)
 
   useEffect(() => {
     if (!lightboxMedia) return undefined
@@ -68,7 +136,21 @@ export default function WorkDetailPage({ entry }) {
       </Head>
 
       <Layout>
-        <section className="work-case-hero" aria-labelledby="work-page-title">
+        <section
+          className="work-case-hero"
+          aria-labelledby="work-page-title"
+          style={{
+            '--work-accent': heroTheme.accent,
+            '--work-hero-ink': heroTheme.ink,
+            '--work-hero-muted': heroTheme.muted,
+            '--work-hero-subtle': heroTheme.subtle,
+            '--work-hero-border': heroTheme.border,
+            '--work-hero-panel': heroTheme.panel,
+            '--work-hero-cta-bg': heroTheme.ctaBg,
+            '--work-hero-cta-text': heroTheme.ctaText,
+            '--work-hero-cta-hover': heroTheme.ctaHover,
+          }}
+        >
           <div className="container work-case-hero__inner">
             <Link href="/#work" className="back-link back-link--light">
               <span className="back-link__icon" aria-hidden="true">
@@ -78,7 +160,6 @@ export default function WorkDetailPage({ entry }) {
             </Link>
 
             <div className="work-case-hero__copy">
-              <span className="section-kicker section-kicker--light">{localizedEntry.category}</span>
               <h1 id="work-page-title" className="work-case-hero__title">
                 {localizedEntry.title}
               </h1>
@@ -136,7 +217,15 @@ export default function WorkDetailPage({ entry }) {
                   aria-label={`${copy.work.expandImage}: ${localizedEntry.title}`}
                 >
                   <div className="work-case-hero__feature-media">
-                    <Image src={localizedEntry.image} alt={localizedEntry.title} fill priority sizes="100vw" />
+                    <Image
+                      className="work-case-media-image"
+                      src={localizedEntry.image}
+                      alt={localizedEntry.title}
+                      width={heroMediaDimensions.width}
+                      height={heroMediaDimensions.height}
+                      priority
+                      sizes="100vw"
+                    />
                   </div>
                 </button>
               )}
@@ -162,10 +251,12 @@ export default function WorkDetailPage({ entry }) {
                 }`}
               >
                 {localizedEntry.visualDeck.map((media, index) => (
+                  (() => {
+                    const mediaDimensions = getMediaDimensions(media.ratio)
+                    return (
                   <figure
                     key={`${localizedEntry.slug}-deck-${index}`}
                     className="work-case-deck__figure"
-                    style={{ '--media-ratio': media.ratio || '16 / 10' }}
                   >
                     <button
                       type="button"
@@ -180,11 +271,20 @@ export default function WorkDetailPage({ entry }) {
                       aria-label={`${copy.work.expandImage}: ${media.alt || localizedEntry.title}`}
                     >
                       <div className="work-case-deck__media">
-                        <Image src={media.src} alt={media.alt || localizedEntry.title} fill sizes="(max-width: 960px) 100vw, 33vw" />
+                        <Image
+                          className="work-case-media-image"
+                          src={media.src}
+                          alt={media.alt || localizedEntry.title}
+                          width={mediaDimensions.width}
+                          height={mediaDimensions.height}
+                          sizes="(max-width: 960px) 100vw, 33vw"
+                        />
                       </div>
                     </button>
                     {media.caption ? <figcaption>{media.caption}</figcaption> : null}
                   </figure>
+                    )
+                  })()
                 ))}
               </div>
             ) : null}
@@ -231,10 +331,12 @@ export default function WorkDetailPage({ entry }) {
                   }`}
                 >
                   {section.gallery.map((media, mediaIndex) => (
+                    (() => {
+                      const mediaDimensions = getMediaDimensions(media.ratio)
+                      return (
                     <figure
                       key={`${section.title}-gallery-${mediaIndex}`}
                       className="work-case-section__figure"
-                      style={{ '--media-ratio': media.ratio || '16 / 10' }}
                     >
                       <button
                         type="button"
@@ -249,11 +351,20 @@ export default function WorkDetailPage({ entry }) {
                         aria-label={`${copy.work.expandImage}: ${media.alt || section.title}`}
                       >
                         <div className="work-case-section__figure-media">
-                          <Image src={media.src} alt={media.alt || section.title} fill sizes="(max-width: 960px) 100vw, 50vw" />
+                          <Image
+                            className="work-case-media-image"
+                            src={media.src}
+                            alt={media.alt || section.title}
+                            width={mediaDimensions.width}
+                            height={mediaDimensions.height}
+                            sizes="(max-width: 960px) 100vw, 50vw"
+                          />
                         </div>
                       </button>
                       {media.caption ? <figcaption>{media.caption}</figcaption> : null}
                     </figure>
+                      )
+                    })()
                   ))}
                 </div>
               ) : null}
