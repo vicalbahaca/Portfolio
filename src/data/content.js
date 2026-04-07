@@ -216,59 +216,916 @@ export const northSection = {
       slug: 'inone-revamp',
       title: 'InOne Revamp',
       image: '/north/page-12.jpg',
+      cardImage: '/north/covers/inone-phone.jpg',
+      cardImageMode: 'contain',
+      accent: '#159BFE',
+      client: 'CaixaBank',
+      industry: {
+        es: 'Banca y producto financiero',
+        en: 'Banking and financial product',
+      },
+      role: {
+        es: 'Principal Product Designer',
+        en: 'Principal Product Designer',
+      },
+      scope: {
+        es: 'Rediseño UX/UI, journeys críticos y sistema visual',
+        en: 'UX/UI redesign, critical journeys, and visual system',
+      },
       metric: '+16K prescriptores · +1.5M usuarios · rating 2.3 → 4.4',
+      headline: {
+        es: 'Rediseño de una app financiera con foco en journeys críticos, claridad operativa y una interfaz más consistente para una red masiva de prescriptores.',
+        en: 'Redesign of a financial app focused on critical journeys, operational clarity, and a more consistent interface for a large prescriber network.',
+      },
       summary: {
         es: 'Rediseño de una app financiera con alta presión operativa. El foco estuvo en simplificar la interfaz, priorizar funciones con impacto real y alinear la experiencia con el ecosistema de CaixaBank.',
         en: 'Redesign of a financial app operating under high pressure. The focus was on simplifying the interface, prioritising high-impact functionality, and aligning the experience with the wider CaixaBank ecosystem.',
+      },
+      description: {
+        es: 'El trabajo combinó benchmark, revisión de journeys y limpieza del sistema visual para mejorar adopción, rating y consistencia sin romper la operativa diaria del canal.',
+        en: 'The work combined benchmark analysis, journey review, and visual-system cleanup to improve adoption, ratings, and consistency without breaking the channel’s daily operation.',
       },
       detail: {
         es: 'Organicé el trabajo desde deuda técnica, journeys y benchmark hasta UI kit, roadmap por entregables y handoff con variables, estados y accesibilidad documentada.',
         en: 'I structured the work from technical debt, journeys, and benchmark analysis to UI kit definition, milestone-based roadmap, and handoff with variables, states, and documented accessibility.',
       },
+      focus: {
+        es: [
+          'Simplificación de journeys críticos en un producto con mucho uso diario.',
+          'Priorización por impacto real, deuda de interfaz y consistencia visual.',
+          'Alineación entre sistema, accesibilidad y salida a producción.',
+        ],
+        en: [
+          'Simplification of critical journeys in a product with heavy daily usage.',
+          'Prioritisation based on real impact, interface debt, and visual consistency.',
+          'Alignment between system decisions, accessibility, and production delivery.',
+        ],
+      },
+      visualDeck: [
+        {
+          src: '/north/page-11.jpg',
+          alt: {
+            es: 'Discovery, benchmark y arquitectura de InOne',
+            en: 'Discovery, benchmark, and architecture for InOne',
+          },
+          caption: {
+            es: 'Base de trabajo con discovery, benchmark, arquitectura y primeras decisiones de producto.',
+            en: 'Working base covering discovery, benchmark, architecture, and the first product decisions.',
+          },
+        },
+        {
+          src: '/north/page-12.jpg',
+          alt: {
+            es: 'Vista general de la app financiera InOne',
+            en: 'Overview of the InOne financial app',
+          },
+          caption: {
+            es: 'Revisión del área principal y jerarquía de producto.',
+            en: 'Review of the main area and product hierarchy.',
+          },
+        },
+        {
+          src: '/north/page-13.jpg',
+          alt: {
+            es: 'Entregable técnico y plan de implementación de InOne',
+            en: 'Technical handoff and implementation plan for InOne',
+          },
+          caption: {
+            es: 'Variables, accesibilidad, edge cases y fases de implementación para tech.',
+            en: 'Variables, accessibility, edge cases, and implementation phases for engineering.',
+          },
+        },
+      ],
+      detailSections: [
+        {
+          title: {
+            es: 'Contexto y oportunidad',
+            en: 'Context and opportunity',
+          },
+          body: {
+            es: 'Una base de producto con mucho uso diario, demasiada deuda de interfaz y varias decisiones históricas que ya no ayudaban a negocio ni a usuarios.',
+            en: 'A product foundation with heavy daily usage, too much interface debt, and several historical decisions that no longer helped business or users.',
+          },
+          paragraphs: {
+            es: [
+              'La app ya tenía un volumen relevante de uso y una presión operativa alta. Eso obligaba a tocar con mucho cuidado cualquier cambio, porque la mejora de UX no podía romper tareas críticas ni generar más fricción en el canal.',
+              'El punto de partida fue revisar journeys, benchmark y problemas repetidos en interfaz para detectar qué piezas estaban penalizando claridad, velocidad de uso y consistencia con el ecosistema de CaixaBank.',
+            ],
+            en: [
+              'The app already had meaningful usage and high operational pressure. That meant every change had to be handled carefully, because UX improvements could not break critical tasks or add friction to the channel.',
+              'The starting point was a review of journeys, benchmarks, and repeated interface issues to detect which elements were hurting clarity, speed of use, and consistency with the wider CaixaBank ecosystem.',
+            ],
+          },
+          points: {
+            es: [
+              'Revisión de journeys de alta frecuencia y tareas con mayor impacto operativo.',
+              'Benchmark para ordenar patrones, lenguaje visual y profundidad funcional.',
+              'Priorización junto a negocio para decidir qué limpiar primero y qué posponer.',
+            ],
+            en: [
+              'Review of high-frequency journeys and tasks with the highest operational impact.',
+              'Benchmark analysis to organise patterns, visual language, and functional depth.',
+              'Prioritisation with business stakeholders to decide what to clean first and what to defer.',
+            ],
+          },
+          gallery: [
+            {
+              src: '/north/page-11.jpg',
+              alt: {
+                es: 'Discovery y arquitectura de InOne',
+                en: 'Discovery and architecture for InOne',
+              },
+            },
+          ],
+          galleryLayout: 1,
+        },
+        {
+          title: {
+            es: 'Sistema y simplificación',
+            en: 'System and simplification',
+          },
+          body: {
+            es: 'El trabajo no fue solo visual: consistió en ordenar estructura, reducir ruido y dejar una base reusable para futuras iteraciones.',
+            en: 'The work was not only visual: it was about ordering the structure, reducing noise, and leaving a reusable base for future iterations.',
+          },
+          paragraphs: {
+            es: [
+              'A medida que se validaban decisiones, la interfaz fue convergiendo hacia patrones más claros y repetibles. Esto permitió reducir excepciones, mejorar la lectura y hacer que la experiencia se sintiera más integrada dentro de la familia de productos.',
+              'La parte importante fue que el sistema no se pensó como un cierre estético, sino como una herramienta para acelerar entregas, documentación y continuidad con desarrollo.',
+            ],
+            en: [
+              'As decisions were validated, the interface moved towards clearer and more repeatable patterns. This reduced exceptions, improved readability, and made the experience feel more integrated within the product family.',
+              'The important point was that the system was not treated as a visual finish, but as a tool to speed up delivery, documentation, and continuity with engineering.',
+            ],
+          },
+          points: {
+            es: [
+              'Limpieza de patrones repetidos y reducción de deuda de interfaz.',
+              'Definición de base visual y estados para handoff más estable.',
+              'Mejora de consistencia entre pantallas con foco en claridad operativa.',
+            ],
+            en: [
+              'Cleanup of repeated patterns and reduction of interface debt.',
+              'Definition of visual foundations and states for a more stable handoff.',
+              'Improved consistency across screens with a focus on operational clarity.',
+            ],
+          },
+          gallery: [
+            {
+              src: '/north/page-12.jpg',
+              alt: {
+                es: 'Nueva versión y mejoras estructurales de InOne',
+                en: 'New version and structural improvements for InOne',
+              },
+            },
+          ],
+          galleryLayout: 1,
+        },
+        {
+          title: {
+            es: 'Entrega e impacto',
+            en: 'Delivery and impact',
+          },
+          body: {
+            es: 'La mejora se tradujo en una base más clara para evolucionar el producto y en una percepción mucho mejor por parte de quienes lo usan.',
+            en: 'The improvement translated into a clearer base to evolve the product and into a much better perception from the people using it.',
+          },
+          paragraphs: {
+            es: [
+              'Además de la mejora visual, el proyecto dejó una estructura más mantenible y una documentación más útil para continuar iterando sin rehacer decisiones una y otra vez.',
+              'El dato más visible fue la mejora del rating, pero el valor real estuvo en tener un producto más coherente, más legible y más fácil de evolucionar desde diseño y negocio.',
+            ],
+            en: [
+              'Beyond the visual improvement, the project left a more maintainable structure and more useful documentation to keep iterating without reworking decisions again and again.',
+              'The most visible outcome was the rating increase, but the real value was a more coherent, readable product that was easier to evolve from both design and business perspectives.',
+            ],
+          },
+          points: {
+            es: [
+              'Base de producto más clara para nuevas iteraciones.',
+              'Documentación y handoff más útiles para continuidad del equipo.',
+              'Mejora visible en percepción y calidad de la experiencia.',
+            ],
+            en: [
+              'A clearer product base for future iterations.',
+              'More useful documentation and handoff for team continuity.',
+              'Visible improvement in user perception and experience quality.',
+            ],
+          },
+          gallery: [
+            {
+              src: '/north/page-13.jpg',
+              alt: {
+                es: 'Documentación técnica y handoff de InOne',
+                en: 'Technical documentation and handoff for InOne',
+              },
+            },
+          ],
+          galleryLayout: 1,
+        },
+      ],
+      gallery: ['/north/page-11.jpg', '/north/page-12.jpg', '/north/page-13.jpg'],
     },
     {
       slug: 'prescriptor-unification',
       title: 'Unificación canales Prescriptor',
-      image: '/north/page-18.jpg',
+      image: '/north/page-20.jpg',
+      cardImage: '/north/covers/prescriptor-cover.jpg',
+      accent: '#1052FE',
+      client: 'CaixaBank',
+      industry: {
+        es: 'Banca, distribución y canal prescriptor',
+        en: 'Banking, distribution, and prescriber channel',
+      },
+      role: {
+        es: 'Principal Product Designer',
+        en: 'Principal Product Designer',
+      },
+      scope: {
+        es: 'Unificación multicanal, journeys y reducción de fricción',
+        en: 'Multichannel unification, journeys, and friction reduction',
+      },
       metric: '+16K prescriptores · menos duplicidad · menos pasos',
+      headline: {
+        es: 'Unificación de varios canales de prescripción para reducir duplicidad, ordenar journeys equivalentes y dejar una estructura más simple de mantener.',
+        en: 'Unification of several prescriber channels to reduce duplication, organise equivalent journeys, and leave a simpler structure to maintain.',
+      },
       summary: {
         es: 'Proyecto de consolidación de canales para una red extensa de prescriptores. El objetivo fue detectar diferencias operativas, unificar patrones y reducir complejidad en flujos equivalentes.',
         en: 'A channel consolidation project for a large prescriber network. The goal was to identify operational differences, unify patterns, and reduce complexity across equivalent flows.',
+      },
+      description: {
+        es: 'La propuesta se apoyó en analítica, comparación de journeys y una lectura muy fina de los puntos donde diferentes canales estaban resolviendo la misma necesidad de forma distinta.',
+        en: 'The proposal relied on analytics, journey comparison, and a close reading of the points where different channels were solving the same need in different ways.',
       },
       detail: {
         es: 'La base fue analítica, comparativa de journeys y documentación detallada por canal. A partir de ahí, definí una estructura común, UI kit y criterios de priorización para limpieza de datos y funnels.',
         en: 'The work started with analytics, journey comparison, and detailed channel-by-channel documentation. From there I defined a shared structure, UI kit, and prioritisation criteria for cleaner data and funnels.',
       },
+      focus: {
+        es: [
+          'Comparativa de journeys para detectar fricción repetida entre canales.',
+          'Unificación de patrones de interfaz para reducir pasos y ambigüedad.',
+          'Base de sistema común para futuros cambios sin rehacer decisiones cada vez.',
+        ],
+        en: [
+          'Journey comparison to detect repeated friction across channels.',
+          'Unified interface patterns to reduce steps and ambiguity.',
+          'A shared system base for future changes without reworking decisions every time.',
+        ],
+      },
+      visualDeck: [
+        {
+          src: '/north/page-15.jpg',
+          alt: {
+            es: 'Base del canal prescriptor y red de captación',
+            en: 'Prescriber channel base and acquisition network',
+          },
+          caption: {
+            es: 'Contexto de una red extensa de más de 16.000 prescriptores.',
+            en: 'Context for a large network of more than 16,000 prescribers.',
+          },
+        },
+        {
+          src: '/north/page-16.jpg',
+          alt: {
+            es: 'Pain points y fricción entre canales',
+            en: 'Pain points and friction across channels',
+          },
+          caption: {
+            es: 'Fragmentación, diferencias operativas y complejidad de mantenimiento.',
+            en: 'Fragmentation, operational differences, and maintenance complexity.',
+          },
+        },
+        {
+          src: '/north/page-17.jpg',
+          alt: {
+            es: 'Proceso de unificación en Figma',
+            en: 'Unification process in Figma',
+          },
+          caption: {
+            es: 'Comparativa, digitalización de activos y primeras reglas de unificación.',
+            en: 'Comparison, asset digitisation, and first unification rules.',
+          },
+        },
+      ],
+      detailSections: [
+        {
+          title: {
+            es: 'Lectura del problema',
+            en: 'Reading the problem',
+          },
+          body: {
+            es: 'Varios canales resolvían la misma necesidad con lógicas parecidas, pero con demasiadas diferencias en pasos, naming y estructura.',
+            en: 'Several channels were solving the same need with similar logic, but with too many differences in steps, naming, and structure.',
+          },
+          paragraphs: {
+            es: [
+              'El punto más delicado no era diseñar algo nuevo, sino detectar dónde las divergencias estaban generando ruido operativo, duplicidad de decisiones y una experiencia incoherente para la red de prescriptores.',
+              'La base de trabajo fue una comparativa detallada de journeys, funnels y bloques funcionales para separar diferencias reales de diferencias heredadas sin valor.',
+            ],
+            en: [
+              'The most delicate point was not to design something new, but to detect where divergences were generating operational noise, duplicated decisions, and an inconsistent experience for the prescriber network.',
+              'The base of the work was a detailed comparison of journeys, funnels, and functional blocks to separate real differences from inherited differences with no value.',
+            ],
+          },
+          points: {
+            es: [
+              'Comparativa de journeys y funnels entre canales equivalentes.',
+              'Detección de duplicidades de interfaz y decisiones heredadas.',
+              'Priorización de simplificaciones con impacto real en uso y mantenimiento.',
+            ],
+            en: [
+              'Comparison of journeys and funnels across equivalent channels.',
+              'Detection of interface duplication and inherited decisions.',
+              'Prioritisation of simplifications with real impact on usage and maintenance.',
+            ],
+          },
+          gallery: [
+            {
+              src: '/north/page-15.jpg',
+              alt: {
+                es: 'Contexto del canal prescriptor',
+                en: 'Context of the prescriber channel',
+              },
+            },
+            {
+              src: '/north/page-16.jpg',
+              alt: {
+                es: 'Pain points entre canales prescriptor',
+                en: 'Pain points across prescriber channels',
+              },
+            },
+          ],
+          galleryLayout: 2,
+        },
+        {
+          title: {
+            es: 'Sistema compartido',
+            en: 'Shared system',
+          },
+          body: {
+            es: 'La clave fue construir una estructura común capaz de absorber matices de canal sin volver a fragmentar el producto.',
+            en: 'The key was to build a shared structure able to absorb channel nuances without fragmenting the product again.',
+          },
+          paragraphs: {
+            es: [
+              'A partir del análisis, definí patrones comunes, reglas de simplificación y una base visual que permitiera mantener coherencia incluso cuando cada canal necesitaba pequeños ajustes.',
+              'Esto ayudó a reducir pasos innecesarios, ordenar mejor el contenido y dejar una base más limpia para futuras mejoras en datos, reporting y conversión.',
+            ],
+            en: [
+              'Based on the analysis, I defined shared patterns, simplification rules, and a visual foundation that could maintain coherence even when each channel needed small adjustments.',
+              'This helped reduce unnecessary steps, order the content more clearly, and leave a cleaner base for future improvements in data, reporting, and conversion.',
+            ],
+          },
+          points: {
+            es: [
+              'Unificación de componentes y patrones de flujo.',
+              'Reducción de pasos y ambigüedad en tareas repetidas.',
+              'Base reusable para cambios futuros sin rehacer la experiencia completa.',
+            ],
+            en: [
+              'Unification of components and flow patterns.',
+              'Reduction of steps and ambiguity in repeated tasks.',
+              'Reusable base for future changes without redesigning the whole experience.',
+            ],
+          },
+          gallery: [
+            {
+              src: '/north/page-17.jpg',
+              alt: {
+                es: 'Proceso de unificación y comparativa',
+                en: 'Unification process and comparison',
+              },
+            },
+            {
+              src: '/north/page-18.jpg',
+              alt: {
+                es: 'Discovery y documentación por canal',
+                en: 'Discovery and documentation by channel',
+              },
+            },
+          ],
+          galleryLayout: 2,
+        },
+        {
+          title: {
+            es: 'Resultado y utilidad',
+            en: 'Outcome and usefulness',
+          },
+          body: {
+            es: 'El resultado no fue una colección de pantallas aisladas, sino una base más ordenada para operar mejor y evolucionar con menos fricción.',
+            en: 'The result was not a collection of isolated screens, but a cleaner base to operate better and evolve with less friction.',
+          },
+          paragraphs: {
+            es: [
+              'El proyecto dejó una estructura más fácil de explicar, documentar y mantener. Eso reduce coste de cambio y mejora la coordinación entre diseño, negocio y desarrollo.',
+              'En entornos de banca con mucho condicionante operativo, ese tipo de claridad tiene un valor real: menos duplicidad, menos esfuerzo repetido y una experiencia más consistente.',
+            ],
+            en: [
+              'The project left a structure that was easier to explain, document, and maintain. That reduces change cost and improves coordination across design, business, and engineering.',
+              'In banking environments with strong operational constraints, that kind of clarity has real value: less duplication, less repeated effort, and a more consistent experience.',
+            ],
+          },
+          points: {
+            es: [
+              'Menos complejidad estructural en journeys equivalentes.',
+              'Documentación más clara para continuidad del equipo.',
+              'Base común más sólida para nuevas iteraciones.',
+            ],
+            en: [
+              'Less structural complexity in equivalent journeys.',
+              'Clearer documentation for team continuity.',
+              'A stronger shared base for future iterations.',
+            ],
+          },
+          gallery: [
+            {
+              src: '/north/page-19.jpg',
+              alt: {
+                es: 'Journeys principales del canal prescriptor',
+                en: 'Main journeys in the prescriber channel',
+              },
+            },
+            {
+              src: '/north/page-20.jpg',
+              alt: {
+                es: 'Unificación final y simplificación de pasos',
+                en: 'Final unification and step reduction',
+              },
+            },
+          ],
+          galleryLayout: 2,
+        },
+      ],
+      gallery: ['/north/page-15.jpg', '/north/page-16.jpg', '/north/page-17.jpg', '/north/page-19.jpg', '/north/page-20.jpg'],
     },
     {
       slug: 'm2p-chatbot',
       title: 'M2P ChatBot',
-      image: '/north/page-29.jpg',
+      image: '/north/page-26.jpg',
+      cardImage: '/north/covers/m2p-cover.jpg',
+      accent: '#533BE9',
+      client: 'MoneyToPay',
+      industry: {
+        es: 'Fintech y atención contextual en producto digital',
+        en: 'Fintech and contextual support in digital product',
+      },
+      role: {
+        es: 'Principal Product Designer',
+        en: 'Principal Product Designer',
+      },
+      scope: {
+        es: 'Arquitectura conversacional, soporte contextual y edge cases',
+        en: 'Conversational architecture, contextual support, and edge cases',
+      },
       metric: '+2M tarjetas emitidas · +1M clientes únicos · canal 100% digital',
+      headline: {
+        es: 'Diseño de una experiencia conversacional para soporte financiero que acompaña el flujo principal sin romper la tarea ni generar más fricción.',
+        en: 'Design of a conversational support experience for financial journeys that supports the main flow without interrupting the task or adding friction.',
+      },
       summary: {
         es: 'Diseño de una experiencia conversacional para soporte financiero dentro de una plataforma de tarjetas prepago. El reto fue integrar ayuda contextual sin romper el flujo del producto.',
         en: 'Design of a conversational support experience for a prepaid-card platform. The challenge was to integrate contextual help without breaking the product flow.',
+      },
+      description: {
+        es: 'La propuesta no se centró en hacer un chatbot vistoso, sino en definir una capa de ayuda útil, bien situada y preparada para crecer hacia escenarios más complejos con IA.',
+        en: 'The proposal did not focus on making a flashy chatbot, but on defining a useful support layer, placed correctly and ready to grow into more complex AI scenarios.',
       },
       detail: {
         es: 'Trabajé acceso, arquitectura, comportamiento del asistente y casuística, detectando edge cases desde UX y preparando una base escalable para una evolución futura con IA.',
         en: 'I worked on entry points, architecture, assistant behaviour, and case coverage, identifying edge cases from UX and preparing a scalable base for future AI evolution.',
       },
+      focus: {
+        es: [
+          'Integración del canal conversacional dentro del flujo principal del producto.',
+          'Cobertura de edge cases y definición del comportamiento del asistente.',
+          'Base escalable para evolución posterior con capacidades de IA.',
+        ],
+        en: [
+          'Integration of the conversational layer into the product’s main flow.',
+          'Coverage of edge cases and assistant behaviour definition.',
+          'A scalable base for future evolution with AI capabilities.',
+        ],
+      },
+      visualDeck: [
+        {
+          src: '/north/page-22.jpg',
+          alt: {
+            es: 'Contexto de producto en MoneyToPay',
+            en: 'Product context in MoneyToPay',
+          },
+          caption: {
+            es: 'Plataforma digital de gestión de tarjetas prepago dentro del ecosistema CaixaBank.',
+            en: 'Digital prepaid-card management platform inside the CaixaBank ecosystem.',
+          },
+        },
+        {
+          src: '/north/page-24.jpg',
+          alt: {
+            es: 'Desafío y arquitectura del chat',
+            en: 'Challenge and chat architecture',
+          },
+          caption: {
+            es: 'Integración web/app, soporte sin fricción y base escalable para evolución futura.',
+            en: 'Web/app integration, low-friction support, and a scalable base for future evolution.',
+          },
+        },
+        {
+          src: '/north/page-26.jpg',
+          alt: {
+            es: 'Resultado final del chatbot en app',
+            en: 'Final chatbot output in app',
+          },
+          caption: {
+            es: 'Posicionamiento del acceso y casuísticas iniciales del asistente.',
+            en: 'Access placement and first chatbot scenarios.',
+          },
+        },
+      ],
+      detailSections: [
+        {
+          title: {
+            es: 'Punto de partida',
+            en: 'Starting point',
+          },
+          body: {
+            es: 'El reto no era añadir un asistente por tendencia, sino resolver soporte contextual dentro de una plataforma financiera muy orientada a tarea.',
+            en: 'The challenge was not to add an assistant because of trend pressure, but to solve contextual support inside a highly task-oriented financial platform.',
+          },
+          paragraphs: {
+            es: [
+              'En productos financieros, cualquier ayuda mal colocada puede romper confianza o interrumpir un momento sensible del journey. Por eso el trabajo arrancó desde arquitectura, puntos de entrada y casuística.',
+              'El objetivo fue entender cuándo el asistente debía aparecer, cuándo no, y cómo integrarlo sin competir con la tarea principal que el usuario estaba intentando completar.',
+            ],
+            en: [
+              'In financial products, poorly placed help can break trust or interrupt a sensitive moment in the journey. That is why the work started from architecture, entry points, and case coverage.',
+              'The goal was to understand when the assistant should appear, when it should not, and how to integrate it without competing with the main task the user was trying to complete.',
+            ],
+          },
+          points: {
+            es: [
+              'Definición de entry points y momentos de ayuda contextual.',
+              'Cobertura de casuísticas frecuentes y edge cases.',
+              'Diseño de comportamiento para no romper confianza ni foco.',
+            ],
+            en: [
+              'Definition of entry points and contextual-help moments.',
+              'Coverage of frequent cases and edge cases.',
+              'Behaviour design that does not break trust or focus.',
+            ],
+          },
+          gallery: [
+            {
+              src: '/north/page-22.jpg',
+              alt: {
+                es: 'Contexto de la plataforma M2P',
+                en: 'Context of the M2P platform',
+              },
+            },
+            {
+              src: '/north/page-24.jpg',
+              alt: {
+                es: 'Reto de integración del chatbot',
+                en: 'Chatbot integration challenge',
+              },
+            },
+          ],
+          galleryLayout: 2,
+        },
+        {
+          title: {
+            es: 'Arquitectura y comportamiento',
+            en: 'Architecture and behaviour',
+          },
+          body: {
+            es: 'Una vez definido el lugar del asistente, el trabajo pasó a ordenar lógica, tono, expectativas y resolución visual.',
+            en: 'Once the assistant’s place was defined, the work moved to ordering logic, tone, expectations, and visual resolution.',
+          },
+          paragraphs: {
+            es: [
+              'La conversación debía ser comprensible, acotada y coherente con el producto. Eso obligó a pensar respuestas, estados, fallback y continuidad con las pantallas que ya existían.',
+              'El resultado fue una base escalable: una experiencia suficientemente útil en su primera versión y preparada para evolucionar hacia capacidades más sofisticadas sin rehacer la estructura.',
+            ],
+            en: [
+              'The conversation had to be understandable, bounded, and coherent with the product. That required thinking through responses, states, fallbacks, and continuity with the screens that already existed.',
+              'The result was a scalable base: an experience useful enough in its first version and ready to evolve into more advanced capabilities without rebuilding the structure.',
+            ],
+          },
+          points: {
+            es: [
+              'Definición de estados, respuestas y fallback del asistente.',
+              'Continuidad visual con el producto principal.',
+              'Base escalable para evolución posterior con IA.',
+            ],
+            en: [
+              'Definition of assistant states, responses, and fallbacks.',
+              'Visual continuity with the main product.',
+              'Scalable base for later AI evolution.',
+            ],
+          },
+          gallery: [
+            {
+              src: '/north/page-25.jpg',
+              alt: {
+                es: 'Proceso de discovery e ideación del chatbot',
+                en: 'Discovery and ideation process for the chatbot',
+              },
+            },
+            {
+              src: '/north/page-26.jpg',
+              alt: {
+                es: 'Resolución visual del chatbot en app',
+                en: 'Visual resolution of the chatbot in app',
+              },
+            },
+          ],
+          galleryLayout: 2,
+        },
+        {
+          title: {
+            es: 'Valor entregado',
+            en: 'Delivered value',
+          },
+          body: {
+            es: 'El proyecto dejó un modelo de ayuda contextual más claro y una base lista para conectar producto financiero e IA de forma útil.',
+            en: 'The project left a clearer model for contextual help and a base ready to connect financial product and AI in a useful way.',
+          },
+          paragraphs: {
+            es: [
+              'Más allá de la UI, el valor estuvo en ordenar cómo un sistema conversacional puede convivir con journeys financieros sin competir con ellos. Ese marco ahorra errores, esfuerzo y futuras discusiones de alcance.',
+              'En proyectos de este tipo, una buena arquitectura inicial tiene mucho más impacto que un acabado superficial, porque condiciona cómo crecerá el producto en siguientes versiones.',
+            ],
+            en: [
+              'Beyond the UI, the value was in ordering how a conversational system can live with financial journeys without competing with them. That framework saves errors, effort, and future scope discussions.',
+              'In projects like this, a good initial architecture has much more impact than a superficial visual finish, because it shapes how the product will grow in future versions.',
+            ],
+          },
+          points: {
+            es: [
+              'Modelo más claro de soporte contextual.',
+              'Menor fricción entre ayuda y task flow principal.',
+              'Base preparada para evolución real con IA.',
+            ],
+            en: [
+              'A clearer model for contextual support.',
+              'Less friction between help and the main task flow.',
+              'A base prepared for real AI evolution.',
+            ],
+          },
+          gallery: [
+            {
+              src: '/north/page-28.jpg',
+              alt: {
+                es: 'Resultado final del chatbot en web',
+                en: 'Final chatbot output on web',
+              },
+            },
+            {
+              src: '/north/page-30.jpg',
+              alt: {
+                es: 'Objetivos cumplidos del proyecto ChatBot',
+                en: 'Completed objectives for the chatbot project',
+              },
+            },
+          ],
+          galleryLayout: 2,
+        },
+      ],
+      gallery: ['/north/page-22.jpg', '/north/page-24.jpg', '/north/page-25.jpg', '/north/page-26.jpg', '/north/page-28.jpg', '/north/page-30.jpg'],
     },
     {
       slug: 'facilitea-accessibility',
       title: 'Accesibilidad Facilitea',
       image: '/north/page-38.jpg',
+      cardImage: '/north/covers/facilitea-cover.jpg',
+      accent: '#40732E',
+      client: 'Facilitea',
+      industry: {
+        es: 'Ecommerce, accesibilidad y documentación de producto',
+        en: 'Ecommerce, accessibility, and product documentation',
+      },
+      role: {
+        es: 'Principal Product Designer',
+        en: 'Principal Product Designer',
+      },
+      scope: {
+        es: 'Sistema documental, WCAG y handoff accesible',
+        en: 'Documentation system, WCAG, and accessible handoff',
+      },
       metric: 'Documentación en 1 semana · base reutilizable · foco WCAG',
+      headline: {
+        es: 'Conversión de criterios dispersos de accesibilidad en un sistema documental claro, reusable y útil para diseño, desarrollo y revisión.',
+        en: 'Turning scattered accessibility criteria into a clear, reusable documentation system useful for design, development, and review.',
+      },
       summary: {
         es: 'Replanteamiento de la documentación de accesibilidad para un ecosistema ecommerce. El objetivo fue convertir criterios dispersos en un sistema claro, accionable y útil para diseño y desarrollo.',
         en: 'A redesign of accessibility documentation for an ecommerce ecosystem. The goal was to turn scattered criteria into a clear, actionable system for both design and development.',
+      },
+      description: {
+        es: 'El valor del proyecto estuvo en estructurar la accesibilidad como una capa de producto y de sistema, no como un checklist aislado al final del proceso.',
+        en: 'The value of the project was in structuring accessibility as a product and system layer, not as an isolated checklist at the end of the process.',
       },
       detail: {
         es: 'Definí un formato integrado en Figma, reglas por comportamiento, tarjetas reutilizables y una base de documentación preparada para escalar con plugin interno y handoff más rápido.',
         en: 'I defined a Figma-integrated format, behaviour-based rules, reusable cards, and a documentation base ready to scale through an internal plugin and faster handoff.',
       },
+      focus: {
+        es: [
+          'Conversión de criterios dispersos en un sistema único y reutilizable.',
+          'Documentación pensada para diseño, desarrollo y revisión accesible.',
+          'Base preparada para escalar con plugin interno y handoff más rápido.',
+        ],
+        en: [
+          'Turning scattered criteria into a single reusable system.',
+          'Documentation designed for design, development, and accessible review.',
+          'A base prepared to scale through an internal plugin and faster handoff.',
+        ],
+      },
+      visualDeck: [
+        {
+          src: '/north/page-32.jpg',
+          alt: {
+            es: 'Contexto ecommerce de Facilitea',
+            en: 'Facilitea ecommerce context',
+          },
+          caption: {
+            es: 'Ecosistema de producto, verticales y presencia dentro del entorno CaixaBank.',
+            en: 'Product ecosystem, verticals, and presence inside the CaixaBank environment.',
+          },
+        },
+        {
+          src: '/north/page-35.jpg',
+          alt: {
+            es: 'Nueva forma de trabajo en accesibilidad',
+            en: 'New accessibility workflow',
+          },
+          caption: {
+            es: 'Accesibilidad integrada en el flujo principal con reglas claras por comportamiento.',
+            en: 'Accessibility integrated into the main flow with clear behaviour-based rules.',
+          },
+        },
+        {
+          src: '/north/page-38.jpg',
+          alt: {
+            es: 'Entrega final de accesibilidad en Facilitea',
+            en: 'Final accessibility delivery for Facilitea',
+          },
+          caption: {
+            es: 'Documentación clara, cartas reutilizables e integración real en producto.',
+            en: 'Clear documentation, reusable behaviour cards, and real product integration.',
+          },
+        },
+      ],
+      detailSections: [
+        {
+          title: {
+            es: 'Del criterio disperso al sistema',
+            en: 'From scattered criteria to a system',
+          },
+          body: {
+            es: 'La accesibilidad ya existía como necesidad, pero no estaba resuelta como una base operativa que diseño y desarrollo pudieran usar con la misma claridad.',
+            en: 'Accessibility already existed as a need, but it was not solved as an operational base that design and engineering could use with the same clarity.',
+          },
+          paragraphs: {
+            es: [
+              'El problema habitual en este tipo de contextos es que los criterios están repartidos, escritos con niveles distintos de detalle y difíciles de convertir en decisiones prácticas durante el diseño.',
+              'El trabajo consistió en ordenar esos criterios, convertirlos en reglas por comportamiento y preparar una estructura que sirviera tanto para revisión como para handoff.',
+            ],
+            en: [
+              'The usual problem in this kind of context is that criteria are scattered, written at different levels of detail, and hard to turn into practical design decisions.',
+              'The work focused on organising those criteria, turning them into behaviour-based rules, and preparing a structure useful for both review and handoff.',
+            ],
+          },
+          points: {
+            es: [
+              'Agrupación de criterios WCAG con lógica de producto.',
+              'Conversión de guidelines difusas en reglas accionables.',
+              'Base única para diseño, revisión y desarrollo.',
+            ],
+            en: [
+              'Grouping WCAG criteria with product logic.',
+              'Turning diffuse guidelines into actionable rules.',
+              'A single base for design, review, and development.',
+            ],
+          },
+          gallery: [
+            {
+              src: '/north/page-32.jpg',
+              alt: {
+                es: 'Contexto del ecosistema Facilitea',
+                en: 'Context of the Facilitea ecosystem',
+              },
+            },
+            {
+              src: '/north/page-34.jpg',
+              alt: {
+                es: 'Problemas del sistema anterior de accesibilidad',
+                en: 'Problems in the previous accessibility system',
+              },
+            },
+          ],
+          galleryLayout: 2,
+        },
+        {
+          title: {
+            es: 'Formato reusable',
+            en: 'Reusable format',
+          },
+          body: {
+            es: 'La solución no se pensó como un documento estático, sino como un formato de trabajo conectado a Figma y preparado para escalar.',
+            en: 'The solution was not designed as a static document, but as a working format connected to Figma and prepared to scale.',
+          },
+          paragraphs: {
+            es: [
+              'Se definieron tarjetas, reglas, ejemplos y una estructura lo bastante flexible como para crecer con el producto sin perder claridad. Esto hacía la documentación más útil y menos pesada.',
+              'Además, la base se pensó con una lógica cercana a sistema: piezas reutilizables, nomenclatura clara y posibilidad de conectarse más adelante con automatización interna.',
+            ],
+            en: [
+              'Cards, rules, examples, and a flexible structure were defined so the documentation could grow with the product without losing clarity. That made it more useful and less heavy.',
+              'The base was also designed with a system mindset: reusable pieces, clear naming, and the possibility of connecting later with internal automation.',
+            ],
+          },
+          points: {
+            es: [
+              'Formato integrado en Figma y cercano al flujo real del equipo.',
+              'Estructura modular para crecer sin perder consistencia.',
+              'Base preparada para automatización interna y mejor handoff.',
+            ],
+            en: [
+              'Format integrated into Figma and close to the real team workflow.',
+              'Modular structure to grow without losing consistency.',
+              'Base prepared for internal automation and better handoff.',
+            ],
+          },
+          gallery: [
+            {
+              src: '/north/page-35.jpg',
+              alt: {
+                es: 'Nuevo formato de documentación accesible',
+                en: 'New accessible documentation format',
+              },
+            },
+            {
+              src: '/north/page-36.jpg',
+              alt: {
+                es: 'Plugin propio de accesibilidad',
+                en: 'Custom accessibility plugin',
+              },
+            },
+          ],
+          galleryLayout: 2,
+        },
+        {
+          title: {
+            es: 'Impacto práctico',
+            en: 'Practical impact',
+          },
+          body: {
+            es: 'El efecto más relevante fue dejar una documentación útil de verdad: más rápida de consultar, más fácil de compartir y más conectada con decisiones reales de producto.',
+            en: 'The most relevant effect was leaving documentation that was genuinely useful: faster to consult, easier to share, and more connected to real product decisions.',
+          },
+          paragraphs: {
+            es: [
+              'En vez de depender de una revisión tardía, el equipo pasa a tener una base que ayuda a diseñar mejor desde el principio y a hablar de accesibilidad con más precisión.',
+              'Ese cambio es pequeño en apariencia, pero muy relevante en la práctica: reduce dudas, mejora handoff y hace que la accesibilidad entre antes en la conversación.',
+            ],
+            en: [
+              'Instead of depending on a late review, the team gets a base that helps them design better from the start and talk about accessibility with more precision.',
+              'That shift looks small on the surface, but it is very relevant in practice: it reduces doubts, improves handoff, and brings accessibility earlier into the conversation.',
+            ],
+          },
+          points: {
+            es: [
+              'Documentación más útil para el día a día del equipo.',
+              'Menos ambigüedad en handoff y revisión.',
+              'Accesibilidad más presente desde fases tempranas.',
+            ],
+            en: [
+              'Documentation that is more useful in day-to-day team work.',
+              'Less ambiguity in handoff and review.',
+              'Accessibility present earlier in the process.',
+            ],
+          },
+          gallery: [
+            {
+              src: '/north/page-38.jpg',
+              alt: {
+                es: 'Entrega final del sistema accesible',
+                en: 'Final delivery of the accessibility system',
+              },
+            },
+          ],
+          galleryLayout: 1,
+        },
+      ],
+      gallery: ['/north/page-32.jpg', '/north/page-34.jpg', '/north/page-35.jpg', '/north/page-36.jpg', '/north/page-38.jpg'],
     },
   ],
+}
+
+export function getNorthProjectBySlug(slug) {
+  return northSection.projects.find((project) => project.slug === slug) || null
 }
 
 export const conceptDesigns = [

@@ -20,13 +20,18 @@ function LinkedInIcon() {
 export default function Navbar() {
   const router = useRouter()
   const { lang, setLang, copy } = useLanguage()
+  const projectsRef = useRef(null)
   const detailsRef = useRef(null)
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const isHome = router.pathname === '/'
   const hasSurface = !isHome || scrolled || menuOpen
+  const projectLinks = [
+    { label: copy.nav.workNorth, href: '/#projects-north' },
+    { label: copy.nav.workMain, href: '/#work' },
+    { label: copy.nav.workOther, href: '/#other-projects' },
+  ]
   const navLinks = [
-    { label: copy.nav.work, href: '/#work', routePrefix: '/work', hash: '#work' },
     { label: copy.nav.about, href: '/#about', hash: '#about' },
     { label: copy.nav.articles, href: '/articles', routePrefix: '/articles' },
   ]
@@ -38,6 +43,9 @@ export default function Navbar() {
 
   useEffect(() => {
     setMenuOpen(false)
+    if (projectsRef.current) {
+      projectsRef.current.open = false
+    }
     if (detailsRef.current) {
       detailsRef.current.open = false
     }
@@ -55,10 +63,19 @@ export default function Navbar() {
   }, [])
 
   const closeMenu = () => {
+    if (projectsRef.current) {
+      projectsRef.current.open = false
+    }
     setMenuOpen(false)
     if (detailsRef.current) {
       detailsRef.current.open = false
     }
+  }
+
+  const handleProjectsHome = (event) => {
+    event.preventDefault()
+    closeMenu()
+    router.push('/#projects-north')
   }
 
   return (
@@ -71,6 +88,24 @@ export default function Navbar() {
         </Link>
 
         <nav className="navbar__links navbar__links--unified" aria-label={copy.nav.primary}>
+          <details ref={projectsRef} className="navbar__projects-disclosure">
+            <summary className={`navbar__link navbar__projects-summary${router.pathname.startsWith('/work') || router.pathname.startsWith('/projects-north/') ? ' navbar__link--active' : ''}`}>
+              <span className="navbar__projects-label" onClick={handleProjectsHome}>
+                {copy.nav.work}
+              </span>
+              <span className="navbar__projects-caret" aria-hidden="true" />
+            </summary>
+            <ul className="navbar__projects-menu">
+              {projectLinks.map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href} className="navbar__projects-link" onClick={closeMenu}>
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </details>
+
           {navLinks.map((link) => {
             const isRouteActive = typeof link.routePrefix === 'string' && router.pathname.startsWith(link.routePrefix)
             const isActive = isRouteActive
@@ -133,6 +168,20 @@ export default function Navbar() {
               <div className="navbar__mobile" id="site-mobile-menu">
                 <nav aria-label={copy.nav.mobile}>
                   <ul className="navbar__mobile-list">
+                    <li>
+                      <details className="navbar__mobile-group">
+                        <summary className="navbar__mobile-link navbar__mobile-link--summary">{copy.nav.work}</summary>
+                        <ul className="navbar__mobile-sublist">
+                          {projectLinks.map((link) => (
+                            <li key={link.href}>
+                              <Link href={link.href} className="navbar__mobile-link navbar__mobile-link--nested" onClick={closeMenu}>
+                                {link.label}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </details>
+                    </li>
                     {navLinks.map((link) => (
                       <li key={link.href}>
                         <Link href={link.href} className="navbar__mobile-link" onClick={closeMenu}>

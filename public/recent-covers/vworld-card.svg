@@ -1,0 +1,12 @@
+<svg width="1600" height="1200" viewBox="0 0 1600 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="1200" rx="72" fill="#C3A51B"/>
+  <rect x="60" y="60" width="1480" height="1080" rx="56" fill="url(#vworld_bg)"/>
+  <rect x="260" y="110" width="1080" height="980" rx="52" fill="white" opacity="0.08"/>
+  <image href="/recent-covers/source/vworld.png" x="320" y="110" width="960" height="980" preserveAspectRatio="xMidYMid meet"/>
+  <defs>
+    <linearGradient id="vworld_bg" x1="260" y1="70" x2="1360" y2="1120" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6E5D10"/>
+      <stop offset="1" stop-color="#241E07"/>
+    </linearGradient>
+  </defs>
+</svg>

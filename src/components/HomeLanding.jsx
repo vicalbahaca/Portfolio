@@ -7,6 +7,7 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import { useGSAP } from '@gsap/react'
 import { caseStudies, conceptDesigns, featuredArticles, siteConfig } from '../data/content'
 import { ArrowUpRightIcon } from './Icons'
+import NorthProjectsGrid from './NorthProjectsGrid'
 import { localizeArticle, localizeProject, useLanguage } from '../lib/i18n'
 
 gsap.registerPlugin(ScrollTrigger, useGSAP)
@@ -41,13 +42,14 @@ export default function HomeLanding() {
       }
 
       revealBlock('.home-work__top > *', 28)
+      revealBlock('.home-north__banner > *', 28)
       revealBlock('.home-secondary__top > *', 28)
       revealBlock('.home-profile__intro > *', 28)
       revealBlock('.home-profile__workflow > *', 24)
       revealBlock('.home-notes__intro > *', 28)
       revealBlock('.home-contact-band__inner > *', 28)
 
-      gsap.from('.home-project-slot', {
+      gsap.from('.home-work .home-project-slot', {
         y: 54,
         opacity: 0,
         duration: 0.95,
@@ -60,7 +62,32 @@ export default function HomeLanding() {
         },
       })
 
-      gsap.from('.home-project__link img', {
+      gsap.from('.home-project-slot--north', {
+        y: 54,
+        opacity: 0,
+        duration: 0.95,
+        ease: 'power3.out',
+        stagger: 0.12,
+        scrollTrigger: {
+          trigger: '.home-work__grid--north',
+          start: 'top 82%',
+          once: true,
+        },
+      })
+
+      gsap.from('.home-work__grid--north .home-project__link img', {
+        scale: 1.08,
+        duration: 1.4,
+        ease: 'power2.out',
+        stagger: 0.1,
+        scrollTrigger: {
+          trigger: '.home-work__grid--north',
+          start: 'top 82%',
+          once: true,
+        },
+      })
+
+      gsap.from('.home-work .home-project__link img', {
         scale: 1.08,
         duration: 1.4,
         ease: 'power2.out',
@@ -107,6 +134,22 @@ export default function HomeLanding() {
 
   return (
     <div ref={landingRef} className="home-flow">
+      <section id="projects-north" className="home-section home-north" aria-labelledby="home-north-title">
+        <div className="container home-block">
+          <div className="home-north__banner">
+            <div className="home-north__intro">
+              <p className="home-label">{copy.home.northLabel}</p>
+              <h2 id="home-north-title" className="home-title">
+                {copy.home.northTitle}
+              </h2>
+              <p className="home-caption">{copy.home.northCaption}</p>
+            </div>
+          </div>
+
+          <NorthProjectsGrid />
+        </div>
+      </section>
+
       <section id="work" className="home-section home-work" aria-labelledby="home-work-title">
         <div className="container home-block">
           <div className="home-work__top">
@@ -146,7 +189,7 @@ export default function HomeLanding() {
         </div>
       </section>
 
-      <section className="home-section home-secondary" aria-labelledby="home-secondary-title">
+      <section id="other-projects" className="home-section home-secondary" aria-labelledby="home-secondary-title">
         <div className="container home-secondary__block">
           <div className="home-secondary__top">
             <p className="home-label">{copy.home.secondaryLabel}</p>

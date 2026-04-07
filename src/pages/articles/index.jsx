@@ -1,4 +1,6 @@
 import Head from 'next/head'
+import Link from 'next/link'
+import { ArrowLeftIcon } from '../../components/Icons'
 import Layout from '../../components/Layout'
 import Articles from '../../components/Articles'
 import { articles, siteConfig } from '../../data/content'
@@ -15,13 +17,18 @@ export default function ArticlesPage() {
       </Head>
 
       <Layout>
-        <section className="page-hero" aria-labelledby="articles-page-title">
-          <div className="container page-hero__panel">
-            <span className="section-kicker">{copy.articles.kicker}</span>
+        <section className="page-hero articles-page-hero" aria-labelledby="articles-page-title">
+          <div className="container writing-layout articles-page-hero__panel">
+            <Link href="/" className="back-link">
+              <span className="back-link__icon" aria-hidden="true">
+                <ArrowLeftIcon />
+              </span>
+              {copy.articles.back}
+            </Link>
             <h1 id="articles-page-title" className="page-title">
               {copy.articles.title}
             </h1>
-            <p className="section-copy">{copy.articles.description}</p>
+            <p className="section-copy articles-page-hero__copy">{copy.articles.description}</p>
           </div>
         </section>
         <Articles
