@@ -32,7 +32,7 @@ export default function NorthProjectsGrid({ className = '' }) {
             <Link
               href={`/projects-north/${project.slug}`}
               className="home-project__link"
-              aria-label={`${project.title}. ${project.metric}`}
+              aria-label={`${String(index + 1).padStart(2, '0')}. ${project.title}`}
             >
               <Image src={project.cardImage} alt={project.title} fill sizes="(max-width: 960px) 100vw, 50vw" />
 

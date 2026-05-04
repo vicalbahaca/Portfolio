@@ -59,49 +59,17 @@ function getNorthStorySections(entry) {
   }))
 }
 
-function getRgbChannels(hex) {
-  const normalized = `${hex || ''}`.replace('#', '').trim()
-  if (normalized.length !== 6) return null
-
-  const value = Number.parseInt(normalized, 16)
-  if (Number.isNaN(value)) return null
-
+function getHeroTheme() {
   return {
-    r: (value >> 16) & 255,
-    g: (value >> 8) & 255,
-    b: value & 255,
-  }
-}
-
-function getHeroTheme(accent) {
-  const rgb = getRgbChannels(accent)
-  if (!rgb) {
-    return {
-      accent: '#07111f',
-      ink: '#ffffff',
-      muted: 'rgba(255, 255, 255, 0.82)',
-      subtle: 'rgba(255, 255, 255, 0.62)',
-      border: 'rgba(255, 255, 255, 0.2)',
-      panel: 'rgba(255, 255, 255, 0.08)',
-      ctaBg: '#ffffff',
-      ctaText: '#091427',
-      ctaHover: 'rgba(255, 255, 255, 0.9)',
-    }
-  }
-
-  const luminance = (0.2126 * rgb.r + 0.7152 * rgb.g + 0.0722 * rgb.b) / 255
-  const useDarkInk = luminance > 0.58
-
-  return {
-    accent,
-    ink: useDarkInk ? '#091427' : '#ffffff',
-    muted: useDarkInk ? 'rgba(13, 23, 38, 0.82)' : 'rgba(255, 255, 255, 0.86)',
-    subtle: useDarkInk ? 'rgba(13, 23, 38, 0.62)' : 'rgba(255, 255, 255, 0.62)',
-    border: useDarkInk ? 'rgba(13, 23, 38, 0.18)' : 'rgba(255, 255, 255, 0.2)',
-    panel: useDarkInk ? 'rgba(13, 23, 38, 0.08)' : 'rgba(255, 255, 255, 0.08)',
-    ctaBg: useDarkInk ? '#091427' : '#ffffff',
-    ctaText: useDarkInk ? '#ffffff' : '#091427',
-    ctaHover: useDarkInk ? 'rgba(9, 20, 39, 0.9)' : 'rgba(255, 255, 255, 0.9)',
+    accent: '#ffffff',
+    ink: '#091427',
+    muted: 'rgba(13, 23, 38, 0.82)',
+    subtle: 'rgba(13, 23, 38, 0.62)',
+    border: 'rgba(13, 23, 38, 0.16)',
+    panel: 'rgba(13, 23, 38, 0.04)',
+    ctaBg: '#091427',
+    ctaText: '#ffffff',
+    ctaHover: 'rgba(9, 20, 39, 0.92)',
   }
 }
 

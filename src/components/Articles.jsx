@@ -30,7 +30,6 @@ export default function Articles({
         {showSectionHead ? (
           <SectionReveal className="section-head">
             <div>
-              <p className="section-kicker">{copy.articles.sectionKicker}</p>
               <h2 id={headingId} className="section-heading">
                 {resolvedTitle}
               </h2>

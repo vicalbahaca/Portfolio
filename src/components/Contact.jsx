@@ -9,7 +9,6 @@ export default function Contact() {
     <section id="contact" className="page-section contact-cta">
       <div className="container">
         <SectionReveal className="contact-cta__inner">
-          <p className="section-kicker">{copy.contactLegacy.kicker}</p>
           <h2 className="contact-cta__title">{copy.contactLegacy.title}</h2>
           <a className="contact-cta__mail" href={`mailto:${siteConfig.email}`}>
             {siteConfig.email}

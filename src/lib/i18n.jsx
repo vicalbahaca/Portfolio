@@ -33,7 +33,15 @@ const translations = {
     hero: {
       subtitle: 'Product Designer',
       cta: 'Ir a LinkedIn',
-      scroll: 'Ver proyectos',
+      statementLines: [
+        'Product Designer con más de 6 años en Fintech, Startups y SaaS.',
+        'Trabajo end-to-end de forma transversal, desde negocio, producto, diseño y desarrollo.',
+      ],
+      personalEmailAria: 'Correo personal',
+      copyEmail: 'Copiar correo electrónico',
+      copiedEmail: 'Copiado en portapapeles',
+      closeToast: 'Cerrar aviso',
+      scroll: 'Navega hacia abajo',
     },
     home: {
       northLabel: 'North studio',
@@ -248,7 +256,15 @@ const translations = {
     hero: {
       subtitle: 'Product Designer',
       cta: 'Go to LinkedIn',
-      scroll: 'Scroll Down',
+      statementLines: [
+        'Product Designer with more than 6 years of experience in Fintech, Startups, and SaaS.',
+        'I work end-to-end across business, product, design, and development.',
+      ],
+      personalEmailAria: 'Personal email',
+      copyEmail: 'Copy email address',
+      copiedEmail: 'Copied to clipboard',
+      closeToast: 'Close notice',
+      scroll: 'Navigate down',
     },
     home: {
       northLabel: 'North studio',

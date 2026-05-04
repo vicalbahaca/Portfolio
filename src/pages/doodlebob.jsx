@@ -18,7 +18,6 @@ export default function DoodlebobPage() {
       <Layout>
         <section className="page-hero">
           <div className="container page-hero__panel">
-            <span className="section-kicker">{copy.doodlebob.kicker}</span>
             <h1 className="page-title">{copy.doodlebob.title}</h1>
             <p className="section-copy">{copy.doodlebob.description}</p>
           </div>
@@ -30,7 +29,7 @@ export default function DoodlebobPage() {
               <Image src={siteConfig.doodlebobArtwork} alt="Doodlebob sticker" fill sizes="(max-width: 960px) 100vw, 58vw" />
             </article>
 
-            <aside className="detail-sidebar">
+            <div className="detail-sidebar">
               <article className="surface-card detail-card">
                 <div className="detail-card__body">
                   <span className="pill pill--light">{copy.doodlebob.reason}</span>
@@ -41,7 +40,7 @@ export default function DoodlebobPage() {
                   </Link>
                 </div>
               </article>
-            </aside>
+            </div>
           </div>
         </section>
       </Layout>

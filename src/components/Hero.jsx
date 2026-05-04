@@ -1,16 +1,27 @@
-import { useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import { useGSAP } from '@gsap/react'
 import { siteConfig } from '../data/content'
 import { useLanguage } from '../lib/i18n'
+import { CloseIcon, CopyIcon } from './Icons'
 
 gsap.registerPlugin(ScrollTrigger, useGSAP)
 
 export default function Hero() {
   const heroRef = useRef(null)
+  const copyButtonRef = useRef(null)
+  const toastCloseRef = useRef(null)
+  const [copied, setCopied] = useState(false)
   const { copy } = useLanguage()
+
+  useEffect(() => {
+    if (copied) {
+      toastCloseRef.current?.focus()
+    }
+  }, [copied])
 
   useGSAP(
     () => {
@@ -24,20 +35,28 @@ export default function Hero() {
         .from('.hero__brand', {
           y: 72,
           opacity: 0,
-          rotate: -2,
           duration: 0.9,
         })
         .from(
-          '.hero__roleline',
+          '.hero__portrait-shell',
           {
-            y: 28,
+            y: 24,
             opacity: 0,
             duration: 0.6,
           },
           '-=0.45'
         )
         .from(
-          '.hero__actions',
+          '.hero__contact-wrap',
+          {
+            y: 20,
+            opacity: 0,
+            duration: 0.45,
+          },
+          '-=0.22'
+        )
+        .from(
+          '.hero__statement',
           {
             y: 20,
             opacity: 0,
@@ -54,18 +73,6 @@ export default function Hero() {
           },
           '-=0.18'
         )
-
-      gsap.to('.hero__copy', {
-        yPercent: -8,
-        opacity: 0.38,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: heroRef.current,
-          start: 'top top',
-          end: 'bottom top',
-          scrub: 1,
-        },
-      })
 
       gsap.to('.hero__scroll-link', {
         y: 10,
@@ -85,24 +92,78 @@ export default function Hero() {
   return (
     <section ref={heroRef} className="hero" id="top" aria-labelledby="hero-title">
       <div className="container hero__frame">
-        <div className="hero__copy">
-          <h1 id="hero-title" className="hero__brand">
-            {siteConfig.heroTitle}
-          </h1>
+        <h1 id="hero-title" className="hero__brand">
+          <span className="hero__brand-line">Victor</span>
+          <span className="hero__brand-line">Saiz</span>
+        </h1>
 
-          <p className="hero__roleline">{copy.hero.subtitle}</p>
+        <div className="hero__statement">
+          {copy.hero.statementLines.map((line) => (
+            <p key={line}>{line}</p>
+          ))}
+        </div>
 
-          <div className="hero__actions">
-            <a className="btn btn--hero-light" href={siteConfig.social.linkedin} target="_blank" rel="noreferrer" aria-label={copy.hero.cta}>
-              {copy.hero.cta}
-            </a>
+        <div className="hero__portrait-shell" aria-hidden="true">
+          <div className="hero__portrait hero__portrait--mono">
+            <Image
+              src={siteConfig.avatar}
+              alt=""
+              fill
+              sizes="(max-width: 720px) 168px, (max-width: 980px) 220px, 280px"
+              quality={95}
+              priority
+            />
           </div>
         </div>
-      </div>
 
-      <Link className="hero__scroll-link" href="/#work" aria-label={copy.nav.work}>
-        {copy.hero.scroll}
-      </Link>
+        <div className="hero__contact-wrap">
+          <a
+            className="hero__contact"
+            href={`mailto:${siteConfig.email}`}
+            aria-label={`${copy.hero.personalEmailAria} ${siteConfig.email}`}
+          >
+            {siteConfig.email}
+          </a>
+          <button
+            type="button"
+            className="hero__copy-button"
+            ref={copyButtonRef}
+            aria-label={copy.hero.copyEmail}
+            onClick={async () => {
+              try {
+                await navigator.clipboard.writeText(siteConfig.email)
+                setCopied(true)
+              } catch (_error) {
+                setCopied(false)
+              }
+            }}
+          >
+            <CopyIcon />
+          </button>
+        </div>
+
+        <Link className="hero__scroll-link" href="/#projects-north" aria-label={copy.home.northTitle}>
+          {copy.hero.scroll}
+        </Link>
+
+        {copied ? (
+          <div className="hero__toast" role="status" aria-live="polite" aria-atomic="true">
+            <p className="hero__toast-copy">{copy.hero.copiedEmail}</p>
+            <button
+              ref={toastCloseRef}
+              type="button"
+              className="hero__toast-close"
+              aria-label={copy.hero.closeToast}
+              onClick={() => {
+                setCopied(false)
+                copyButtonRef.current?.focus()
+              }}
+            >
+              <CloseIcon />
+            </button>
+          </div>
+        ) : null}
+      </div>
     </section>
   )
 }

@@ -138,7 +138,6 @@ export default function HomeLanding() {
         <div className="container home-block">
           <div className="home-north__banner">
             <div className="home-north__intro">
-              <p className="home-label">{copy.home.northLabel}</p>
               <h2 id="home-north-title" className="home-title">
                 {copy.home.northTitle}
               </h2>
@@ -153,7 +152,6 @@ export default function HomeLanding() {
       <section id="work" className="home-section home-work" aria-labelledby="home-work-title">
         <div className="container home-block">
           <div className="home-work__top">
-            <p className="home-label">{copy.home.featuredLabel}</p>
             <h2 id="home-work-title" className="home-title">
               {copy.home.featuredTitle}
             </h2>
@@ -171,7 +169,7 @@ export default function HomeLanding() {
                   <Link
                     href={`/work/${project.slug}`}
                     className="home-project__link"
-                    aria-label={`${project.title}. ${project.subtitle}`}
+                    aria-label={`0${index + 1}. ${project.role}. ${project.title}. ${project.subtitle}`}
                   >
                     <Image src={project.image} alt={project.title} fill sizes="(max-width: 960px) 100vw, 50vw" />
 
@@ -192,7 +190,6 @@ export default function HomeLanding() {
       <section id="other-projects" className="home-section home-secondary" aria-labelledby="home-secondary-title">
         <div className="container home-secondary__block">
           <div className="home-secondary__top">
-            <p className="home-label">{copy.home.secondaryLabel}</p>
             <h2 id="home-secondary-title" className="home-title home-title--compact">
               {copy.home.secondaryTitle}
             </h2>
@@ -231,7 +228,6 @@ export default function HomeLanding() {
           <div className="home-profile__panel">
             <div className="home-profile__content">
               <div className="home-profile__intro">
-                <p className="home-label">{copy.home.aboutLabel}</p>
                 <h2 id="home-about-title" className="home-title">
                   {copy.home.aboutTitle}
                 </h2>
@@ -251,7 +247,6 @@ export default function HomeLanding() {
               </div>
 
               <div className="home-profile__experience" aria-labelledby="home-experience-title">
-                <p className="home-label">{copy.home.experienceLabel}</p>
                 <h3 id="home-experience-title" className="home-profile__workflow-title">
                   {copy.home.experienceTitle}
                 </h3>
@@ -274,7 +269,6 @@ export default function HomeLanding() {
               </div>
 
               <div className="home-profile__workflow" aria-labelledby="home-workflow-title">
-                <p className="home-label">{copy.home.workflowLabel}</p>
                 <h3 id="home-workflow-title" className="home-profile__workflow-title">
                   {copy.home.workflowTitle}
                 </h3>
@@ -291,7 +285,7 @@ export default function HomeLanding() {
               </div>
             </div>
 
-            <aside className="home-profile__aside">
+            <div className="home-profile__aside">
               <div className="home-profile__visual">
                 <Image src={siteConfig.avatar} alt={siteConfig.name} fill sizes="(max-width: 960px) 72vw, 24vw" />
               </div>
@@ -303,7 +297,7 @@ export default function HomeLanding() {
               >
                 {lang === 'en' ? copy.home.downloadCvEn : copy.home.downloadCvEs}
               </a>
-            </aside>
+            </div>
           </div>
         </div>
       </section>
@@ -311,7 +305,6 @@ export default function HomeLanding() {
       <section id="articles" className="home-section home-notes" aria-labelledby="home-articles-title">
         <div className="container home-notes__block">
           <div className="home-notes__intro">
-            <p className="home-label">{copy.home.articlesLabel}</p>
             <h2 id="home-articles-title" className="home-title home-title--compact">
               {copy.home.articlesTitle}
             </h2>
