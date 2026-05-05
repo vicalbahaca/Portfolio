@@ -148,10 +148,10 @@ export default function Navbar() {
                 aria-label={copy.nav.language}
                 onChange={(event) => setLang(event.target.value)}
               >
-                <option value="es">ES</option>
-                <option value="en">EN</option>
-                <option value="ca">CA</option>
-                <option value="eu">EU</option>
+                <option value="es">Español</option>
+                <option value="en">Inglés</option>
+                <option value="ca">Catalán</option>
+                <option value="eu">Euskera</option>
               </select>
             </div>
             <details

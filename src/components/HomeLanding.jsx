@@ -22,7 +22,7 @@ export default function HomeLanding() {
     featured: { atStart: true, atEnd: false },
     secondary: { atStart: true, atEnd: false },
   })
-  const { copy, lang } = useLanguage()
+  const { copy, lang, cvHref } = useLanguage()
   const highlightedProjects = caseStudies.map((entry) => localizeProject(entry, lang))
   const secondaryProjects = conceptDesigns.slice(0, 4).map((entry) => localizeProject(entry, lang))
   const latestArticles = featuredArticles.map((entry) => localizeArticle(entry, lang))
@@ -347,6 +347,9 @@ export default function HomeLanding() {
                 {copy.home.aboutSummaryPrefix} {copy.home.aboutSummaryAccent}
                 {copy.home.aboutSummarySuffix}
               </p>
+              <a className="btn btn--brand proposal-about__cv-cta" href={cvHref} download>
+                {copy.home.downloadCv}
+              </a>
             </div>
 
             <div className="proposal-about__body">

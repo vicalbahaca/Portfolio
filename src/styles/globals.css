@@ -7759,6 +7759,10 @@ body.lightbox-open .navbar {
   line-height: 1.68;
 }
 
+.proposal-about__cv-cta {
+  margin-top: 14px;
+}
+
 .proposal-about__lede {
   max-width: 18ch;
   color: var(--proposal-ink);
