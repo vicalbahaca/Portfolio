@@ -4387,6 +4387,7 @@ body {
     position: relative;
     overflow: hidden;
     padding-top: 56px;
+    margin-top: 14px;
   }
 
   .home-work__grid,
@@ -8042,6 +8043,12 @@ body.lightbox-open .navbar {
     margin: 0;
     padding-left: 0;
     padding-right: 0;
+  }
+
+  .footer__site-bar {
+    width: calc(100% - 48px);
+    margin-left: 24px;
+    margin-right: 24px;
   }
 }
 
