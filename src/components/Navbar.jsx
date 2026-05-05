@@ -150,8 +150,6 @@ export default function Navbar() {
               >
                 <option value="es">Español</option>
                 <option value="en">Inglés</option>
-                <option value="ca">Catalán</option>
-                <option value="eu">Euskera</option>
               </select>
             </div>
             <details

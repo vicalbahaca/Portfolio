@@ -565,219 +565,6 @@ const translations = {
   },
 }
 
-const caOverrides = {
-  langCode: 'CA',
-  langLabel: 'Català',
-  site: { location: 'Barcelona, Espanya', skipToContent: 'Salta al contingut' },
-  nav: {
-    work: 'Projectes',
-    workMain: 'Principals',
-    workOther: 'Altres projectes',
-    about: 'Sobre mi',
-    articles: 'Articles',
-    openMenu: 'Obre el menú',
-    closeMenu: 'Tanca el menú',
-    primary: 'Navegació principal',
-    mobile: 'Navegació mòbil',
-    language: 'Idioma',
-  },
-  hero: {
-    cta: 'Anar a LinkedIn',
-    copiedEmail: 'Copiat al porta-retalls',
-    closeToast: 'Tanca l’avís',
-    scroll: 'Navega cap avall',
-  },
-  home: {
-    northTitle: 'Projectes recents a North studio',
-    featuredTitle: 'Projectes recents',
-    secondaryTitle: 'Altres projectes',
-    articlesTitle: 'Publicacions',
-    allArticles: 'Veure totes les publicacions',
-    contactTitle: 'Contacta amb mi',
-    contactCaption:
-      'Si tens una posició oberta al teu equip, necessites una col·laboració puntual o simplement vols parlar de producte i de com està canviant el món, envia’m un correu i et respondré tan aviat com pugui.',
-    contactCta: 'Contactar',
-    carouselPrevNorth: 'Projecte anterior a North Studio',
-    carouselNextNorth: 'Projecte següent a North Studio',
-    carouselPrevFeatured: 'Projecte anterior a projectes recents',
-    carouselNextFeatured: 'Projecte següent a projectes recents',
-    carouselPrevSecondary: 'Projecte anterior',
-    carouselNextSecondary: 'Projecte següent',
-    highlightsLabel: 'Punts destacats de',
-    rolesLabel: 'Rols de',
-    downloadCv: 'Descarregar CV',
-  },
-  footer: {
-    work: 'Projectes',
-    about: 'Sobre mi',
-    articles: 'Articles',
-    contact: 'Contacte',
-    email: 'Correu',
-    navigation: 'Navegació del peu',
-    contactLinkedin: 'Contactar via LinkedIn',
-  },
-  articles: {
-    back: 'Tornar',
-    kicker: 'Arxiu',
-    title: 'Publicacions',
-    description: 'Arxiu complet d’articles, notes i publicacions sobre producte, UX/UI, accessibilitat i eines.',
-    sectionKicker: 'Publicacions',
-    archiveDescription: 'Arxiu complet d’articles i notes publicades al portfolio.',
-    allArticles: 'Veure totes les publicacions',
-    metaDescription: 'Arxiu curat de publicacions públiques de LinkedIn sobre producte, UX/UI i accessibilitat.',
-    opening: 'Obrint publicació...',
-  },
-  north: {
-    kicker: 'North studio',
-    title: 'Projectes a North',
-    description:
-      'Revisa els projectes més rellevants que he realitzat com a Principal Product Designer, per a clients reals amb gran impacte. No s’hi inclou informació sensible ni el procés complet per NDA amb North.',
-    back: 'Tornar',
-    summaryTitle: 'Resum',
-    detailTitle: 'Aportació',
-    focusTitle: 'Enfocament',
-    impactLabel: 'Impacte',
-    roleLabel: 'Rol',
-    clientLabel: 'Client',
-    industryLabel: 'Sector',
-    scopeLabel: 'Abast',
-    ndaTitle: 'Nota d’abast',
-    ndaBody: 'Aquestes pàgines resumeixen context, impacte i decisions visibles. No inclouen informació sensible ni el procés complet per restriccions de NDA amb North.',
-    allProjects: 'Veure tots els projectes de North',
-  },
-  work: {
-    notFound: 'Projecte no trobat',
-    back: 'Tornar',
-    visitWebsite: 'Visitar web',
-    metaDescriptionFallback: 'Cas d’estudi de producte, UX/UI i sistemes dissenyat per Victor Saiz.',
-    expandImage: 'Ampliar imatge',
-    closeImage: 'Tancar imatge',
-  },
-  redirects: {
-    workTitle: 'Projectes',
-    aboutTitle: 'Sobre mi',
-    projectsTitle: 'Projectes',
-    northTitle: 'Projectes a North',
-    openingWork: 'Obrint la secció de projectes...',
-    openingAbout: 'Obrint la secció Sobre mi...',
-    openingNorth: 'Obrint la secció de projectes a North...',
-  },
-  access: {
-    title: 'Accés privat',
-    description: 'Introdueix la contrasenya per accedir al portfolio.',
-    label: 'Contrasenya',
-    placeholder: 'Escriu la contrasenya',
-    submit: 'Entrar',
-    error: 'La contrasenya no és correcta.',
-  },
-}
-
-const euOverrides = {
-  langCode: 'EU',
-  langLabel: 'Euskara',
-  site: { location: 'Bartzelona, Espainia', skipToContent: 'Joan edukira' },
-  nav: {
-    work: 'Proiektuak',
-    workMain: 'Nagusiak',
-    workOther: 'Beste proiektuak',
-    about: 'Niri buruz',
-    articles: 'Artikuluak',
-    openMenu: 'Ireki menua',
-    closeMenu: 'Itxi menua',
-    primary: 'Nabigazio nagusia',
-    mobile: 'Mugikorreko nabigazioa',
-    language: 'Hizkuntza',
-  },
-  hero: {
-    cta: 'Joan LinkedIn-era',
-    copiedEmail: 'Arbelean kopiatuta',
-    closeToast: 'Itxi oharra',
-    scroll: 'Nabigatu behera',
-  },
-  home: {
-    northTitle: 'Azken proiektuak North studio-n',
-    featuredTitle: 'Azken proiektuak',
-    secondaryTitle: 'Beste proiektuak',
-    articlesTitle: 'Argitalpenak',
-    allArticles: 'Ikusi argitalpen guztiak',
-    contactTitle: 'Jarri nirekin harremanetan',
-    contactCaption:
-      'Zure taldean lanpostu bat baduzu, lankidetza puntual bat behar baduzu edo produktuaz eta mundua nola aldatzen ari den hitz egin nahi baduzu, bidali email bat eta ahalik eta azkarren erantzungo dizut.',
-    contactCta: 'Kontaktatu',
-    carouselPrevNorth: 'Aurreko proiektua North Studio-n',
-    carouselNextNorth: 'Hurrengo proiektua North Studio-n',
-    carouselPrevFeatured: 'Aurreko proiektua azken proiektuetan',
-    carouselNextFeatured: 'Hurrengo proiektua azken proiektuetan',
-    carouselPrevSecondary: 'Aurreko proiektua',
-    carouselNextSecondary: 'Hurrengo proiektua',
-    highlightsLabel: 'Nabarmenduak',
-    rolesLabel: 'Rolak',
-    downloadCv: 'Deskargatu CVa',
-  },
-  footer: {
-    work: 'Proiektuak',
-    about: 'Niri buruz',
-    articles: 'Artikuluak',
-    contact: 'Kontaktua',
-    email: 'Posta',
-    navigation: 'Orri-oinaren nabigazioa',
-    contactLinkedin: 'Kontaktatu LinkedIn bidez',
-  },
-  articles: {
-    back: 'Itzuli',
-    kicker: 'Artxiboa',
-    title: 'Argitalpenak',
-    description: 'Produktu, UX/UI, irisgarritasun eta tresnei buruzko artikulu, ohar eta argitalpenen artxibo osoa.',
-    sectionKicker: 'Argitalpenak',
-    archiveDescription: 'Portfolioan argitaratutako artikulu eta oharren artxibo osoa.',
-    allArticles: 'Ikusi argitalpen guztiak',
-    metaDescription: 'LinkedIn-eko produktu, UX/UI eta irisgarritasunari buruzko argitalpen publikoen artxibo kuratua.',
-    opening: 'Argitalpena irekitzen...',
-  },
-  north: {
-    kicker: 'North studio',
-    title: 'North-eko proiektuak',
-    description:
-      'Begiratu Principal Product Designer gisa egin ditudan proiektu garrantzitsuenak, benetako bezeroentzat eta eragin handiarekin. Ez da informazio sentikorrik ezta prozesu osoa ere erakusten, North-ekin NDA dela eta.',
-    back: 'Itzuli',
-    summaryTitle: 'Laburpena',
-    detailTitle: 'Ekarpena',
-    focusTitle: 'Fokua',
-    impactLabel: 'Eragina',
-    roleLabel: 'Rola',
-    clientLabel: 'Bezeroa',
-    industryLabel: 'Sektorea',
-    scopeLabel: 'Irismena',
-    ndaTitle: 'Irismen-oharra',
-    ndaBody: 'Orrialde hauek testuingurua, eragina eta ikus daitezkeen erabakiak laburbiltzen dituzte. Ez dute informazio sentikorrik edo prozesu osoa jasotzen, North-eko NDA murrizketengatik.',
-    allProjects: 'Ikusi North-eko proiektu guztiak',
-  },
-  work: {
-    notFound: 'Proiektua ez da aurkitu',
-    back: 'Itzuli',
-    visitWebsite: 'Webgunea bisitatu',
-    metaDescriptionFallback: 'Victor Saizek diseinatutako produktu, UX/UI eta sistemen kasu-azterketa.',
-    expandImage: 'Irudia handitu',
-    closeImage: 'Irudia itxi',
-  },
-  redirects: {
-    workTitle: 'Proiektuak',
-    aboutTitle: 'Niri buruz',
-    projectsTitle: 'Proiektuak',
-    northTitle: 'North-eko proiektuak',
-    openingWork: 'Proiektuen atala irekitzen...',
-    openingAbout: 'Niri buruz atala irekitzen...',
-    openingNorth: 'North-eko proiektuen atala irekitzen...',
-  },
-  access: {
-    title: 'Sarbide pribatua',
-    description: 'Sartu pasahitza portfolioa ikusteko.',
-    label: 'Pasahitza',
-    placeholder: 'Idatzi pasahitza',
-    submit: 'Sartu',
-    error: 'Pasahitza ez da zuzena.',
-  },
-}
 
 function deepMerge(base, override) {
   const out = { ...base }
@@ -809,8 +596,6 @@ translations.en.home.carouselNextSecondary = 'Next project'
 translations.en.home.highlightsLabel = 'Highlights for'
 translations.en.home.rolesLabel = 'Roles at'
 translations.en.footer.contactLinkedin = 'Contact via LinkedIn'
-translations.ca = deepMerge(translations.es, caOverrides)
-translations.eu = deepMerge(translations.es, euOverrides)
 
 function normalizeLanguageCode(value = '') {
   return value.toLowerCase().trim()
@@ -823,11 +608,9 @@ export function detectPreferredLanguage(source) {
     const code = normalizeLanguageCode(value)
     if (!code) continue
 
-    if (code.startsWith('es') || code.startsWith('val')) {
+    if (code.startsWith('es') || code.startsWith('ca') || code.startsWith('eu') || code.startsWith('val')) {
       return 'es'
     }
-    if (code.startsWith('ca')) return 'ca'
-    if (code.startsWith('eu') || code.startsWith('eus')) return 'eu'
     if (code.startsWith('en')) return 'en'
   }
 
@@ -848,14 +631,14 @@ export function LanguageProvider({ children }) {
 
   useEffect(() => {
     const stored = typeof window !== 'undefined' ? window.localStorage.getItem(LANGUAGE_STORAGE_KEY) : null
-    const nextLang = ['es', 'en', 'ca', 'eu'].includes(stored) ? stored : detectPreferredLanguage(window.navigator.languages)
+    const nextLang = stored === 'es' || stored === 'en' ? stored : detectPreferredLanguage(window.navigator.languages)
     setLangState(nextLang)
     document.documentElement.lang = nextLang
     setIsReady(true)
   }, [])
 
   const setLang = (nextLang) => {
-    if (!['es', 'en', 'ca', 'eu'].includes(nextLang)) return
+    if (nextLang !== 'es' && nextLang !== 'en') return
     setLangState(nextLang)
     if (typeof window !== 'undefined') {
       window.localStorage.setItem(LANGUAGE_STORAGE_KEY, nextLang)

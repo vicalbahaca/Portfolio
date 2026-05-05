@@ -1046,7 +1046,7 @@ export const projectTranslations = {
 }
 
 export function localizeArticleContent(entry, lang) {
-  const contentLang = lang === 'ca' || lang === 'eu' ? 'en' : lang
+  const contentLang = lang
   if (!entry) return entry
 
   const localized = deepMerge(entry, articleTranslations[entry.slug]?.[contentLang])
@@ -1061,7 +1061,7 @@ export function localizeArticleContent(entry, lang) {
 }
 
 export function localizeProjectContent(entry, lang) {
-  const contentLang = lang === 'ca' || lang === 'eu' ? 'en' : lang
+  const contentLang = lang
   if (!entry) return entry
   return deepMerge(entry, projectTranslations[entry.slug]?.[contentLang])
 }
