@@ -11,10 +11,11 @@
 @tailwind utilities;
 
 :root {
+  --primary: #0C1726;
   --page-bg: #f7f7f7;
   --surface: #ffffff;
   --surface-muted: #eef5fb;
-  --ink: #0d1726;
+  --ink: var(--primary);
   --ink-soft: #465668;
   --line: rgba(13, 23, 38, 0.1);
   --line-strong: rgba(13, 23, 38, 0.16);
@@ -31,7 +32,7 @@
   --radius-md: 18px;
   --container: 1200px;
   --focus-ring: #159bfe;
-  --section-space: clamp(72px, 8vw, 112px);
+  --section-space: 64px;
   --text-max: 62ch;
 }
 
@@ -2563,8 +2564,8 @@ body {
 }
 
 .home-notes__cta {
-  background: #232E40;
-  border-color: #232E40;
+  background: var(--primary);
+  border-color: var(--primary);
   color: #ffffff;
 }
 
@@ -3586,7 +3587,7 @@ body {
   font-size: 0.98rem;
   font-weight: 700;
   letter-spacing: 0.04em;
-  text-transform: uppercase;
+  text-transform: none;
   appearance: none;
   -webkit-appearance: none;
   cursor: pointer;
@@ -4020,7 +4021,8 @@ body {
 }
 
 .home-secondary-item__body p {
-  max-width: 52ch;
+  max-width: none;
+  width: 100%;
   color: rgba(13, 23, 38, 0.68);
 }
 
@@ -4384,6 +4386,7 @@ body {
   .home-secondary__carousel {
     position: relative;
     overflow: hidden;
+    padding-top: 56px;
   }
 
   .home-work__grid,
@@ -4413,25 +4416,25 @@ body {
   .home-mobile-carousel > .home-secondary__nav,
   .home-secondary__carousel > .home-secondary__nav {
     position: absolute;
-    top: -52px;
+    top: 8px;
     transform: none;
     z-index: 3;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 38px;
-    height: 38px;
+    width: 44px;
+    height: 44px;
     border-radius: 999px;
-    border: 1px solid rgba(35, 46, 64, 0.2);
-    background: rgba(255, 255, 255, 0.96);
-    color: #232E40;
-    font-size: 1.35rem;
+    border: 2px solid #0C1726;
+    background: #ffffff;
+    color: #0C1726;
+    font-size: 1.5rem;
     line-height: 1;
   }
 
   .home-mobile-carousel > .home-secondary__nav--prev {
     left: auto;
-    right: 54px;
+    right: 60px;
   }
 
   .home-mobile-carousel > .home-secondary__nav--next {
@@ -4440,7 +4443,7 @@ body {
 
   .home-secondary__carousel > .home-secondary__nav--prev {
     left: auto;
-    right: 54px;
+    right: 60px;
   }
 
   .home-secondary__carousel > .home-secondary__nav--next {
@@ -6884,9 +6887,9 @@ body.lightbox-open .navbar {
 .btn--brand,
 .btn--hero-light,
 .inline-link {
-  background: #0d1726;
+  background: var(--primary);
   color: #ffffff;
-  border-color: #0d1726;
+  border-color: var(--primary);
 }
 
 .btn--brand,
@@ -6913,7 +6916,7 @@ body.lightbox-open .navbar {
   justify-content: center;
   min-height: 54px;
   padding: 0 22px;
-  border: 1px solid #0d1726;
+  border: 1px solid var(--primary);
   border-radius: 999px;
   font-weight: 600;
   letter-spacing: -0.01em;
@@ -6922,9 +6925,9 @@ body.lightbox-open .navbar {
 .page-shell--home .inline-link,
 .page-shell--home .btn--brand,
 .page-shell--home .home-contact-band__cta {
-  background: #0d1726;
+  background: var(--primary);
   color: #ffffff;
-  border-color: #0d1726;
+  border-color: var(--primary);
 }
 
 .page-shell--home .inline-link::after {
@@ -7686,7 +7689,7 @@ body.lightbox-open .navbar {
 .footer--home,
 .page-shell--home .footer--home,
 .page-shell .footer--site {
-  background: #232E40;
+  background: var(--primary);
 }
 
 .footer--site .footer__site-bar,
