@@ -71,6 +71,8 @@ export default function HomeLanding() {
   useGSAP(
     () => {
       const revealBlock = (target, y = 34) => {
+        const nodes = gsap.utils.toArray(target)
+        if (!nodes.length) return
         gsap.from(target, {
           y,
           opacity: 0,
@@ -93,55 +95,63 @@ export default function HomeLanding() {
       revealBlock('.home-notes__intro > *', 28)
       revealBlock('.home-contact-band__inner > *', 28)
 
-      gsap.from('.home-work .home-project-slot', {
-        y: 54,
-        opacity: 0,
-        duration: 0.95,
-        ease: 'power3.out',
-        stagger: 0.12,
-        scrollTrigger: {
-          trigger: '.home-work__grid',
-          start: 'top 78%',
-          once: true,
-        },
-      })
+      if (gsap.utils.toArray('.home-work .home-project-slot').length) {
+        gsap.from('.home-work .home-project-slot', {
+          y: 54,
+          opacity: 0,
+          duration: 0.95,
+          ease: 'power3.out',
+          stagger: 0.12,
+          scrollTrigger: {
+            trigger: '.home-work__grid',
+            start: 'top 78%',
+            once: true,
+          },
+        })
+      }
 
-      gsap.from('.home-project-slot--north', {
-        y: 54,
-        opacity: 0,
-        duration: 0.95,
-        ease: 'power3.out',
-        stagger: 0.12,
-        scrollTrigger: {
-          trigger: '.home-work__grid--north',
-          start: 'top 82%',
-          once: true,
-        },
-      })
+      if (gsap.utils.toArray('.home-project-slot--north').length) {
+        gsap.from('.home-project-slot--north', {
+          y: 54,
+          opacity: 0,
+          duration: 0.95,
+          ease: 'power3.out',
+          stagger: 0.12,
+          scrollTrigger: {
+            trigger: '.home-work__grid--north',
+            start: 'top 82%',
+            once: true,
+          },
+        })
+      }
 
-      gsap.from('.home-work__grid--north .home-project__link img', {
-        scale: 1.08,
-        duration: 1.4,
-        ease: 'power2.out',
-        stagger: 0.1,
-        scrollTrigger: {
-          trigger: '.home-work__grid--north',
-          start: 'top 82%',
-          once: true,
-        },
-      })
+      if (gsap.utils.toArray('.home-work__grid--north .home-project__link img').length) {
+        gsap.from('.home-work__grid--north .home-project__link img', {
+          scale: 1.08,
+          duration: 1.4,
+          ease: 'power2.out',
+          stagger: 0.1,
+          scrollTrigger: {
+            trigger: '.home-work__grid--north',
+            start: 'top 82%',
+            once: true,
+          },
+        })
+      }
 
-      gsap.from('.home-work .home-project__link img', {
-        scale: 1.08,
-        duration: 1.4,
-        ease: 'power2.out',
-        stagger: 0.1,
-        scrollTrigger: {
-          trigger: '.home-work__grid',
-          start: 'top 78%',
-          once: true,
-        },
-      })
+      if (gsap.utils.toArray('.home-work .home-project__link img').length) {
+        gsap.from('.home-work .home-project__link img', {
+          scale: 1.08,
+          duration: 1.4,
+          ease: 'power2.out',
+          stagger: 0.1,
+          scrollTrigger: {
+            trigger: '.home-work__grid',
+            start: 'top 78%',
+            once: true,
+          },
+        })
+      }
 
       ScrollTrigger.batch('.home-secondary-item, .home-point, .home-note, .home-profile__story > p', {
         start: 'top 84%',
@@ -162,16 +172,18 @@ export default function HomeLanding() {
         },
       })
 
-      gsap.to('.home-profile__visual', {
-        yPercent: -5,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: '.home-profile',
-          start: 'top bottom',
-          end: 'bottom top',
-          scrub: 1,
-        },
-      })
+      if (gsap.utils.toArray('.home-profile__visual').length) {
+        gsap.to('.home-profile__visual', {
+          yPercent: -5,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: '.home-profile',
+            start: 'top bottom',
+            end: 'bottom top',
+            scrub: 1,
+          },
+        })
+      }
     },
     { scope: landingRef }
   )

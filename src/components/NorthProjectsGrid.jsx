@@ -4,18 +4,25 @@ import { motion } from 'framer-motion'
 import { northSection } from '../data/content'
 import { useLanguage } from '../lib/i18n'
 
+function readLocalized(value, lang) {
+  if (value && typeof value === 'object' && !Array.isArray(value)) {
+    return value[lang] || value.es || value.en || ''
+  }
+  return value || ''
+}
+
 export default function NorthProjectsGrid({ className = '', trackId, trackRef }) {
   const { lang, copy } = useLanguage()
   const projects = northSection.projects.map((project) => ({
     ...project,
     cardImage: project.cardImage || project.image,
     cardImageMode: project.cardImageMode || 'contain',
-    cardTag: project.cardTag?.[lang] || project.scope?.[lang] || project.role?.[lang] || project.role,
-    cardDescription: project.cardDescription?.[lang] || project.summary?.[lang] || '',
-    summary: project.summary[lang],
-    detail: project.detail[lang],
-    role: project.role?.[lang] || project.role,
-    industry: project.industry?.[lang] || project.industry,
+    cardTag: readLocalized(project.cardTag, lang) || readLocalized(project.scope, lang) || readLocalized(project.role, lang),
+    cardDescription: readLocalized(project.cardDescription, lang) || readLocalized(project.summary, lang),
+    summary: readLocalized(project.summary, lang),
+    detail: readLocalized(project.detail, lang),
+    role: readLocalized(project.role, lang),
+    industry: readLocalized(project.industry, lang),
   }))
 
   return (
