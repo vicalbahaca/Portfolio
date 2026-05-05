@@ -8021,12 +8021,12 @@ body.lightbox-open .navbar {
   }
 }
 
-/* Mobile global gutters: enforce 16px left/right on all pages */
+/* Mobile global gutters: enforce 24px left/right on all pages */
 @media (max-width: 760px) {
   .container,
   .proposal-container,
   .page-shell--landing-proposal .navbar__inner--unified {
-    width: min(calc(100% - 32px), var(--container));
+    width: min(calc(100% - 48px), var(--container));
   }
 
   .home-work__top,
