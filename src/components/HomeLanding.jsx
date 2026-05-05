@@ -14,7 +14,7 @@ gsap.registerPlugin(ScrollTrigger, useGSAP)
 
 export default function HomeLanding() {
   const landingRef = useRef(null)
-  const { copy, cvHref, lang } = useLanguage()
+  const { copy, lang } = useLanguage()
   const highlightedProjects = caseStudies.map((entry) => localizeProject(entry, lang))
   const secondaryProjects = conceptDesigns.slice(0, 4).map((entry) => localizeProject(entry, lang))
   const latestArticles = featuredArticles.map((entry) => localizeArticle(entry, lang))
@@ -164,17 +164,22 @@ export default function HomeLanding() {
                   className="home-project"
                   whileHover={{ y: -8, scale: 1.01 }}
                   transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
-                  style={{ '--project-accent': project.accent }}
+                  style={{
+                    '--project-accent': project.accent,
+                    '--project-image-fit': project.cardImageMode || 'contain',
+                    '--project-image-bg': project.cardImageBackground || '#ece8e0',
+                    '--project-image-scale': project.cardImageScale || 1,
+                  }}
                 >
                   <Link
                     href={`/work/${project.slug}`}
                     className="home-project__link"
-                    aria-label={`0${index + 1}. ${project.role}. ${project.title}. ${project.subtitle}`}
+                    aria-label={`${project.role}. ${project.title}. ${project.subtitle}`}
                   >
-                    <Image src={project.image} alt={project.title} fill sizes="(max-width: 960px) 100vw, 50vw" />
-
-                    <div className="home-project__content">
-                      <span className="home-project__index">0{index + 1}</span>
+                    <div className="home-project__media" style={{ '--thumb-bg-image': `url("${project.image}")` }}>
+                      <Image src={project.image} alt={project.title} fill sizes="(max-width: 960px) 100vw, 50vw" />
+                    </div>
+                    <div className="home-project__copy">
                       <p className="home-project__meta">{project.role}</p>
                       <h3>{project.title}</h3>
                       <p className="home-project__subtitle">{project.subtitle}</p>
@@ -204,7 +209,7 @@ export default function HomeLanding() {
                 className="home-secondary-item"
                 aria-label={`${project.title}. ${project.subtitle}`}
               >
-                <div className="home-secondary-item__media">
+                <div className="home-secondary-item__media" style={{ '--thumb-bg-image': `url("${project.image}")` }}>
                   <Image src={project.image} alt={project.title} fill sizes="(max-width: 960px) 100vw, 150px" />
                 </div>
 
@@ -225,78 +230,60 @@ export default function HomeLanding() {
 
       <section id="about" className="home-section home-profile" aria-labelledby="home-about-title">
         <div className="container">
-          <div className="home-profile__panel">
-            <div className="home-profile__content">
-              <div className="home-profile__intro">
-                <h2 id="home-about-title" className="home-title">
-                  {copy.home.aboutTitle}
-                </h2>
-                <p className="home-profile__lede">
-                  {copy.home.aboutSummaryPrefix}{' '}
-                  <span className="home-profile__lede-nowrap">{copy.home.aboutSummaryAccent}</span>
-                  {copy.home.aboutSummarySuffix}
-                </p>
-              </div>
-
-              <div className="home-profile__story">
-                {copy.home.aboutBody.map((paragraph) => (
-                  <p key={paragraph} className="home-profile__text">
-                    {paragraph}
-                  </p>
-                ))}
-              </div>
-
-              <div className="home-profile__experience" aria-labelledby="home-experience-title">
-                <h3 id="home-experience-title" className="home-profile__workflow-title">
-                  {copy.home.experienceTitle}
-                </h3>
-                <p className="home-profile__workflow-caption">{copy.home.experienceCaption}</p>
-
-                <div className="home-experience__list">
-                  {copy.home.experienceItems.map((item) => (
-                    <article key={`${item.company}-${item.role}`} className="home-experience__item">
-                      <div className="home-experience__head">
-                        <div className="home-experience__title-group">
-                          <h4>{item.company}</h4>
-                          <p>{item.role}</p>
-                        </div>
-                        <span className="home-experience__period">{item.period}</span>
-                      </div>
-                      <p className="home-experience__summary">{item.summary}</p>
-                    </article>
-                  ))}
-                </div>
-              </div>
-
-              <div className="home-profile__workflow" aria-labelledby="home-workflow-title">
-                <h3 id="home-workflow-title" className="home-profile__workflow-title">
-                  {copy.home.workflowTitle}
-                </h3>
-                <p className="home-profile__workflow-caption">{copy.home.workflowCaption}</p>
-
-                <ol className="home-profile__workflow-list">
-                  {copy.home.workflowSteps.map((step) => (
-                    <li key={step} className="home-profile__workflow-step">
-                      <span className="home-profile__workflow-step-marker" aria-hidden="true" />
-                      <span className="home-profile__workflow-step-copy">{step}</span>
-                    </li>
-                  ))}
-                </ol>
-              </div>
+          <div className="proposal-about__grid">
+            <div className="proposal-section__intro">
+              <h2 id="home-about-title">{copy.home.aboutTitle}</h2>
+              <p className="proposal-about__lede">
+                {copy.home.aboutSummaryPrefix} {copy.home.aboutSummaryAccent}
+                {copy.home.aboutSummarySuffix}
+              </p>
             </div>
 
-            <div className="home-profile__aside">
-              <div className="home-profile__visual">
-                <Image src={siteConfig.avatar} alt={siteConfig.name} fill sizes="(max-width: 960px) 72vw, 24vw" />
-              </div>
-              <a
-                className="btn btn--brand home-profile__aside-cta"
-                href={cvHref}
-                download={lang === 'en' ? 'VictorSaiz_CV_EN.pdf' : 'VictorSaiz_CV_ES.pdf'}
-                aria-label={lang === 'en' ? copy.home.downloadCvEn : copy.home.downloadCvEs}
-              >
-                {lang === 'en' ? copy.home.downloadCvEn : copy.home.downloadCvEs}
-              </a>
+            <div className="proposal-about__body">
+              {copy.home.aboutBody.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+            </div>
+
+            <div className="proposal-experience" aria-labelledby="home-experience-title">
+              <h3 id="home-experience-title">{copy.home.experienceTitle}</h3>
+              {copy.home.experienceItems.map((item) => (
+                <article key={`${item.company}-${item.role}`} className="proposal-experience__item">
+                  <div>
+                    <h4>{item.company}</h4>
+                    <p>{item.role}</p>
+                    {item.summary ? <p className="proposal-experience__summary">{item.summary}</p> : null}
+                    {item.highlights?.length ? (
+                      <ul className="proposal-experience__highlights" aria-label={`${item.company} highlights`}>
+                        {item.highlights.map((point) => (
+                          <li key={`${item.company}-${point}`}>{point}</li>
+                        ))}
+                      </ul>
+                    ) : null}
+                    {item.moves?.length ? (
+                      <ul className="proposal-experience__moves" aria-label={`${item.company} roles`}>
+                        {item.moves.map((move) => (
+                          <li key={`${item.company}-${move.role}-${move.period}`} className="proposal-experience__move">
+                            <div className="proposal-experience__move-head">
+                              <span className="proposal-experience__move-role">{move.role}</span>
+                              <span className="proposal-experience__move-period">{move.period}</span>
+                            </div>
+                            {move.summary ? <p className="proposal-experience__move-summary">{move.summary}</p> : null}
+                            {move.highlights?.length ? (
+                              <ul className="proposal-experience__move-highlights" aria-label={`${move.role} highlights`}>
+                                {move.highlights.map((point) => (
+                                  <li key={`${move.role}-${point}`}>{point}</li>
+                                ))}
+                              </ul>
+                            ) : null}
+                          </li>
+                        ))}
+                      </ul>
+                    ) : null}
+                  </div>
+                  <time>{item.period}</time>
+                </article>
+              ))}
             </div>
           </div>
         </div>
@@ -322,7 +309,7 @@ export default function HomeLanding() {
                 aria-label={article.title}
               >
                 {article.image ? (
-                  <div className="home-note__media">
+                  <div className="home-note__media" style={{ '--thumb-bg-image': `url("${article.image}")` }}>
                     <Image src={article.image} alt={article.title} fill sizes="(max-width: 720px) 100vw, 132px" />
                   </div>
                 ) : null}
@@ -347,18 +334,6 @@ export default function HomeLanding() {
         </div>
       </section>
 
-      <section id="contact" className="home-section home-contact-band" aria-labelledby="home-contact-title">
-        <div className="container home-contact-band__inner">
-          <h2 id="home-contact-title" className="home-title home-title--compact">
-            {copy.home.contactTitle}
-          </h2>
-          <p className="home-caption">{copy.home.contactCaption}</p>
-
-          <a className="btn btn--primary home-contact-band__cta" href={`mailto:${siteConfig.email}`} aria-label={copy.home.contactCta}>
-            {copy.home.contactCta}
-          </a>
-        </div>
-      </section>
     </div>
   )
 }

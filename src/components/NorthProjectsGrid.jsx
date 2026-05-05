@@ -9,7 +9,9 @@ export default function NorthProjectsGrid({ className = '' }) {
   const projects = northSection.projects.map((project) => ({
     ...project,
     cardImage: project.cardImage || project.image,
-    cardImageMode: project.cardImageMode || 'cover',
+    cardImageMode: project.cardImageMode || 'contain',
+    cardTag: project.cardTag?.[lang] || project.scope?.[lang] || project.role?.[lang] || project.role,
+    cardDescription: project.cardDescription?.[lang] || project.summary?.[lang] || '',
     summary: project.summary[lang],
     detail: project.detail[lang],
     role: project.role?.[lang] || project.role,
@@ -27,18 +29,21 @@ export default function NorthProjectsGrid({ className = '' }) {
             style={{
               '--project-accent': project.accent || '#159BFE',
               '--project-image-fit': project.cardImageMode,
+              '--thumb-backdrop-opacity': project.cardUseBackdrop === false ? 0 : 1,
             }}
           >
             <Link
               href={`/projects-north/${project.slug}`}
               className="home-project__link"
-              aria-label={`${String(index + 1).padStart(2, '0')}. ${project.title}`}
+              aria-label={`${project.cardTag}. ${project.title}. ${project.cardDescription}`}
             >
-              <Image src={project.cardImage} alt={project.title} fill sizes="(max-width: 960px) 100vw, 50vw" />
-
-              <div className="home-project__content">
-                <span className="home-project__index">{String(index + 1).padStart(2, '0')}</span>
+              <div className="home-project__media" style={{ '--thumb-bg-image': `url("${project.cardImage}")` }}>
+                <Image src={project.cardImage} alt={project.title} fill sizes="(max-width: 960px) 100vw, 50vw" />
+              </div>
+              <div className="home-project__copy">
+                <p className="home-project__meta">{project.cardTag}</p>
                 <h3>{project.title}</h3>
+                <p className="home-project__subtitle">{project.cardDescription}</p>
               </div>
             </Link>
           </motion.article>

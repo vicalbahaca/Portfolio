@@ -1,10 +1,9 @@
 import Navbar from './Navbar'
 import Footer from './Footer'
-import ContactBand from './ContactBand'
 import { useLanguage } from '../lib/i18n'
 import { useRouter } from 'next/router'
 
-export default function Layout({ children, shellClassName = '' }) {
+export default function Layout({ children, shellClassName = '', hideContactBand = false }) {
   const { copy } = useLanguage()
   const router = useRouter()
   const isHome = router.pathname === '/'
@@ -18,7 +17,6 @@ export default function Layout({ children, shellClassName = '' }) {
       <main id="main-content" className="site-main" tabIndex={-1}>
         {children}
       </main>
-      {!isHome ? <ContactBand id="contact" /> : null}
       <Footer />
     </div>
   )

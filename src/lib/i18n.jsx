@@ -35,7 +35,7 @@ const translations = {
       cta: 'Ir a LinkedIn',
       statementLines: [
         'Product Designer con más de 6 años en Fintech, Startups y SaaS.',
-        'Trabajo end-to-end de forma transversal, desde negocio, producto, diseño y desarrollo.',
+        'Trabajo end-to-end de forma transversal, desde negocio, producto, diseño y tech.',
       ],
       personalEmailAria: 'Correo personal',
       copyEmail: 'Copiar correo electrónico',
@@ -70,46 +70,101 @@ const translations = {
         'He combinado diseño de producto, lógica de negocio y ejecución técnica en consultoría, startups, servicios digitales y proyectos de producto con mucho peso de interfaz.',
       experienceItems: [
         {
-          role: 'AI Product Designer · Product Maker',
-          company: 'Coubber',
-          period: 'Ene 2026 — Actualidad',
-          summary:
-            'Trabajo en una plataforma sportstech orientada a análisis, reporting y lectura de rendimiento. Mi foco está en producto, claridad del flujo, narrativa de datos y una UI capaz de traducir información compleja en decisiones útiles.',
+          role: 'Product & Engineering · Colaborador',
+          company: 'Coubber (Startup) · Tiempo parcial (Barcelona)',
+          period: 'Ene 2026 — actualidad',
+          summary: 'Desarrollo y diseño de producto en startup enfocada en generación de informes deportivos a partir de dispositivos de medición.',
+          highlights: [
+            'Creación de backlog, diseño de producto e implantación de código.',
+            'Integración de modelos de IA para interpretar datos y generar valor accionable.',
+          ],
         },
         {
-          role: 'Product Design Lead',
-          company: 'North',
-          period: 'Oct 2024 — Actualidad',
-          summary:
-            'Lidero diseño en productos fintech y retail, definiendo estructura, accesibilidad, criterios de interfaz y decisiones que conectan negocio, operativa, regulación y capacidad real de entrega.',
+          role: 'Senior Product Designer · Senior AI Product Designer',
+          company: 'North · Tiempo completo (Barcelona)',
+          period: 'Nov 2024 — actualidad',
+          moves: [
+            {
+              role: 'Senior AI Product Designer',
+              period: 'Ene 2026 — actualidad',
+              summary:
+                'Principal AI Product Designer en una squad interna de IA: exploración y filtrado de herramientas, automatizaciones para acelerar squads (prototipos, documentación, QA y soporte de research).',
+              highlights: [
+                'Diseño y lanzamiento de proyectos impulsados por IA para grandes clientes.',
+                'Continuidad de proyectos en sector bancario y retail.',
+              ],
+            },
+            {
+              role: 'Mid-Senior Product Designer',
+              period: 'Oct 2024 — ene 2026',
+              summary:
+                'Lead designer en cuatro productos fintech (web y mobile) centrados en contratación financiera, onboarding y herramientas de gestión B2B, B2C y B2B2C.',
+              highlights: [
+                'Owner de financiación y checkout eCommerce en uno de los principales bancos de España.',
+                'Accessibility Lead: handoffs accesibles para web y apps nativas.',
+                'Trabajo cercano con POs, PMs, Devs y negocio para validar flujos y requisitos regulatorios.',
+              ],
+            },
+          ],
         },
         {
-          role: 'Freelancer',
-          company: 'Independent',
-          period: 'Ago 2023 — Actualidad',
-          summary:
-            'He trabajado en webs, conceptos de producto, identidad digital y MVPs con foco en velocidad, claridad y salida a mercado. Esta etapa también ha reforzado mi perfil como Product Maker en proyectos propios.',
+          role: 'Product Designer Lead',
+          company: 'Lowerton (Startup) · Tiempo completo (Remoto)',
+          period: 'Mar 2024 — oct 2024',
+          summary: 'Definición y diseño de producto digital desde cero.',
+          highlights: [
+            'Trabajo en proyectos con requisitos complejos, incluyendo concursos públicos, con foco en documentación y alineación con negocio.',
+            'Participación en concursos públicos y generación de documentación técnica/legal mediante IA.',
+          ],
         },
         {
-          role: 'Product Designer',
-          company: 'Lowerton',
-          period: 'Mar 2024 — Oct 2024',
-          summary:
-            'Diseñé un producto desde cero, articulando marca, sistema visual, arquitectura y primeros flujos para construir un MVP claro y presentable a mercado desde etapas tempranas.',
+          role: 'UX/UI Freelance',
+          company: 'Freelance',
+          period: 'Ago 2023 — jun 2024',
+          summary: 'Diseño de productos digitales y landings orientadas a conversión (empresas de marketing, portfolios y ecommerce).',
+          highlights: ['Mejora de flujos y experiencia de usuario en distintos proyectos.'],
         },
         {
-          role: 'Full Stack Developer · Full Stack + UX',
-          company: 'Deusto SEIDOR',
-          period: 'Mar 2021 — Ago 2023',
-          summary:
-            'Los dos primeros años trabajé específicamente como full stack. En el último año la posición evolucionó hacia un rol híbrido entre full stack y UX, acercando más el trabajo de interfaz, flujo y decisión de producto al desarrollo.',
+          role: 'Full Stack Developer · UX Designer · QA',
+          company: 'Deusto SEIDOR S.A · Tiempo completo (Vitoria)',
+          period: 'Mar 2021 — ago 2023',
+          moves: [
+            {
+              role: 'Full Stack Developer · UX Designer · QA',
+              period: 'Jun 2022 — ago 2023',
+              highlights: [
+                'Diseño y desarrollo de funcionalidades combinando visión técnica y de producto.',
+                'Mejora de UX, mejora continua de producto, investigación con usuarios y QA.',
+                'Lideré un equipo de cinco especialistas para refinar flujos y crear funcionalidades centradas en el usuario.',
+              ],
+            },
+            {
+              role: 'Full Stack Developer',
+              period: 'Jun 2021 — jun 2022',
+              highlights: [
+                'Participación en decisiones técnicas y estructuración de soluciones.',
+                'Acercamiento entre desarrollo y producto, aportando criterio más allá de código.',
+                'Implementación de funcionalidades y comprensión de la lógica de negocio desde el lado técnico.',
+              ],
+            },
+            {
+              role: 'Full Stack Developer · Intern',
+              period: 'Mar 2021 — jun 2021',
+              highlights: [
+                'Desarrollo de soluciones tecnológicas desde cero.',
+                'Participación en software de digitalización documental utilizando .NET, Python, Angular y C#.',
+              ],
+            },
+          ],
         },
         {
-          role: 'Web & IT Support',
-          company: 'Mercedarias',
-          period: 'Mar 2019 — Jun 2019',
-          summary:
-            'Participé en soporte técnico y evolución web en un entorno educativo, colaborando en estructura de contenidos, mantenimiento y mejoras prácticas para el uso diario de la plataforma.',
+          role: 'Técnico informático · Intern',
+          company: 'NSM Educational Center · Tiempo completo (Vitoria)',
+          period: 'Mar 2019 — jun 2019',
+          highlights: [
+            'Rediseño y desarrollo de un sistema en WordPress para gestionar recursos educativos y mejorar la eficiencia diaria.',
+            'Pruebas de la nueva plataforma con profesorado y alumnado, recogida de feedback e iteraciones de mejora.',
+          ],
         },
       ],
       workflowLabel: 'Flujo de trabajo',
@@ -138,7 +193,7 @@ const translations = {
       allArticles: 'Ver todas las publicaciones',
       contactTitle: 'Contacta conmigo',
       contactCaption:
-        'Si tienes una posición abierta en tu equipo, necesitas una colaboración puntual o simplemente quieres hablar de producto y de cómo está cambiando el mundo, puedes enviarme un correo y te responderé lo antes posible.',
+        'Si tienes una posición abierta en tu equipo, necesitas una colaboración puntual o simplemente quieres hablar de producto y de como está cambiando el mundo, puedes enviarme un correo y te responderé lo antes posible.',
       contactCta: 'Contactar',
     },
     footer: {
@@ -258,7 +313,7 @@ const translations = {
       cta: 'Go to LinkedIn',
       statementLines: [
         'Product Designer with more than 6 years of experience in Fintech, Startups, and SaaS.',
-        'I work end-to-end across business, product, design, and development.',
+        'I work end-to-end across business, product, design, and tech.',
       ],
       personalEmailAria: 'Personal email',
       copyEmail: 'Copy email address',
@@ -293,43 +348,52 @@ const translations = {
         'I have combined product design, business logic, and technical execution across consulting, startups, digital services, and product work with a strong UI focus.',
       experienceItems: [
         {
-          role: 'AI Product Designer · Product Maker',
+          role: 'Product & Engineering · Contributor',
           company: 'Coubber',
-          period: 'Jan 2026 — Present',
+          period: 'Jan 2026 — present',
           summary:
             'I work on a sportstech platform focused on analysis, reporting, and performance reading. My focus is product, flow clarity, data storytelling, and a UI able to translate complex information into useful decisions.',
         },
         {
-          role: 'Product Design Lead',
+          role: 'Senior Product Designer · Senior AI Product Designer',
           company: 'North',
-          period: 'Oct 2024 — Present',
+          period: 'Nov 2024 — present',
+          moves: [
+            { role: 'Senior Product Designer', period: 'Nov 2024 — Jan 2026' },
+            { role: 'Senior AI Product Designer', period: 'Jan 2026 — present' },
+          ],
           summary:
             'I lead design across fintech and retail products, defining structure, accessibility, interface criteria, and product decisions that connect business, operations, regulation, and delivery reality.',
         },
         {
-          role: 'Freelancer',
-          company: 'Independent',
-          period: 'Aug 2023 — Present',
-          summary:
-            'I have worked on websites, product concepts, digital identity, and MVPs focused on speed, clarity, and launch readiness. This stage also strengthened my profile as a Product Maker on personal products.',
-        },
-        {
-          role: 'Product Designer',
+          role: 'Product Designer Lead',
           company: 'Lowerton',
           period: 'Mar 2024 — Oct 2024',
           summary:
             'I designed a product from scratch, connecting brand, visual system, architecture, and first workflows to shape an MVP that felt clear and presentable from an early stage.',
         },
         {
-          role: 'Full Stack Developer · Full Stack + UX',
+          role: 'UX/UI Freelance',
+          company: 'Freelance',
+          period: 'Aug 2023 — Jun 2024',
+          summary:
+            'I have worked on websites, product concepts, digital identity, and MVPs focused on speed, clarity, and launch readiness. This stage also strengthened my profile as a Product Maker on personal products.',
+        },
+        {
+          role: 'Full Stack Developer · UX Designer · QA',
           company: 'Deusto SEIDOR',
           period: 'Mar 2021 — Aug 2023',
+          moves: [
+            { role: 'Full Stack Developer · Intern', period: 'Mar 2021 — Jun 2021' },
+            { role: 'Full Stack Developer', period: 'Jun 2021 — Jun 2022' },
+            { role: 'Full Stack Developer · UX Designer · QA', period: 'Jun 2022 — Aug 2023' },
+          ],
           summary:
             'For the first two years I worked specifically as a full stack developer. In the last year the role evolved into a hybrid position between full stack and UX, bringing interface, flow, and product decisions closer to development.',
         },
         {
-          role: 'Web & IT Support',
-          company: 'Mercedarias',
+          role: 'IT Technician · Intern',
+          company: 'NSM Educational Center',
           period: 'Mar 2019 — Jun 2019',
           summary:
             'I contributed to technical support and website evolution in an educational environment, working on content structure, maintenance, and practical improvements for everyday platform use.',

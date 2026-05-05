@@ -10,6 +10,8 @@ import { CloseIcon, CopyIcon } from './Icons'
 
 gsap.registerPlugin(ScrollTrigger, useGSAP)
 
+const BRAND_LINES = ['Victor', 'Saiz']
+
 export default function Hero() {
   const heroRef = useRef(null)
   const copyButtonRef = useRef(null)
@@ -33,45 +35,45 @@ export default function Hero() {
 
       intro
         .from('.hero__brand', {
-          y: 72,
+          y: -88,
           opacity: 0,
           duration: 0.9,
         })
         .from(
+          '.hero__statement',
+          {
+            x: -72,
+            opacity: 0,
+            duration: 0.62,
+          },
+          '+=0.02'
+        )
+        .from(
           '.hero__portrait-shell',
           {
-            y: 24,
+            x: 34,
+            y: -34,
             opacity: 0,
-            duration: 0.6,
+            duration: 0.62,
           },
-          '-=0.45'
+          '+=0.02'
         )
         .from(
           '.hero__contact-wrap',
           {
-            y: 20,
-            opacity: 0,
-            duration: 0.45,
-          },
-          '-=0.22'
-        )
-        .from(
-          '.hero__statement',
-          {
-            y: 20,
             opacity: 0,
             duration: 0.48,
           },
-          '-=0.3'
+          '+=0.02'
         )
         .from(
           '.hero__scroll-link',
           {
-            y: 18,
+            y: 14,
             opacity: 0,
             duration: 0.42,
           },
-          '-=0.18'
+          '+=0.02'
         )
 
       gsap.to('.hero__scroll-link', {
@@ -93,8 +95,11 @@ export default function Hero() {
     <section ref={heroRef} className="hero" id="top" aria-labelledby="hero-title">
       <div className="container hero__frame">
         <h1 id="hero-title" className="hero__brand">
-          <span className="hero__brand-line">Victor</span>
-          <span className="hero__brand-line">Saiz</span>
+          {BRAND_LINES.map((line) => (
+            <span key={line} className="hero__brand-line">
+              {line}
+            </span>
+          ))}
         </h1>
 
         <div className="hero__statement">

@@ -51,7 +51,7 @@ export default function Articles({
               >
                 <span className="writing-item__index">0{index + 1}</span>
                 {article.image ? (
-                  <div className="writing-item__media">
+                  <div className="writing-item__media" style={{ '--thumb-bg-image': `url("${article.image}")` }}>
                     <Image src={article.image} alt={article.title} fill sizes="(max-width: 960px) 100vw, 168px" />
                   </div>
                 ) : null}

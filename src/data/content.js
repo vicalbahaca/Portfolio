@@ -106,7 +106,10 @@ export const caseStudies = [
       'Una herramienta enfocada en detectar problemas de accesibilidad, generar documentacion lista para desarrollo y acelerar handoff desde una captura o un diseño.',
     description:
       'AAAQuest combina analisis visual, criterios WCAG y generacion asistida por IA para que equipos de diseño puedan documentar accesibilidad en segundos, aprender mejores practicas y compartir entregables mas claros.',
-    image: 'https://aaaquest.com/files/Analizador.png',
+    image: '/logo.svg',
+    cardImageMode: 'contain',
+    cardImageBackground: '#000000',
+    cardImageScale: 0.44,
     accent: '#03875A',
     category: 'Case study',
     type: 'Producto IA para auditorias y documentacion de accesibilidad',
@@ -124,7 +127,7 @@ export const caseStudies = [
       'Una plataforma que automatiza el analisis de datos deportivos y convierte procesos de valoracion muy manuales en informes claros y accionables en segundos.',
     description:
       'Coubber Data Studio integra multiples dispositivos, centraliza metricas y usa IA para ayudar a preparadores fisicos, fisioterapeutas y clubes a decidir con mas rapidez y menos friccion operativa.',
-    image: 'https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/331b815d-3626-4d68-b713-4c859fcd9508/id-preview-9cc74aff--f6bd7479-71e4-43f1-ac14-809fe4648e9e.lovable.app-1768241033888.png',
+    image: '/thumbs/recent/coubber.jpg',
     accent: '#1052FE',
     category: 'Case study',
     type: 'Plataforma B2B de analisis de rendimiento deportivo',
@@ -140,7 +143,7 @@ export const caseStudies = [
       'Una plataforma para ordenar procesos de innovación, conectar con partners y convertir objetivos estratégicos en flujos accionables.',
     description:
       'Lowerton centraliza la definición de proyectos, la relación con proveedores y el seguimiento de KPIs dentro de una experiencia pensada para equipos de innovación.',
-    image: 'https://framerusercontent.com/images/KZmynPqvl2C96VmSjiyTZ1OWA.png',
+    image: '/thumbs/recent/lowerton.jpg',
     accent: '#573FE6',
     category: 'Case study',
     type: 'Spin-off project developed for Lowerton, a startup specializing in innovation management',
@@ -155,7 +158,7 @@ export const caseStudies = [
       'Una app enfocada en reconectar con otras personas y transformar pequeñas acciones cotidianas en relaciones más sanas y significativas.',
     description:
       'Closy es un proyecto end-to-end que une branding, UX/UI y tono de producto para hablar de vínculos humanos desde un lenguaje más cercano.',
-    image: 'https://framerusercontent.com/images/IP36ICprEQruHirW42Xr4w2Fms.png',
+    image: '/thumbs/recent/closy.jpg',
     accent: '#40732E',
     category: 'Case study',
     type: 'End-to-end app + branding',
@@ -170,7 +173,7 @@ export const caseStudies = [
       'Una plataforma para generar rutinas personalizadas de musculacion, Hyrox y CrossFit a partir de analisis fisico, contexto real y un proceso guiado orientado a progresion.',
     description:
       'MyCoach combina analisis previo, formulario dinamico y exportacion a Excel para construir mesociclos editables que evolucionan segun el feedback, la fatiga y el material disponible.',
-    image: '/mycoach.png',
+    image: '/thumbs/recent/mycoach.jpg',
     accent: '#0944A9',
     category: 'Case study',
     type: 'Plataforma de planificacion deportiva personalizada',
@@ -186,7 +189,7 @@ export const caseStudies = [
       'Un concepto social que recupera espontaneidad, juego y conexión real a través de retos diarios compartidos con todo el mundo.',
     description:
       'VWorld explora una alternativa a las redes hiperproducidas: más autenticidad, más juego y menos fricción para participar.',
-    image: 'https://framerusercontent.com/images/qus3Gsdn4lwA3eOT9OgSrB7iE2Y.png',
+    image: '/thumbs/recent/vworld.jpg',
     accent: '#C3A51B',
     category: 'Case study',
     type: 'Spin-off application project',
@@ -216,8 +219,9 @@ export const northSection = {
       slug: 'inone-revamp',
       title: 'InOne Revamp',
       image: '/north/page-12.jpg',
-      cardImage: '/north/covers/inone-phone.jpg',
-      cardImageMode: 'contain',
+      cardImage: '/north/covers/inone-new.jpg',
+      cardImageMode: 'cover',
+      cardUseBackdrop: false,
       accent: '#159BFE',
       client: 'CaixaBank',
       industry: {
@@ -231,6 +235,14 @@ export const northSection = {
       scope: {
         es: 'Rediseño UX/UI, journeys críticos y sistema visual',
         en: 'UX/UI redesign, critical journeys, and visual system',
+      },
+      cardTag: {
+        es: 'Rediseño de producto financiero',
+        en: 'Financial product redesign',
+      },
+      cardDescription: {
+        es: 'Evolución de InOne para simplificar journeys críticos, aumentar claridad operativa y mejorar la consistencia visual del canal prescriptor.',
+        en: 'InOne evolution to simplify critical journeys, improve operational clarity, and raise visual consistency in the prescriber channel.',
       },
       metric: '+16K prescriptores · +1.5M usuarios · rating 2.3 → 4.4',
       headline: {
@@ -430,7 +442,7 @@ export const northSection = {
       slug: 'prescriptor-unification',
       title: 'Unificación canales Prescriptor',
       image: '/north/page-20.jpg',
-      cardImage: '/north/covers/prescriptor-cover.jpg',
+      cardImage: '/north/covers/prescriptor-new.jpg',
       accent: '#1052FE',
       client: 'CaixaBank',
       industry: {
@@ -444,6 +456,14 @@ export const northSection = {
       scope: {
         es: 'Unificación multicanal, journeys y reducción de fricción',
         en: 'Multichannel unification, journeys, and friction reduction',
+      },
+      cardTag: {
+        es: 'Unificación de canales de producto',
+        en: 'Product channel unification',
+      },
+      cardDescription: {
+        es: 'Consolidación de canales Prescriptor para reducir duplicidades, ordenar flujos equivalentes y dejar una base común más mantenible.',
+        en: 'Prescriber channel consolidation to reduce duplication, align equivalent flows, and leave a more maintainable shared foundation.',
       },
       metric: '+16K prescriptores · menos duplicidad · menos pasos',
       headline: {
@@ -664,7 +684,7 @@ export const northSection = {
       slug: 'm2p-chatbot',
       title: 'M2P ChatBot',
       image: '/north/page-26.jpg',
-      cardImage: '/north/covers/m2p-cover.jpg',
+      cardImage: '/north/covers/m2p-new.jpg',
       accent: '#533BE9',
       client: 'MoneyToPay',
       industry: {
@@ -678,6 +698,14 @@ export const northSection = {
       scope: {
         es: 'Arquitectura conversacional, soporte contextual y edge cases',
         en: 'Conversational architecture, contextual support, and edge cases',
+      },
+      cardTag: {
+        es: 'Diseño conversacional en producto fintech',
+        en: 'Conversational design for fintech product',
+      },
+      cardDescription: {
+        es: 'Diseño de M2P ChatBot para integrar soporte contextual sin romper la tarea principal y con una base escalable para evolución con IA.',
+        en: 'M2P ChatBot design to integrate contextual support without disrupting the main task, with a scalable foundation for AI evolution.',
       },
       metric: '+2M tarjetas emitidas · +1M clientes únicos · canal 100% digital',
       headline: {
@@ -898,7 +926,7 @@ export const northSection = {
       slug: 'facilitea-accessibility',
       title: 'Accesibilidad Facilitea',
       image: '/north/page-38.jpg',
-      cardImage: '/north/covers/facilitea-cover.jpg',
+      cardImage: '/north/covers/facilitea-new.jpg',
       accent: '#40732E',
       client: 'Facilitea',
       industry: {
@@ -912,6 +940,14 @@ export const northSection = {
       scope: {
         es: 'Sistema documental, WCAG y handoff accesible',
         en: 'Documentation system, WCAG, and accessible handoff',
+      },
+      cardTag: {
+        es: 'Accesibilidad y documentación de sistema',
+        en: 'Accessibility and system documentation',
+      },
+      cardDescription: {
+        es: 'Accesibilidad Facilitea convertida en un sistema documental reutilizable para diseño y desarrollo, con foco en WCAG y handoff claro.',
+        en: 'Facilitea accessibility turned into a reusable documentation system for design and engineering, focused on WCAG and clear handoff.',
       },
       metric: 'Documentación en 1 semana · base reutilizable · foco WCAG',
       headline: {

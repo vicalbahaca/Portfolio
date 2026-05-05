@@ -1,13 +1,10 @@
 import Link from 'next/link'
-import { useRouter } from 'next/router'
 import { siteConfig } from '../data/content'
 import { useLanguage } from '../lib/i18n'
 
 export default function Footer() {
-  const router = useRouter()
   const { copy } = useLanguage()
   const year = new Date().getFullYear()
-  const isHome = router.pathname === '/'
   const footerLinks = [
     { label: copy.footer.work, href: '/#work' },
     { label: copy.footer.about, href: '/#about' },
@@ -16,8 +13,24 @@ export default function Footer() {
   ]
 
   return (
-    <footer className={`footer footer--site${isHome ? ' footer--home' : ''}`}>
+    <footer className="footer footer--site footer--home">
       <div className="container">
+        <section id="contact" className="footer__contact-band" aria-labelledby="footer-contact-title">
+          <h2 id="footer-contact-title" className="footer__contact-title">
+            {copy.home.contactTitle}
+          </h2>
+          <p className="footer__contact-caption">{copy.home.contactCaption}</p>
+          <a
+            className="btn btn--primary footer__contact-cta"
+            href="https://www.linkedin.com/in/victorsaizalfageme/"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Contactar vía LinkedIn"
+          >
+            Contactar vía LinkedIn
+          </a>
+        </section>
+
         <div className="footer__site-bar">
           <div className="footer__site-meta">
             <p className="footer__site-name">{siteConfig.name}</p>
