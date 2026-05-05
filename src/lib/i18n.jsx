@@ -65,7 +65,7 @@ const translations = {
         'Ahora estoy mucho más enfocado en inteligencia artificial, actuando como AI Product Designer y también como Product Maker en productos propios y colaboraciones donde la velocidad, la documentación y la claridad del flujo importan tanto como la UI.',
       ],
       experienceLabel: 'Experiencia',
-      experienceTitle: 'Trayectoria',
+      experienceTitle: 'Trayectoria laboral',
       experienceCaption:
         'He combinado diseño de producto, lógica de negocio y ejecución técnica en consultoría, startups, servicios digitales y proyectos de producto con mucho peso de interfaz.',
       experienceItems: [
@@ -343,7 +343,7 @@ const translations = {
         'Right now my focus is much stronger on artificial intelligence, acting as an AI Product Designer and also as a Product Maker across personal products and collaborations where speed, documentation, and flow clarity matter as much as interface quality.',
       ],
       experienceLabel: 'Experience',
-      experienceTitle: 'Trajectory',
+      experienceTitle: 'Career path',
       experienceCaption:
         'I have combined product design, business logic, and technical execution across consulting, startups, digital services, and product work with a strong UI focus.',
       experienceItems: [

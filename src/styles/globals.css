@@ -7030,13 +7030,16 @@ body.lightbox-open .navbar {
   display: grid;
   gap: 6px;
   margin: 8px 0 0;
-  padding: 0 0 0 18px;
+  padding: 0 0 0 22px;
+  list-style: disc;
+  list-style-position: outside;
 }
 
 .proposal-experience__highlights li,
 .proposal-experience__move-highlights li {
   color: rgba(13, 23, 38, 0.72);
   line-height: 1.55;
+  display: list-item;
 }
 
 .proposal-experience__move {
@@ -7575,7 +7578,7 @@ body.lightbox-open .navbar {
   max-width: 18ch;
   color: var(--proposal-ink);
   font-size: clamp(1.38rem, 2.4vw, 2rem);
-  font-weight: 650;
+  font-weight: 500;
   line-height: 1.06;
   letter-spacing: -0.04em;
 }
@@ -7583,7 +7586,7 @@ body.lightbox-open .navbar {
 .proposal-experience {
   grid-column: 2;
   display: grid;
-  margin-top: 18px;
+  margin-top: 8px;
   border-top: 1px solid var(--proposal-line);
 }
 
@@ -7605,9 +7608,9 @@ body.lightbox-open .navbar {
 
 .proposal-experience__item h4 {
   color: var(--proposal-ink);
-  font-size: clamp(1.08rem, 0.45vw + 0.96rem, 1.22rem);
-  line-height: 1.18;
-  font-weight: 640;
+  font-size: clamp(1.14rem, 0.65vw + 0.94rem, 1.36rem);
+  line-height: 1.2;
+  font-weight: 700;
   letter-spacing: -0.02em;
 }
 
@@ -7625,10 +7628,24 @@ body.lightbox-open .navbar {
   white-space: nowrap;
 }
 
-.proposal-experience__item > div > p:first-of-type {
+.proposal-experience__company {
   margin-top: 4px;
-  font-size: clamp(1rem, 0.28vw + 0.92rem, 1.1rem);
-  color: rgba(20, 17, 13, 0.76);
+  font-size: clamp(0.92rem, 0.22vw + 0.86rem, 1rem);
+  color: #2f4f7a;
+  font-weight: 500;
+}
+
+.proposal-experience__highlights {
+  display: grid;
+  gap: 8px;
+  margin: 10px 0 0;
+  padding: 0 0 0 20px;
+  width: 100%;
+}
+
+.proposal-experience__highlights li {
+  width: 100%;
+  max-width: none;
 }
 
 .proposal-experience__summary,

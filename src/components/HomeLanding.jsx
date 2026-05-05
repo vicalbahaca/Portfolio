@@ -250,12 +250,12 @@ export default function HomeLanding() {
               {copy.home.experienceItems.map((item) => (
                 <article key={`${item.company}-${item.role}`} className="proposal-experience__item">
                   <div>
-                    <h4>{item.company}</h4>
-                    <p>{item.role}</p>
-                    {item.summary ? <p className="proposal-experience__summary">{item.summary}</p> : null}
-                    {item.highlights?.length ? (
+                    <h4 className="proposal-experience__role">{item.role}</h4>
+                    <p className="proposal-experience__company">{item.company}</p>
+                    {item.summary || item.highlights?.length ? (
                       <ul className="proposal-experience__highlights" aria-label={`${item.company} highlights`}>
-                        {item.highlights.map((point) => (
+                        {item.summary ? <li>{item.summary}</li> : null}
+                        {(item.highlights || []).map((point) => (
                           <li key={`${item.company}-${point}`}>{point}</li>
                         ))}
                       </ul>
@@ -268,9 +268,9 @@ export default function HomeLanding() {
                               <span className="proposal-experience__move-role">{move.role}</span>
                               <span className="proposal-experience__move-period">{move.period}</span>
                             </div>
-                            {move.summary ? <p className="proposal-experience__move-summary">{move.summary}</p> : null}
-                            {move.highlights?.length ? (
+                            {move.summary || move.highlights?.length ? (
                               <ul className="proposal-experience__move-highlights" aria-label={`${move.role} highlights`}>
+                                {move.summary ? <li>{move.summary}</li> : null}
                                 {move.highlights.map((point) => (
                                   <li key={`${move.role}-${point}`}>{point}</li>
                                 ))}
