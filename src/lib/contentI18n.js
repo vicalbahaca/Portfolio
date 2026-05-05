@@ -1046,10 +1046,11 @@ export const projectTranslations = {
 }
 
 export function localizeArticleContent(entry, lang) {
+  const contentLang = lang === 'ca' || lang === 'eu' ? 'en' : lang
   if (!entry) return entry
 
-  const localized = deepMerge(entry, articleTranslations[entry.slug]?.[lang])
-  const topicTranslation = articleTopicTranslations[localized.topic]?.[lang]
+  const localized = deepMerge(entry, articleTranslations[entry.slug]?.[contentLang])
+  const topicTranslation = articleTopicTranslations[localized.topic]?.[contentLang]
 
   return topicTranslation
     ? {
@@ -1060,6 +1061,7 @@ export function localizeArticleContent(entry, lang) {
 }
 
 export function localizeProjectContent(entry, lang) {
+  const contentLang = lang === 'ca' || lang === 'eu' ? 'en' : lang
   if (!entry) return entry
-  return deepMerge(entry, projectTranslations[entry.slug]?.[lang])
+  return deepMerge(entry, projectTranslations[entry.slug]?.[contentLang])
 }
