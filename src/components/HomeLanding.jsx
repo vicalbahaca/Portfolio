@@ -38,7 +38,7 @@ export default function HomeLanding() {
   const scrollCarousel = (direction, key, list) => {
     if (!list) return
     const firstItem = list.querySelector('.home-project-slot, .home-secondary-item')
-    const step = firstItem ? firstItem.getBoundingClientRect().width + 16 : list.clientWidth
+    const step = firstItem ? firstItem.getBoundingClientRect().width + 32 : list.clientWidth
     list.scrollBy({ left: direction * step, behavior: 'smooth' })
   }
 
