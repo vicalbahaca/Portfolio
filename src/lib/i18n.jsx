@@ -349,54 +349,100 @@ const translations = {
       experienceItems: [
         {
           role: 'Product & Engineering · Contributor',
-          company: 'Coubber',
+          company: 'Coubber (Startup) · Part-time (Barcelona)',
           period: 'Jan 2026 — present',
-          summary:
-            'I work on a sportstech platform focused on analysis, reporting, and performance reading. My focus is product, flow clarity, data storytelling, and a UI able to translate complex information into useful decisions.',
+          summary: 'Product development and design in a startup focused on sports reporting from measurement devices.',
+          highlights: [
+            'Backlog creation, product design, and code implementation.',
+            'Integration of AI models to interpret data and generate actionable value.',
+          ],
         },
         {
           role: 'Senior Product Designer · Senior AI Product Designer',
-          company: 'North',
+          company: 'North · Full-time (Barcelona)',
           period: 'Nov 2024 — present',
           moves: [
-            { role: 'Senior Product Designer', period: 'Nov 2024 — Jan 2026' },
-            { role: 'Senior AI Product Designer', period: 'Jan 2026 — present' },
+            {
+              role: 'Senior AI Product Designer',
+              period: 'Jan 2026 — present',
+              summary:
+                'Principal AI Product Designer in an internal AI squad: tool exploration and filtering, plus automations to accelerate squads (prototypes, documentation, QA, and research support).',
+              highlights: [
+                'Design and launch of AI-driven projects for enterprise clients.',
+                'Continuity of projects in banking and retail.',
+              ],
+            },
+            {
+              role: 'Mid-Senior Product Designer',
+              period: 'Oct 2024 — Jan 2026',
+              summary:
+                'Lead designer in four fintech products (web and mobile) focused on financial contracting, onboarding, and management tools for B2B, B2C, and B2B2C.',
+              highlights: [
+                'Owner of financing and eCommerce checkout in one of Spain’s main banks.',
+                'Accessibility Lead: accessible handoffs for web and native apps.',
+                'Close collaboration with POs, PMs, Devs, and business stakeholders to validate flows and regulatory requirements.',
+              ],
+            },
           ],
-          summary:
-            'I lead design across fintech and retail products, defining structure, accessibility, interface criteria, and product decisions that connect business, operations, regulation, and delivery reality.',
         },
         {
           role: 'Product Designer Lead',
-          company: 'Lowerton',
+          company: 'Lowerton (Startup) · Full-time (Remote)',
           period: 'Mar 2024 — Oct 2024',
-          summary:
-            'I designed a product from scratch, connecting brand, visual system, architecture, and first workflows to shape an MVP that felt clear and presentable from an early stage.',
+          summary: 'Definition and design of a digital product from scratch.',
+          highlights: [
+            'Work on projects with complex requirements, including public tenders, with a strong focus on documentation and business alignment.',
+            'Participation in public tenders and generation of technical/legal documentation using AI.',
+          ],
         },
         {
           role: 'UX/UI Freelance',
           company: 'Freelance',
           period: 'Aug 2023 — Jun 2024',
-          summary:
-            'I have worked on websites, product concepts, digital identity, and MVPs focused on speed, clarity, and launch readiness. This stage also strengthened my profile as a Product Maker on personal products.',
+          summary: 'Design of digital products and conversion-focused landing pages (marketing companies, portfolios, and ecommerce).',
+          highlights: ['Improvement of flows and user experience across different projects.'],
         },
         {
           role: 'Full Stack Developer · UX Designer · QA',
-          company: 'Deusto SEIDOR',
+          company: 'Deusto SEIDOR S.A · Full-time (Vitoria)',
           period: 'Mar 2021 — Aug 2023',
           moves: [
-            { role: 'Full Stack Developer · Intern', period: 'Mar 2021 — Jun 2021' },
-            { role: 'Full Stack Developer', period: 'Jun 2021 — Jun 2022' },
-            { role: 'Full Stack Developer · UX Designer · QA', period: 'Jun 2022 — Aug 2023' },
+            {
+              role: 'Full Stack Developer · UX Designer · QA',
+              period: 'Jun 2022 — Aug 2023',
+              highlights: [
+                'Feature design and development combining technical and product vision.',
+                'UX improvements, continuous product improvement, user research, and QA.',
+                'Led a team of five specialists to refine flows and deliver user-centered features.',
+              ],
+            },
+            {
+              role: 'Full Stack Developer',
+              period: 'Jun 2021 — Jun 2022',
+              highlights: [
+                'Participation in technical decisions and solution structuring.',
+                'Closer connection between development and product, adding judgement beyond code.',
+                'Feature implementation and business logic understanding from the technical side.',
+              ],
+            },
+            {
+              role: 'Full Stack Developer · Intern',
+              period: 'Mar 2021 — Jun 2021',
+              highlights: [
+                'Development of technological solutions from scratch.',
+                'Participation in document digitisation software using .NET, Python, Angular, and C#.',
+              ],
+            },
           ],
-          summary:
-            'For the first two years I worked specifically as a full stack developer. In the last year the role evolved into a hybrid position between full stack and UX, bringing interface, flow, and product decisions closer to development.',
         },
         {
           role: 'IT Technician · Intern',
-          company: 'NSM Educational Center',
+          company: 'NSM Educational Center · Full-time (Vitoria)',
           period: 'Mar 2019 — Jun 2019',
-          summary:
-            'I contributed to technical support and website evolution in an educational environment, working on content structure, maintenance, and practical improvements for everyday platform use.',
+          highlights: [
+            'Redesign and development of a WordPress system to manage educational resources and improve day-to-day efficiency.',
+            'Testing of the new platform with teachers and students, gathering feedback, and iterative improvements.',
+          ],
         },
       ],
       workflowLabel: 'Workflow',

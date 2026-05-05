@@ -223,58 +223,60 @@ export default function HomeLanding() {
             </h2>
           </div>
 
-          <div className="home-work__grid home-mobile-carousel" id="featured-carousel-track" ref={featuredCarouselRef}>
-            {highlightedProjects.map((project, index) => (
-              <div key={project.slug} className={`home-project-slot home-project-slot--${index + 1}`}>
-                <motion.article
-                  className="home-project"
-                  whileHover={{ y: -8, scale: 1.01 }}
-                  transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
-                  style={{
-                    '--project-accent': project.accent,
-                    '--project-image-fit': project.cardImageMode || 'contain',
-                    '--project-image-bg': project.cardImageBackground || '#ece8e0',
-                    '--project-image-scale': project.cardImageScale || 1,
-                  }}
-                >
-                  <Link
-                    href={`/work/${project.slug}`}
-                    className="home-project__link"
-                    aria-label={`${project.role}. ${project.title}. ${project.subtitle}`}
+          <div className="home-mobile-carousel">
+            <div className="home-work__grid" id="featured-carousel-track" ref={featuredCarouselRef}>
+              {highlightedProjects.map((project, index) => (
+                <div key={project.slug} className={`home-project-slot home-project-slot--${index + 1}`}>
+                  <motion.article
+                    className="home-project"
+                    whileHover={{ y: -8, scale: 1.01 }}
+                    transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+                    style={{
+                      '--project-accent': project.accent,
+                      '--project-image-fit': project.cardImageMode || 'contain',
+                      '--project-image-bg': project.cardImageBackground || '#ece8e0',
+                      '--project-image-scale': project.cardImageScale || 1,
+                    }}
                   >
-                    <div className="home-project__media" style={{ '--thumb-bg-image': `url("${project.image}")` }}>
-                      <Image src={project.image} alt={project.title} fill sizes="(max-width: 960px) 100vw, 50vw" />
-                    </div>
-                    <div className="home-project__copy">
-                      <p className="home-project__meta">{project.role}</p>
-                      <h3>{project.title}</h3>
-                      <p className="home-project__subtitle">{project.subtitle}</p>
-                    </div>
-                  </Link>
-                </motion.article>
-              </div>
-            ))}
+                    <Link
+                      href={`/work/${project.slug}`}
+                      className="home-project__link"
+                      aria-label={`${project.role}. ${project.title}. ${project.subtitle}`}
+                    >
+                      <div className="home-project__media" style={{ '--thumb-bg-image': `url("${project.image}")` }}>
+                        <Image src={project.image} alt={project.title} fill sizes="(max-width: 960px) 100vw, 50vw" />
+                      </div>
+                      <div className="home-project__copy">
+                        <p className="home-project__meta">{project.role}</p>
+                        <h3>{project.title}</h3>
+                        <p className="home-project__subtitle">{project.subtitle}</p>
+                      </div>
+                    </Link>
+                  </motion.article>
+                </div>
+              ))}
+            </div>
+            <button
+              type="button"
+              className="home-secondary__nav home-secondary__nav--prev"
+              onClick={() => scrollCarousel(-1, 'featured', featuredCarouselRef.current)}
+              aria-label={copy.home.carouselPrevFeatured}
+              aria-controls="featured-carousel-track"
+              disabled={carouselState.featured.atStart}
+            >
+              <span aria-hidden="true">‹</span>
+            </button>
+            <button
+              type="button"
+              className="home-secondary__nav home-secondary__nav--next"
+              onClick={() => scrollCarousel(1, 'featured', featuredCarouselRef.current)}
+              aria-label={copy.home.carouselNextFeatured}
+              aria-controls="featured-carousel-track"
+              disabled={carouselState.featured.atEnd}
+            >
+              <span aria-hidden="true">›</span>
+            </button>
           </div>
-          <button
-            type="button"
-            className="home-secondary__nav home-secondary__nav--prev"
-            onClick={() => scrollCarousel(-1, 'featured', featuredCarouselRef.current)}
-            aria-label={copy.home.carouselPrevFeatured}
-            aria-controls="featured-carousel-track"
-            disabled={carouselState.featured.atStart}
-          >
-            <span aria-hidden="true">‹</span>
-          </button>
-          <button
-            type="button"
-            className="home-secondary__nav home-secondary__nav--next"
-            onClick={() => scrollCarousel(1, 'featured', featuredCarouselRef.current)}
-            aria-label={copy.home.carouselNextFeatured}
-            aria-controls="featured-carousel-track"
-            disabled={carouselState.featured.atEnd}
-          >
-            <span aria-hidden="true">›</span>
-          </button>
         </div>
       </section>
 

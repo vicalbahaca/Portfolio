@@ -2563,14 +2563,14 @@ body {
 }
 
 .home-notes__cta {
-  background: #159bfe;
-  border-color: #159bfe;
+  background: #232E40;
+  border-color: #232E40;
   color: #ffffff;
 }
 
 .home-notes__cta:hover {
-  background: #1186e8;
-  border-color: #1186e8;
+  background: #1b2433;
+  border-color: #1b2433;
   color: #ffffff;
 }
 
@@ -4380,12 +4380,17 @@ body {
     font-size: clamp(1.85rem, 9vw, 2.8rem);
   }
 
+  .home-mobile-carousel,
+  .home-secondary__carousel {
+    position: relative;
+    overflow: hidden;
+  }
+
   .home-work__grid,
-  .home-work__grid--north {
-    display: grid;
-    grid-auto-flow: column;
-    grid-auto-columns: 100%;
-    gap: 16px;
+  .home-work__grid--north,
+  .home-secondary__list {
+    display: flex;
+    gap: 0;
     overflow-x: auto;
     overscroll-behavior-x: contain;
     scroll-snap-type: x mandatory;
@@ -4399,13 +4404,17 @@ body {
   }
 
   .home-work__grid .home-project-slot,
-  .home-work__grid--north .home-project-slot {
+  .home-work__grid--north .home-project-slot,
+  .home-secondary__list .home-secondary-item {
+    flex: 0 0 100%;
     scroll-snap-align: start;
   }
 
-  .home-mobile-carousel > .home-secondary__nav {
+  .home-mobile-carousel > .home-secondary__nav,
+  .home-secondary__carousel > .home-secondary__nav {
     position: absolute;
-    top: 120px;
+    top: 42%;
+    transform: translateY(-50%);
     z-index: 3;
     display: inline-flex;
     align-items: center;
@@ -4421,11 +4430,19 @@ body {
   }
 
   .home-mobile-carousel > .home-secondary__nav--prev {
-    left: 8px;
+    left: 12px;
   }
 
   .home-mobile-carousel > .home-secondary__nav--next {
-    right: 8px;
+    right: 12px;
+  }
+
+  .home-secondary__carousel > .home-secondary__nav--prev {
+    left: 12px;
+  }
+
+  .home-secondary__carousel > .home-secondary__nav--next {
+    right: 12px;
   }
 
   .home-secondary__nav[disabled] {
@@ -4537,8 +4554,8 @@ body {
 }
 
 .page-shell--home .navbar--surface .navbar__inner--unified {
-  background: rgba(9, 20, 39, 0.88);
-  border-color: rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.78);
+  border-color: rgba(255, 255, 255, 0.42);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
 }
@@ -4547,16 +4564,16 @@ body {
 .page-shell--home .navbar--surface .navbar__links--unified .navbar__link,
 .page-shell--home .navbar--surface .navbar__socials--unified .navbar__social-link,
 .page-shell--home .navbar--surface .navbar__toggle--unified {
-  color: #ffffff;
+  color: rgba(13, 23, 38, 0.82);
 }
 
 .page-shell--home .navbar--surface .navbar__language-select {
-  border-color: rgba(255, 255, 255, 0.16);
+  border-color: rgba(13, 23, 38, 0.12);
   background:
     linear-gradient(45deg, transparent 50%, currentColor 50%) right 16px center / 8px 8px no-repeat,
     linear-gradient(135deg, currentColor 50%, transparent 50%) right 11px center / 8px 8px no-repeat,
-    rgba(255, 255, 255, 0.08);
-  color: #ffffff;
+    rgba(255, 255, 255, 0.62);
+  color: #091427;
 }
 
 .page-shell--home .home-flow {
@@ -4876,7 +4893,7 @@ body {
 
 @media (max-width: 720px) {
   .home-north {
-    margin-top: 28px;
+    margin-top: 10px;
   }
 
   .home-north__logo-inline {
@@ -7709,18 +7726,17 @@ body.lightbox-open .navbar {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 10px 14px;
-  border-radius: 999px;
-  border: 1px solid #159bfe;
-  background: #159bfe;
-  color: #ffffff;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #232E40;
 }
 
 .back-link:hover,
 .back-link--light:hover {
-  border-color: #1186e8;
-  background: #1186e8;
-  color: #ffffff;
+  background: transparent;
+  color: #232E40;
+  opacity: 0.78;
 }
 
 .proposal-about {
@@ -7999,7 +8015,6 @@ body.lightbox-open .navbar {
 /* Mobile global gutters: enforce 16px left/right on all pages */
 @media (max-width: 760px) {
   .container,
-  .navbar__inner,
   .proposal-container,
   .page-shell--landing-proposal .navbar__inner--unified {
     width: min(calc(100% - 32px), var(--container));
@@ -8011,6 +8026,20 @@ body.lightbox-open .navbar {
     justify-items: start;
     text-align: left;
     margin-left: 0;
+  }
+
+  .page-shell--home .navbar__inner--unified {
+    width: 100%;
+    border-radius: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .page-shell--home .footer .container {
+    width: 100%;
+    margin: 0;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
