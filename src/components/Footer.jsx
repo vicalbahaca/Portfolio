@@ -25,9 +25,9 @@ export default function Footer() {
             href="https://www.linkedin.com/in/victorsaizalfageme/"
             target="_blank"
             rel="noreferrer"
-            aria-label="Contactar vía LinkedIn"
+            aria-label={copy.footer.contactLinkedin}
           >
-            Contactar vía LinkedIn
+            {copy.footer.contactLinkedin}
           </a>
         </section>
 

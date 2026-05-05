@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
@@ -14,15 +14,59 @@ gsap.registerPlugin(ScrollTrigger, useGSAP)
 
 export default function HomeLanding() {
   const landingRef = useRef(null)
+  const northCarouselRef = useRef(null)
+  const featuredCarouselRef = useRef(null)
+  const secondaryCarouselRef = useRef(null)
+  const [carouselState, setCarouselState] = useState({
+    north: { atStart: true, atEnd: false },
+    featured: { atStart: true, atEnd: false },
+    secondary: { atStart: true, atEnd: false },
+  })
   const { copy, lang } = useLanguage()
   const highlightedProjects = caseStudies.map((entry) => localizeProject(entry, lang))
   const secondaryProjects = conceptDesigns.slice(0, 4).map((entry) => localizeProject(entry, lang))
   const latestArticles = featuredArticles.map((entry) => localizeArticle(entry, lang))
-  const articleDateFormatter = new Intl.DateTimeFormat(lang === 'en' ? 'en-GB' : 'es-ES', {
-    day: 'numeric',
-    month: 'short',
-    year: 'numeric',
-  })
+
+  const updateCarouselState = (key, list) => {
+    if (!list) return
+    const maxLeft = Math.max(0, list.scrollWidth - list.clientWidth)
+    const atStart = list.scrollLeft <= 4
+    const atEnd = list.scrollLeft >= maxLeft - 4
+    setCarouselState((prev) => ({ ...prev, [key]: { atStart, atEnd } }))
+  }
+
+  const scrollCarousel = (direction, key, list) => {
+    if (!list) return
+    const firstItem = list.querySelector('.home-project-slot, .home-secondary-item')
+    const step = firstItem ? firstItem.getBoundingClientRect().width + 16 : list.clientWidth
+    list.scrollBy({ left: direction * step, behavior: 'smooth' })
+  }
+
+  useEffect(() => {
+    const configs = [
+      ['north', northCarouselRef.current],
+      ['featured', featuredCarouselRef.current],
+      ['secondary', secondaryCarouselRef.current],
+    ]
+
+    const handlers = configs.map(([key, node]) => {
+      if (!node) return null
+      const handler = () => updateCarouselState(key, node)
+      handler()
+      node.addEventListener('scroll', handler, { passive: true })
+      return { node, handler }
+    })
+
+    const onResize = () => {
+      configs.forEach(([key, node]) => node && updateCarouselState(key, node))
+    }
+    window.addEventListener('resize', onResize)
+
+    return () => {
+      handlers.forEach((item) => item && item.node.removeEventListener('scroll', item.handler))
+      window.removeEventListener('resize', onResize)
+    }
+  }, [])
 
   useGSAP(
     () => {
@@ -145,7 +189,29 @@ export default function HomeLanding() {
             </div>
           </div>
 
-          <NorthProjectsGrid />
+          <div className="home-mobile-carousel">
+            <NorthProjectsGrid className="home-mobile-carousel__track" trackId="north-carousel-track" trackRef={northCarouselRef} />
+            <button
+              type="button"
+              className="home-secondary__nav home-secondary__nav--prev"
+              onClick={() => scrollCarousel(-1, 'north', northCarouselRef.current)}
+              aria-label={copy.home.carouselPrevNorth}
+              aria-controls="north-carousel-track"
+              disabled={carouselState.north.atStart}
+            >
+              <span aria-hidden="true">‹</span>
+            </button>
+            <button
+              type="button"
+              className="home-secondary__nav home-secondary__nav--next"
+              onClick={() => scrollCarousel(1, 'north', northCarouselRef.current)}
+              aria-label={copy.home.carouselNextNorth}
+              aria-controls="north-carousel-track"
+              disabled={carouselState.north.atEnd}
+            >
+              <span aria-hidden="true">›</span>
+            </button>
+          </div>
         </div>
       </section>
 
@@ -157,7 +223,7 @@ export default function HomeLanding() {
             </h2>
           </div>
 
-          <div className="home-work__grid">
+          <div className="home-work__grid home-mobile-carousel" id="featured-carousel-track" ref={featuredCarouselRef}>
             {highlightedProjects.map((project, index) => (
               <div key={project.slug} className={`home-project-slot home-project-slot--${index + 1}`}>
                 <motion.article
@@ -189,6 +255,26 @@ export default function HomeLanding() {
               </div>
             ))}
           </div>
+          <button
+            type="button"
+            className="home-secondary__nav home-secondary__nav--prev"
+            onClick={() => scrollCarousel(-1, 'featured', featuredCarouselRef.current)}
+            aria-label={copy.home.carouselPrevFeatured}
+            aria-controls="featured-carousel-track"
+            disabled={carouselState.featured.atStart}
+          >
+            <span aria-hidden="true">‹</span>
+          </button>
+          <button
+            type="button"
+            className="home-secondary__nav home-secondary__nav--next"
+            onClick={() => scrollCarousel(1, 'featured', featuredCarouselRef.current)}
+            aria-label={copy.home.carouselNextFeatured}
+            aria-controls="featured-carousel-track"
+            disabled={carouselState.featured.atEnd}
+          >
+            <span aria-hidden="true">›</span>
+          </button>
         </div>
       </section>
 
@@ -201,7 +287,8 @@ export default function HomeLanding() {
             <p className="home-caption">{copy.home.secondaryCaption}</p>
           </div>
 
-          <div className="home-secondary__list">
+          <div className="home-secondary__carousel">
+            <div ref={secondaryCarouselRef} className="home-secondary__list" id="secondary-carousel-track">
             {secondaryProjects.map((project) => (
               <Link
                 key={project.slug}
@@ -224,6 +311,27 @@ export default function HomeLanding() {
                 </span>
               </Link>
             ))}
+            </div>
+            <button
+              type="button"
+              className="home-secondary__nav home-secondary__nav--prev"
+              onClick={() => scrollCarousel(-1, 'secondary', secondaryCarouselRef.current)}
+              aria-label={copy.home.carouselPrevSecondary}
+              aria-controls="secondary-carousel-track"
+              disabled={carouselState.secondary.atStart}
+            >
+              <span aria-hidden="true">‹</span>
+            </button>
+            <button
+              type="button"
+              className="home-secondary__nav home-secondary__nav--next"
+              onClick={() => scrollCarousel(1, 'secondary', secondaryCarouselRef.current)}
+              aria-label={copy.home.carouselNextSecondary}
+              aria-controls="secondary-carousel-track"
+              disabled={carouselState.secondary.atEnd}
+            >
+              <span aria-hidden="true">›</span>
+            </button>
           </div>
         </div>
       </section>
@@ -248,12 +356,15 @@ export default function HomeLanding() {
             <div className="proposal-experience" aria-labelledby="home-experience-title">
               <h3 id="home-experience-title">{copy.home.experienceTitle}</h3>
               {copy.home.experienceItems.map((item) => (
-                <article key={`${item.company}-${item.role}`} className="proposal-experience__item">
-                  <div>
+                <details key={`${item.company}-${item.role}`} className="proposal-experience__item" open>
+                  <summary className="proposal-experience__summary-head">
                     <h4 className="proposal-experience__role">{item.role}</h4>
                     <p className="proposal-experience__company">{item.company}</p>
+                    <time className="proposal-experience__period">{item.period}</time>
+                  </summary>
+                  <div className="proposal-experience__content">
                     {item.summary || item.highlights?.length ? (
-                      <ul className="proposal-experience__highlights" aria-label={`${item.company} highlights`}>
+                      <ul className="proposal-experience__highlights" aria-label={`${copy.home.highlightsLabel} ${item.company}`}>
                         {item.summary ? <li>{item.summary}</li> : null}
                         {(item.highlights || []).map((point) => (
                           <li key={`${item.company}-${point}`}>{point}</li>
@@ -261,7 +372,7 @@ export default function HomeLanding() {
                       </ul>
                     ) : null}
                     {item.moves?.length ? (
-                      <ul className="proposal-experience__moves" aria-label={`${item.company} roles`}>
+                      <ul className="proposal-experience__moves" aria-label={`${copy.home.rolesLabel} ${item.company}`}>
                         {item.moves.map((move) => (
                           <li key={`${item.company}-${move.role}-${move.period}`} className="proposal-experience__move">
                             <div className="proposal-experience__move-head">
@@ -269,7 +380,7 @@ export default function HomeLanding() {
                               <span className="proposal-experience__move-period">{move.period}</span>
                             </div>
                             {move.summary || move.highlights?.length ? (
-                              <ul className="proposal-experience__move-highlights" aria-label={`${move.role} highlights`}>
+                              <ul className="proposal-experience__move-highlights" aria-label={`${copy.home.highlightsLabel} ${move.role}`}>
                                 {move.summary ? <li>{move.summary}</li> : null}
                                 {move.highlights.map((point) => (
                                   <li key={`${move.role}-${point}`}>{point}</li>
@@ -281,8 +392,7 @@ export default function HomeLanding() {
                       </ul>
                     ) : null}
                   </div>
-                  <time>{item.period}</time>
-                </article>
+                </details>
               ))}
             </div>
           </div>
@@ -317,9 +427,6 @@ export default function HomeLanding() {
                   <span className="home-note__meta">{article.topic}</span>
                   <h3>{article.title}</h3>
                   <p>{article.excerpt}</p>
-                  {article.publishedAt ? (
-                    <span className="home-note__date">{articleDateFormatter.format(new Date(article.publishedAt))}</span>
-                  ) : null}
                 </div>
                 <span className="home-note__arrow" aria-hidden="true">
                   <ArrowUpRightIcon />
@@ -328,7 +435,7 @@ export default function HomeLanding() {
             ))}
           </div>
 
-          <Link href="/articles" className="inline-link">
+          <Link href="/articles" className="inline-link home-notes__cta">
             {copy.home.allArticles}
           </Link>
         </div>

@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import { northSection } from '../data/content'
 import { useLanguage } from '../lib/i18n'
 
-export default function NorthProjectsGrid({ className = '' }) {
+export default function NorthProjectsGrid({ className = '', trackId, trackRef }) {
   const { lang, copy } = useLanguage()
   const projects = northSection.projects.map((project) => ({
     ...project,
@@ -19,7 +19,7 @@ export default function NorthProjectsGrid({ className = '' }) {
   }))
 
   return (
-    <div className={`home-work__grid home-work__grid--north ${className}`.trim()}>
+    <div id={trackId} ref={trackRef} className={`home-work__grid home-work__grid--north ${className}`.trim()}>
       {projects.map((project, index) => (
         <div key={project.slug} className={`home-project-slot home-project-slot--north home-project-slot--north-${index + 1}`}>
           <motion.article

@@ -517,6 +517,137 @@ const translations = {
   },
 }
 
+const caOverrides = {
+  langCode: 'CA',
+  langLabel: 'Català',
+  site: { location: 'Barcelona, Espanya', skipToContent: 'Salta al contingut' },
+  nav: {
+    work: 'Projectes',
+    workMain: 'Principals',
+    workOther: 'Altres projectes',
+    about: 'Sobre mi',
+    articles: 'Articles',
+    openMenu: 'Obre el menú',
+    closeMenu: 'Tanca el menú',
+    primary: 'Navegació principal',
+    mobile: 'Navegació mòbil',
+    language: 'Idioma',
+  },
+  hero: {
+    cta: 'Anar a LinkedIn',
+    copiedEmail: 'Copiat al porta-retalls',
+    closeToast: 'Tanca l’avís',
+    scroll: 'Navega cap avall',
+  },
+  home: {
+    northTitle: 'Projectes recents a North studio',
+    featuredTitle: 'Projectes recents',
+    secondaryTitle: 'Altres projectes',
+    articlesTitle: 'Publicacions',
+    allArticles: 'Veure totes les publicacions',
+    contactTitle: 'Contacta amb mi',
+    carouselPrevNorth: 'Projecte anterior a North Studio',
+    carouselNextNorth: 'Projecte següent a North Studio',
+    carouselPrevFeatured: 'Projecte anterior a projectes recents',
+    carouselNextFeatured: 'Projecte següent a projectes recents',
+    carouselPrevSecondary: 'Projecte anterior',
+    carouselNextSecondary: 'Projecte següent',
+    highlightsLabel: 'Punts destacats de',
+    rolesLabel: 'Rols de',
+  },
+  footer: {
+    work: 'Projectes',
+    about: 'Sobre mi',
+    articles: 'Articles',
+    contact: 'Contacte',
+    email: 'Correu',
+    navigation: 'Navegació del peu',
+    contactLinkedin: 'Contactar via LinkedIn',
+  },
+}
+
+const euOverrides = {
+  langCode: 'EU',
+  langLabel: 'Euskara',
+  site: { location: 'Bartzelona, Espainia', skipToContent: 'Joan edukira' },
+  nav: {
+    work: 'Proiektuak',
+    workMain: 'Nagusiak',
+    workOther: 'Beste proiektuak',
+    about: 'Niri buruz',
+    articles: 'Artikuluak',
+    openMenu: 'Ireki menua',
+    closeMenu: 'Itxi menua',
+    primary: 'Nabigazio nagusia',
+    mobile: 'Mugikorreko nabigazioa',
+    language: 'Hizkuntza',
+  },
+  hero: {
+    cta: 'Joan LinkedIn-era',
+    copiedEmail: 'Arbelean kopiatuta',
+    closeToast: 'Itxi oharra',
+    scroll: 'Nabigatu behera',
+  },
+  home: {
+    northTitle: 'Azken proiektuak North studio-n',
+    featuredTitle: 'Azken proiektuak',
+    secondaryTitle: 'Beste proiektuak',
+    articlesTitle: 'Argitalpenak',
+    allArticles: 'Ikusi argitalpen guztiak',
+    contactTitle: 'Jarri nirekin harremanetan',
+    carouselPrevNorth: 'Aurreko proiektua North Studio-n',
+    carouselNextNorth: 'Hurrengo proiektua North Studio-n',
+    carouselPrevFeatured: 'Aurreko proiektua azken proiektuetan',
+    carouselNextFeatured: 'Hurrengo proiektua azken proiektuetan',
+    carouselPrevSecondary: 'Aurreko proiektua',
+    carouselNextSecondary: 'Hurrengo proiektua',
+    highlightsLabel: 'Nabarmenduak',
+    rolesLabel: 'Rolak',
+  },
+  footer: {
+    work: 'Proiektuak',
+    about: 'Niri buruz',
+    articles: 'Artikuluak',
+    contact: 'Kontaktua',
+    email: 'Posta',
+    navigation: 'Orri-oinaren nabigazioa',
+    contactLinkedin: 'Kontaktatu LinkedIn bidez',
+  },
+}
+
+function deepMerge(base, override) {
+  const out = { ...base }
+  Object.entries(override).forEach(([k, v]) => {
+    if (v && typeof v === 'object' && !Array.isArray(v) && base[k] && typeof base[k] === 'object' && !Array.isArray(base[k])) {
+      out[k] = deepMerge(base[k], v)
+    } else {
+      out[k] = v
+    }
+  })
+  return out
+}
+
+translations.es.home.carouselPrevNorth = 'Proyecto anterior en North Studio'
+translations.es.home.carouselNextNorth = 'Proyecto siguiente en North Studio'
+translations.es.home.carouselPrevFeatured = 'Proyecto anterior en proyectos recientes'
+translations.es.home.carouselNextFeatured = 'Proyecto siguiente en proyectos recientes'
+translations.es.home.carouselPrevSecondary = 'Proyecto anterior'
+translations.es.home.carouselNextSecondary = 'Proyecto siguiente'
+translations.es.home.highlightsLabel = 'Puntos destacados de'
+translations.es.home.rolesLabel = 'Roles de'
+translations.es.footer.contactLinkedin = 'Contactar vía LinkedIn'
+translations.en.home.carouselPrevNorth = 'Previous project in North Studio'
+translations.en.home.carouselNextNorth = 'Next project in North Studio'
+translations.en.home.carouselPrevFeatured = 'Previous recent project'
+translations.en.home.carouselNextFeatured = 'Next recent project'
+translations.en.home.carouselPrevSecondary = 'Previous project'
+translations.en.home.carouselNextSecondary = 'Next project'
+translations.en.home.highlightsLabel = 'Highlights for'
+translations.en.home.rolesLabel = 'Roles at'
+translations.en.footer.contactLinkedin = 'Contact via LinkedIn'
+translations.ca = deepMerge(translations.es, caOverrides)
+translations.eu = deepMerge(translations.es, euOverrides)
+
 function normalizeLanguageCode(value = '') {
   return value.toLowerCase().trim()
 }
@@ -528,9 +659,12 @@ export function detectPreferredLanguage(source) {
     const code = normalizeLanguageCode(value)
     if (!code) continue
 
-    if (code.startsWith('es') || code.startsWith('ca') || code.startsWith('eu') || code.startsWith('val')) {
+    if (code.startsWith('es') || code.startsWith('val')) {
       return 'es'
     }
+    if (code.startsWith('ca')) return 'ca'
+    if (code.startsWith('eu') || code.startsWith('eus')) return 'eu'
+    if (code.startsWith('en')) return 'en'
   }
 
   return 'en'
@@ -545,19 +679,19 @@ export function localizeArticle(entry, lang) {
 }
 
 export function LanguageProvider({ children }) {
-  const [lang, setLangState] = useState('es')
+  const [lang, setLangState] = useState('en')
   const [isReady, setIsReady] = useState(false)
 
   useEffect(() => {
     const stored = typeof window !== 'undefined' ? window.localStorage.getItem(LANGUAGE_STORAGE_KEY) : null
-    const nextLang = stored === 'es' || stored === 'en' ? stored : detectPreferredLanguage(window.navigator.languages)
+    const nextLang = ['es', 'en', 'ca', 'eu'].includes(stored) ? stored : detectPreferredLanguage(window.navigator.languages)
     setLangState(nextLang)
     document.documentElement.lang = nextLang
     setIsReady(true)
   }, [])
 
   const setLang = (nextLang) => {
-    if (nextLang !== 'es' && nextLang !== 'en') return
+    if (!['es', 'en', 'ca', 'eu'].includes(nextLang)) return
     setLangState(nextLang)
     if (typeof window !== 'undefined') {
       window.localStorage.setItem(LANGUAGE_STORAGE_KEY, nextLang)

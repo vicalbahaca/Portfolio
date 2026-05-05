@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import { useEffect } from 'react'
 import Layout from '../components/Layout'
 import Hero from '../components/Hero'
 import HomeLanding from '../components/HomeLanding'
@@ -9,6 +10,14 @@ export default function Home() {
   const { copy } = useLanguage()
   const pageTitle = `${siteConfig.name} | ${copy.site.role}`
   const pageDescription = `${copy.home.aboutSummaryPrefix} ${copy.home.aboutSummaryAccent}${copy.home.aboutSummarySuffix}`
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual'
+    }
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
+  }, [])
 
   return (
     <>

@@ -25,7 +25,7 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const isHome = router.pathname === '/'
-  const hasSurface = !isHome || scrolled || menuOpen
+  const hasSurface = true
   const projectLinks = [
     { label: copy.nav.workNorth, href: '/#projects-north' },
     { label: copy.nav.workMain, href: '/#work' },
@@ -150,6 +150,8 @@ export default function Navbar() {
               >
                 <option value="es">ES</option>
                 <option value="en">EN</option>
+                <option value="ca">CA</option>
+                <option value="eu">EU</option>
               </select>
             </div>
             <details
