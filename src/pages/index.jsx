@@ -9,7 +9,7 @@ import { useLanguage } from '../lib/i18n'
 export default function Home() {
   const { copy } = useLanguage()
   const pageTitle = `${siteConfig.name} | ${copy.site.role}`
-  const pageDescription = `${copy.home.aboutSummaryPrefix} ${copy.home.aboutSummaryAccent}${copy.home.aboutSummarySuffix}`
+  const pageDescription = copy.home.aboutSubtitle
 
   useEffect(() => {
     if (typeof window === 'undefined') return

@@ -7527,7 +7527,7 @@ body.lightbox-open .navbar {
 .proposal-about__grid {
   display: grid;
   grid-template-columns: minmax(240px, 0.42fr) minmax(0, 1fr);
-  gap: clamp(40px, 7vw, 88px);
+  gap: clamp(24px, 4vw, 56px);
   align-items: start;
 }
 

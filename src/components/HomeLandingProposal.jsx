@@ -132,8 +132,7 @@ export default function HomeLandingProposal() {
           <div className="proposal-section__intro">
             <h2 id="proposal-about-title">{copy.home.aboutTitle}</h2>
             <p className="proposal-about__lede">
-              {copy.home.aboutSummaryPrefix} {copy.home.aboutSummaryAccent}
-              {copy.home.aboutSummarySuffix}
+              {copy.home.aboutSubtitle}
             </p>
           </div>
 
