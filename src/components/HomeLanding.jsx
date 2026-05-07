@@ -356,7 +356,7 @@ export default function HomeLanding() {
             <div className="proposal-section__intro">
               <h2 id="home-about-title">{copy.home.aboutTitle}</h2>
               <p className="proposal-about__lede">{copy.home.aboutSubtitle}</p>
-              <a className="btn btn--brand proposal-about__cv-cta" href={cvHref} download>
+              <a className="btn btn--brand proposal-about__cv-cta" href={cvHref} download="VictorSaiz_CV.pdf">
                 {copy.home.downloadCv}
               </a>
             </div>

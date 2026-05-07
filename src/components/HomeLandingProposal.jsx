@@ -5,7 +5,7 @@ import { localizeArticle, localizeProject, useLanguage } from '../lib/i18n'
 import { ArrowUpRightIcon } from './Icons'
 
 export default function HomeLandingProposal() {
-  const { copy, cvHref, lang } = useLanguage()
+  const { copy, cvHref } = useLanguage()
   const mainProjects = caseStudies.slice(0, 4).map((entry) => localizeProject(entry, lang))
   const northProjects = northSection.projects.slice(0, 3).map((entry) => localizeProject(entry, lang))
   const secondaryProjects = conceptDesigns.slice(0, 3).map((entry) => localizeProject(entry, lang))
@@ -33,7 +33,7 @@ export default function HomeLandingProposal() {
               <a
                 className="proposal-button"
                 href={cvHref}
-                download={lang === 'en' ? 'VictorSaiz_CV_EN.pdf' : 'VictorSaiz_CV_ES.pdf'}
+                download="VictorSaiz_CV.pdf"
               >
                 {lang === 'en' ? copy.home.downloadCvEn : copy.home.downloadCvEs}
               </a>
