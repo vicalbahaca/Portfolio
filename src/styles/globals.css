@@ -6608,7 +6608,6 @@ body.lightbox-open .navbar {
 
 .page-shell--home .hero__portrait--mono img {
   object-fit: cover;
-  filter: grayscale(1) contrast(1.04);
   transform: scaleX(-1);
 }
 
