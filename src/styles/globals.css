@@ -5888,7 +5888,22 @@ body {
 
 .work-case-section__gallery--phones {
   grid-template-columns: repeat(3, minmax(0, 280px));
-  justify-content: start;
+  justify-content: center;
+  align-items: start;
+  padding: clamp(18px, 3vw, 34px);
+  border-radius: 28px;
+  background: #010102;
+}
+
+.work-case-section__gallery--phones .work-case-section__figure-media {
+  height: clamp(420px, 52vw, 680px);
+  background: transparent;
+}
+
+.work-case-section__gallery--phones .work-case-media-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .work-case-section--blue {

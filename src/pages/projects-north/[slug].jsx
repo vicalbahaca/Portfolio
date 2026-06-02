@@ -324,8 +324,8 @@ export default function NorthProjectDetailPage({ project }) {
                             className="work-case-media-image"
                             src={media.src}
                             alt={media.alt || section.title}
-                            width={1600}
-                            height={1000}
+                            width={media.width || 1600}
+                            height={media.height || 1000}
                             sizes="(max-width: 960px) 100vw, 50vw"
                           />
                         </div>

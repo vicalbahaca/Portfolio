@@ -353,6 +353,102 @@ export const northSection = {
         },
         {
           title: {
+            es: 'Versión anterior',
+            en: 'Previous version',
+          },
+          body: {
+            es: 'Punto de partida con interfaz oscura, jerarquías densas y patrones heredados que dificultaban la lectura rápida de tareas críticas.',
+            en: 'Starting point with a dark interface, dense hierarchies, and inherited patterns that made critical tasks harder to scan quickly.',
+          },
+          paragraphs: {
+            es: [
+              'Estas pantallas muestran la base previa del producto: login, resumen financiero y confirmación segura. El sistema ya resolvía la operativa, pero acumulaba ruido visual, baja separación entre estados y una lectura poco consistente entre journeys.',
+            ],
+            en: [
+              'These screens show the previous product base: login, financial overview, and secure confirmation. The system already solved the operation, but it accumulated visual noise, weak state separation, and inconsistent readability across journeys.',
+            ],
+          },
+          gallery: [
+            {
+              src: '/north/inone-revamp/previous-01-login.png',
+              width: 890,
+              height: 1442,
+              alt: {
+                es: 'Versión anterior de login de InOne',
+                en: 'Previous InOne login screen',
+              },
+            },
+            {
+              src: '/north/inone-revamp/previous-02-home.png',
+              width: 816,
+              height: 1482,
+              alt: {
+                es: 'Versión anterior de resumen financiero de InOne',
+                en: 'Previous InOne financial overview screen',
+              },
+            },
+            {
+              src: '/north/inone-revamp/previous-03-secure-code.png',
+              width: 848,
+              height: 1478,
+              alt: {
+                es: 'Versión anterior de confirmación segura de InOne',
+                en: 'Previous InOne secure confirmation screen',
+              },
+            },
+          ],
+          galleryLayout: 'phones',
+        },
+        {
+          title: {
+            es: 'Versión nueva',
+            en: 'New version',
+          },
+          body: {
+            es: 'Evolución hacia una interfaz más clara, con patrones de lectura más directos, más contraste funcional y módulos preparados para escalar.',
+            en: 'Evolution towards a clearer interface, with more direct reading patterns, stronger functional contrast, and modules ready to scale.',
+          },
+          paragraphs: {
+            es: [
+              'La nueva propuesta cambia el foco hacia superficies más limpias, acciones agrupadas y una confirmación segura más comprensible. El objetivo era reducir carga cognitiva y hacer que cada pantalla explicase mejor qué puede hacer el usuario.',
+            ],
+            en: [
+              'The new proposal shifts the focus towards cleaner surfaces, grouped actions, and a more understandable secure confirmation. The goal was to reduce cognitive load and make each screen explain more clearly what the user can do.',
+            ],
+          },
+          gallery: [
+            {
+              src: '/north/inone-revamp/new-01-secure-identification.png',
+              width: 872,
+              height: 1506,
+              alt: {
+                es: 'Nueva versión de identificación segura de InOne',
+                en: 'New InOne secure identification screen',
+              },
+            },
+            {
+              src: '/north/inone-revamp/new-02-card-detail.png',
+              width: 874,
+              height: 1478,
+              alt: {
+                es: 'Nueva versión de detalle de tarjeta de InOne',
+                en: 'New InOne card detail screen',
+              },
+            },
+            {
+              src: '/north/inone-revamp/new-03-card-expanded.png',
+              width: 940,
+              height: 1478,
+              alt: {
+                es: 'Nueva versión de tarjeta desplegada de InOne',
+                en: 'New InOne expanded card screen',
+              },
+            },
+          ],
+          galleryLayout: 'phones',
+        },
+        {
+          title: {
             es: 'Sistema y simplificación',
             en: 'System and simplification',
           },
