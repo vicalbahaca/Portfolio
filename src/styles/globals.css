@@ -2906,8 +2906,10 @@ body {
   transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.home-project:hover img {
-  transform: scale(1.04);
+.home-project:hover img,
+.home-project__link:hover .home-project__media img,
+.home-project__link:focus-visible .home-project__media img {
+  transform: none;
 }
 
 .home-project__content {
@@ -4695,8 +4697,16 @@ body {
 .page-shell--home .home-secondary-item:focus-visible,
 .page-shell--home .home-note:focus-visible,
 .home-project__link:focus-visible,
-.writing-item:focus-visible {
-  box-shadow: 0 0 0 3px rgba(21, 155, 254, 0.9);
+.writing-item:focus-visible,
+.concept-link:focus-visible,
+.proposal-project-row:focus-visible,
+.proposal-compact-row:focus-visible,
+.proposal-work-item:focus-visible {
+  border-radius: 24px;
+  outline: none;
+  box-shadow:
+    0 0 0 3px rgba(255, 255, 255, 0.88),
+    0 0 0 6px rgba(21, 155, 254, 0.95);
 }
 
 .page-shell--home .home-profile {
@@ -4927,6 +4937,12 @@ body {
 .home-project--north img {
   object-fit: var(--project-image-fit, cover);
   object-position: center center;
+}
+
+.home-work__grid--north .home-project:hover img,
+.home-work__grid--north .home-project__link:hover .home-project__media img,
+.home-work__grid--north .home-project__link:focus-visible .home-project__media img {
+  transform: none;
 }
 
 .north-page-hero__panel,
@@ -5439,9 +5455,18 @@ body {
 .home-secondary-item:focus-visible,
 .home-note:focus-visible,
 .writing-item:focus-visible,
+.concept-link:focus-visible,
+.proposal-project-row:focus-visible,
+.proposal-compact-row:focus-visible,
+.proposal-work-item:focus-visible,
 .back-link:focus-visible,
-.inline-link:focus-visible {
+.inline-link:focus-visible,
+.home-project__link:focus-visible {
   border-radius: 24px;
+  outline: none;
+  box-shadow:
+    0 0 0 3px rgba(255, 255, 255, 0.88),
+    0 0 0 6px rgba(21, 155, 254, 0.95);
 }
 
 @media (max-width: 980px) {
@@ -5880,6 +5905,20 @@ body {
 
 .work-case-section__gallery--2 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.work-case-page--facilitea-figma-plugin .work-case-section__gallery--2 .work-case-section__figure-media {
+  height: clamp(420px, 42vw, 620px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f4f4f1;
+}
+
+.work-case-page--facilitea-figma-plugin .work-case-section__gallery--2 .work-case-media-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .work-case-section__gallery--3 {
@@ -6449,6 +6488,10 @@ body.lightbox-open .navbar {
   border-top: 1px solid rgba(13, 23, 38, 0.1);
   border-radius: 0;
   background: transparent;
+}
+
+.page-shell--home .home-secondary-item:first-child {
+  border-top: 0;
 }
 
 .page-shell--home .home-secondary-item + .home-secondary-item,

@@ -241,7 +241,6 @@ export default function HomeLanding() {
                 <div key={project.slug} className={`home-project-slot home-project-slot--${index + 1}`}>
                   <motion.article
                     className="home-project"
-                    whileHover={{ y: -8, scale: 1.01 }}
                     transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
                     style={{
                       '--project-accent': project.accent,

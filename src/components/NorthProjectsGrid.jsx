@@ -31,7 +31,6 @@ export default function NorthProjectsGrid({ className = '', trackId, trackRef })
         <div key={project.slug} className={`home-project-slot home-project-slot--north home-project-slot--north-${index + 1}`}>
           <motion.article
             className="home-project home-project--north"
-            whileHover={{ y: -8, scale: 1.01 }}
             transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
             style={{
               '--project-accent': project.accent || '#159BFE',

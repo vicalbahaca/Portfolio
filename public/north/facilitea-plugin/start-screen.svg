@@ -1,0 +1,20 @@
+<svg width="1600" height="1200" viewBox="0 0 1600 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="1200" fill="#1E1D1D"/>
+  <rect x="62" y="46" width="1476" height="1098" rx="28" fill="#FFFFFF"/>
+  <path d="M62 74C62 58.536 74.536 46 90 46H1510C1525.46 46 1538 58.536 1538 74V132H62V74Z" fill="#2D2A2A"/>
+  <rect x="100" y="71" width="36" height="36" rx="6" fill="#FFFFFF"/>
+  <path d="M113 91L119 80M119 80L125 91M119 80V98" stroke="#0A4A59" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="154" y="93" fill="#FFFFFF" font-size="24" font-family="Arial, sans-serif" font-weight="700">Facilitea - Plugin Dise&#241;o</text>
+  <path d="M1462 72L1490 100M1490 72L1462 100" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+  <text x="800" y="272" fill="#004B5B" font-size="86" text-anchor="middle" font-family="Arial, sans-serif" font-weight="800">Textos B2</text>
+  <circle cx="1420" cy="245" r="17" stroke="#004B5B" stroke-width="4"/>
+  <text x="1420" y="252" fill="#004B5B" text-anchor="middle" font-size="28" font-family="Arial, sans-serif" font-weight="700">i</text>
+  <text x="800" y="385" fill="#676767" font-size="30" text-anchor="middle" font-family="Arial, sans-serif">Selecciona los elementos que quieres incluir y pulsa Seleccionar. Se guardar&#225;n</text>
+  <text x="800" y="425" fill="#676767" font-size="30" text-anchor="middle" font-family="Arial, sans-serif">en la lista inferior para generar un CSV con los textos visibles y su versi&#243;n</text>
+  <text x="800" y="465" fill="#676767" font-size="30" text-anchor="middle" font-family="Arial, sans-serif">validada para B2.</text>
+  <rect x="618" y="560" width="364" height="92" rx="20" fill="#FFFFFF" stroke="#004B5B" stroke-width="3"/>
+  <text x="800" y="617" fill="#004B5B" font-size="30" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700">Seleccionar elementos</text>
+  <text x="800" y="735" fill="#737373" font-size="28" text-anchor="middle" font-family="Arial, sans-serif">No hay elementos seleccionados</text>
+  <rect x="106" y="1030" width="1388" height="110" rx="22" fill="#E6E5E3"/>
+  <text x="800" y="1098" fill="#6F6F6F" font-size="30" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700">Buscar textos</text>
+</svg>

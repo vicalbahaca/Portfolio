@@ -218,7 +218,7 @@ export const northSection = {
     {
       slug: 'inone-revamp',
       title: 'InOne Revamp',
-      image: '/north/page-12.jpg',
+      image: null,
       cardImage: '/north/covers/inone-new.jpg',
       cardImageMode: 'cover',
       cardUseBackdrop: false,
@@ -283,17 +283,6 @@ export const northSection = {
           caption: {
             es: 'Base de trabajo con discovery, benchmark, arquitectura y primeras decisiones de producto.',
             en: 'Working base covering discovery, benchmark, architecture, and the first product decisions.',
-          },
-        },
-        {
-          src: '/north/page-12.jpg',
-          alt: {
-            es: 'Vista general de la app financiera InOne',
-            en: 'Overview of the InOne financial app',
-          },
-          caption: {
-            es: 'Revisión del área principal y jerarquía de producto.',
-            en: 'Review of the main area and product hierarchy.',
           },
         },
         {
@@ -478,16 +467,6 @@ export const northSection = {
               'Improved consistency across screens with a focus on operational clarity.',
             ],
           },
-          gallery: [
-            {
-              src: '/north/page-12.jpg',
-              alt: {
-                es: 'Nueva versión y mejoras estructurales de InOne',
-                en: 'New version and structural improvements for InOne',
-              },
-            },
-          ],
-          galleryLayout: 1,
         },
         {
           title: {
@@ -532,7 +511,7 @@ export const northSection = {
           galleryLayout: 1,
         },
       ],
-      gallery: ['/north/page-11.jpg', '/north/page-12.jpg', '/north/page-13.jpg'],
+      gallery: ['/north/page-11.jpg', '/north/page-13.jpg'],
     },
     {
       slug: 'prescriptor-unification',
@@ -546,8 +525,8 @@ export const northSection = {
         en: 'Banking, distribution, and prescriber channel',
       },
       role: {
-        es: 'Principal Product Designer',
-        en: 'Principal Product Designer',
+        es: 'AI Principal Product Designer',
+        en: 'AI Principal Product Designer',
       },
       scope: {
         es: 'Unificación multicanal, journeys y reducción de fricción',
@@ -1253,8 +1232,282 @@ export const northSection = {
       ],
       gallery: ['/north/page-32.jpg', '/north/page-34.jpg', '/north/page-35.jpg', '/north/page-36.jpg', '/north/page-38.jpg'],
     },
+    {
+      slug: 'facilitea-figma-plugin',
+      title: 'Plugin de diseño Facilitea',
+      image: null,
+      imageRatio: '4 / 3',
+      heroRatio: '4 / 3',
+      cardImage: '/north/covers/facilitea-plugin-cover.png',
+      cardImageMode: 'contain',
+      accent: '#004B5B',
+      client: 'Facilitea · CaixaBank',
+      industry: {
+        es: 'Ecommerce, diseño de producto y automatización interna',
+        en: 'Ecommerce, product design, and internal automation',
+      },
+      role: {
+        es: 'Principal Product Designer',
+        en: 'Principal Product Designer',
+      },
+      scope: {
+        es: 'Plugin de Figma, revisión B2, accesibilidad y exportación de textos',
+        en: 'Figma plugin, B2 review, accessibility, and text export',
+      },
+      cardTag: {
+        es: 'Plugin interno para equipos de diseño y contenido',
+        en: 'Internal plugin for design and content teams',
+      },
+      cardDescription: {
+        es: 'Diseño y desarrollo de un plugin interno de Figma para reducir trabajo manual en revisión B2, accesibilidad y preparación de textos para desarrollo.',
+        en: 'Design and development of an internal Figma plugin that reduced manual work in B2 review, accessibility checks, and text preparation for development.',
+      },
+      metric: {
+        es: 'Plugin interno · CSV/XLSX · exportación ES/CAT/EN',
+        en: 'Internal plugin · CSV/XLSX · ES/CAT/EN export',
+      },
+      headline: {
+        es: 'Diseño y desarrollo de un plugin interno de Figma que convierte la revisión de textos, accesibilidad y exportación multidioma en un flujo único, trazable y mucho más rápido.',
+        en: 'Design and development of an internal Figma plugin that turns text review, accessibility checks, and multilingual export into a single, traceable, and much faster workflow.',
+      },
+      summary: {
+        es: 'Plugin interno creado para Facilitea, el ecommerce de CaixaBank, con el objetivo de reducir trabajo manual en revisión de contenidos, validación B2 y preparación de textos para desarrollo.',
+        en: 'Internal plugin built for Facilitea, CaixaBank’s ecommerce platform, to reduce manual work in content review, B2 validation, and text preparation for development.',
+      },
+      description: {
+        es: 'La herramienta unifica en una sola interfaz la selección de pantallas en Figma, la detección de textos visibles, la propuesta de mejora B2, la trazabilidad de cada capa y la exportación final para equipos de contenido, legal, accesibilidad y desarrollo.',
+        en: 'The tool brings together screen selection in Figma, visible-text detection, B2 improvement proposals, layer-level traceability, and final export for content, legal, accessibility, and engineering teams inside one interface.',
+      },
+      detail: {
+        es: 'La interfaz se apoyó en el design system de Facilitea para mantener coherencia visual con el producto, mientras que la lógica interna resuelve selección, deduplicación, validación B2 y exportación operativa sin sacar al equipo de Figma.',
+        en: 'The interface reused the Facilitea design system to stay visually coherent with the product, while the internal logic handled selection, deduplication, B2 validation, and operational export without taking the team out of Figma.',
+      },
+      focus: {
+        es: [
+          'Unificación de revisión B2, accesibilidad y exportación textual en una sola herramienta.',
+          'Trazabilidad entre cada texto exportado y su capa original dentro de Figma.',
+          'Entrega operativa para equipos no diseño mediante CSV/XLSX y exportación multidioma.',
+        ],
+        en: [
+          'Unification of B2 review, accessibility checks, and text export inside one tool.',
+          'Traceability between every exported string and its original Figma layer.',
+          'Operational delivery for non-design teams through CSV/XLSX and multilingual export.',
+        ],
+      },
+      visualDeck: [
+        {
+          src: '/north/facilitea-plugin/start-screen.png',
+          alt: {
+            es: 'Pantalla de resultados y exportación del plugin Textos B2',
+            en: 'Results and export screen for the Textos B2 plugin',
+          },
+          caption: {
+            es: 'Resultado final con métricas, tabla de textos y acciones para copiar CSV o guardar Excel.',
+            en: 'Final result with metrics, text table, and actions to copy CSV or save Excel.',
+          },
+        },
+      ],
+      detailSections: [
+        {
+          title: {
+            es: 'Qué resuelve',
+            en: 'What it solves',
+          },
+          body: {
+            es: 'El plugin nace para reducir un proceso manual y propenso a errores: revisar textos de Figma, validar si están alineados con criterios B2, preparar entregables para otros equipos y mantener la relación con el diseño original.',
+            en: 'The plugin was created to reduce a manual and error-prone process: reviewing Figma copy, validating it against B2 criteria, preparing deliverables for other teams, and keeping the link to the original design.',
+          },
+          paragraphs: {
+            es: [
+              'Diseñé y desarrollé esta herramienta interna para Facilitea, el ecommerce de CaixaBank, agrupando varias necesidades reales del equipo en una sola interfaz: documentación de accesibilidad, exportación de textos B2 y revisión visual con textos al 200%.',
+              'La base visual se construyó tomando como referencia el design system de Facilitea, reutilizando criterios de UI, componentes y variables para que el plugin se sintiera parte del mismo ecosistema de producto y no una utilidad aislada.',
+            ],
+            en: [
+              'I designed and developed this internal tool for Facilitea, CaixaBank’s ecommerce platform, combining several real team needs in one interface: accessibility documentation, B2 text export, and visual review with text resized to 200%.',
+              'The visual foundation reused the Facilitea design system, including UI criteria, components, and variables, so the plugin felt like part of the same product ecosystem instead of an isolated utility.',
+            ],
+          },
+          points: {
+            es: [
+              'Una única herramienta para revisión de textos, accesibilidad y preparación de entregables.',
+              'Interfaz alineada con el design system ya usado por el producto.',
+              'Sección de ayuda integrada para explicar el flujo real de trabajo.',
+            ],
+            en: [
+              'A single tool for text review, accessibility checks, and delivery preparation.',
+              'Interface aligned with the design system already used by the product.',
+              'Integrated help section to explain the real working flow.',
+            ],
+          },
+          gallery: [
+            {
+              src: '/north/facilitea-plugin/results-screen.png',
+              width: 1600,
+              height: 1200,
+              alt: {
+                es: 'Pantalla inicial del plugin Facilitea Textos B2',
+                en: 'Opening screen of the Facilitea Textos B2 plugin',
+              },
+              caption: {
+                es: 'Pantalla de entrada del plugin, con acceso a selección de elementos y arranque del flujo de búsqueda.',
+                en: 'Plugin entry screen, with access to element selection and the start of the search flow.',
+              },
+            },
+            {
+              src: '/north/facilitea-plugin/loading-screen.png',
+              width: 1600,
+              height: 1200,
+              alt: {
+                es: 'Pantalla de ayuda del plugin Facilitea Textos B2',
+                en: 'Help screen of the Facilitea Textos B2 plugin',
+              },
+              caption: {
+                es: 'Pantalla de información para explicar qué hace la herramienta, qué se puede seleccionar y cómo funciona el flujo.',
+                en: 'Information screen explaining what the tool does, what can be selected, and how the workflow behaves.',
+              },
+            },
+          ],
+          galleryLayout: 2,
+        },
+        {
+          title: {
+            es: 'Selección y trazabilidad',
+            en: 'Selection and traceability',
+          },
+          body: {
+            es: 'El flujo parte siempre de una selección en Figma. El usuario puede añadir frames, secciones, grupos, componentes, instancias o capas de texto, y cada elemento se representa como una etiqueta interactiva dentro del plugin.',
+            en: 'The flow always starts with a selection in Figma. The user can add frames, sections, groups, components, instances, or text layers, and each element is shown as an interactive tag inside the plugin.',
+          },
+          paragraphs: {
+            es: [
+              'Al pulsar en “Seleccionar elementos”, la herramienta guarda cada selección válida, evita duplicados y mantiene la jerarquía para no exportar el mismo contenido varias veces. Desde cada etiqueta se puede volver al frame o componente correspondiente en el canvas para revisar selecciones grandes sin perder contexto.',
+              'Este punto era importante porque la exportación no podía convertirse en una lista ciega. Cada string tenía que seguir conectado con su origen dentro del diseño para facilitar revisión manual, exclusiones puntuales y correcciones rápidas durante el trabajo del equipo.',
+            ],
+            en: [
+              'When the user clicks “Seleccionar elementos”, the tool stores each valid selection, avoids duplicates, and preserves hierarchy so the same content is not exported multiple times. Every tag can take the user back to the corresponding frame or component in the canvas, which keeps large selections manageable.',
+              'This mattered because the export could not become a blind list. Every string had to remain connected to its origin inside the design so manual review, selective exclusions, and quick corrections stayed practical for the team.',
+            ],
+          },
+          points: {
+            es: [
+              'Selección soportada para frames, secciones, grupos, componentes, instancias y textos.',
+              'Etiquetas interactivas para volver al origen de cada selección.',
+              'Control de duplicados y jerarquía para evitar exportaciones repetidas.',
+            ],
+            en: [
+              'Supported selection for frames, sections, groups, components, instances, and text layers.',
+              'Interactive tags to jump back to the origin of each selection.',
+              'Duplicate and hierarchy control to avoid repeated exports.',
+            ],
+          },
+          gallery: [
+            {
+              src: '/north/facilitea-plugin/selection-multi.png',
+              width: 1600,
+              height: 1200,
+              alt: {
+                es: 'Selección múltiple dentro del plugin Textos B2',
+                en: 'Multiple selection inside the Textos B2 plugin',
+              },
+              caption: {
+                es: 'Selección múltiple de frames, componentes y elementos para preparar una revisión amplia sin perder jerarquía.',
+                en: 'Multiple selection of frames, components, and elements to prepare a broader review without losing hierarchy.',
+              },
+            },
+            {
+              src: '/north/facilitea-plugin/selection-single.png',
+              width: 1600,
+              height: 1200,
+              alt: {
+                es: 'Selección simple dentro del plugin Textos B2',
+                en: 'Single selection inside the Textos B2 plugin',
+              },
+              caption: {
+                es: 'Selección de un único elemento con trazabilidad directa hacia su origen dentro del canvas de Figma.',
+                en: 'Single-element selection with direct traceability back to its origin inside the Figma canvas.',
+              },
+            },
+          ],
+          galleryLayout: 2,
+        },
+        {
+          title: {
+            es: 'Análisis, B2 y exportación',
+            en: 'Analysis, B2, and export',
+          },
+          body: {
+            es: 'Al lanzar la búsqueda, el plugin recorre capa por capa los elementos seleccionados, identifica textos visibles, descarta vacíos o no relevantes, elimina duplicados y prepara una tabla final con métricas, propuesta B2 y acciones por fila.',
+            en: 'Once analysis starts, the plugin scans the selected elements layer by layer, identifies visible text, discards empty or irrelevant strings, removes duplicates, and prepares a final table with metrics, B2 proposals, and row-level actions.',
+          },
+          paragraphs: {
+            es: [
+              'La revisión combina reglas internas de lenguaje claro, detección de términos mejorables, análisis de legibilidad y conexión con Clara, la herramienta interna de CaixaBank para validar si un texto cumple criterios de B2 en español. Cuando detecta una mejora, la fila queda marcada y se puede consultar el motivo desde la propia interfaz.',
+              'El resultado puede copiarse como CSV o guardarse como Excel para que managers, desarrollo, accesibilidad, legal o contenido revisen los textos fuera de Figma. La exportación incluye sección, texto original, propuesta B2, traducción al catalán y traducción al inglés, dejando el material listo para los equipos que intervienen después del diseño.',
+            ],
+            en: [
+              'The review combines internal plain-language rules, detection of improvable terms, readability analysis, and a connection to Clara, CaixaBank’s internal tool used to validate whether Spanish copy meets B2 criteria. When a better version is found, the row is flagged and the reason can be reviewed in the interface itself.',
+              'The output can be copied as CSV or saved as Excel so managers, engineering, accessibility, legal, or content teams can review the copy outside Figma. The export includes section, original text, B2 proposal, Catalan translation, and English translation, leaving the material ready for the teams that work after design.',
+            ],
+          },
+          points: {
+            es: [
+              'Detección automática de textos visibles y limpieza de entradas no útiles.',
+              'Marcado de mejoras B2 con explicación y acciones por fila.',
+              'Salida operativa en CSV/XLSX con columnas listas para revisión multidioma.',
+            ],
+            en: [
+              'Automatic detection of visible text and cleanup of unusable entries.',
+              'Flagged B2 improvements with explanation and row-level actions.',
+              'Operational CSV/XLSX output with columns ready for multilingual review.',
+            ],
+          },
+          gallery: [
+            {
+              src: '/north/facilitea-plugin/help-screen.png',
+              width: 1600,
+              height: 1200,
+              alt: {
+                es: 'Pantalla de carga del plugin Textos B2',
+                en: 'Loading screen of the Textos B2 plugin',
+              },
+              caption: {
+                es: 'Estado de análisis mientras el plugin recorre capas, detecta textos visibles y prepara la tabla final.',
+                en: 'Analysis state while the plugin scans layers, detects visible text, and prepares the final table.',
+              },
+            },
+            {
+              src: '/north/facilitea-plugin/start-screen.png',
+              width: 1600,
+              height: 1200,
+              alt: {
+                es: 'Pantalla de resultados del plugin Textos B2',
+                en: 'Results screen of the Textos B2 plugin',
+              },
+              caption: {
+                es: 'Resultado final con métricas, tabla de textos y acciones para copiar CSV o guardar Excel.',
+                en: 'Final result with metrics, text table, and actions to copy CSV or save Excel.',
+              },
+            },
+          ],
+          galleryLayout: 2,
+        },
+      ],
+      gallery: [
+        '/north/facilitea-plugin/results-screen.png',
+        '/north/facilitea-plugin/start-screen.png',
+        '/north/facilitea-plugin/help-screen.png',
+        '/north/facilitea-plugin/selection-multi.png',
+        '/north/facilitea-plugin/selection-single.png',
+        '/north/facilitea-plugin/loading-screen.png',
+      ],
+    },
   ],
 }
+
+northSection.projects = [
+  ...northSection.projects.filter((project) => project.slug === 'facilitea-figma-plugin'),
+  ...northSection.projects.filter((project) => project.slug !== 'facilitea-figma-plugin'),
+]
 
 export function getNorthProjectBySlug(slug) {
   return northSection.projects.find((project) => project.slug === slug) || null
