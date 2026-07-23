@@ -3,7 +3,7 @@ import { useEffect } from 'react'
 import Layout from '../components/Layout'
 import Hero from '../components/Hero'
 import HomeLanding from '../components/HomeLanding'
-import { siteConfig } from '../data/content'
+import { siteConfig } from '../data/siteContent'
 import { useLanguage } from '../lib/i18n'
 
 export default function Home() {
@@ -16,6 +16,13 @@ export default function Home() {
     if ('scrollRestoration' in window.history) {
       window.history.scrollRestoration = 'manual'
     }
+
+    const targetId = window.location.hash.slice(1)
+    if (targetId) {
+      document.getElementById(targetId)?.scrollIntoView({ block: 'start', behavior: 'auto' })
+      return
+    }
+
     window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
   }, [])
 

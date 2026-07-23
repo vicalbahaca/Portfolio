@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import Layout from '../components/Layout'
-import { siteConfig } from '../data/content'
+import { siteConfig } from '../data/siteContent'
 import { useLanguage } from '../lib/i18n'
 
 export default function DoodlebobPage() {

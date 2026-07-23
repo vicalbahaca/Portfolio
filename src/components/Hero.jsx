@@ -4,7 +4,7 @@ import Link from 'next/link'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import { useGSAP } from '@gsap/react'
-import { siteConfig } from '../data/content'
+import { siteConfig } from '../data/siteContent'
 import { useLanguage } from '../lib/i18n'
 import { CloseIcon, CopyIcon } from './Icons'
 

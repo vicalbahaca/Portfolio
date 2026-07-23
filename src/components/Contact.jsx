@@ -1,5 +1,5 @@
 import SectionReveal from './SectionReveal'
-import { siteConfig } from '../data/content'
+import { siteConfig } from '../data/siteContent'
 import { useLanguage } from '../lib/i18n'
 
 export default function Contact() {

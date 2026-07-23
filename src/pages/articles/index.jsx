@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { ArrowLeftIcon } from '../../components/Icons'
 import Layout from '../../components/Layout'
 import Articles from '../../components/Articles'
-import { articles, siteConfig } from '../../data/content'
+import { articles, siteConfig } from '../../data/siteContent'
 import { useLanguage } from '../../lib/i18n'
 
 export default function ArticlesPage() {

@@ -1,4 +1,4 @@
-import { siteConfig } from '../data/content'
+import { siteConfig } from '../data/siteContent'
 import { useLanguage } from '../lib/i18n'
 
 export default function ContactBand({ id, className = '' }) {

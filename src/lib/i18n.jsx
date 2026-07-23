@@ -1,657 +1,227 @@
-import { createContext, useContext, useEffect, useState } from 'react'
-import { localizeArticleContent, localizeProjectContent } from './contentI18n'
-
-const LANGUAGE_STORAGE_KEY = 'victor-saiz-portfolio-language'
+import { createContext, useContext } from 'react'
 
 const LanguageContext = createContext(null)
 
-const translations = {
-  es: {
-    langCode: 'ES',
-    langLabel: 'Español',
-    site: {
-      role: 'Product Designer',
-      location: 'Barcelona, España',
-      skipToContent: 'Saltar al contenido',
-    },
-    nav: {
-      work: 'Proyectos',
-      workNorth: 'North',
-      workMain: 'Principales',
-      workOther: 'Otros proyectos',
-      about: 'Sobre mí',
-      articles: 'Artículos',
-      openMenu: 'Abrir menú',
-      closeMenu: 'Cerrar menú',
-      openEmail: 'Abrir email',
-      primary: 'Navegación principal',
-      mobile: 'Navegación móvil',
-      language: 'Idioma',
-      linkedinLabel: 'LinkedIn',
-      behanceLabel: 'Behance',
-    },
-    hero: {
-      subtitle: 'Product Designer',
-      cta: 'Ir a LinkedIn',
-      statementLines: [
-        'Product Designer con más de 6 años en Fintech, Startups y SaaS.',
-        'Trabajo end-to-end de forma transversal, desde negocio, producto, diseño y tech.',
-      ],
-      personalEmailAria: 'Correo personal',
-      copyEmail: 'Copiar correo electrónico',
-      copiedEmail: 'Copiado en portapapeles',
-      closeToast: 'Cerrar aviso',
-      scroll: 'Navega hacia abajo',
-    },
-    home: {
-      northLabel: 'North studio',
-      northTitle: 'Proyectos recientes en North studio',
-      northCaption:
-        'Revisa los proyectos más relevantes que he realizado como Principal product designer, para clientes reales con mayor impacto. En los proyectos no hay información sensible ni proceso detallado al completo por NDA con North.',
-      northCta: 'Ver proyectos en North',
-      featuredLabel: 'Casos principales',
-      featuredTitle: 'Proyectos recientes',
-      secondaryLabel: 'Archivo secundario',
-      secondaryTitle: 'Otros proyectos',
-      secondaryCaption: 'Conceptos y piezas más rápidas que completan el archivo de trabajo.',
-      aboutLabel: 'Sobre mí',
-      aboutTitle: 'Sobre mí',
-      aboutSubtitle: 'Senior AI Product Designer',
-      aboutBody: [
-        'Mi carrera conecta diseño, tecnología, producto y negocio. Empecé a jugar con código con 15 años y desde entonces mi enfoque ha sido el mismo: entender el problema, crear, validar e iterar.',
-        'En los últimos años he estado centrado en proyectos de fintech y retail donde la precisión, la validación funcional y el entendimiento del negocio y del usuario son clave.',
-        'Me considero un Product Maker de manual, un perfil 360. En equipos que quieren moverse rápido de verdad, necesitas perfiles así, capaces de adaptar metodologías, simplificar procesos y llevar las ideas hasta producción.',
-        'Se me reconoce por ser rápido, organizado y por ejecutar. Tengo una mentalidad de startup, enfocada en iterar rápido, encontrar la forma más eficiente de trabajar y empujar hasta que las cosas pasan.',
-        'Me obsesiona aportar valor real, subir el nivel del equipo y del producto, y convertirme en alguien realmente fuerte en los problemas que estoy resolviendo.',
-      ],
-      experienceLabel: 'Experiencia',
-      experienceTitle: 'Trayectoria laboral',
-      experienceCaption:
-        'He combinado diseño de producto, lógica de negocio y ejecución técnica en consultoría, startups, servicios digitales y proyectos de producto con mucho peso de interfaz.',
-      experienceItems: [
-        {
-          role: 'Product & Engineering · Colaborador',
-          company: 'Coubber (Startup) · Tiempo parcial (Barcelona)',
-          period: 'Ene 2026 — actualidad',
-          summary: 'Desarrollo y diseño de producto en startup enfocada en generación de informes deportivos a partir de dispositivos de medición.',
-          highlights: [
-            'Creación de backlog, diseño de producto e implantación de código.',
-            'Integración de modelos de IA para interpretar datos y generar valor accionable.',
-          ],
-        },
-        {
-          role: 'Senior Product Designer · Senior AI Product Designer',
-          company: 'North · Tiempo completo (Barcelona)',
-          period: 'Nov 2024 — actualidad',
-          moves: [
-            {
-              role: 'Senior AI Product Designer',
-              period: 'Ene 2026 — actualidad',
-              summary:
-                'Principal AI Product Designer en una squad interna de IA: exploración y filtrado de herramientas, automatizaciones para acelerar squads (prototipos, documentación, QA y soporte de research).',
-              highlights: [
-                'Diseño y lanzamiento de proyectos impulsados por IA para grandes clientes.',
-                'Continuidad de proyectos en sector bancario y retail.',
-              ],
-            },
-            {
-              role: 'Mid-Senior Product Designer',
-              period: 'Oct 2024 — ene 2026',
-              summary:
-                'Lead designer en cuatro productos fintech (web y mobile) centrados en contratación financiera, onboarding y herramientas de gestión B2B, B2C y B2B2C.',
-              highlights: [
-                'Owner de financiación y checkout eCommerce en uno de los principales bancos de España.',
-                'Accessibility Lead: handoffs accesibles para web y apps nativas.',
-                'Trabajo cercano con POs, PMs, Devs y negocio para validar flujos y requisitos regulatorios.',
-              ],
-            },
-          ],
-        },
-        {
-          role: 'Product Designer Lead',
-          company: 'Lowerton (Startup) · Tiempo completo (Remoto)',
-          period: 'Mar 2024 — oct 2024',
-          summary: 'Definición y diseño de producto digital desde cero.',
-          highlights: [
-            'Trabajo en proyectos con requisitos complejos, incluyendo concursos públicos, con foco en documentación y alineación con negocio.',
-            'Participación en concursos públicos y generación de documentación técnica/legal mediante IA.',
-          ],
-        },
-        {
-          role: 'UX/UI Freelance',
-          company: 'Freelance',
-          period: 'Ago 2023 — jun 2024',
-          summary: 'Diseño de productos digitales y landings orientadas a conversión (empresas de marketing, portfolios y ecommerce).',
-          highlights: ['Mejora de flujos y experiencia de usuario en distintos proyectos.'],
-        },
-        {
-          role: 'Full Stack Developer · UX Designer · QA',
-          company: 'Deusto SEIDOR S.A · Tiempo completo (Vitoria)',
-          period: 'Mar 2021 — ago 2023',
-          moves: [
-            {
-              role: 'Full Stack Developer · UX Designer · QA',
-              period: 'Jun 2022 — ago 2023',
-              highlights: [
-                'Diseño y desarrollo de funcionalidades combinando visión técnica y de producto.',
-                'Mejora de UX, mejora continua de producto, investigación con usuarios y QA.',
-                'Lideré un equipo de cinco especialistas para refinar flujos y crear funcionalidades centradas en el usuario.',
-              ],
-            },
-            {
-              role: 'Full Stack Developer',
-              period: 'Jun 2021 — jun 2022',
-              highlights: [
-                'Participación en decisiones técnicas y estructuración de soluciones.',
-                'Acercamiento entre desarrollo y producto, aportando criterio más allá de código.',
-                'Implementación de funcionalidades y comprensión de la lógica de negocio desde el lado técnico.',
-              ],
-            },
-            {
-              role: 'Full Stack Developer · Intern',
-              period: 'Mar 2021 — jun 2021',
-              highlights: [
-                'Desarrollo de soluciones tecnológicas desde cero.',
-                'Participación en software de digitalización documental utilizando .NET, Python, Angular y C#.',
-              ],
-            },
-          ],
-        },
-        {
-          role: 'Técnico informático · Intern',
-          company: 'NSM Educational Center · Tiempo completo (Vitoria)',
-          period: 'Mar 2019 — jun 2019',
-          highlights: [
-            'Rediseño y desarrollo de un sistema en WordPress para gestionar recursos educativos y mejorar la eficiencia diaria.',
-            'Pruebas de la nueva plataforma con profesorado y alumnado, recogida de feedback e iteraciones de mejora.',
-          ],
-        },
-      ],
-      workflowLabel: 'Flujo de trabajo',
-      workflowTitle: 'El mundo está cambiando y mi forma de trabajar también',
-      workflowCaption:
-        'Hay que saber priorizar, diseñar y validar para cualquier tipo de proyecto. Este workflow depende del contexto, los tiempos y el presupuesto, pero suele moverse entre estas etapas.',
-      workflowSteps: [
-        'Priorización y roadmap con negocio.',
-        'Lectura de analítica actual, si existe, junto con research y benchmark.',
-        'Revisión de arquitectura, posibles flujos de usuario y casuísticas.',
-        'Validación de esta arquitectura con negocio y con tech.',
-        'Primeros diseños validados con usuarios reales o perfiles simulados con IA para testear casos y usabilidad.',
-        'Validación e iteración técnica y de negocio.',
-        'Diseño de todo el flujo o de la pantalla trabajada.',
-        'Validación del flujo o de la pantalla antes de cerrar la solución.',
-        'Documentación automatizada para preparar el handoff.',
-        'Handoff con contexto suficiente para desarrollo.',
-        'Revisión de la analítica y comparación con la analítica anterior.',
-        'Si aplica, planteamiento de A/B test o experimento para seguir iterando.',
-      ],
-      downloadCv: 'Descargar CV',
-      downloadCvEs: 'Descargar CV ES',
-      downloadCvEn: 'Descargar CV EN',
-      articlesLabel: 'Archivo editorial',
-      articlesTitle: 'Publicaciones',
-      articlesCaption: 'Artículos y notas publicados en la versión actual del portfolio.',
-      allArticles: 'Ver todas las publicaciones',
-      contactTitle: 'Contacta conmigo',
-      contactCaption:
-        'Si tienes una posición abierta en tu equipo, necesitas una colaboración puntual o simplemente quieres hablar de producto y de como está cambiando el mundo, puedes enviarme un correo y te responderé lo antes posible.',
-      contactCta: 'Contactar',
-    },
-    footer: {
-      work: 'Proyectos',
-      about: 'Sobre mí',
-      articles: 'Artículos',
-      contact: 'Contacto',
-      email: 'Correo',
-      navigation: 'Navegación del pie',
-      linkedinLabel: 'LinkedIn',
-    },
-    articles: {
-      back: 'Volver',
-      kicker: 'Archivo',
-      title: 'Publicaciones',
-      description: 'Archivo completo de artículos, notas y publicaciones sobre producto, UX/UI, accesibilidad y herramientas.',
-      sectionKicker: 'Publicaciones',
-      archiveDescription: 'Archivo completo de artículos y notas publicados en el portfolio.',
-      allArticles: 'Ver todas las publicaciones',
-      metaDescription: 'Archivo curado de publicaciones públicas de LinkedIn sobre producto, UX/UI y accesibilidad.',
-      opening: 'Abriendo publicación...',
-    },
-    north: {
-      kicker: 'North studio',
-      title: 'Proyectos en North',
-      description:
-        'Revisa los proyectos más relevantes que he realizado como Principal product designer, para clientes reales con mayor impacto. En los proyectos no hay información sensible ni proceso detallado al completo por NDA con North.',
-      back: 'Volver',
-      summaryTitle: 'Resumen',
-      detailTitle: 'Aportación',
-      focusTitle: 'Enfoque',
-      impactLabel: 'Impacto',
-      roleLabel: 'Rol',
-      clientLabel: 'Cliente',
-      industryLabel: 'Sector',
-      scopeLabel: 'Alcance',
-      ndaTitle: 'Nota de alcance',
-      ndaBody:
-        'Estas páginas resumen contexto, impacto y decisiones visibles. No incluyen información sensible ni el proceso completo por restricciones de NDA con North.',
-      allProjects: 'Ver todos los proyectos de North',
-    },
-    work: {
-      notFound: 'Proyecto no encontrado',
-      back: 'Volver',
-      visitWebsite: 'Visitar web',
-      metaDescriptionFallback: 'Caso de estudio de producto, UX/UI y sistemas diseñado por Victor Saiz.',
-      expandImage: 'Ampliar imagen',
-      closeImage: 'Cerrar imagen',
-    },
-    redirects: {
-      workTitle: 'Proyectos',
-      aboutTitle: 'Sobre mí',
-      projectsTitle: 'Proyectos',
-      northTitle: 'Proyectos en North',
-      openingWork: 'Abriendo la sección de proyectos...',
-      openingAbout: 'Abriendo la sección Sobre mí...',
-      openingNorth: 'Abriendo la sección de proyectos en North...',
-    },
-    access: {
-      title: 'Acceso privado',
-      description: 'Introduce la contraseña para acceder al portfolio.',
-      label: 'Contraseña',
-      placeholder: 'Escribe la contraseña',
-      submit: 'Entrar',
-      error: 'La contraseña no es correcta.',
-    },
-    doodlebob: {
-      title: 'ME HOY MINOY!',
-      kicker: 'Easter egg',
-      description:
-        'La versión local del portfolio mantiene a Doodlebob para conservar el lado más juguetón y menos corporativo de la web.',
-      reason: 'Por qué existe',
-      bodyOne:
-        'Las referencias a Bob Esponja forman parte del lenguaje visual de Victor y ayudan a que la marca se sienta menos corporativa y más personal.',
-      bodyTwo:
-        'También explican la mezcla de humor, color y formas exageradas que aparece en otros puntos del portfolio.',
-      back: 'Volver al inicio',
-      metaDescription: 'Rincón lúdico del portfolio, preservado como pequeño easter egg dentro de la versión en código.',
-    },
-    marquee: {
-      label: 'Highlights',
-    },
-    contactLegacy: {
-      kicker: 'Contacto',
-      title: 'Si el producto necesita criterio visual y alguien que entienda a ingeniería, hablemos.',
-      linkedin: 'LinkedIn',
-      mentorship: 'Mentorías',
-      downloadCv: 'Descargar CV',
-    },
+const spanishCopy = {
+  site: {
+    role: 'Product Designer',
+    location: 'Barcelona, España',
+    skipToContent: 'Saltar al contenido',
   },
-  en: {
-    langCode: 'EN',
-    langLabel: 'English',
-    site: {
-      role: 'Product Designer',
-      location: 'Barcelona, Spain',
-      skipToContent: 'Skip to content',
-    },
-    nav: {
-      work: 'Work',
-      workNorth: 'North',
-      workMain: 'Main projects',
-      workOther: 'Other projects',
-      about: 'About',
-      articles: 'Articles',
-      openMenu: 'Open menu',
-      closeMenu: 'Close menu',
-      openEmail: 'Open email',
-      primary: 'Primary navigation',
-      mobile: 'Mobile navigation',
-      language: 'Language',
-      linkedinLabel: 'LinkedIn',
-      behanceLabel: 'Behance',
-    },
-    hero: {
-      subtitle: 'Product Designer',
-      cta: 'Go to LinkedIn',
-      statementLines: [
-        'Product Designer with more than 6 years of experience in Fintech, Startups, and SaaS.',
-        'I work end-to-end across business, product, design, and tech.',
-      ],
-      personalEmailAria: 'Personal email',
-      copyEmail: 'Copy email address',
-      copiedEmail: 'Copied to clipboard',
-      closeToast: 'Close notice',
-      scroll: 'Navigate down',
-    },
-    home: {
-      northLabel: 'North studio',
-      northTitle: 'Recent projects at North studio',
-      northCaption:
-        'Review the most relevant projects I worked on as Principal Product Designer, for real clients with significant impact. These pages do not include sensitive information or the full detailed process due to NDA constraints with North.',
-      northCta: 'View North projects',
-      featuredLabel: 'Selected cases',
-      featuredTitle: 'Recent projects',
-      secondaryLabel: 'Secondary archive',
-      secondaryTitle: 'Other projects',
-      secondaryCaption: 'Faster concepts and smaller pieces that complete the body of work.',
-      aboutLabel: 'About',
-      aboutTitle: 'About me',
-      aboutSubtitle: 'Senior AI Product Designer',
-      aboutBody: [
-        'My career connects design, technology, product, and business. I started experimenting with code at 15, and since then my approach has stayed the same: understand the problem, build, validate, and iterate.',
-        'In recent years I have focused on fintech and retail projects where precision, functional validation, and a clear understanding of business and user needs are essential.',
-        'I see myself as a true Product Maker with a 360 profile. Teams that want to move fast need this kind of profile: someone who can adapt methods, simplify processes, and take ideas all the way to production.',
-        'People know me for being fast, organised, and execution-focused. I work with a startup mindset, iterating quickly, finding efficient ways to work, and pushing until things happen.',
-        'I am driven by real impact: raising the level of the team and the product, and becoming stronger at the problems I am solving.',
-      ],
-      experienceLabel: 'Experience',
-      experienceTitle: 'Career path',
-      experienceCaption:
-        'I have combined product design, business logic, and technical execution across consulting, startups, digital services, and product work with a strong UI focus.',
-      experienceItems: [
-        {
-          role: 'Product & Engineering · Contributor',
-          company: 'Coubber (Startup) · Part-time (Barcelona)',
-          period: 'Jan 2026 — present',
-          summary: 'Product development and design in a startup focused on sports reporting from measurement devices.',
-          highlights: [
-            'Backlog creation, product design, and code implementation.',
-            'Integration of AI models to interpret data and generate actionable value.',
-          ],
-        },
-        {
-          role: 'Senior Product Designer · Senior AI Product Designer',
-          company: 'North · Full-time (Barcelona)',
-          period: 'Nov 2024 — present',
-          moves: [
-            {
-              role: 'Senior AI Product Designer',
-              period: 'Jan 2026 — present',
-              summary:
-                'Principal AI Product Designer in an internal AI squad: tool exploration and filtering, plus automations to accelerate squads (prototypes, documentation, QA, and research support).',
-              highlights: [
-                'Design and launch of AI-driven projects for enterprise clients.',
-                'Continuity of projects in banking and retail.',
-              ],
-            },
-            {
-              role: 'Mid-Senior Product Designer',
-              period: 'Oct 2024 — Jan 2026',
-              summary:
-                'Lead designer in four fintech products (web and mobile) focused on financial contracting, onboarding, and management tools for B2B, B2C, and B2B2C.',
-              highlights: [
-                'Owner of financing and eCommerce checkout in one of Spain’s main banks.',
-                'Accessibility Lead: accessible handoffs for web and native apps.',
-                'Close collaboration with POs, PMs, Devs, and business stakeholders to validate flows and regulatory requirements.',
-              ],
-            },
-          ],
-        },
-        {
-          role: 'Product Designer Lead',
-          company: 'Lowerton (Startup) · Full-time (Remote)',
-          period: 'Mar 2024 — Oct 2024',
-          summary: 'Definition and design of a digital product from scratch.',
-          highlights: [
-            'Work on projects with complex requirements, including public tenders, with a strong focus on documentation and business alignment.',
-            'Participation in public tenders and generation of technical/legal documentation using AI.',
-          ],
-        },
-        {
-          role: 'UX/UI Freelance',
-          company: 'Freelance',
-          period: 'Aug 2023 — Jun 2024',
-          summary: 'Design of digital products and conversion-focused landing pages (marketing companies, portfolios, and ecommerce).',
-          highlights: ['Improvement of flows and user experience across different projects.'],
-        },
-        {
-          role: 'Full Stack Developer · UX Designer · QA',
-          company: 'Deusto SEIDOR S.A · Full-time (Vitoria)',
-          period: 'Mar 2021 — Aug 2023',
-          moves: [
-            {
-              role: 'Full Stack Developer · UX Designer · QA',
-              period: 'Jun 2022 — Aug 2023',
-              highlights: [
-                'Feature design and development combining technical and product vision.',
-                'UX improvements, continuous product improvement, user research, and QA.',
-                'Led a team of five specialists to refine flows and deliver user-centered features.',
-              ],
-            },
-            {
-              role: 'Full Stack Developer',
-              period: 'Jun 2021 — Jun 2022',
-              highlights: [
-                'Participation in technical decisions and solution structuring.',
-                'Closer connection between development and product, adding judgement beyond code.',
-                'Feature implementation and business logic understanding from the technical side.',
-              ],
-            },
-            {
-              role: 'Full Stack Developer · Intern',
-              period: 'Mar 2021 — Jun 2021',
-              highlights: [
-                'Development of technological solutions from scratch.',
-                'Participation in document digitisation software using .NET, Python, Angular, and C#.',
-              ],
-            },
-          ],
-        },
-        {
-          role: 'IT Technician · Intern',
-          company: 'NSM Educational Center · Full-time (Vitoria)',
-          period: 'Mar 2019 — Jun 2019',
-          highlights: [
-            'Redesign and development of a WordPress system to manage educational resources and improve day-to-day efficiency.',
-            'Testing of the new platform with teachers and students, gathering feedback, and iterative improvements.',
-          ],
-        },
-      ],
-      workflowLabel: 'Workflow',
-      workflowTitle: 'The world is changing and the way I work is changing too',
-      workflowCaption:
-        'You need to know how to prioritise, design, and validate for any kind of project. This workflow depends on context, timelines, and budget, but it usually moves through these stages.',
-      workflowSteps: [
-        'Prioritisation and roadmap alignment with business.',
-        'Review of current analytics, when available, together with research and benchmark work.',
-        'Review of architecture, possible user flows, and edge cases.',
-        'Validation of that architecture with business and tech.',
-        'First designs validated with real users or AI-simulated profiles to test cases and usability.',
-        'Validation and iteration from both technical and business perspectives.',
-        'Design of the full flow or the full screen being worked on.',
-        'Validation of the flow or screen before closing the solution.',
-        'Automated documentation to prepare handoff.',
-        'Handoff with enough context for development.',
-        'Analytics review and comparison against previous performance.',
-        'If it makes sense, definition of an A/B test or experiment to keep iterating.',
-      ],
-      downloadCv: 'Download CV',
-      downloadCvEs: 'Download CV ES',
-      downloadCvEn: 'Download CV EN',
-      articlesLabel: 'Editorial archive',
-      articlesTitle: 'Writing',
-      articlesCaption: 'Articles and short posts published in the current portfolio.',
-      allArticles: 'See all posts',
-      contactTitle: 'Get in touch',
-      contactCaption:
-        'If you have an open role in your team, need focused collaboration, or simply want to talk about product and how the world is changing, send me an email and I will get back to you as soon as possible.',
-      contactCta: 'Contact',
-    },
-    footer: {
-      work: 'Work',
-      about: 'About',
-      articles: 'Articles',
-      contact: 'Contact',
-      email: 'Email',
-      navigation: 'Footer navigation',
-      linkedinLabel: 'LinkedIn',
-    },
-    articles: {
-      back: 'Back',
-      kicker: 'Archive',
-      title: 'Articles',
-      description: 'Full archive of articles, notes, and posts about product, UX/UI, accessibility, and tools.',
-      sectionKicker: 'Articles',
-      archiveDescription: 'Complete archive of articles and notes published in the portfolio.',
-      allArticles: 'See all posts',
-      metaDescription: 'Curated archive of public LinkedIn posts about product, UX/UI, and accessibility.',
-      opening: 'Opening post...',
-    },
-    north: {
-      kicker: 'North studio',
-      title: 'Projects at North',
-      description:
-        'Review the most relevant projects I worked on as Principal Product Designer, for real clients with significant impact. These pages do not include sensitive information or the full detailed process due to NDA constraints with North.',
-      back: 'Back',
-      summaryTitle: 'Overview',
-      detailTitle: 'Contribution',
-      focusTitle: 'Focus',
-      impactLabel: 'Impact',
-      roleLabel: 'Role',
-      clientLabel: 'Client',
-      industryLabel: 'Industry',
-      scopeLabel: 'Scope',
-      ndaTitle: 'Scope note',
-      ndaBody:
-        'These pages summarise context, impact, and visible decisions. They do not include sensitive information or the full process because of NDA restrictions with North.',
-      allProjects: 'See all North projects',
-    },
-    work: {
-      notFound: 'Project not found',
-      back: 'Back',
-      visitWebsite: 'Visit website',
-      metaDescriptionFallback: 'Product, UX/UI, and systems case study designed by Victor Saiz.',
-      expandImage: 'Expand image',
-      closeImage: 'Close image',
-    },
-    redirects: {
-      workTitle: 'Work',
-      aboutTitle: 'About',
-      projectsTitle: 'Projects',
-      northTitle: 'Projects at North',
-      openingWork: 'Opening Work section...',
-      openingAbout: 'Opening About section...',
-      openingNorth: 'Opening North projects section...',
-    },
-    access: {
-      title: 'Private access',
-      description: 'Enter the password to access the portfolio.',
-      label: 'Password',
-      placeholder: 'Enter the password',
-      submit: 'Enter',
-      error: 'The password is not correct.',
-    },
-    doodlebob: {
-      title: 'ME HOY MINOY!',
-      kicker: 'Easter egg',
-      description: 'The local version of the portfolio keeps Doodlebob to preserve the more playful and less corporate side of the site.',
-      reason: 'Why it exists',
-      bodyOne:
-        'SpongeBob references are part of Victor’s visual language and help the brand feel less corporate and more personal.',
-      bodyTwo:
-        'They also explain the mix of humour, colour, and exaggerated shapes that appears in other parts of the portfolio.',
-      back: 'Back to home',
-      metaDescription: 'Playful corner of the portfolio preserved as a small easter egg inside the coded version of the site.',
-    },
-    marquee: {
-      label: 'Highlights',
-    },
-    contactLegacy: {
-      kicker: 'Contact',
-      title: 'If the product needs visual judgement and someone who understands engineering, let’s talk.',
-      linkedin: 'LinkedIn',
-      mentorship: 'Mentoring',
-      downloadCv: 'Download CV',
-    },
+  nav: {
+    work: 'Proyectos',
+    about: 'Sobre mí',
+    articles: 'Publicaciones',
+    openMenu: 'Abrir menú',
+    closeMenu: 'Cerrar menú',
+    primary: 'Navegación principal',
+    mobile: 'Navegación móvil',
+    linkedinLabel: 'LinkedIn',
+  },
+  hero: {
+    cta: 'Ir a LinkedIn',
+    statementLines: [
+      'Principal Product Designer especializado en servicios financieros, retail y productos regulados.',
+      'Conecto negocio, experiencia y tecnología para llevar problemas complejos hasta producción.',
+    ],
+    personalEmailAria: 'Correo personal',
+    copyEmail: 'Copiar correo electrónico',
+    copiedEmail: 'Copiado en portapapeles',
+    closeToast: 'Cerrar aviso',
+    scroll: 'Navega hacia abajo',
+  },
+  home: {
+    northTitle: 'Proyectos en North studio',
+    northCaption:
+      'En los proyectos no hay información sensible ni datos privados: únicamente información pública y procesos de trabajo.',
+    aboutTitle: 'Sobre mí',
+    aboutSubtitle: 'Principal Product Designer',
+    aboutBody: [
+      'Mi experiencia combina diseño de producto, tecnología y negocio para abordar problemas complejos de servicios digitales. Trabajo con autonomía para ordenar necesidades, construir una dirección clara y acompañar la solución hasta su puesta en producción.',
+      'Trabajo con stakeholders para entender el problema, contrastar necesidades y proponer la solución más adecuada para usuario, negocio y tecnología. Mantengo una mirada activa sobre referentes, herramientas y prácticas del sector para aplicarlas al día a día cuando aportan valor real.',
+      'Acostumbrado a trabajar con autonomía en contextos regulados, he participado en productos financieros y proyectos de sector público para canales B2B, B2C y B2B2C. Desarrollo producto de principio a fin, desde sistemas de diseño y prototipos hasta accesibilidad, QA y validación.',
+    ],
+    experienceTitle: 'Trayectoria laboral',
+    experienceItems: [
+      {
+        role: 'Principal Product Designer',
+        company: 'North · Tiempo completo (Barcelona)',
+        period: 'Oct 2024 — Actualmente',
+        summary:
+          'Responsable del diseño end-to-end de los principales canales de captación y contratación de financiación y pagos al consumo de una entidad financiera líder en España, en entornos B2B, B2C y B2B2C.',
+        highlights: [
+          'Trabajo transversal sobre productos de financiación y pagos, incluyendo canales de captación y áreas privadas (web y app).',
+          'Diseño y evolución continua de una aplicación de gestión de productos de financiación con más de 600k usuarios únicos activos.',
+          'Trabajo en el rediseño end-to-end del área privada web y app para la gestión de productos de financiación: nueva experiencia, Design System y despliegue progresivo a producción junto a tecnología.',
+          'Responsable de la experiencia de financiación integrada en el checkout (e-commerce) de un activo de retail de una entidad financiera líder, orientada a mejorar conversión y contratación.',
+          'Responsable de accesibilidad en más de cinco productos financieros, preparándolos para el cumplimiento de normativa europea.',
+          'Impulso aprendizaje mediante workshops internos sobre nuevas herramientas, IA aplicada, accesibilidad y diseño de producto.',
+        ],
+      },
+      {
+        role: 'Product & Engineering · Colaborador',
+        company: 'Coubber (Startup) · Tiempo parcial (Barcelona)',
+        period: 'Ene 2026 — Jun 2026',
+        summary:
+          'Colaboración a tiempo parcial en una startup enfocada en generación de informes deportivos a partir de dispositivos de medición.',
+        highlights: [
+          'Diseño de la experiencia y lógica de pagos en la plataforma vía API de Stripe: planes, permisos, suscripciones, facturación y cancelaciones.',
+          'IA aplicada al producto para transformar datos de dispositivos en informes de valor para el usuario.',
+        ],
+      },
+      {
+        role: 'Product Designer Lead',
+        company: 'Lowerton (Startup) · Tiempo completo (Remoto)',
+        period: 'Mar 2024 — Oct 2024',
+        summary: 'Lideré la conceptualización y diseño de producto en fase early stage, contribuyendo a la entrada del proyecto en Lanzadera, aceleradora de empresas impulsada por Juan Roig.',
+        highlights: [
+          'Definición de un Design System escalable para acelerar la construcción y evolución del producto.',
+          'Definición de soluciones digitales para contextos complejos, con foco en requisitos, negocio y trazabilidad documental.',
+          'Documentación técnica y legal asistida por IA para apoyar propuestas y concursos.',
+        ],
+      },
+      {
+        role: 'UX/UI Freelance',
+        company: 'Freelance · Autónomo',
+        period: 'Ago 2023 — Jun 2024',
+        summary:
+          'Diseño de productos digitales y landings orientadas a conversión para empresas de marketing, portfolios y e-commerce.',
+        highlights: ['Mejora de flujos y experiencia de usuario en distintos proyectos, desde la investigación hasta la iteración de la solución.'],
+      },
+      {
+        role: 'Full Stack Developer & UX Designer & QA',
+        company: 'Deusto SEIDOR S.A · Tiempo completo (Vitoria)',
+        period: 'Mar 2021 — Ago 2023',
+        moves: [
+          {
+            role: 'Full Stack Developer & UX Designer & QA',
+            period: 'Jun 2022 — Ago 2023',
+            highlights: [
+              'Diseño y desarrollo de funcionalidades combinando visión técnica, UX y producto.',
+              'Mejora continua mediante investigación, validación de flujos y QA funcional.',
+              'Responsable de un equipo de tres desarrolladores para refinar flujos y crear funcionalidades centradas en el usuario.',
+            ],
+          },
+          {
+            role: 'Full Stack Developer',
+            period: 'Jun 2021 — Jun 2022',
+            highlights: [
+              'Participación en decisiones técnicas y estructuración de soluciones.',
+              'Conexión entre desarrollo y producto, aportando criterio de negocio más allá de la implementación.',
+            ],
+          },
+          {
+            role: 'Full Stack Developer - Intern',
+            period: 'Mar 2021 — Jun 2021',
+            highlights: [
+              'Participación en software de digitalización documental con .NET, Python, Angular y C#.',
+            ],
+          },
+        ],
+      },
+      {
+        role: 'Técnico informático - Intern',
+        company: 'NSM Educational Center · Tiempo completo (Vitoria)',
+        period: 'Mar 2019 — Jun 2019',
+        highlights: [
+          'Rediseño y desarrollo de un sistema en WordPress para gestionar recursos educativos y mejorar la eficiencia diaria.',
+          'Pruebas de la nueva plataforma con profesorado y alumnado. Recogida de feedback e iteraciones de mejora.',
+        ],
+      },
+    ],
+    downloadCv: 'Descargar CV',
+    articlesTitle: 'Publicaciones',
+    articlesCaption: 'Artículos y notas públicas sobre producto, accesibilidad, herramientas y carrera.',
+    allArticles: 'Ver todas las publicaciones',
+    highlightsLabel: 'Aportaciones en',
+    rolesLabel: 'Evolución en',
+    contactTitle: 'Contacta conmigo',
+    contactCaption:
+      'Si tienes un proyecto interesante o solamente quieres hablar de producto y tecnología, puedes escribirme por LinkedIn.',
+    contactCta: 'Contactar',
+  },
+  footer: {
+    work: 'Proyectos',
+    about: 'Sobre mí',
+    articles: 'Artículos',
+    contact: 'Contacto',
+    email: 'Correo',
+    navigation: 'Navegación del pie',
+    linkedinLabel: 'LinkedIn',
+    contactLinkedin: 'Contactar por LinkedIn',
+  },
+  articles: {
+    back: 'Volver',
+    title: 'Publicaciones',
+    description:
+      'Archivo de artículos y notas públicas sobre producto, UX/UI, accesibilidad y herramientas.',
+    archiveDescription: 'Archivo de publicaciones públicas del portfolio.',
+    allArticles: 'Ver todas las publicaciones',
+    metaDescription:
+      'Publicaciones de Victor Saiz sobre producto, UX/UI, accesibilidad y herramientas.',
+    opening: 'Abriendo publicación...',
+  },
+  north: {
+    title: 'Proyectos de producto',
+    back: 'Volver a proyectos',
+    impactLabel: 'Resultado',
+    roleLabel: 'Rol',
+    clientLabel: 'Contexto',
+    industryLabel: 'Sector',
+    scopeLabel: 'Alcance',
+  },
+  work: {
+    notFound: 'Proyecto no encontrado',
+    metaDescriptionFallback:
+      'Caso de estudio de producto, UX/UI, accesibilidad y sistemas diseñado por Victor Saiz.',
+    expandImage: 'Ampliar imagen',
+    closeImage: 'Cerrar imagen',
+  },
+  redirects: {
+    workTitle: 'Proyectos',
+    aboutTitle: 'Sobre mí',
+    projectsTitle: 'Proyectos',
+    northTitle: 'Proyectos',
+    openingWork: 'Abriendo la sección de proyectos...',
+    openingAbout: 'Abriendo la sección Sobre mí...',
+    openingNorth: 'Abriendo la sección de proyectos...',
+  },
+  doodlebob: {
+    title: 'ME HOY MINOY!',
+    description: 'Un pequeño rincón más lúdico dentro del portfolio.',
+    reason: 'Por qué existe',
+    bodyOne:
+      'Las referencias a Bob Esponja forman parte del lenguaje visual de Victor y ayudan a que la marca se sienta menos corporativa y más personal.',
+    bodyTwo:
+      'También explican la mezcla de humor, color y formas exageradas que aparece en otros puntos del portfolio.',
+    back: 'Volver al inicio',
+    metaDescription: 'Easter egg del portfolio de Victor Saiz.',
+  },
+  marquee: {
+    label: 'Áreas de trabajo',
+  },
+  contactLegacy: {
+    title: 'Si el producto necesita criterio visual y alguien que entienda a ingeniería, hablemos.',
+    linkedin: 'LinkedIn',
+    mentorship: 'Mentorías',
+    downloadCv: 'Descargar CV',
   },
 }
 
-
-function deepMerge(base, override) {
-  const out = { ...base }
-  Object.entries(override).forEach(([k, v]) => {
-    if (v && typeof v === 'object' && !Array.isArray(v) && base[k] && typeof base[k] === 'object' && !Array.isArray(base[k])) {
-      out[k] = deepMerge(base[k], v)
-    } else {
-      out[k] = v
-    }
-  })
-  return out
+export function localizeProject(entry) {
+  return entry
 }
 
-translations.es.home.carouselPrevNorth = 'Proyecto anterior en North Studio'
-translations.es.home.carouselNextNorth = 'Proyecto siguiente en North Studio'
-translations.es.home.carouselPrevFeatured = 'Proyecto anterior en proyectos recientes'
-translations.es.home.carouselNextFeatured = 'Proyecto siguiente en proyectos recientes'
-translations.es.home.carouselPrevSecondary = 'Proyecto anterior'
-translations.es.home.carouselNextSecondary = 'Proyecto siguiente'
-translations.es.home.highlightsLabel = 'Puntos destacados de'
-translations.es.home.rolesLabel = 'Roles de'
-translations.es.footer.contactLinkedin = 'Contactar vía LinkedIn'
-translations.en.home.carouselPrevNorth = 'Previous project in North Studio'
-translations.en.home.carouselNextNorth = 'Next project in North Studio'
-translations.en.home.carouselPrevFeatured = 'Previous recent project'
-translations.en.home.carouselNextFeatured = 'Next recent project'
-translations.en.home.carouselPrevSecondary = 'Previous project'
-translations.en.home.carouselNextSecondary = 'Next project'
-translations.en.home.highlightsLabel = 'Highlights for'
-translations.en.home.rolesLabel = 'Roles at'
-translations.en.footer.contactLinkedin = 'Contact via LinkedIn'
-
-function normalizeLanguageCode(value = '') {
-  return value.toLowerCase().trim()
-}
-
-export function detectPreferredLanguage(source) {
-  const values = Array.isArray(source) ? source : [source]
-
-  for (const value of values) {
-    const code = normalizeLanguageCode(value)
-    if (!code) continue
-
-    if (code.startsWith('es') || code.startsWith('ca') || code.startsWith('eu') || code.startsWith('val')) {
-      return 'es'
-    }
-    if (code.startsWith('en')) return 'en'
-  }
-
-  return 'en'
-}
-
-export function localizeProject(entry, lang) {
-  return localizeProjectContent(entry, lang)
-}
-
-export function localizeArticle(entry, lang) {
-  return localizeArticleContent(entry, lang)
+export function localizeArticle(entry) {
+  return entry
 }
 
 export function LanguageProvider({ children }) {
-  const [lang, setLangState] = useState('en')
-  const [isReady, setIsReady] = useState(false)
-
-  useEffect(() => {
-    const stored = typeof window !== 'undefined' ? window.localStorage.getItem(LANGUAGE_STORAGE_KEY) : null
-    const nextLang = stored === 'es' || stored === 'en' ? stored : detectPreferredLanguage(window.navigator.languages)
-    setLangState(nextLang)
-    document.documentElement.lang = nextLang
-    setIsReady(true)
-  }, [])
-
-  const setLang = (nextLang) => {
-    if (nextLang !== 'es' && nextLang !== 'en') return
-    setLangState(nextLang)
-    if (typeof window !== 'undefined') {
-      window.localStorage.setItem(LANGUAGE_STORAGE_KEY, nextLang)
-    }
-    document.documentElement.lang = nextLang
-  }
-
   const value = {
-    lang,
-    setLang,
-    isReady,
-    copy: translations[lang],
-    cvHref: lang === 'en' ? '/VictorSaiz_CV_EN.pdf' : '/VictorSaiz_CV_ES.pdf',
+    lang: 'es',
+    isReady: true,
+    copy: spanishCopy,
+    cvHref: '/VictorSaiz_CV_ES.pdf',
   }
 
   return <LanguageContext.Provider value={value}>{children}</LanguageContext.Provider>
@@ -661,7 +231,7 @@ export function useLanguage() {
   const context = useContext(LanguageContext)
 
   if (!context) {
-    throw new Error('useLanguage must be used within LanguageProvider')
+    throw new Error('useLanguage debe utilizarse dentro de LanguageProvider')
   }
 
   return context

@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowUpRightIcon } from './Icons'
 import SectionReveal from './SectionReveal'
-import { featuredArticles } from '../data/content'
+import { featuredArticles } from '../data/siteContent'
 import { localizeArticle, useLanguage } from '../lib/i18n'
 
 export default function Articles({

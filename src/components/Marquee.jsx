@@ -1,4 +1,4 @@
-import { homeHighlights } from '../data/content'
+import { homeHighlights } from '../data/siteContent'
 import { useLanguage } from '../lib/i18n'
 
 export default function Marquee() {

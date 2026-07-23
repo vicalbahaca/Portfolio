@@ -1,28 +1,23 @@
+import { useEffect } from 'react'
 import Head from 'next/head'
-import Layout from '../components/Layout'
-import HomeLandingProposal from '../components/HomeLandingProposal'
-import { siteConfig } from '../data/content'
-import { useLanguage } from '../lib/i18n'
+import Link from 'next/link'
 
-export default function LandingProposalPage() {
-  const { copy } = useLanguage()
-  const pageTitle = `Propuesta landing | ${siteConfig.name}`
-  const pageDescription = `${siteConfig.name}. ${copy.hero.statementLines.join(' ')}`
+export default function RemovedLandingProposalPage() {
+  useEffect(() => {
+    window.location.replace('/')
+  }, [])
 
   return (
     <>
       <Head>
-        <title>{pageTitle}</title>
-        <meta name="description" content={pageDescription} />
-        <meta property="og:title" content={pageTitle} />
-        <meta property="og:description" content={pageDescription} />
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content={siteConfig.avatar.src || siteConfig.avatar} />
+        <title>Portfolio de Victor Saiz</title>
+        <meta httpEquiv="refresh" content="0;url=/" />
+        <meta name="robots" content="noindex" />
+        <link rel="canonical" href="/" />
       </Head>
-
-      <Layout shellClassName="page-shell--landing-proposal" hideContactBand>
-        <HomeLandingProposal />
-      </Layout>
+      <main style={{ minHeight: '100vh', display: 'grid', placeItems: 'center', padding: '24px' }}>
+        <Link href="/">Abrir portfolio</Link>
+      </main>
     </>
   )
 }

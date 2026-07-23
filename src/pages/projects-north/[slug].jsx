@@ -3,8 +3,12 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowLeftIcon } from '../../components/Icons'
+import EditorialCase from '../../components/EditorialCase'
 import Layout from '../../components/Layout'
-import { getNorthProjectBySlug, northSection, siteConfig } from '../../data/content'
+import InOneCase from '../../components/InOneCase'
+import { siteConfig } from '../../data/siteContent'
+import { inoneCase } from '../../data/inoneCaseExplorations'
+import { getPortfolioProjectBySlug, portfolioSection } from '../../data/portfolioNorth'
 import { useLanguage } from '../../lib/i18n'
 
 function readLocalized(value, lang) {
@@ -40,6 +44,7 @@ function localizeNorthProject(project, lang) {
     scope: readLocalized(project.scope, lang),
     focus: readLocalized(project.focus, lang) || [],
     visualDeck: localizeMediaItems(project.visualDeck, lang),
+    sources: project.sources || [],
     detailSections: (project.detailSections || []).map((section) => ({
       ...section,
       title: readLocalized(section.title, lang),
@@ -62,35 +67,15 @@ function getNorthStorySections(entry) {
 
 function getHeroTheme() {
   return {
-    accent: '#ffffff',
-    ink: '#091427',
-    muted: 'rgba(13, 23, 38, 0.82)',
-    subtle: 'rgba(13, 23, 38, 0.62)',
-    border: 'rgba(13, 23, 38, 0.16)',
-    panel: 'rgba(13, 23, 38, 0.04)',
-    ctaBg: '#091427',
-    ctaText: '#ffffff',
-    ctaHover: 'rgba(9, 20, 39, 0.92)',
-  }
-}
-
-function getMediaDimensions(ratio, fallbackWidth = 1600, fallbackHeight = 1000) {
-  if (typeof ratio !== 'string') {
-    return { width: fallbackWidth, height: fallbackHeight }
-  }
-
-  const [rawWidth, rawHeight] = ratio.split('/').map((value) => Number.parseFloat(value.trim()))
-
-  if (!Number.isFinite(rawWidth) || !Number.isFinite(rawHeight) || rawWidth <= 0 || rawHeight <= 0) {
-    return { width: fallbackWidth, height: fallbackHeight }
-  }
-
-  const needsScaling = rawWidth <= 20 && rawHeight <= 20
-  const scale = needsScaling ? 100 : 1
-
-  return {
-    width: Math.round(rawWidth * scale),
-    height: Math.round(rawHeight * scale),
+    accent: '#000000',
+    ink: '#ffffff',
+    muted: 'rgba(255, 255, 255, 0.82)',
+    subtle: 'rgba(255, 255, 255, 0.62)',
+    border: 'rgba(255, 255, 255, 0.18)',
+    panel: 'rgba(255, 255, 255, 0.08)',
+    ctaBg: '#ffffff',
+    ctaText: '#091427',
+    ctaHover: 'rgba(255, 255, 255, 0.9)',
   }
 }
 
@@ -100,8 +85,7 @@ export default function NorthProjectDetailPage({ project }) {
   const storySections = getNorthStorySections(localizedProject)
   const [lightboxMedia, setLightboxMedia] = useState(null)
   const closeLightbox = () => setLightboxMedia(null)
-  const heroMediaDimensions = getMediaDimensions(localizedProject?.heroRatio || localizedProject?.imageRatio)
-  const heroTheme = getHeroTheme(localizedProject?.accent)
+  const heroTheme = getHeroTheme()
 
   useEffect(() => {
     if (!lightboxMedia) return undefined
@@ -124,9 +108,39 @@ export default function NorthProjectDetailPage({ project }) {
     }
   }, [lightboxMedia])
 
+  if (localizedProject?.slug === 'inone') {
+    return (
+      <>
+        <Head>
+          <title>InOne: evolución de la app | North | {siteConfig.name}</title>
+          <meta name="description" content={inoneCase.summary} />
+          <meta property="og:image" content={localizedProject.image} />
+        </Head>
+        <Layout hideFooter>
+          <InOneCase caseStudy={inoneCase} />
+        </Layout>
+      </>
+    )
+  }
+
+  if (localizedProject?.editorialCase) {
+    return (
+      <>
+        <Head>
+          <title>{`${localizedProject.title} | ${copy.north.title} | ${siteConfig.name}`}</title>
+          <meta name="description" content={localizedProject.description || localizedProject.summary} />
+          <meta property="og:image" content={localizedProject.image} />
+        </Head>
+        <Layout hideFooter>
+          <EditorialCase caseStudy={localizedProject} />
+        </Layout>
+      </>
+    )
+  }
+
   if (!localizedProject) {
     return (
-      <Layout>
+      <Layout hideFooter>
         <section className="page-hero">
           <div className="container page-hero__panel">
             <h1 className="page-title">{copy.work.notFound}</h1>
@@ -135,14 +149,6 @@ export default function NorthProjectDetailPage({ project }) {
       </Layout>
     )
   }
-
-  const heroFacts = [
-    { label: copy.north.clientLabel, value: localizedProject.client },
-    { label: copy.north.roleLabel, value: localizedProject.role },
-    { label: copy.north.industryLabel, value: localizedProject.industry },
-    { label: copy.north.scopeLabel, value: localizedProject.scope },
-    { label: copy.north.impactLabel, value: localizedProject.metric },
-  ].filter((item) => item.value)
 
   return (
     <>
@@ -155,7 +161,7 @@ export default function NorthProjectDetailPage({ project }) {
         <meta property="og:image" content={localizedProject.image} />
       </Head>
 
-      <Layout>
+      <Layout hideFooter>
         <div className={`work-case-page work-case-page--${localizedProject.slug}`}>
           <section
             className="work-case-hero"
@@ -187,44 +193,6 @@ export default function NorthProjectDetailPage({ project }) {
                 <p className="work-case-hero__headline">{localizedProject.headline || localizedProject.summary}</p>
               </div>
 
-              {heroFacts.length ? (
-                <dl className="work-case-hero__facts">
-                  {heroFacts.map((fact) => (
-                    <div key={`${localizedProject.slug}-${fact.label}`} className="work-case-hero__fact">
-                      <dt>{fact.label}</dt>
-                      <dd>{fact.value}</dd>
-                    </div>
-                  ))}
-                </dl>
-              ) : null}
-
-              {localizedProject.image ? (
-                <article className="work-case-hero__feature">
-                  <button
-                    type="button"
-                    className="work-case-media-button work-case-media-button--feature"
-                    onClick={() =>
-                      setLightboxMedia({
-                        src: localizedProject.image,
-                        alt: localizedProject.title,
-                      })
-                    }
-                    aria-label={`${copy.work.expandImage}: ${localizedProject.title}`}
-                  >
-                    <div className="work-case-hero__feature-media">
-                      <Image
-                        className="work-case-media-image"
-                        src={localizedProject.image}
-                        alt={localizedProject.title}
-                        width={heroMediaDimensions.width}
-                        height={heroMediaDimensions.height}
-                        priority
-                        sizes="100vw"
-                      />
-                    </div>
-                  </button>
-                </article>
-              ) : null}
             </div>
           </section>
 
@@ -342,6 +310,32 @@ export default function NorthProjectDetailPage({ project }) {
               </div>
             </section>
           ))}
+
+          {localizedProject.sources?.length ? (
+            <section className="page-section work-case-sources" aria-labelledby="north-sources-title">
+              <div className="container work-case-section__inner">
+                <div className="work-case-section__header">
+                  <div className="work-case-section__headline">
+                    <h2 id="north-sources-title" className="section-heading">
+                      Fuentes públicas de contexto
+                    </h2>
+                    <p className="detail-copy detail-copy--lead">
+                      Referencias externas utilizadas para limitar el caso a información pública y verificable.
+                    </p>
+                  </div>
+                </div>
+                <ul className="work-case-sources__list">
+                  {localizedProject.sources.map((source) => (
+                    <li key={source.href}>
+                      <a href={source.href} target="_blank" rel="noreferrer">
+                        {source.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </section>
+          ) : null}
         </div>
 
         {lightboxMedia ? (
@@ -385,7 +379,7 @@ export default function NorthProjectDetailPage({ project }) {
 
 export function getStaticPaths() {
   return {
-    paths: northSection.projects.map((project) => ({ params: { slug: project.slug } })),
+    paths: portfolioSection.projects.map((project) => ({ params: { slug: project.slug } })),
     fallback: false,
   }
 }
@@ -393,7 +387,7 @@ export function getStaticPaths() {
 export function getStaticProps({ params }) {
   return {
     props: {
-      project: getNorthProjectBySlug(params.slug) || null,
+      project: getPortfolioProjectBySlug(params.slug) || null,
     },
   }
 }

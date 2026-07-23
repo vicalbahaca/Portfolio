@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { siteConfig } from '../data/content'
+import { siteConfig } from '../data/siteContent'
 import { useLanguage } from '../lib/i18n'
 
 const brandAsset = 'https://framerusercontent.com/images/mJBC1wHo4tTlycjCSQJoIBVrqRU.png'
@@ -19,21 +19,19 @@ function LinkedInIcon() {
 
 export default function Navbar() {
   const router = useRouter()
-  const { lang, setLang, copy } = useLanguage()
-  const projectsRef = useRef(null)
+  const { copy } = useLanguage()
   const detailsRef = useRef(null)
+  const projectsRef = useRef(null)
   const [menuOpen, setMenuOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
-  const isHome = router.pathname === '/'
+  const [projectsOpen, setProjectsOpen] = useState(false)
   const hasSurface = true
   const projectLinks = [
-    { label: copy.nav.workNorth, href: '/#projects-north' },
-    { label: copy.nav.workMain, href: '/#work' },
-    { label: copy.nav.workOther, href: '/#other-projects' },
+    { label: 'Proyectos en North studio', href: '/#projects-north' },
+    { label: 'Otros proyectos', href: '/#recent-projects' },
   ]
   const navLinks = [
+    { label: 'Workshops', href: '/workshops', routePrefix: '/workshops' },
     { label: copy.nav.about, href: '/#about', hash: '#about' },
-    { label: copy.nav.articles, href: '/articles', routePrefix: '/articles' },
   ]
 
   useEffect(() => {
@@ -43,40 +41,55 @@ export default function Navbar() {
 
   useEffect(() => {
     setMenuOpen(false)
-    if (projectsRef.current) {
-      projectsRef.current.open = false
-    }
+    setProjectsOpen(false)
     if (detailsRef.current) {
       detailsRef.current.open = false
+    }
+    if (projectsRef.current) {
+      projectsRef.current.open = false
     }
   }, [router.asPath])
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 24)
+    const handlePointerDown = (event) => {
+      if (projectsRef.current && !projectsRef.current.contains(event.target)) {
+        projectsRef.current.open = false
+        setProjectsOpen(false)
+      }
     }
 
-    handleScroll()
-    window.addEventListener('scroll', handleScroll, { passive: true })
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape' && projectsRef.current?.open) {
+        projectsRef.current.open = false
+        setProjectsOpen(false)
+        projectsRef.current.querySelector('summary')?.focus()
+      }
+    }
 
-    return () => window.removeEventListener('scroll', handleScroll)
+    document.addEventListener('pointerdown', handlePointerDown)
+    document.addEventListener('keydown', handleKeyDown)
+
+    return () => {
+      document.removeEventListener('pointerdown', handlePointerDown)
+      document.removeEventListener('keydown', handleKeyDown)
+    }
   }, [])
 
   const closeMenu = () => {
-    if (projectsRef.current) {
-      projectsRef.current.open = false
-    }
     setMenuOpen(false)
     if (detailsRef.current) {
       detailsRef.current.open = false
     }
   }
 
-  const handleProjectsHome = (event) => {
-    event.preventDefault()
-    closeMenu()
-    router.push('/#projects-north')
+  const closeProjects = () => {
+    setProjectsOpen(false)
+    if (projectsRef.current) {
+      projectsRef.current.open = false
+    }
   }
+
+  const isProjectsActive = router.pathname.startsWith('/projects-north') || router.pathname === '/work' || router.pathname === '/work/[slug]'
 
   return (
     <header className={`navbar${hasSurface ? ' navbar--surface' : ''}`}>
@@ -88,17 +101,19 @@ export default function Navbar() {
         </Link>
 
         <nav className="navbar__links navbar__links--unified" aria-label={copy.nav.primary}>
-          <details ref={projectsRef} className="navbar__projects-disclosure">
-            <summary className={`navbar__link navbar__projects-summary${router.pathname.startsWith('/work') || router.pathname.startsWith('/projects-north/') ? ' navbar__link--active' : ''}`}>
-              <span className="navbar__projects-label" onClick={handleProjectsHome}>
-                {copy.nav.work}
-              </span>
+          <details
+            ref={projectsRef}
+            className="navbar__projects-disclosure"
+            onToggle={(event) => setProjectsOpen(event.currentTarget.open)}
+          >
+            <summary className={`navbar__link navbar__projects-summary${isProjectsActive ? ' navbar__link--active' : ''}`}>
+              <span className="navbar__projects-label">{copy.nav.work}</span>
               <span className="navbar__projects-caret" aria-hidden="true" />
             </summary>
             <ul className="navbar__projects-menu">
               {projectLinks.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="navbar__projects-link" onClick={closeMenu}>
+                  <Link href={link.href} className="navbar__projects-link" onClick={closeProjects}>
                     {link.label}
                   </Link>
                 </li>
@@ -137,21 +152,6 @@ export default function Navbar() {
           </div>
 
           <div className="navbar__actions navbar__actions--unified">
-            <div className="navbar__language">
-              <label className="sr-only" htmlFor="site-language">
-                {copy.nav.language}
-              </label>
-              <select
-                id="site-language"
-                className="navbar__language-select"
-                value={lang}
-                aria-label={copy.nav.language}
-                onChange={(event) => setLang(event.target.value)}
-              >
-                <option value="es">Español</option>
-                <option value="en">Inglés</option>
-              </select>
-            </div>
             <details
               ref={detailsRef}
               className="navbar__mobile-disclosure"

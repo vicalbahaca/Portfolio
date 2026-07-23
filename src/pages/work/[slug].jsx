@@ -1,93 +1,21 @@
-import { useEffect, useState } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowLeftIcon } from '../../components/Icons'
 import Layout from '../../components/Layout'
-import { getWorkEntryBySlug, siteConfig, workEntries } from '../../data/content'
-import { localizeProject, useLanguage } from '../../lib/i18n'
+import { ArrowLeftIcon } from '../../components/Icons'
+import { getWorkProjectBySlug, recentProjects, siteConfig } from '../../data/siteContent'
 
-function getStorySections(entry) {
-  if (!entry?.detailSections?.length) return []
+const externalWebsiteProjects = new Set(['aaaquest', 'coubber', 'mycoach'])
 
-  return entry.detailSections.map((section, index) => ({
-    ...section,
-    anchorId: `work-section-${index + 1}`,
-  }))
-}
-
-function getHeroTheme() {
-  return {
-    accent: '#ffffff',
-    ink: '#091427',
-    muted: 'rgba(13, 23, 38, 0.82)',
-    subtle: 'rgba(13, 23, 38, 0.62)',
-    border: 'rgba(13, 23, 38, 0.16)',
-    panel: 'rgba(13, 23, 38, 0.04)',
-    ctaBg: '#091427',
-    ctaText: '#ffffff',
-    ctaHover: 'rgba(9, 20, 39, 0.92)',
-  }
-}
-
-function getMediaDimensions(ratio, fallbackWidth = 1600, fallbackHeight = 1000) {
-  if (typeof ratio !== 'string') {
-    return { width: fallbackWidth, height: fallbackHeight }
-  }
-
-  const [rawWidth, rawHeight] = ratio.split('/').map((value) => Number.parseFloat(value.trim()))
-
-  if (!Number.isFinite(rawWidth) || !Number.isFinite(rawHeight) || rawWidth <= 0 || rawHeight <= 0) {
-    return { width: fallbackWidth, height: fallbackHeight }
-  }
-
-  const needsScaling = rawWidth <= 20 && rawHeight <= 20
-  const scale = needsScaling ? 100 : 1
-
-  return {
-    width: Math.round(rawWidth * scale),
-    height: Math.round(rawHeight * scale),
-  }
-}
-
-export default function WorkDetailPage({ entry }) {
-  const { copy, lang } = useLanguage()
-  const localizedEntry = entry ? localizeProject(entry, lang) : null
-  const storySections = getStorySections(localizedEntry)
-  const [lightboxMedia, setLightboxMedia] = useState(null)
-  const closeLightbox = () => setLightboxMedia(null)
-  const heroMediaDimensions = getMediaDimensions(localizedEntry?.heroRatio || localizedEntry?.imageRatio)
-  const heroTheme = getHeroTheme(localizedEntry?.accent)
-
-  useEffect(() => {
-    if (!lightboxMedia) return undefined
-
-    const previousOverflow = document.body.style.overflow
-    const handleKeyDown = (event) => {
-      if (event.key === 'Escape') {
-        closeLightbox()
-      }
-    }
-
-    document.body.style.overflow = 'hidden'
-    document.body.classList.add('lightbox-open')
-    window.addEventListener('keydown', handleKeyDown)
-
-    return () => {
-      document.body.style.overflow = previousOverflow
-      document.body.classList.remove('lightbox-open')
-      window.removeEventListener('keydown', handleKeyDown)
-    }
-  }, [lightboxMedia])
-
-  if (!localizedEntry) {
+export default function WorkProjectPage({ project }) {
+  if (!project) {
     return (
-      <Layout shellClassName="page-shell--work">
-        <section className="page-hero">
-          <div className="container empty-state">
-            <h1 className="page-title">{copy.work.notFound}</h1>
+      <Layout>
+        <main className="page-hero">
+          <div className="container page-hero__panel">
+            <h1 className="page-title">Proyecto no encontrado</h1>
           </div>
-        </section>
+        </main>
       </Layout>
     )
   }
@@ -95,285 +23,162 @@ export default function WorkDetailPage({ entry }) {
   return (
     <>
       <Head>
-        <title>{`${localizedEntry.title} | ${siteConfig.name}`}</title>
-        <meta
-          name="description"
-          content={localizedEntry.description || localizedEntry.summary || localizedEntry.headline || copy.work.metaDescriptionFallback}
-        />
-        <meta property="og:image" content={localizedEntry.image} />
+        <title>{`${project.title} | ${siteConfig.name}`}</title>
+        <meta name="description" content={project.subtitle} />
+        <meta property="og:image" content={project.image} />
       </Head>
 
       <Layout>
-        <section
-          className="work-case-hero"
-          aria-labelledby="work-page-title"
-          style={{
-            '--work-accent': heroTheme.accent,
-            '--work-hero-ink': heroTheme.ink,
-            '--work-hero-muted': heroTheme.muted,
-            '--work-hero-subtle': heroTheme.subtle,
-            '--work-hero-border': heroTheme.border,
-            '--work-hero-panel': heroTheme.panel,
-            '--work-hero-cta-bg': heroTheme.ctaBg,
-            '--work-hero-cta-text': heroTheme.ctaText,
-            '--work-hero-cta-hover': heroTheme.ctaHover,
-          }}
-        >
-          <div className="container work-case-hero__inner">
-            <Link href="/#work" className="back-link back-link--light">
-              <span className="back-link__icon" aria-hidden="true">
-                <ArrowLeftIcon />
-              </span>
-              {copy.work.back}
-            </Link>
+        <main className="work-case-page work-case-page--recent" style={{ '--recent-accent': project.accent || '#0a0a0a' }}>
+          <section className="work-case-hero" aria-labelledby="work-project-title">
+            <div className="container work-case-hero__inner">
+              <Link href="/#projects-north" className="back-link back-link--light">
+                <span className="back-link__icon" aria-hidden="true">
+                  <ArrowLeftIcon />
+                </span>
+                Volver
+              </Link>
 
-            <div className="work-case-hero__copy">
-              <h1 id="work-page-title" className="work-case-hero__title">
-                {localizedEntry.title}
-              </h1>
-              <p className="work-case-hero__headline">{localizedEntry.headline || localizedEntry.summary}</p>
-            </div>
-
-            {(localizedEntry.facts || []).length ? (
-              <dl className="work-case-hero__facts">
-                {localizedEntry.facts.map((fact) => (
-                  <div key={`${localizedEntry.slug}-${fact.label}`} className="work-case-hero__fact">
-                    <dt>{fact.label}</dt>
-                    <dd>{fact.value}</dd>
-                  </div>
-                ))}
-              </dl>
-            ) : null}
-
-            <div className="work-case-hero__actions">
-              {localizedEntry.websiteUrl ? (
-                <a
-                  className="btn btn--primary"
-                  href={localizedEntry.websiteUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label={`${copy.work.visitWebsite}: ${localizedEntry.title}`}
-                >
-                  {copy.work.visitWebsite}
-                </a>
-              ) : null}
-            </div>
-
-            <article className="work-case-hero__feature">
-              {localizedEntry.videoUrl ? (
-                <video
-                  className="work-case-hero__feature-video"
-                  src={localizedEntry.videoUrl}
-                  poster={localizedEntry.videoPoster || localizedEntry.image}
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  controls
-                  aria-label={localizedEntry.title}
-                />
-              ) : (
-                <button
-                  type="button"
-                  className="work-case-media-button work-case-media-button--feature"
-                  onClick={() =>
-                    setLightboxMedia({
-                      src: localizedEntry.image,
-                      alt: localizedEntry.title,
-                    })
-                  }
-                  aria-label={`${copy.work.expandImage}: ${localizedEntry.title}`}
-                >
-                  <div className="work-case-hero__feature-media">
-                    <Image
-                      className="work-case-media-image"
-                      src={localizedEntry.image}
-                      alt={localizedEntry.title}
-                      width={heroMediaDimensions.width}
-                      height={heroMediaDimensions.height}
-                      priority
-                      sizes="100vw"
-                    />
-                  </div>
-                </button>
-              )}
-            </article>
-          </div>
-        </section>
-
-        <section className="page-section work-case-intro" aria-labelledby="work-intro-title">
-          <div className="container work-case-intro__inner">
-            <div className="work-case-intro__copy">
-              <h2 id="work-intro-title" className="section-heading">
-                {localizedEntry.summary}
-              </h2>
-              {localizedEntry.description ? <p className="detail-copy detail-copy--lead">{localizedEntry.description}</p> : null}
-            </div>
-          </div>
-
-          <div className="container">
-            {localizedEntry.visualDeck?.length ? (
-              <div
-                className={`work-case-deck work-case-deck--${
-                  localizedEntry.visualDeckLayout || Math.min(localizedEntry.visualDeck.length, 3)
-                }`}
-              >
-                {localizedEntry.visualDeck.map((media, index) => (
-                  (() => {
-                    const mediaDimensions = getMediaDimensions(media.ratio)
-                    return (
-                  <figure
-                    key={`${localizedEntry.slug}-deck-${index}`}
-                    className="work-case-deck__figure"
-                  >
-                    <button
-                      type="button"
-                      className="work-case-media-button"
-                      onClick={() =>
-                        setLightboxMedia({
-                          src: media.src,
-                          alt: media.alt || localizedEntry.title,
-                          caption: media.caption,
-                        })
-                      }
-                      aria-label={`${copy.work.expandImage}: ${media.alt || localizedEntry.title}`}
+              <div className="work-case-hero__copy">
+                <p className="work-case-hero__eyebrow">{project.role}</p>
+                <h1 id="work-project-title" className="work-case-hero__title">
+                  {project.title}
+                </h1>
+                <p className="work-case-hero__headline">{project.headline || project.subtitle}</p>
+                {project.websiteUrl ? (
+                  <p className="work-case-hero__action">
+                    <a
+                      className={`btn ${externalWebsiteProjects.has(project.slug) ? 'btn--brand work-case-hero__external-cta' : 'btn--primary'}`}
+                      href={project.websiteUrl}
+                      target="_blank"
+                      rel="noreferrer"
                     >
-                      <div className="work-case-deck__media">
-                        <Image
-                          className="work-case-media-image"
-                          src={media.src}
-                          alt={media.alt || localizedEntry.title}
-                          width={mediaDimensions.width}
-                          height={mediaDimensions.height}
-                          sizes="(max-width: 960px) 100vw, 33vw"
-                        />
-                      </div>
-                    </button>
-                    {media.caption ? <figcaption>{media.caption}</figcaption> : null}
-                  </figure>
-                    )
-                  })()
-                ))}
-              </div>
-            ) : null}
-          </div>
-        </section>
-
-        {storySections.map((section, sectionIndex) => (
-          <section
-            key={`${localizedEntry.slug}-${section.anchorId}`}
-            className={`page-section work-case-section${section.tone === 'blue' ? ' work-case-section--blue' : ''}`}
-            aria-labelledby={section.anchorId}
-          >
-            <div className="container work-case-section__inner">
-              <div className="work-case-section__header">
-                <p className="work-case-section__index">{String(sectionIndex + 1).padStart(2, '0')}</p>
-                <div className="work-case-section__headline">
-                  <h2 id={section.anchorId} className="section-heading">
-                    {section.title}
-                  </h2>
-                  {section.body ? <p className="detail-copy detail-copy--lead">{section.body}</p> : null}
-                </div>
-              </div>
-
-              <div className="work-case-section__body">
-                {section.paragraphs?.map((paragraph, paragraphIndex) => (
-                  <p key={`${section.title}-paragraph-${paragraphIndex}`} className="detail-copy">
-                    {paragraph}
+                      {externalWebsiteProjects.has(project.slug) ? 'Visitar página web' : 'Visitar proyecto'}
+                    </a>
                   </p>
-                ))}
+                ) : null}
               </div>
 
-              {section.points?.length ? (
-                <ul className="work-case-section__points">
-                  {section.points.map((point, pointIndex) => (
-                    <li key={`${section.title}-point-${pointIndex}`}>{point}</li>
-                  ))}
-                </ul>
-              ) : null}
-
-              {section.gallery?.length ? (
-                <div
-                  className={`work-case-section__gallery work-case-section__gallery--${
-                    section.galleryLayout || Math.min(section.gallery.length, 3)
-                  }`}
-                >
-                  {section.gallery.map((media, mediaIndex) => (
-                    (() => {
-                      const mediaDimensions = getMediaDimensions(media.ratio)
-                      return (
-                    <figure
-                      key={`${section.title}-gallery-${mediaIndex}`}
-                      className="work-case-section__figure"
-                    >
-                      <button
-                        type="button"
-                        className="work-case-media-button"
-                        onClick={() =>
-                          setLightboxMedia({
-                            src: media.src,
-                            alt: media.alt || section.title,
-                            caption: media.caption,
-                          })
-                        }
-                        aria-label={`${copy.work.expandImage}: ${media.alt || section.title}`}
-                      >
-                        <div className="work-case-section__figure-media">
-                          <Image
-                            className="work-case-media-image"
-                            src={media.src}
-                            alt={media.alt || section.title}
-                            width={mediaDimensions.width}
-                            height={mediaDimensions.height}
-                            sizes="(max-width: 960px) 100vw, 50vw"
-                          />
-                        </div>
-                      </button>
-                      {media.caption ? <figcaption>{media.caption}</figcaption> : null}
-                    </figure>
-                      )
-                    })()
-                  ))}
-                </div>
-              ) : null}
             </div>
           </section>
-        ))}
 
-        {lightboxMedia ? (
-          <div
-            className="work-case-lightbox"
-            role="dialog"
-            aria-modal="true"
-            aria-label={lightboxMedia.alt || localizedEntry.title}
-            onClick={closeLightbox}
-          >
-            <button
-              type="button"
-              className="work-case-lightbox__close"
-              onClick={(event) => {
-                event.stopPropagation()
-                closeLightbox()
-              }}
-              onMouseDown={(event) => event.stopPropagation()}
-              aria-label={copy.work.closeImage}
-            >
-              {copy.work.closeImage}
-            </button>
+          {project.detailSections?.length ? (
+            <>
+              <section className="page-section work-case-section" aria-labelledby="work-project-intro">
+                <div className="container work-case-section__inner">
+                  <div className="work-case-section__header">
+                    <p className="work-case-section__index">01</p>
+                    <div className="work-case-section__headline">
+                      <h2 id="work-project-intro" className="section-heading">
+                        Problema detectado
+                      </h2>
+                      {project.problemStatement ? <p className="work-case-problem__statement">{project.problemStatement}</p> : null}
+                      {project.description ? (
+                        <div className="work-case-problem__solution">
+                          <p className="work-case-problem__label">Como lo soluciona?</p>
+                          <p className="detail-copy detail-copy--lead">{project.description}</p>
+                        </div>
+                      ) : null}
+                    </div>
+                  </div>
 
-            <figure className="work-case-lightbox__figure" onClick={(event) => event.stopPropagation()}>
-              <Image
-                className="work-case-lightbox__image"
-                src={lightboxMedia.src}
-                alt={lightboxMedia.alt || localizedEntry.title}
-                width={1600}
-                height={1200}
-                sizes="100vw"
-              />
-              {lightboxMedia.caption ? <figcaption className="work-case-lightbox__caption">{lightboxMedia.caption}</figcaption> : null}
-            </figure>
-          </div>
-        ) : null}
+                  {project.highlights?.length ? (
+                    <ul className="work-case-section__points">
+                      {project.highlights.map((highlight) => (
+                        <li key={highlight}>{highlight}</li>
+                      ))}
+                    </ul>
+                  ) : null}
+
+                  {project.visualDeck?.length ? (
+                    <div className={`work-case-deck work-case-deck--${project.visualDeckLayout || Math.min(project.visualDeck.length, 3)}`}>
+                      {project.visualDeck.map((media, mediaIndex) => (
+                        <figure key={media.src} className="work-case-deck__figure">
+                          <div className="work-case-deck__media" style={{ '--media-ratio': media.ratio || '16 / 10' }}>
+                            <Image
+                              className="work-case-media-image"
+                              src={media.src}
+                              alt={media.alt || project.title}
+                              width={1600}
+                              height={1000}
+                              sizes="(max-width: 960px) 100vw, 33vw"
+                            />
+                          </div>
+                          {!media.hideCaption ? (
+                            <figcaption>
+                              <span>{String(mediaIndex + 1).padStart(2, '0')}</span>
+                              {media.caption || media.alt}
+                            </figcaption>
+                          ) : null}
+                        </figure>
+                      ))}
+                    </div>
+                  ) : null}
+                </div>
+              </section>
+
+              {project.detailSections.map((section, index) => (
+                <section key={section.title} className="page-section work-case-section" aria-labelledby={`work-section-${index + 2}`}>
+                  <div className="container work-case-section__inner">
+                    <div className="work-case-section__header">
+                      <p className="work-case-section__index">{String(index + 2).padStart(2, '0')}</p>
+                      <div className="work-case-section__headline">
+                        <h2 id={`work-section-${index + 2}`} className="section-heading">
+                          {section.title}
+                        </h2>
+                        {section.body ? <p className="detail-copy detail-copy--lead">{section.body}</p> : null}
+                      </div>
+                    </div>
+
+                    {section.paragraphs?.length ? (
+                      <div className="work-case-section__body">
+                        {section.paragraphs.map((paragraph) => (
+                          <p key={paragraph} className="detail-copy">
+                            {paragraph}
+                          </p>
+                        ))}
+                      </div>
+                    ) : null}
+
+                    {section.points?.length ? (
+                      <ul className="work-case-section__points">
+                        {section.points.map((point) => (
+                          <li key={point}>{point}</li>
+                        ))}
+                      </ul>
+                    ) : null}
+
+                    {section.gallery?.length ? (
+                      <div className={`work-case-section__gallery work-case-section__gallery--${section.galleryLayout || Math.min(section.gallery.length, 3)}`}>
+                        {section.gallery.map((media, mediaIndex) => (
+                          <figure key={media.src} className="work-case-section__figure">
+                            <div className="work-case-section__figure-media" style={{ '--media-ratio': media.ratio || '16 / 10' }}>
+                              <Image
+                                className="work-case-media-image"
+                                src={media.src}
+                                alt={media.alt || section.title}
+                                width={1600}
+                                height={1000}
+                                sizes="(max-width: 960px) 100vw, 50vw"
+                              />
+                            </div>
+                            {!media.hideCaption ? (
+                              <figcaption>
+                                <span>{String(mediaIndex + 1).padStart(2, '0')}</span>
+                                {media.caption || media.alt}
+                              </figcaption>
+                            ) : null}
+                          </figure>
+                        ))}
+                      </div>
+                    ) : null}
+                  </div>
+                </section>
+              ))}
+            </>
+          ) : null}
+
+        </main>
       </Layout>
     </>
   )
@@ -381,7 +186,7 @@ export default function WorkDetailPage({ entry }) {
 
 export function getStaticPaths() {
   return {
-    paths: workEntries.map((entry) => ({ params: { slug: entry.slug } })),
+    paths: recentProjects.map((project) => ({ params: { slug: project.slug } })),
     fallback: false,
   }
 }
@@ -389,7 +194,7 @@ export function getStaticPaths() {
 export function getStaticProps({ params }) {
   return {
     props: {
-      entry: getWorkEntryBySlug(params.slug) || null,
+      project: getWorkProjectBySlug(params.slug),
     },
   }
 }

@@ -1,186 +1,134 @@
 import { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { motion } from 'framer-motion'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import { useGSAP } from '@gsap/react'
-import { caseStudies, conceptDesigns, featuredArticles, siteConfig } from '../data/content'
-import { ArrowUpRightIcon } from './Icons'
+import { recentProjects } from '../data/siteContent'
+import { workshopsPage } from '../data/portfolioNorth'
 import NorthProjectsGrid from './NorthProjectsGrid'
-import { localizeArticle, localizeProject, useLanguage } from '../lib/i18n'
+import { useLanguage } from '../lib/i18n'
 
 gsap.registerPlugin(ScrollTrigger, useGSAP)
+
+const cvEmphasis = [
+  'Responsable de la experiencia de financiación integrada en el checkout (e-commerce)',
+  'Diseño de productos digitales y landings orientadas a conversión',
+  'Rediseño y desarrollo de un sistema en WordPress',
+  'Responsable del diseño end-to-end',
+  'Responsable de un equipo de tres desarrolladores',
+  'problemas complejos de servicios digitales',
+  'referentes, herramientas y prácticas del sector',
+  'Diseño de la experiencia y lógica de pagos',
+  'más de 600k usuarios únicos activos',
+  'Definición de un Design System',
+  'canales B2B, B2C y B2B2C',
+  'Desarrollo producto de principio a fin',
+  'proponer la solución más adecuada',
+  'visión técnica, UX y producto',
+  'Responsable de accesibilidad',
+  'workshops internos',
+  'IA aplicada al producto',
+  'productos financieros',
+].sort((left, right) => right.length - left.length)
+
+const cvEmphasisPattern = new RegExp(
+  `(${cvEmphasis.map((term) => term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|')})`,
+  'g'
+)
+
+function renderCvText(text) {
+  return text.split(cvEmphasisPattern).map((fragment, index) =>
+    cvEmphasis.includes(fragment) ? <strong key={`${fragment}-${index}`}>{fragment}</strong> : fragment
+  )
+}
+
+function getCarouselState(list) {
+  const maxLeft = Math.max(0, list.scrollWidth - list.clientWidth)
+
+  return {
+    atStart: list.scrollLeft <= 4,
+    atEnd: list.scrollLeft >= maxLeft - 4,
+  }
+}
 
 export default function HomeLanding() {
   const landingRef = useRef(null)
   const northCarouselRef = useRef(null)
-  const featuredCarouselRef = useRef(null)
-  const secondaryCarouselRef = useRef(null)
-  const [carouselState, setCarouselState] = useState({
-    north: { atStart: true, atEnd: false },
-    featured: { atStart: true, atEnd: false },
-    secondary: { atStart: true, atEnd: false },
-  })
-  const { copy, lang, cvHref } = useLanguage()
-  const highlightedProjects = caseStudies.map((entry) => localizeProject(entry, lang))
-  const secondaryProjects = conceptDesigns.slice(0, 4).map((entry) => localizeProject(entry, lang))
-  const latestArticles = featuredArticles.map((entry) => localizeArticle(entry, lang))
+  const recentCarouselRef = useRef(null)
+  const [carouselState, setCarouselState] = useState({ atStart: true, atEnd: false })
+  const [recentCarouselState, setRecentCarouselState] = useState({ atStart: true, atEnd: false })
+  const { copy, cvHref } = useLanguage()
 
-  const updateCarouselState = (key, list) => {
+  const updateCarouselState = (list, setState) => {
     if (!list) return
-    const maxLeft = Math.max(0, list.scrollWidth - list.clientWidth)
-    const atStart = list.scrollLeft <= 4
-    const atEnd = list.scrollLeft >= maxLeft - 4
-    setCarouselState((prev) => ({ ...prev, [key]: { atStart, atEnd } }))
+    setState(getCarouselState(list))
   }
 
-  const scrollCarousel = (direction, key, list) => {
+  const scrollCarousel = (carouselRef, direction) => {
+    const list = carouselRef.current
     if (!list) return
-    const firstItem = list.querySelector('.home-project-slot, .home-secondary-item')
+    const firstItem = list.querySelector('.home-project-slot')
     const step = firstItem ? firstItem.getBoundingClientRect().width + 32 : list.clientWidth
     list.scrollBy({ left: direction * step, behavior: 'smooth' })
   }
 
   useEffect(() => {
-    const configs = [
-      ['north', northCarouselRef.current],
-      ['featured', featuredCarouselRef.current],
-      ['secondary', secondaryCarouselRef.current],
-    ]
+    const carousels = [
+      { list: northCarouselRef.current, setState: setCarouselState },
+      { list: recentCarouselRef.current, setState: setRecentCarouselState },
+    ].filter((carousel) => carousel.list)
 
-    const handlers = configs.map(([key, node]) => {
-      if (!node) return null
-      const handler = () => updateCarouselState(key, node)
-      handler()
-      node.addEventListener('scroll', handler, { passive: true })
-      return { node, handler }
-    })
-
-    const onResize = () => {
-      configs.forEach(([key, node]) => node && updateCarouselState(key, node))
+    const updateAllCarouselStates = () => {
+      carousels.forEach(({ list, setState }) => updateCarouselState(list, setState))
     }
-    window.addEventListener('resize', onResize)
+
+    updateAllCarouselStates()
+    carousels.forEach(({ list }) => list.addEventListener('scroll', updateAllCarouselStates, { passive: true }))
+    window.addEventListener('resize', updateAllCarouselStates)
 
     return () => {
-      handlers.forEach((item) => item && item.node.removeEventListener('scroll', item.handler))
-      window.removeEventListener('resize', onResize)
+      carousels.forEach(({ list }) => list.removeEventListener('scroll', updateAllCarouselStates))
+      window.removeEventListener('resize', updateAllCarouselStates)
     }
   }, [])
 
   useGSAP(
     () => {
-      const revealBlock = (target, y = 34) => {
-        const nodes = gsap.utils.toArray(target)
-        if (!nodes.length) return
+      const revealTargets = [
+        '.home-north__banner > *',
+        '.home-workshops__copy > *',
+        '.proposal-about__grid > *',
+        '.home-notes__intro > *',
+      ]
+
+      revealTargets.forEach((target) => {
+        if (!gsap.utils.toArray(target).length) return
         gsap.from(target, {
-          y,
+          y: 28,
           opacity: 0,
-          duration: 0.8,
+          duration: 0.76,
           ease: 'power3.out',
           stagger: 0.08,
           scrollTrigger: {
             trigger: target,
-            start: 'top 82%',
+            start: 'top 84%',
             once: true,
           },
         })
-      }
-
-      revealBlock('.home-work__top > *', 28)
-      revealBlock('.home-north__banner > *', 28)
-      revealBlock('.home-secondary__top > *', 28)
-      revealBlock('.home-profile__intro > *', 28)
-      revealBlock('.home-profile__workflow > *', 24)
-      revealBlock('.home-notes__intro > *', 28)
-      revealBlock('.home-contact-band__inner > *', 28)
-
-      if (gsap.utils.toArray('.home-work .home-project-slot').length) {
-        gsap.from('.home-work .home-project-slot', {
-          y: 54,
-          opacity: 0,
-          duration: 0.95,
-          ease: 'power3.out',
-          stagger: 0.12,
-          scrollTrigger: {
-            trigger: '.home-work__grid',
-            start: 'top 78%',
-            once: true,
-          },
-        })
-      }
+      })
 
       if (gsap.utils.toArray('.home-project-slot--north').length) {
         gsap.from('.home-project-slot--north', {
-          y: 54,
+          y: 44,
           opacity: 0,
-          duration: 0.95,
+          duration: 0.86,
           ease: 'power3.out',
-          stagger: 0.12,
-          scrollTrigger: {
-            trigger: '.home-work__grid--north',
-            start: 'top 82%',
-            once: true,
-          },
-        })
-      }
-
-      if (gsap.utils.toArray('.home-work__grid--north .home-project__link img').length) {
-        gsap.from('.home-work__grid--north .home-project__link img', {
-          scale: 1.08,
-          duration: 1.4,
-          ease: 'power2.out',
           stagger: 0.1,
           scrollTrigger: {
             trigger: '.home-work__grid--north',
             start: 'top 82%',
             once: true,
-          },
-        })
-      }
-
-      if (gsap.utils.toArray('.home-work .home-project__link img').length) {
-        gsap.from('.home-work .home-project__link img', {
-          scale: 1.08,
-          duration: 1.4,
-          ease: 'power2.out',
-          stagger: 0.1,
-          scrollTrigger: {
-            trigger: '.home-work__grid',
-            start: 'top 78%',
-            once: true,
-          },
-        })
-      }
-
-      ScrollTrigger.batch('.home-secondary-item, .home-point, .home-note, .home-profile__story > p', {
-        start: 'top 84%',
-        once: true,
-        onEnter: (elements) => {
-          gsap.fromTo(
-            elements,
-            { y: 28, opacity: 0 },
-            {
-              y: 0,
-              opacity: 1,
-              duration: 0.72,
-              ease: 'power3.out',
-              stagger: 0.1,
-              overwrite: true,
-            }
-          )
-        },
-      })
-
-      if (gsap.utils.toArray('.home-profile__visual').length) {
-        gsap.to('.home-profile__visual', {
-          yPercent: -5,
-          ease: 'none',
-          scrollTrigger: {
-            trigger: '.home-profile',
-            start: 'top bottom',
-            end: 'bottom top',
-            scrub: 1,
           },
         })
       }
@@ -202,24 +150,28 @@ export default function HomeLanding() {
           </div>
 
           <div className="home-mobile-carousel">
-            <NorthProjectsGrid className="home-mobile-carousel__track" trackId="north-carousel-track" trackRef={northCarouselRef} />
+            <NorthProjectsGrid
+              className="home-mobile-carousel__track"
+              trackId="north-carousel-track"
+              trackRef={northCarouselRef}
+            />
             <button
               type="button"
               className="home-secondary__nav home-secondary__nav--prev"
-              onClick={() => scrollCarousel(-1, 'north', northCarouselRef.current)}
-              aria-label={copy.home.carouselPrevNorth}
+              onClick={() => scrollCarousel(northCarouselRef, -1)}
+              aria-label="Ver proyecto anterior"
               aria-controls="north-carousel-track"
-              disabled={carouselState.north.atStart}
+              disabled={carouselState.atStart}
             >
               <span aria-hidden="true">‹</span>
             </button>
             <button
               type="button"
               className="home-secondary__nav home-secondary__nav--next"
-              onClick={() => scrollCarousel(1, 'north', northCarouselRef.current)}
-              aria-label={copy.home.carouselNextNorth}
+              onClick={() => scrollCarousel(northCarouselRef, 1)}
+              aria-label="Ver proyecto siguiente"
               aria-controls="north-carousel-track"
-              disabled={carouselState.north.atEnd}
+              disabled={carouselState.atEnd}
             >
               <span aria-hidden="true">›</span>
             </button>
@@ -227,34 +179,25 @@ export default function HomeLanding() {
         </div>
       </section>
 
-      <section id="work" className="home-section home-work" aria-labelledby="home-work-title">
+      <section id="recent-projects" className="home-section home-recent" aria-labelledby="home-recent-title">
         <div className="container home-block">
           <div className="home-work__top">
-            <h2 id="home-work-title" className="home-title">
-              {copy.home.featuredTitle}
+            <h2 id="home-recent-title" className="home-title">
+              Otros proyectos
             </h2>
           </div>
 
-          <div className="home-mobile-carousel">
-            <div className="home-work__grid" id="featured-carousel-track" ref={featuredCarouselRef}>
-              {highlightedProjects.map((project, index) => (
-                <div key={project.slug} className={`home-project-slot home-project-slot--${index + 1}`}>
-                  <motion.article
-                    className="home-project"
-                    transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
-                    style={{
-                      '--project-accent': project.accent,
-                      '--project-image-fit': project.cardImageMode || 'contain',
-                      '--project-image-bg': project.cardImageBackground || '#ece8e0',
-                      '--project-image-scale': project.cardImageScale || 1,
-                    }}
-                  >
+          <div className="home-mobile-carousel home-mobile-carousel--recent">
+            <div id="recent-carousel-track" ref={recentCarouselRef} className="home-work__grid home-work__grid--recent">
+              {recentProjects.map((project, index) => (
+                <div key={project.title} className="home-project-slot">
+                  <article className={`home-project home-project--recent home-project--recent-${index + 1}`}>
                     <Link
-                      href={`/work/${project.slug}`}
+                      href={project.href}
                       className="home-project__link"
                       aria-label={`${project.role}. ${project.title}. ${project.subtitle}`}
                     >
-                      <div className="home-project__media" style={{ '--thumb-bg-image': `url("${project.image}")` }}>
+                      <div className="home-project__media">
                         <Image src={project.image} alt={project.title} fill sizes="(max-width: 960px) 100vw, 50vw" />
                       </div>
                       <div className="home-project__copy">
@@ -263,27 +206,27 @@ export default function HomeLanding() {
                         <p className="home-project__subtitle">{project.subtitle}</p>
                       </div>
                     </Link>
-                  </motion.article>
+                  </article>
                 </div>
               ))}
             </div>
             <button
               type="button"
               className="home-secondary__nav home-secondary__nav--prev"
-              onClick={() => scrollCarousel(-1, 'featured', featuredCarouselRef.current)}
-              aria-label={copy.home.carouselPrevFeatured}
-              aria-controls="featured-carousel-track"
-              disabled={carouselState.featured.atStart}
+              onClick={() => scrollCarousel(recentCarouselRef, -1)}
+              aria-label="Ver proyecto anterior"
+              aria-controls="recent-carousel-track"
+              disabled={recentCarouselState.atStart}
             >
               <span aria-hidden="true">‹</span>
             </button>
             <button
               type="button"
               className="home-secondary__nav home-secondary__nav--next"
-              onClick={() => scrollCarousel(1, 'featured', featuredCarouselRef.current)}
-              aria-label={copy.home.carouselNextFeatured}
-              aria-controls="featured-carousel-track"
-              disabled={carouselState.featured.atEnd}
+              onClick={() => scrollCarousel(recentCarouselRef, 1)}
+              aria-label="Ver proyecto siguiente"
+              aria-controls="recent-carousel-track"
+              disabled={recentCarouselState.atEnd}
             >
               <span aria-hidden="true">›</span>
             </button>
@@ -291,60 +234,24 @@ export default function HomeLanding() {
         </div>
       </section>
 
-      <section id="other-projects" className="home-section home-secondary" aria-labelledby="home-secondary-title">
-        <div className="container home-secondary__block">
-          <div className="home-secondary__top">
-            <h2 id="home-secondary-title" className="home-title home-title--compact">
-              {copy.home.secondaryTitle}
+      <section id="workshops" className="home-section home-workshops" aria-labelledby="home-workshops-title">
+        <div className="container home-workshops__grid">
+          <div className="home-workshops__copy">
+            <h2 id="home-workshops-title" className="home-title">
+              {workshopsPage.title}
             </h2>
-            <p className="home-caption">{copy.home.secondaryCaption}</p>
+            <p className="home-caption">{workshopsPage.description}</p>
+            <Link href="/workshops" className="btn btn--primary home-workshops__cta">
+              Ver programa de workshops
+            </Link>
           </div>
-
-          <div className="home-secondary__carousel">
-            <div ref={secondaryCarouselRef} className="home-secondary__list" id="secondary-carousel-track">
-            {secondaryProjects.map((project) => (
-              <Link
-                key={project.slug}
-                href={`/work/${project.slug}`}
-                className="home-secondary-item"
-                aria-label={`${project.title}. ${project.subtitle}`}
-              >
-                <div className="home-secondary-item__media" style={{ '--thumb-bg-image': `url("${project.image}")` }}>
-                  <Image src={project.image} alt={project.title} fill sizes="(max-width: 960px) 100vw, 150px" />
-                </div>
-
-                <div className="home-secondary-item__body">
-                  <span className="home-secondary-item__label">{project.subtitle}</span>
-                  <h3>{project.title}</h3>
-                  <p>{project.summary}</p>
-                </div>
-
-                <span className="home-secondary-item__arrow" aria-hidden="true">
-                  <ArrowUpRightIcon />
-                </span>
-              </Link>
-            ))}
-            </div>
-            <button
-              type="button"
-              className="home-secondary__nav home-secondary__nav--prev"
-              onClick={() => scrollCarousel(-1, 'secondary', secondaryCarouselRef.current)}
-              aria-label={copy.home.carouselPrevSecondary}
-              aria-controls="secondary-carousel-track"
-              disabled={carouselState.secondary.atStart}
-            >
-              <span aria-hidden="true">‹</span>
-            </button>
-            <button
-              type="button"
-              className="home-secondary__nav home-secondary__nav--next"
-              onClick={() => scrollCarousel(1, 'secondary', secondaryCarouselRef.current)}
-              aria-label={copy.home.carouselNextSecondary}
-              aria-controls="secondary-carousel-track"
-              disabled={carouselState.secondary.atEnd}
-            >
-              <span aria-hidden="true">›</span>
-            </button>
+          <div className="home-workshops__media">
+            <Image
+              src={workshopsPage.image}
+              alt="Personas participando en un workshop de producto"
+              fill
+              sizes="(max-width: 900px) 100vw, 56vw"
+            />
           </div>
         </div>
       </section>
@@ -355,14 +262,14 @@ export default function HomeLanding() {
             <div className="proposal-section__intro">
               <h2 id="home-about-title">{copy.home.aboutTitle}</h2>
               <p className="proposal-about__lede">{copy.home.aboutSubtitle}</p>
-              <a className="btn btn--brand proposal-about__cv-cta" href={cvHref} download="VictorSaiz_CV.pdf">
+              <a className="btn btn--brand proposal-about__cv-cta" href={cvHref} download="VictorSaiz_CV_ES.pdf">
                 {copy.home.downloadCv}
               </a>
             </div>
 
             <div className="proposal-about__body">
               {copy.home.aboutBody.map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
+                <p key={paragraph}>{renderCvText(paragraph)}</p>
               ))}
             </div>
 
@@ -378,9 +285,9 @@ export default function HomeLanding() {
                   <div className="proposal-experience__content">
                     {item.summary || item.highlights?.length ? (
                       <ul className="proposal-experience__highlights" aria-label={`${copy.home.highlightsLabel} ${item.company}`}>
-                        {item.summary ? <li>{item.summary}</li> : null}
+                        {item.summary ? <li>{renderCvText(item.summary)}</li> : null}
                         {(item.highlights || []).map((point) => (
-                          <li key={`${item.company}-${point}`}>{point}</li>
+                          <li key={`${item.company}-${point}`}>{renderCvText(point)}</li>
                         ))}
                       </ul>
                     ) : null}
@@ -394,9 +301,9 @@ export default function HomeLanding() {
                             </div>
                             {move.summary || move.highlights?.length ? (
                               <ul className="proposal-experience__move-highlights" aria-label={`${copy.home.highlightsLabel} ${move.role}`}>
-                                {move.summary ? <li>{move.summary}</li> : null}
-                                {move.highlights.map((point) => (
-                                  <li key={`${move.role}-${point}`}>{point}</li>
+                                {move.summary ? <li>{renderCvText(move.summary)}</li> : null}
+                                {(move.highlights || []).map((point) => (
+                                  <li key={`${move.role}-${point}`}>{renderCvText(point)}</li>
                                 ))}
                               </ul>
                             ) : null}
@@ -409,48 +316,6 @@ export default function HomeLanding() {
               ))}
             </div>
           </div>
-        </div>
-      </section>
-
-      <section id="articles" className="home-section home-notes" aria-labelledby="home-articles-title">
-        <div className="container home-notes__block">
-          <div className="home-notes__intro">
-            <h2 id="home-articles-title" className="home-title home-title--compact">
-              {copy.home.articlesTitle}
-            </h2>
-            <p className="home-caption">{copy.home.articlesCaption}</p>
-          </div>
-
-          <div className="home-notes__list">
-            {latestArticles.map((article) => (
-              <a
-                key={article.slug}
-                href={article.externalUrl}
-                target="_blank"
-                rel="noreferrer"
-                className={`home-note${article.image ? '' : ' home-note--no-media'}`}
-                aria-label={article.title}
-              >
-                {article.image ? (
-                  <div className="home-note__media" style={{ '--thumb-bg-image': `url("${article.image}")` }}>
-                    <Image src={article.image} alt={article.title} fill sizes="(max-width: 720px) 100vw, 132px" />
-                  </div>
-                ) : null}
-                <div className="home-note__body">
-                  <span className="home-note__meta">{article.topic}</span>
-                  <h3>{article.title}</h3>
-                  <p>{article.excerpt}</p>
-                </div>
-                <span className="home-note__arrow" aria-hidden="true">
-                  <ArrowUpRightIcon />
-                </span>
-              </a>
-            ))}
-          </div>
-
-          <Link href="/articles" className="inline-link home-notes__cta">
-            {copy.home.allArticles}
-          </Link>
         </div>
       </section>
 

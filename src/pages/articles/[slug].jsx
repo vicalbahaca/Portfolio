@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import Head from 'next/head'
-import { articles, getArticleBySlug } from '../../data/content'
+import { articles, getArticleBySlug } from '../../data/siteContent'
 import { localizeArticle, useLanguage } from '../../lib/i18n'
 
 export default function ArticleRedirectPage({ article }) {

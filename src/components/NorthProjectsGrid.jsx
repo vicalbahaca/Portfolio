@@ -1,28 +1,15 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { northSection } from '../data/content'
-import { useLanguage } from '../lib/i18n'
-
-function readLocalized(value, lang) {
-  if (value && typeof value === 'object' && !Array.isArray(value)) {
-    return value[lang] || value.es || value.en || ''
-  }
-  return value || ''
-}
+import { portfolioSection } from '../data/portfolioNorth'
 
 export default function NorthProjectsGrid({ className = '', trackId, trackRef }) {
-  const { lang, copy } = useLanguage()
-  const projects = northSection.projects.map((project) => ({
+  const projects = portfolioSection.projects.map((project) => ({
     ...project,
     cardImage: project.cardImage || project.image,
     cardImageMode: project.cardImageMode || 'contain',
-    cardTag: readLocalized(project.cardTag, lang) || readLocalized(project.scope, lang) || readLocalized(project.role, lang),
-    cardDescription: readLocalized(project.cardDescription, lang) || readLocalized(project.summary, lang),
-    summary: readLocalized(project.summary, lang),
-    detail: readLocalized(project.detail, lang),
-    role: readLocalized(project.role, lang),
-    industry: readLocalized(project.industry, lang),
+    cardTag: project.cardTag || project.scope || project.role,
+    cardDescription: project.cardDescription || project.summary,
   }))
 
   return (
