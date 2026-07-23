@@ -85,6 +85,14 @@ export default function InOneCase({ caseStudy }) {
               Evolución post-lanzamiento de una aplicación financiera para unificar productos, mejorar su
               accesibilidad y construir una experiencia preparada para crecer.
             </p>
+            <a
+              className={styles.finalHeroExternalLink}
+              href="https://www.caixabankpc.com/es/appinone"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Visitar InOne
+            </a>
           </div>
 
         </div>
@@ -101,7 +109,7 @@ export default function InOneCase({ caseStudy }) {
         </section>
 
         <section className={`${styles.finalSection} ${styles.finalRole}`}>
-          <SectionHeader number="02" title="Consultor y ejecutor" />
+          <SectionHeader number="02" title="Desafío" />
           <p className={styles.finalRoleLead}>{content.role.lead}</p>
           <ul className={styles.finalRoleList}>
             {content.role.bullets.map((item) => (

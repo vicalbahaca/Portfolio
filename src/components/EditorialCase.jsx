@@ -40,6 +40,7 @@ export default function EditorialCase({ caseStudy }) {
   const resultsDescription =
     content.resultsDescription ||
     'El resultado del trabajo fue una base de decisión y ejecución; no se presentan métricas de ahorro, conversión o cumplimiento sin una medición validada.'
+  const hasResults = Boolean(content.results?.length)
   return (
     <main className={`${styles.casePage} ${styles.finalCase}`}>
       <a className="skip-link" href="#case-content">
@@ -58,6 +59,16 @@ export default function EditorialCase({ caseStudy }) {
           <div className={styles.finalHeroCopy}>
             <h1>{caseStudy.title}</h1>
             <p>{caseStudy.headline}</p>
+            {caseStudy.externalLink ? (
+              <a
+                className={styles.finalHeroExternalLink}
+                href={caseStudy.externalLink.href}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {caseStudy.externalLink.label}
+              </a>
+            ) : null}
           </div>
 
         </div>
@@ -74,7 +85,7 @@ export default function EditorialCase({ caseStudy }) {
         </section>
 
         <section className={`${styles.finalSection} ${styles.finalRole}`}>
-          <SectionHeader number="02" title="Retos" />
+          <SectionHeader number="02" title={content.roleTitle || 'Retos'} />
           <p className={styles.finalRoleLead}>{content.role.lead}</p>
           <ul className={styles.finalRoleList}>
             {content.role.bullets.map((item) => (
@@ -137,21 +148,23 @@ export default function EditorialCase({ caseStudy }) {
           </section>
         ) : null}
 
-        <section className={`${styles.finalSection} ${styles.finalResults}`}>
-          <SectionHeader
-            number="05"
-            title={resultsTitle}
-            description={resultsDescription}
-          />
+        {hasResults ? (
+          <section className={`${styles.finalSection} ${styles.finalResults}`}>
+            <SectionHeader
+              number="05"
+              title={resultsTitle}
+              description={resultsDescription}
+            />
 
-          <ul className={styles.finalResultList}>
-            {content.results.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
+            <ul className={styles.finalResultList}>
+              {content.results.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
 
-          {content.learning ? <p className={styles.finalRoleLead}>{content.learning}</p> : null}
-        </section>
+            {content.learning ? <p className={styles.finalRoleLead}>{content.learning}</p> : null}
+          </section>
+        ) : null}
       </div>
 
     </main>

@@ -1,7 +1,7 @@
 export const portfolioSection = {
   title: 'Proyectos seleccionados',
   summary:
-    'Cuatro casos de producto financiero, accesibilidad y operaciones de diseño. El contenido está redactado para explicar mi responsabilidad sin exponer clientes, datos internos ni interfaces sujetas a confidencialidad.',
+    'Cinco casos de producto financiero, comercio electrónico, accesibilidad y operaciones de diseño. El contenido está redactado para explicar mi responsabilidad sin exponer clientes, datos internos ni interfaces sujetas a confidencialidad.',
   projects: [
     {
       slug: 'inone',
@@ -392,6 +392,83 @@ export const portfolioSection = {
           ],
         },
       ],
+    },
+    {
+      slug: 'facilitea-ecommerce',
+      title: 'Facilitea: evolución del e-commerce',
+      image: '/portfolio-north/covers/facilitea-ecommerce.svg',
+      cardImage: '/portfolio-north/covers/facilitea-ecommerce.svg',
+      cardImageMode: 'cover',
+      cardUseBackdrop: false,
+      accent: '#f20505',
+      client: 'E-commerce retail vinculado a CaixaBank',
+      industry: 'Retail · E-commerce · Financiación',
+      role: 'Product Design Owner',
+      scope: 'Oficinas, financiación, checkout y posventa',
+      cardTag: 'Evolución de la plataforma',
+      cardDescription:
+        'Evolución a largo plazo de una plataforma retail: beneficios, financiación, checkout y posventa en una experiencia conectada.',
+      metric: 'E-commerce · Financiación · Posventa',
+      headline:
+        'Evolucionar un e-commerce retail para conectar catálogo, contratación y posventa sin perder coherencia entre canales.',
+      summary:
+        'Una evolución de producto sobre Facilitea.com y el servicio que permite a las oficinas acompañar operaciones de e-commerce.',
+      description:
+        'El caso evita reglas comerciales, condiciones de financiación, datos operativos y pantallas internas. Se centra en las decisiones de producto que conectan beneficios, checkout, financiación y posventa.',
+      externalLink: {
+        label: 'Visitar Facilitea',
+        href: 'https://www.facilitea.com/',
+      },
+      editorialCase: {
+        roleTitle: 'Desafío',
+        context: [
+          'Facilitea es la plataforma de comercio electrónico de CaixaBank. Reúne productos y servicios de tecnología, movilidad, hogar y viajes, además de propuestas especializadas de coche y vivienda.',
+          'La evolución se centró en Facilitea.com y en el servicio interno que permite a las oficinas acompañar operaciones de e-commerce. El alcance conectó catálogo, financiación, checkout y posventa para responder a nuevas necesidades de mercado y negocio.',
+        ],
+        role: {
+          lead:
+            'Responsabilidad de consultoría y diseño para convertir necesidades de negocio y señales del mercado en decisiones ejecutables que hicieran evolucionar el e-commerce.',
+          bullets: [
+            'Asumir el ownership de la herramienta para oficinas y de los journeys de financiación, checkout y posventa de Facilitea.com.',
+            'Definir necesidades junto a negocio, operaciones, legal, seguridad y tecnología antes de diseñar cada evolución.',
+            'Diseñar y documentar journeys, reglas de interfaz, estados y casos límite para desarrollo.',
+            'Acompañar handoff, QA y las iteraciones posteriores a cada entrada en producción.',
+          ],
+        },
+        challengesTitle: 'Dos retos de evolución',
+        challengesDescription:
+          'Los frentes que conectaron propuesta comercial, contratación y servicio posterior en una experiencia de producto coherente.',
+        challenges: [
+          {
+            number: '01',
+            title: 'Llevar la financiación al momento de compra',
+            problem:
+              'La financiación debía responder a distintas condiciones de producto y contratación. El reto era que pudiera entenderse y gestionarse desde el checkout, sin obligar a cambiar de canal ni a interpretar información dispersa.',
+            process: [
+              { title: 'Mapear oferta', description: 'Recoger escenarios de compra, posibilidades de financiación y restricciones relevantes.' },
+              { title: 'Priorizar journeys', description: 'Distinguir los recorridos que requieren una decisión de financiación dentro de la compra.' },
+              { title: 'Diseñar contratación', description: 'Aterrizar una experiencia que mantenga la compra y la contratación en un mismo recorrido.' },
+              { title: 'Alinear viabilidad', description: 'Validar contenido, estados y dependencias con negocio, legal y tecnología.' },
+            ],
+            result:
+              'Una base de contratación integrada en checkout, preparada para presentar opciones de financiación sin añadir fricción innecesaria.',
+          },
+          {
+            number: '02',
+            title: 'Convertir la posventa en parte del producto',
+            problem:
+              'El área privada no reunía de forma clara la gestión de pedidos, pagos, facturas, logística, suscripciones y renting. Había que rediseñar la posventa con el nuevo sistema de diseño y cubrir sus distintas casuísticas de forma accesible.',
+            process: [
+              { title: 'Inventariar servicio', description: 'Ordenar necesidades posteriores a la compra, desde envíos e incidencias hasta cobros y documentación.' },
+              { title: 'Área privada y posventa', description: 'Rediseñar una estructura común para compras, suscripciones y renting.' },
+              { title: 'Validar el servicio', description: 'Contrastar todas las funcionalidades con tecnología, operaciones, empresas externas y logística.' },
+              { title: 'Documentar y entregar', description: 'Cubrir casos de uso, handoff y QA con los equipos responsables.' },
+            ],
+            result:
+              'Un área privada alineada con la nueva marca de Facilitea y una posventa para que todas las personas puedan consultar información y realizar gestiones sobre compras, renting y suscripciones.',
+          },
+        ],
+      },
     },
     {
       slug: 'figma-documentation-plugin',

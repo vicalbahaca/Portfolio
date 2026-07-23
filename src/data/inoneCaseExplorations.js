@@ -16,7 +16,7 @@ export const inoneCase = {
   challenge:
     'El reto no era rediseñar pantallas aisladas. Había que ordenar una experiencia recién lanzada, reducir fricción, integrar accesibilidad y convertir restricciones de negocio y tecnología en una evolución viable.',
   roleSummary:
-    'Trabajé como consultor y ejecutor: detectando problemas, haciendo visibles los trade-offs, alineando decisiones y acompañando la entrega hasta su validación.',
+    'Trabajé desde la consultoría y el diseño para convertir necesidades de negocio y señales del mercado en decisiones ejecutables que hicieran evolucionar la aplicación.',
   collaboration: [
     'Definí un diagnóstico combinando flujos, señales de uso, soporte y restricciones del servicio.',
     'Reorganicé la arquitectura para dar prioridad a las tareas financieras más frecuentes y reducir cambios de contexto.',
@@ -249,7 +249,7 @@ export const inoneCase = {
     ],
     role: {
       lead:
-        'Un rol de consultoría y ejecución para convertir señales dispersas en decisiones, alinear áreas y acompañar cada propuesta hasta una entrega viable.',
+        'Responsabilidad de consultoría y diseño para convertir necesidades de negocio y señales del mercado en decisiones ejecutables que hicieran evolucionar la aplicación.',
       bullets: [
         'Definir un diagnóstico combinando analítica, flujos existentes, soporte y restricciones del servicio.',
         'Traducir hallazgos en prioridades, decisiones de producto y un roadmap de entregas progresivas.',
