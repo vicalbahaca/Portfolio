@@ -7846,6 +7846,10 @@ body.lightbox-open .navbar {
   margin-top: 14px;
 }
 
+.proposal-about__cv-cta:hover {
+  transform: none;
+}
+
 .work-case-hero__action {
   margin: 0;
 }
