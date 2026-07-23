@@ -5558,7 +5558,8 @@ body {
 .work-case-hero__copy {
   display: grid;
   gap: 16px;
-  max-width: min(100%, 1120px);
+  width: 100%;
+  max-width: none;
 }
 
 .work-case-hero__title {
@@ -5572,7 +5573,8 @@ body {
 }
 
 .work-case-hero__headline {
-  max-width: min(100%, 64ch);
+  width: 100%;
+  max-width: none;
   color: var(--work-hero-muted, rgba(255, 255, 255, 0.86));
   font-size: clamp(1.08rem, 2vw, 1.34rem);
   line-height: 1.45;
@@ -5583,7 +5585,8 @@ body {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 18px;
-  max-width: min(100%, 1120px);
+  width: 100%;
+  max-width: none;
   margin: 24px 0 0;
 }
 
@@ -8285,11 +8288,12 @@ body .page-shell--home .home-north .home-project__subtitle {
 .workshops-hero__copy {
   display: grid;
   gap: 18px;
-  max-width: 1000px;
+  width: 100%;
+  max-width: none;
 }
 
 .workshops-hero__copy h1 {
-  max-width: 9ch;
+  max-width: none;
   margin: 0;
   color: #091427;
   font-size: clamp(4.2rem, 11vw, 9.6rem);
@@ -8298,7 +8302,8 @@ body .page-shell--home .home-north .home-project__subtitle {
 }
 
 .workshops-hero__copy > p:last-child {
-  max-width: 62ch;
+  width: 100%;
+  max-width: none;
   margin: 0;
   color: rgba(13, 23, 38, 0.72);
   font-size: clamp(1.08rem, 2vw, 1.34rem);
@@ -8596,7 +8601,7 @@ body :is(h1, h2, h3) {
 }
 
 .work-case-page--recent .work-case-hero__headline {
-  max-width: 62ch;
+  max-width: none;
   color: rgba(13, 23, 38, 0.72);
   font-size: clamp(1.08rem, 2vw, 1.34rem);
   line-height: 1.5;

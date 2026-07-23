@@ -2193,11 +2193,13 @@
 
 .finalHeroCopy {
   margin-top: clamp(72px, 9vh, 112px);
-  max-width: 1080px;
+  width: 100%;
+  max-width: none;
 }
 
 .finalHeroCopy h1 {
-  max-width: 1050px;
+  width: 100%;
+  max-width: none;
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
   font-size: clamp(5rem, 9.2vw, 8.6rem);
@@ -2209,7 +2211,8 @@
 }
 
 .finalHeroCopy > p {
-  max-width: 920px;
+  width: 100%;
+  max-width: none;
   margin-top: 64px;
   color: rgba(255, 255, 255, 0.82);
   font-size: clamp(1rem, 1.65vw, 1.35rem);
