@@ -8481,6 +8481,11 @@ body .page-shell--home .home-north .home-project__subtitle {
     grid-template-columns: 1fr;
   }
 
+  .home-workshops__media {
+    margin-top: 24px;
+    justify-self: start;
+  }
+
   .workshops-principles__grid {
     grid-template-columns: 1fr;
   }
