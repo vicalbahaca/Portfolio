@@ -75,7 +75,7 @@ export default function WorkProjectPage({ project }) {
                       {project.problemStatement ? <p className="work-case-problem__statement">{project.problemStatement}</p> : null}
                       {project.description ? (
                         <div className="work-case-problem__solution">
-                          <p className="work-case-problem__label">Como lo soluciona?</p>
+                          <p className="work-case-problem__label">¿Cómo lo soluciona?</p>
                           <p className="detail-copy detail-copy--lead">{project.description}</p>
                         </div>
                       ) : null}

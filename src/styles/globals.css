@@ -6315,7 +6315,11 @@ body.lightbox-open .navbar {
 @media (max-width: 720px) {
   .work-case-hero__title {
     max-width: 100%;
-    font-size: clamp(2.8rem, 16vw, 4.6rem);
+    font-size: clamp(2.8rem, 13.5vw, 3.8rem);
+    line-height: 0.96;
+    letter-spacing: 0;
+    overflow-wrap: anywhere;
+    word-break: normal;
   }
 
   .work-case-hero__headline,
@@ -8698,6 +8702,11 @@ body :is(h1, h2, h3) {
   }
 
   .work-case-page--recent .work-case-hero__title {
-    font-size: clamp(3.5rem, 20vw, 5.4rem);
+    max-width: 100%;
+    font-size: clamp(3rem, 13.5vw, 3.8rem);
+    line-height: 0.96;
+    letter-spacing: 0;
+    overflow-wrap: anywhere;
+    word-break: normal;
   }
 }

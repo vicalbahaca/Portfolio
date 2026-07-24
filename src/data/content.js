@@ -101,18 +101,18 @@ export const caseStudies = [
   {
     slug: 'aaaquest',
     title: 'AAAQuest',
-    subtitle: 'IA para accesibilidad y documentacion de producto',
+    subtitle: 'IA para accesibilidad y documentación de producto',
     summary:
-      'Una herramienta enfocada en detectar problemas de accesibilidad, generar documentacion lista para desarrollo y acelerar handoff desde una captura o un diseño.',
+      'Una herramienta enfocada en detectar problemas de accesibilidad, generar documentación lista para desarrollo y acelerar handoff desde una captura o un diseño.',
     description:
-      'AAAQuest combina analisis visual, criterios WCAG y generacion asistida por IA para que equipos de diseño puedan documentar accesibilidad en segundos, aprender mejores practicas y compartir entregables mas claros.',
+      'AAAQuest combina análisis visual, criterios WCAG y generación asistida por IA para que equipos de diseño puedan documentar accesibilidad en segundos, aprender mejores prácticas y compartir entregables más claros.',
     image: '/logo.svg',
     cardImageMode: 'contain',
     cardImageBackground: '#000000',
     cardImageScale: 0.44,
     accent: '#03875A',
     category: 'Case study',
-    type: 'Producto IA para auditorias y documentacion de accesibilidad',
+    type: 'Producto IA para auditorías y documentación de accesibilidad',
     role: 'Product Design & MVP',
     industry: 'Accessibility, design tooling y AI product',
     websiteUrl: 'https://aaaquest.com',
@@ -122,15 +122,15 @@ export const caseStudies = [
   {
     slug: 'coubber',
     title: 'Coubber',
-    subtitle: 'Plataforma sportstech para analisis y reporting',
+    subtitle: 'Plataforma sportstech para análisis y reporting',
     summary:
-      'Una plataforma que automatiza el analisis de datos deportivos y convierte procesos de valoracion muy manuales en informes claros y accionables en segundos.',
+      'Una plataforma que automatiza el análisis de datos deportivos y convierte procesos de valoración muy manuales en informes claros y accionables en segundos.',
     description:
-      'Coubber Data Studio integra multiples dispositivos, centraliza metricas y usa IA para ayudar a preparadores fisicos, fisioterapeutas y clubes a decidir con mas rapidez y menos friccion operativa.',
+      'Coubber Data Studio integra múltiples dispositivos, centraliza métricas y usa IA para ayudar a preparadores físicos, fisioterapeutas y clubes a decidir con más rapidez y menos fricción operativa.',
     image: '/thumbs/recent/coubber.jpg',
     accent: '#1052FE',
     category: 'Case study',
-    type: 'Plataforma B2B de analisis de rendimiento deportivo',
+    type: 'Plataforma B2B de análisis de rendimiento deportivo',
     role: 'Product Design',
     industry: 'SportsTech, data analytics y rendimiento deportivo',
     websiteUrl: 'https://coubber.com',
@@ -170,13 +170,13 @@ export const caseStudies = [
     title: 'MyCoach',
     subtitle: 'Plataforma para rutinas y mesociclos personalizados',
     summary:
-      'Una plataforma para generar rutinas personalizadas de musculacion, Hyrox y CrossFit a partir de analisis fisico, contexto real y un proceso guiado orientado a progresion.',
+      'Una plataforma para generar rutinas personalizadas de musculación, Hyrox y CrossFit a partir de análisis físico, contexto real y un proceso guiado orientado a progresión.',
     description:
-      'MyCoach combina analisis previo, formulario dinamico y exportacion a Excel para construir mesociclos editables que evolucionan segun el feedback, la fatiga y el material disponible.',
+      'MyCoach combina análisis previo, formulario dinámico y exportación a Excel para construir mesociclos editables que evolucionan según el feedback, la fatiga y el material disponible.',
     image: '/thumbs/recent/mycoach.jpg',
     accent: '#0944A9',
     category: 'Case study',
-    type: 'Plataforma de planificacion deportiva personalizada',
+    type: 'Plataforma de planificación deportiva personalizada',
     role: 'Product Design & MVP',
     industry: 'Fitness, coaching digital y performance',
     websiteUrl: 'https://mycoach-27z4.onrender.com/',
@@ -1005,7 +1005,7 @@ export const northSection = {
       accent: '#40732E',
       client: 'Facilitea',
       industry: {
-        es: 'Ecommerce, accesibilidad y documentación de producto',
+        es: 'Comercio electrónico, accesibilidad y documentación de producto',
         en: 'Ecommerce, accessibility, and product documentation',
       },
       role: {
@@ -1030,7 +1030,7 @@ export const northSection = {
         en: 'Turning scattered accessibility criteria into a clear, reusable documentation system useful for design, development, and review.',
       },
       summary: {
-        es: 'Replanteamiento de la documentación de accesibilidad para un ecosistema ecommerce. El objetivo fue convertir criterios dispersos en un sistema claro, accionable y útil para diseño y desarrollo.',
+        es: 'Replanteamiento de la documentación de accesibilidad para un ecosistema de comercio electrónico. El objetivo fue convertir criterios dispersos en un sistema claro, accionable y útil para diseño y desarrollo.',
         en: 'A redesign of accessibility documentation for an ecommerce ecosystem. The goal was to turn scattered criteria into a clear, actionable system for both design and development.',
       },
       description: {
@@ -1057,7 +1057,7 @@ export const northSection = {
         {
           src: '/north/page-32.jpg',
           alt: {
-            es: 'Contexto ecommerce de Facilitea',
+            es: 'Contexto de comercio electrónico de Facilitea',
             en: 'Facilitea ecommerce context',
           },
           caption: {
@@ -1243,7 +1243,7 @@ export const northSection = {
       accent: '#004B5B',
       client: 'Facilitea · CaixaBank',
       industry: {
-        es: 'Ecommerce, diseño de producto y automatización interna',
+        es: 'Comercio electrónico, diseño de producto y automatización interna',
         en: 'Ecommerce, product design, and internal automation',
       },
       role: {
@@ -1271,7 +1271,7 @@ export const northSection = {
         en: 'Design and development of an internal Figma plugin that turns text review, accessibility checks, and multilingual export into a single, traceable, and much faster workflow.',
       },
       summary: {
-        es: 'Plugin interno creado para Facilitea, el ecommerce de CaixaBank, con el objetivo de reducir trabajo manual en revisión de contenidos, validación B2 y preparación de textos para desarrollo.',
+        es: 'Plugin interno creado para Facilitea, la plataforma de comercio electrónico de CaixaBank, con el objetivo de reducir trabajo manual en revisión de contenidos, validación B2 y preparación de textos para desarrollo.',
         en: 'Internal plugin built for Facilitea, CaixaBank’s ecommerce platform, to reduce manual work in content review, B2 validation, and text preparation for development.',
       },
       description: {
@@ -1319,7 +1319,7 @@ export const northSection = {
           },
           paragraphs: {
             es: [
-              'Diseñé y desarrollé esta herramienta interna para Facilitea, el ecommerce de CaixaBank, agrupando varias necesidades reales del equipo en una sola interfaz: documentación de accesibilidad, exportación de textos B2 y revisión visual con textos al 200%.',
+              'Diseñé y desarrollé esta herramienta interna para Facilitea, la plataforma de comercio electrónico de CaixaBank, agrupando varias necesidades reales del equipo en una sola interfaz: documentación de accesibilidad, exportación de textos B2 y revisión visual con textos al 200%.',
               'La base visual se construyó tomando como referencia el design system de Facilitea, reutilizando criterios de UI, componentes y variables para que el plugin se sintiera parte del mismo ecosistema de producto y no una utilidad aislada.',
             ],
             en: [
@@ -1517,109 +1517,109 @@ export const conceptDesigns = [
   {
     slug: 'meeting-room-booking-app',
     title: 'Meeting Room Booking App',
-    subtitle: 'Prototype',
+    subtitle: 'Prototipo',
     summary:
       'Un flujo claro para reservar salas en oficinas grandes sin perder tiempo entre disponibilidad, cercanía y gestión de reservas.',
     image: 'https://framerusercontent.com/images/5JC1cCAp9eoEtQVR7tftMRUR8Ew.png',
     accent: '#159BFE',
-    category: 'Concept design',
+    category: 'Diseño conceptual',
   },
   {
     slug: 'inventory-screen-pixel-art-game',
     title: 'Inventory Screen Pixel Art Game',
-    subtitle: 'Feature Concept Design',
+    subtitle: 'Diseño conceptual de funcionalidad',
     summary:
-      'Un inventario para juego mobile pixel art con crafting, rarezas y trade entre amigos, diseñado para ser legible incluso con mucha información.',
+      'Un inventario para juego móvil pixel art con crafting, rarezas e intercambio entre amigos, diseñado para ser legible incluso con mucha información.',
     image: 'https://framerusercontent.com/images/a25SWw0LUgkjLCAqdr0hnYmzOg.png',
     accent: '#533BE9',
-    category: 'Concept design',
+    category: 'Diseño conceptual',
   },
   {
     slug: 'joining-made-simple-private-group',
     title: 'Joining Made Simple: Private Group',
-    subtitle: 'Webpage Concept Design',
+    subtitle: 'Diseño conceptual web',
     summary:
       'Una landing conceptual publicada en Behance que simplifica la entrada a grupos privados con una comunicación más directa y amable.',
     image: 'https://framerusercontent.com/images/RgzY3fBtWyalkOHw48OTW2J020.png',
     accent: '#0057A3',
-    category: 'Concept design',
+    category: 'Diseño conceptual',
   },
   {
     slug: 'local-flower-shop',
     title: 'Local Flower Shop',
-    subtitle: 'Webpage Concept Design',
+    subtitle: 'Diseño conceptual web',
     summary:
       'Una landing editorial para floristería local con una dirección visual más cálida, expresiva y orientada a marca.',
     image: 'https://framerusercontent.com/images/W805ok8Zi2siWWOOHMJrBhl3tz4.png',
     accent: '#3D8324',
-    category: 'Concept design',
+    category: 'Diseño conceptual',
   },
 ]
 
 const workDetailContent = {
   mycoach: {
-    headline: 'Una plataforma que construye rutinas y mesociclos personalizados desde el contexto real del atleta, no desde plantillas genericas.',
+    headline: 'Una plataforma que construye rutinas y mesociclos personalizados desde el contexto real del atleta, no desde plantillas genéricas.',
     facts: [
-      { label: 'Tipo', value: 'Plataforma de planificacion deportiva personalizada' },
+      { label: 'Tipo', value: 'Plataforma de planificación deportiva personalizada' },
       { label: 'Rol', value: 'Product Design & MVP' },
       { label: 'Industria', value: 'Fitness, coaching digital y performance' },
-      { label: 'Formato', value: 'Landing + flujo guiado de creacion de rutina' },
+      { label: 'Formato', value: 'Landing + flujo guiado de creación de rutina' },
       { label: 'Web', value: 'mycoach-27z4.onrender.com' },
     ],
-    highlights: ['Analisis fisico previo', 'Formulario guiado en 6 pasos', 'Excel editable para seguir el mesociclo'],
+    highlights: ['Análisis físico previo', 'Formulario guiado en 6 pasos', 'Excel editable para seguir el mesociclo'],
     detailSections: [
       {
         title: 'Contexto',
         paragraphs: [
-          'MyCoach se presenta como una plataforma para crear rutinas personalizadas y mesociclos exportables, con un enfoque muy claro en hipertrofia, fuerza y rendimiento hibrido para disciplinas como CrossFit, Hyrox y powerlifting.',
-          'La propuesta evita la idea de rutina generica y defiende que la planificacion debe salir del contexto real de la persona: historial, objetivo, sensaciones, fatiga, equipo disponible y analisis fisico previo.',
+          'MyCoach se presenta como una plataforma para crear rutinas personalizadas y mesociclos exportables, con un enfoque muy claro en hipertrofia, fuerza y rendimiento híbrido para disciplinas como CrossFit, Hyrox y powerlifting.',
+          'La propuesta evita la idea de rutina genérica y defiende que la planificación debe salir del contexto real de la persona: historial, objetivo, sensaciones, fatiga, equipo disponible y análisis físico previo.',
         ],
       },
       {
         title: 'Propuesta de valor',
         paragraphs: [
-          'La promesa principal del producto es diseñar una rutina personalizada a partir de analisis de contexto, tablas claras y exportacion a Excel editable para seguir el progreso.',
-          'La landing posiciona el sistema como una forma de entrenar con logica de elite, apoyandose en tres pilares: analisis fisico, rutina personalizada y exportacion operativa del plan.',
+          'La promesa principal del producto es diseñar una rutina personalizada a partir de análisis de contexto, tablas claras y exportación a Excel editable para seguir el progreso.',
+          'La landing posiciona el sistema como una forma de entrenar con lógica de élite, apoyándose en tres pilares: análisis físico, rutina personalizada y exportación operativa del plan.',
         ],
         points: [
-          'Analisis fisico mediante imagenes o video para detectar asimetrias, dominancias y prioridades reales.',
+          'Análisis físico mediante imágenes o vídeo para detectar asimetrías, dominancias y prioridades reales.',
           'Rutina construida a partir de historial, objetivo, sensaciones, material disponible y contexto actual.',
-          'Exportacion a Excel para registrar cargas, repeticiones, RIR y evolucion del mesociclo.',
+          'Exportación a Excel para registrar cargas, repeticiones, RIR y evolución del mesociclo.',
         ],
       },
       {
         title: 'Flujo del producto',
         paragraphs: [
-          'La experiencia publica de MyCoach se estructura como un proceso guiado. En la landing se resume en cuatro momentos: contexto, analisis fisico, formulario personalizado y rutina editable.',
-          'La ruta /plan ya muestra una implementacion mas concreta del flujo, presentada como un formulario de 6 pasos que empieza por datos personales y deportivos.',
+          'La experiencia pública de MyCoach se estructura como un proceso guiado. En la landing se resume en cuatro momentos: contexto, análisis físico, formulario personalizado y rutina editable.',
+          'La ruta /plan ya muestra una implementación más concreta del flujo, presentada como un formulario de 6 pasos que empieza por datos personales y deportivos.',
         ],
         points: [
-          'Paso 1 visible con genero, altura, peso y anos entrenando.',
+          'Paso 1 visible con género, altura, peso y años entrenando.',
           'Preferencias como dieta y objetivo principal.',
-          'Seleccion de disciplinas deportivas como musculacion, Hyrox, CrossFit, powerlifting, calistenia, running, natacion o pilates.',
-          'Formulario corto y poco tecnico para modificar estructura, volumen y seleccion de ejercicios.',
+          'Selección de disciplinas deportivas como musculación, Hyrox, CrossFit, powerlifting, calistenia, running, natación o pilates.',
+          'Formulario corto y poco técnico para modificar estructura, volumen y selección de ejercicios.',
         ],
       },
       {
         title: 'Mesociclo y seguimiento',
         paragraphs: [
-          'Un punto importante del producto es que no se vende como una rutina puntual sino como un mesociclo completo: varias semanas con progresion real, objetivos claros y estructura bloque a bloque.',
-          'La propia web explica que, al terminar el ciclo, el usuario vuelve a introducir contexto y feedback para generar una nueva rutina adaptada a su evolucion diaria.',
+          'Un punto importante del producto es que no se vende como una rutina puntual sino como un mesociclo completo: varias semanas con progresión real, objetivos claros y estructura bloque a bloque.',
+          'La propia web explica que, al terminar el ciclo, el usuario vuelve a introducir contexto y feedback para generar una nueva rutina adaptada a su evolución diaria.',
           'Eso convierte el Excel exportable en una pieza operativa del sistema, no solo en un entregable final.',
         ],
       },
       {
-        title: 'Logica de rendimiento',
+        title: 'Lógica de rendimiento',
         paragraphs: [
-          'La narrativa de producto insiste en una periodizacion avanzada orientada a que la fatiga no comprometa las ganancias de hipertrofia mientras se sigue escalando en rendimiento cardiovascular y capacidad hibrida.',
-          'Ese enfoque mezcla objetivos de composicion corporal y de rendimiento, y es lo que diferencia a MyCoach de un simple generador de tablas de ejercicios.',
+          'La narrativa de producto insiste en una periodización avanzada orientada a que la fatiga no comprometa las ganancias de hipertrofia mientras se sigue escalando en rendimiento cardiovascular y capacidad híbrida.',
+          'Ese enfoque mezcla objetivos de composición corporal y de rendimiento, y es lo que diferencia a MyCoach de un simple generador de tablas de ejercicios.',
         ],
       },
       {
-        title: 'Direccion del producto',
+        title: 'Dirección del producto',
         paragraphs: [
-          'A nivel de posicionamiento, MyCoach busca sonar menos a plantilla de gimnasio y mas a herramienta de decision personalizada para atletas. La marca, el tono y la estructura del contenido empujan hacia una idea de progreso serio, disciplina y evolucion inteligente de ciclo.',
-          'La plataforma ya combina una landing editorial bastante clara con un builder funcional, lo que deja ver una direccion de MVP con intencion real de uso y no solo una demo visual.',
+          'A nivel de posicionamiento, MyCoach busca sonar menos a plantilla de gimnasio y más a herramienta de decisión personalizada para atletas. La marca, el tono y la estructura del contenido empujan hacia una idea de progreso serio, disciplina y evolución inteligente de ciclo.',
+          'La plataforma ya combina una landing editorial bastante clara con un builder funcional, lo que deja ver una dirección de MVP con intención real de uso y no solo una demo visual.',
         ],
       },
     ],
@@ -1627,77 +1627,77 @@ const workDetailContent = {
   aaaquest: {
     headline: 'Documenta accesibilidad en segundos con una herramienta que analiza pantallas, detecta problemas WCAG y genera entregables listos para producto y desarrollo.',
     facts: [
-      { label: 'Tipo', value: 'Producto IA para auditorias y documentacion de accesibilidad' },
+      { label: 'Tipo', value: 'Producto IA para auditorías y documentación de accesibilidad' },
       { label: 'Rol', value: 'Product Design & MVP' },
       { label: 'Industria', value: 'Accessibility, design tooling y AI product' },
-      { label: 'Estado', value: 'Demo publica y beta abierta' },
+      { label: 'Estado', value: 'Demo pública y beta abierta' },
       { label: 'Web', value: 'aaaquest.com' },
     ],
-    highlights: ['Documentacion WCAG desde una captura', 'Modo estudio con niveles generados por IA', 'PDFs, creditos mensuales y API key para integraciones'],
+    highlights: ['Documentación WCAG desde una captura', 'Modo estudio con niveles generados por IA', 'PDFs, créditos mensuales y API key para integraciones'],
     detailSections: [
       {
         title: 'Contexto',
         paragraphs: [
-          'AAAQuest nace para atacar una friccion muy concreta en diseño y handoff: la accesibilidad suele llegar tarde, con auditorias lentas, lenguaje demasiado tecnico o revisiones dispersas entre herramientas.',
-          'La propuesta publica del producto lo resume bien: analizar pantallas, generar documentacion y acelerar el flujo de diseño con creditos mensuales y API key.',
-          'En la web actual se posiciona como una capa de IA para accesibilidad de producto, con foco en documentar rapido y convertir una captura o un diseño en un entregable entendible por diseño, producto y desarrollo.',
+          'AAAQuest nace para atacar una fricción muy concreta en diseño y handoff: la accesibilidad suele llegar tarde, con auditorías lentas, lenguaje demasiado técnico o revisiones dispersas entre herramientas.',
+          'La propuesta pública del producto lo resume bien: analizar pantallas, generar documentación y acelerar el flujo de diseño con créditos mensuales y API key.',
+          'En la web actual se posiciona como una capa de IA para accesibilidad de producto, con foco en documentar rápido y convertir una captura o un diseño en un entregable entendible por diseño, producto y desarrollo.',
         ],
       },
       {
         title: 'Propuesta de producto',
         paragraphs: [
-          'La home de AAAQuest presenta el valor principal en una sola frase: documentar accesibilidad en segundos. La herramienta detecta errores segun criterios WCAG y genera documentacion lista para desarrollo apoyandose en IA.',
-          'Ese enfoque cambia el tipo de salida: en lugar de quedarse en una lista tecnica de issues, el producto intenta producir contexto, severidad, estructura y documentacion que se pueda compartir y exportar directamente.',
+          'La home de AAAQuest presenta el valor principal en una sola frase: documentar accesibilidad en segundos. La herramienta detecta errores según criterios WCAG y genera documentación lista para desarrollo apoyándose en IA.',
+          'Ese enfoque cambia el tipo de salida: en lugar de quedarse en una lista técnica de issues, el producto intenta producir contexto, severidad, estructura y documentación que se pueda compartir y exportar directamente.',
         ],
         points: [
-          'Auditoria de accesibilidad en segundos.',
-          'Documentacion lista para desarrollo.',
-          'Analisis multi-plataforma para web, nativo movil y PDFs.',
-          'Unificacion de contenido para generar documentacion consistente a lo largo del tiempo.',
+          'Auditoría de accesibilidad en segundos.',
+          'Documentación lista para desarrollo.',
+          'Análisis multiplataforma para web, nativo móvil y PDFs.',
+          'Unificación de contenido para generar documentación consistente a lo largo del tiempo.',
         ],
       },
       {
         title: 'Flujo principal',
         body:
-          'La experiencia comercial de AAAQuest se explica como un flujo corto de tres pasos, pensado para reducir friccion desde el primer uso.',
+          'La experiencia comercial de AAAQuest se explica como un flujo corto de tres pasos, pensado para reducir fricción desde el primer uso.',
         points: [
           'Subir una pantalla: captura, maqueta o frame de Figma.',
           'La IA analiza con WCAG: detecta errores, contexto y severidad en segundos.',
-          'Compartir y exportar: devuelve una pantalla documentada disponible para compartir via PDF.',
+          'Compartir y exportar: devuelve una pantalla documentada disponible para compartir vía PDF.',
         ],
       },
       {
         title: 'Superficies del producto',
         paragraphs: [
-          'AAAQuest no se presenta solo como un checker. El producto combina varias capas para cubrir aprendizaje, practica y documentacion dentro del mismo ecosistema.',
-          'En el lanzamiento publico en LinkedIn se definio la beta como una herramienta AI based de aprendizaje y auditorias de accesibilidad, con modo estudio y documentacion automatica desde capturas.',
+          'AAAQuest no se presenta solo como un checker. El producto combina varias capas para cubrir aprendizaje, práctica y documentación dentro del mismo ecosistema.',
+          'En el lanzamiento público en LinkedIn se definió la beta como una herramienta AI based de aprendizaje y auditorías de accesibilidad, con modo estudio y documentación automática desde capturas.',
         ],
         points: [
-          'Modo estudio con 10 niveles de aprendizaje basicos generados por IA.',
-          'Tests rapidos de accesibilidad en formato de 20 preguntas.',
+          'Modo estudio con 10 niveles de aprendizaje básicos generados por IA.',
+          'Tests rápidos de accesibilidad en formato de 20 preguntas.',
           'Detector de accesibilidad para documentar una captura de pantalla.',
           'Certificado final para visualizar progreso y compartir la experiencia.',
-          'Plugin de Figma en preparacion para documentar accesibilidad sin salir del diseño.',
+          'Plugin de Figma en preparación para documentar accesibilidad sin salir del diseño.',
         ],
       },
       {
-        title: 'Diferenciacion',
+        title: 'Diferenciación',
         paragraphs: [
-          'La informacion publica del producto insiste en una idea importante: herramientas como Axe, Wave o Lighthouse son muy utiles para escanear codigo, pero no entienden el contexto visual antes de programar.',
-          'AAAQuest intenta cubrir justo ese hueco analizando la imagen de la interfaz como punto de partida, para ayudar a documentar modales, tablas, jerarquia, foco, estados y otros componentes antes de que el trabajo llegue a desarrollo.',
+          'La información pública del producto insiste en una idea importante: herramientas como Axe, Wave o Lighthouse son muy útiles para escanear código, pero no entienden el contexto visual antes de programar.',
+          'AAAQuest intenta cubrir justo ese hueco analizando la imagen de la interfaz como punto de partida, para ayudar a documentar modales, tablas, jerarquía, foco, estados y otros componentes antes de que el trabajo llegue a desarrollo.',
         ],
       },
       {
         title: 'Modelo y operativa',
         paragraphs: [
-          'El producto ya incorpora logica de cuenta, facturacion y planes, con una prueba gratuita y una via personalizada para equipos u operaciones mas avanzadas.',
-          'La comunicacion actual del sitio gira alrededor de analisis por cupos mensuales, creditos disponibles y uso de API key para ciertas integraciones, lo que sugiere una direccion clara hacia producto utilizable y no solo demo tecnica.',
+          'El producto ya incorpora lógica de cuenta, facturación y planes, con una prueba gratuita y una vía personalizada para equipos u operaciones más avanzadas.',
+          'La comunicación actual del sitio gira alrededor de análisis por cupos mensuales, créditos disponibles y uso de API key para ciertas integraciones, lo que sugiere una dirección clara hacia producto utilizable y no solo demo técnica.',
         ],
         points: [
-          'Prueba gratuita con analisis limitados para validar el valor inicial.',
-          'Plan personalizado para equipos y volumen mas alto.',
-          'Exportacion a PDF como salida principal para handoff.',
-          'API key y panel de cuenta para planes, billing y facturacion.',
+          'Prueba gratuita con análisis limitados para validar el valor inicial.',
+          'Plan personalizado para equipos y volumen más alto.',
+          'Exportación a PDF como salida principal para handoff.',
+          'API key y panel de cuenta para planes, billing y facturación.',
         ],
       },
     ],
@@ -1705,56 +1705,56 @@ const workDetailContent = {
   coubber: {
     headline: 'Analiza datos y genera informes en segundos con una plataforma que centraliza dispositivos, automatiza flujos y apoya decisiones con IA.',
     facts: [
-      { label: 'Tipo', value: 'Plataforma B2B de analisis de rendimiento deportivo y readaptacion' },
+      { label: 'Tipo', value: 'Plataforma B2B de análisis de rendimiento deportivo y readaptación' },
       { label: 'Producto', value: 'Coubber Data Studio' },
       { label: 'Rol', value: 'Product Design' },
       { label: 'Industria', value: 'SportsTech, data analytics y rendimiento deportivo' },
-      { label: 'Estado', value: 'MVP en validacion con profesionales del sector y preparacion de lanzamiento comercial' },
+      { label: 'Estado', value: 'MVP en validación con profesionales del sector y preparación de lanzamiento comercial' },
     ],
-    highlights: ['De 90 minutos a 30 segundos', '7+ dispositivos y 45+ tests', 'IA aplicada a analisis, interpretacion y reporting'],
+    highlights: ['De 90 minutos a 30 segundos', '7+ dispositivos y 45+ tests', 'IA aplicada a análisis, interpretación y reporting'],
     detailSections: [
       {
         title: 'Contexto',
         paragraphs: [
-          'Coubber plantea una capa de software para resolver un problema muy concreto en el ecosistema sportstech: hay cada vez mas dispositivos, mas mediciones y mas deportistas, pero el tiempo para importar, interpretar y convertir esos datos en decisiones sigue siendo demasiado alto.',
-          'La propuesta publica del producto se centra en automatizar el analisis de datos deportivos y la readaptacion de lesiones para que profesionales y organizaciones trabajen con informacion mas clara, visual y accionable.',
-          'Segun la informacion publica de la empresa en LinkedIn, el producto ya esta desarrollado y se encuentra en fase de validacion con profesionales del sector mientras preparan el lanzamiento comercial.',
+          'Coubber plantea una capa de software para resolver un problema muy concreto en el ecosistema sportstech: hay cada vez más dispositivos, más mediciones y más deportistas, pero el tiempo para importar, interpretar y convertir esos datos en decisiones sigue siendo demasiado alto.',
+          'La propuesta pública del producto se centra en automatizar el análisis de datos deportivos y la readaptación de lesiones para que profesionales y organizaciones trabajen con información más clara, visual y accionable.',
+          'Según la información pública de la empresa en LinkedIn, el producto ya está desarrollado y se encuentra en fase de validación con profesionales del sector mientras preparan el lanzamiento comercial.',
         ],
       },
       {
         title: 'Propuesta de valor',
         paragraphs: [
-          'La promesa principal de Coubber Data Studio es reducir drasticamente el tiempo operativo que exige una valoracion deportiva completa, pasando de procesos que podian ocupar hasta 90 minutos a informes generados en segundos.',
-          'La web posiciona la plataforma como un lugar unico donde confluyen multiples dispositivos, automatizaciones avanzadas y soporte de IA basada en ciencia y datos objetivos.',
+          'La promesa principal de Coubber Data Studio es reducir drásticamente el tiempo operativo que exige una valoración deportiva completa, pasando de procesos que podían ocupar hasta 90 minutos a informes generados en segundos.',
+          'La web posiciona la plataforma como un lugar único donde confluyen múltiples dispositivos, automatizaciones avanzadas y soporte de IA basada en ciencia y datos objetivos.',
         ],
         points: [
-          'Hasta un 99% mas de eficiencia en tareas repetitivas segun la propuesta comercial del producto.',
-          'Generacion de informes en 30 segundos.',
-          'Compatibilidad con mas de 7 tipos de dispositivos de medicion.',
-          'Catalogo de mas de 45 tests para evaluacion deportiva.',
+          'Hasta un 99% más de eficiencia en tareas repetitivas según la propuesta comercial del producto.',
+          'Generación de informes en 30 segundos.',
+          'Compatibilidad con más de 7 tipos de dispositivos de medición.',
+          'Catálogo de más de 45 tests para evaluación deportiva.',
         ],
       },
       {
-        title: 'Como funciona',
+        title: 'Cómo funciona',
         body:
-          'La arquitectura del producto esta explicada como una cadena continua que va desde la entrada de datos hasta la interpretacion profesional y la accion posterior.',
+          'La arquitectura del producto está explicada como una cadena continua que va desde la entrada de datos hasta la interpretación profesional y la acción posterior.',
         points: [
-          'Importacion automatica de datos mediante CSV, PDF, Excel, Sheets o entrada manual.',
-          'Extraccion y analisis automatico con algoritmos propios.',
-          'Visualizacion mediante dashboard y graficos dinamicos.',
-          'Interpretacion apoyada por IA o por criterio profesional manual.',
-          'Generacion automatica de informes descriptivos, avanzados y personalizables.',
-          'Sugerencias para planificaciones, programaciones, periodizaciones y prescripciones basadas en datos objetivos y literatura cientifica actual.',
+          'Importación automática de datos mediante CSV, PDF, Excel, Sheets o entrada manual.',
+          'Extracción y análisis automático con algoritmos propios.',
+          'Visualización mediante dashboard y gráficos dinámicos.',
+          'Interpretación apoyada por IA o por criterio profesional manual.',
+          'Generación automática de informes descriptivos, avanzados y personalizables.',
+          'Sugerencias para planificaciones, programaciones, periodizaciones y prescripciones basadas en datos objetivos y literatura científica actual.',
         ],
       },
       {
         title: 'Capacidades clave',
         paragraphs: [
-          'Mas alla del dashboard principal, el producto se presenta como una herramienta modular pensada para que los profesionales no solo lean datos, sino que comparen escenarios, estandaricen valoraciones y construyan sus propios protocolos.',
+          'Más allá del dashboard principal, el producto se presenta como una herramienta modular pensada para que los profesionales no solo lean datos, sino que comparen escenarios, estandaricen valoraciones y construyan sus propios protocolos.',
         ],
         points: [
           'Creador de tests, valoraciones y protocolos.',
-          'Comparador entre metricas, sesiones o deportistas.',
+          'Comparador entre métricas, sesiones o deportistas.',
           'Acceso a Cubby, la IA de Coubber.',
           'Perfiles administradores para profesionales y deportistas.',
           'Control del readiness.',
@@ -1762,17 +1762,17 @@ const workDetailContent = {
         ],
       },
       {
-        title: 'A quien sirve',
+        title: 'A quién sirve',
         paragraphs: [
-          'La comunicacion de Coubber no se limita a un unico tipo de usuario. La plataforma se presenta como infraestructura de trabajo para preparadores fisicos, readaptadores, fisioterapeutas, centros de entrenamiento, clubes y tambien para contextos de universidad e investigacion.',
-          'Esa amplitud tiene sentido porque el beneficio principal no es solo medir mejor, sino centralizar la informacion, reducir errores de interpretacion y liberar tiempo para tareas de mas valor como la prescripcion, la planificacion o la toma de decisiones.',
+          'La comunicación de Coubber no se limita a un único tipo de usuario. La plataforma se presenta como infraestructura de trabajo para preparadores físicos, readaptadores, fisioterapeutas, centros de entrenamiento, clubes y también para contextos de universidad e investigación.',
+          'Esa amplitud tiene sentido porque el beneficio principal no es solo medir mejor, sino centralizar la información, reducir errores de interpretación y liberar tiempo para tareas de más valor como la prescripción, la planificación o la toma de decisiones.',
         ],
       },
       {
         title: 'Señal de mercado',
         paragraphs: [
-          'La presencia publica del proyecto muestra una startup todavia en fase temprana pero ya muy enfocada en validacion sectorial. En su comunicacion en LinkedIn explican una vision clara: simplificar, automatizar y conectar el analisis del rendimiento deportivo.',
-          'Tambien indican que ya estan haciendo tests de usuario del MVP con centros de rendimiento y readaptacion reconocidos en Europa, que existe interes por parte de clubes deportivos de referencia internacional y que la ambicion es convertirse en el estandar de analisis de datos para profesionales del rendimiento.',
+          'La presencia pública del proyecto muestra una startup todavía en fase temprana pero ya muy enfocada en validación sectorial. En su comunicación en LinkedIn explican una visión clara: simplificar, automatizar y conectar el análisis del rendimiento deportivo.',
+          'También indican que ya están haciendo tests de usuario del MVP con centros de rendimiento y readaptación reconocidos en Europa, que existe interés por parte de clubes deportivos de referencia internacional y que la ambición es convertirse en el estándar de análisis de datos para profesionales del rendimiento.',
         ],
       },
     ],
@@ -2070,15 +2070,15 @@ const workDetailContent = {
     ],
   },
   closy: {
-    headline: 'The human ability to connect is threatened by technology and isolation, affecting meaningful relationships.',
+    headline: 'La capacidad humana de conectar está amenazada por la tecnología y el aislamiento, afectando a las relaciones significativas.',
     facts: [
       { label: 'Tipo', value: 'End-to-end app + branding' },
-      { label: 'Overview', value: 'A product concept focused on improving close relationships instead of simply connecting more people.' },
+      { label: 'Resumen', value: 'Un concepto de producto centrado en mejorar relaciones cercanas, no solo en conectar a más personas.' },
       { label: 'Rol', value: 'UX/UI Designer' },
-      { label: 'Herramientas', value: 'Figma, FigJam, Notion, Tally, Paper, and Pen' },
-      { label: 'Duracion', value: 'Q2 2024' },
+      { label: 'Herramientas', value: 'Figma, FigJam, Notion, Tally, papel y bolígrafo' },
+      { label: 'Duración', value: 'Q2 2024' },
     ],
-    highlights: ['10 interviews and 150 responses', 'Value Proposition Canvas', 'Testing, revisions and onboarding improvements'],
+    highlights: ['10 entrevistas y 150 respuestas', 'Value Proposition Canvas', 'Tests, iteraciones y mejoras de onboarding'],
     visualDeck: [
       {
         src: 'https://framerusercontent.com/images/QKP0JMEajT4eVYZ8mYOMxsAoY.png',
@@ -2100,42 +2100,42 @@ const workDetailContent = {
     ],
     detailSections: [
       {
-        title: 'The Problem',
+        title: 'El problema',
         paragraphs: [
-          'Today, facing loneliness has become a significant challenge for many people. Despite living in a hyper-connected era, many feel more isolated than ever, especially younger users.',
-          'This persistent feeling of loneliness does not only affect emotional well-being. It also has serious implications for physical health and economic stability.',
-          'In light of this, there is a clear need for solutions that foster meaningful relationships and respond to the paradoxical loneliness of the digital age.',
+          'Hoy, afrontar la soledad se ha convertido en un reto relevante para muchas personas. Aunque vivimos en una era hiperconectada, muchas se sienten más aisladas que nunca, especialmente las más jóvenes.',
+          'Esta sensación persistente de soledad no solo afecta al bienestar emocional. También tiene implicaciones importantes en la salud física y en la estabilidad económica.',
+          'Ante este contexto, existe una necesidad clara de soluciones que impulsen relaciones significativas y respondan a la soledad paradójica de la era digital.',
         ],
       },
       {
-        title: 'How is the problem currently addressed?',
+        title: 'Cómo se aborda actualmente',
         paragraphs: [
-          'Most apps today aim to connect new people: Tinder, Bumble, Looplan, Meetup. These apps make it easy to meet people, but that is usually where the experience ends.',
-          'Often those new connections are lost over time because they are not nurtured enough.',
-          'That creates a clear gap: current apps focus on creating quantity, but not on helping users deepen and care for the relationships they already have.',
-          'Closy focuses on that opportunity: helping users cultivate and preserve their most valuable connections.',
+          'La mayoría de apps actuales buscan conectar con personas nuevas: Tinder, Bumble, Looplan o Meetup. Estas aplicaciones facilitan conocer gente, pero normalmente la experiencia termina ahí.',
+          'A menudo esas nuevas conexiones se pierden con el tiempo porque no se cuidan lo suficiente.',
+          'Eso abre un hueco claro: las apps actuales se centran en generar cantidad, pero no en ayudar a profundizar y cuidar las relaciones que las personas ya tienen.',
+          'Closy se enfoca en esa oportunidad: ayudar a cultivar y preservar las conexiones más valiosas.',
         ],
       },
       {
-        title: 'Research Plan and Interviews',
+        title: 'Plan de investigación y entrevistas',
         paragraphs: [
-          'The interview process began with a research plan that outlined project background, research objectives, specific objectives, research questions, methodologies, and hypotheses.',
-          'The team explored how people perceive loneliness, how they currently deal with it, what they expect from new solutions, and how social dynamics influence the feeling of isolation.',
-          'Interviews were conducted both in-person and through digital platforms over the course of a week, and the information was later compiled into a final report.',
-          'A total of 10 interviews were conducted in record time.',
+          'El proceso de entrevistas comenzó con un plan de investigación que definía contexto del proyecto, objetivos, preguntas de investigación, metodologías e hipótesis.',
+          'Se exploró cómo las personas perciben la soledad, cómo la gestionan, qué esperan de nuevas soluciones y cómo las dinámicas sociales influyen en la sensación de aislamiento.',
+          'Las entrevistas se realizaron de forma presencial y mediante plataformas digitales durante una semana, y la información se consolidó después en un informe final.',
+          'En total, se realizaron 10 entrevistas en tiempo récord.',
         ],
         points: [
-          'Project background',
-          'Research objectives',
-          'Specific objectives',
-          'Research questions',
-          'Methodologies',
-          'Hypotheses',
+          'Contexto del proyecto',
+          'Objetivos de investigación',
+          'Objetivos específicos',
+          'Preguntas de investigación',
+          'Metodologías',
+          'Hipótesis',
         ],
         gallery: [
           {
             src: 'https://framerusercontent.com/images/d6O9VKThPFl33l34vYeJ9uxos.png',
-            alt: 'Closy interview script and research questionnaire',
+            alt: 'Guion de entrevista y cuestionario de investigación de Closy',
             hideCaption: true,
           },
         ],
@@ -2166,11 +2166,11 @@ const workDetailContent = {
         ],
       },
       {
-        title: 'The 5 Whys and Value Proposition',
+        title: 'Los 5 porqués y propuesta de valor',
         paragraphs: [
-          'After applying the “5 Whys” and analyzing both interviews and surveys, neglecting relationships emerged as the key problem behind the users’ frustration.',
-          'That insight redirected the solution toward strengthening personal bonds and making it easier to maintain relationships in a practical and sustainable way.',
-          'The Value Proposition Canvas then helped define the core promise: help young people who feel lonely improve their relationships by deepening the bonds inside their close social circle.',
+          'Tras aplicar los “5 porqués” y analizar entrevistas y encuestas, el descuido de las relaciones apareció como el problema principal detrás de la frustración de las personas usuarias.',
+          'Ese aprendizaje redirigió la solución hacia fortalecer vínculos personales y facilitar el mantenimiento de relaciones de forma práctica y sostenible.',
+          'El Value Proposition Canvas ayudó después a definir la promesa principal: ayudar a jóvenes que se sienten solos a mejorar sus relaciones profundizando los vínculos dentro de su círculo social cercano.',
         ],
       },
       {
@@ -2195,53 +2195,53 @@ const workDetailContent = {
         ],
       },
       {
-        title: 'Moodboard, Logo and Hi-Fi Wireframes',
+        title: 'Moodboard, logotipo y wireframes de alta fidelidad',
         tone: 'blue',
         paragraphs: [
-          'The crossing point of the double diamond came when research and creativity collided: mood board, logo, UI kit, hi-fi wireframes, and prototype v1.',
-          'For the mood board, the direction moved toward a garden full of life, with green tones that suggest peace and growth without feeling childish.',
-          'Typography was set around Outfit, chosen for its balance between joy and seriousness and used as part of the app’s full branding system.',
-          'The visual identity moved from an abstract dot-and-aura concept toward a plant analogy, ending in a plant-based name and logo.',
-          'In the hi-fi phase, every detail came to life through colors, typography, and interactive elements while staying aligned with the product’s emotional tone and mobile-first constraints.',
+          'El cruce del doble diamante llegó cuando investigación y creatividad se encontraron: moodboard, logotipo, UI kit, wireframes de alta fidelidad y primer prototipo.',
+          'Para el moodboard, la dirección avanzó hacia un jardín lleno de vida, con tonos verdes que sugieren calma y crecimiento sin sentirse infantiles.',
+          'La tipografía se construyó alrededor de Outfit, elegida por su equilibrio entre alegría y seriedad, y se aplicó como parte del sistema completo de marca de la app.',
+          'La identidad visual pasó de un concepto abstracto de punto y aura a una analogía vegetal, hasta llegar a un nombre y un logotipo basados en el cuidado de una planta.',
+          'En la fase de alta fidelidad, cada detalle cobró vida mediante color, tipografía e interacción, manteniendo coherencia con el tono emocional del producto y sus restricciones mobile-first.',
         ],
       },
       {
-        title: 'User Testing',
+        title: 'Tests con usuarios',
         paragraphs: [
-          'Testing was conducted through one-on-one in-person interviews using the mobile prototype to explore each designed feature in depth.',
-          'The goal was to validate the intuitiveness of navigation and interaction, with special attention to accessibility issues and to elements that had raised doubts during prototyping.',
+          'Los tests se realizaron mediante entrevistas individuales presenciales, usando el prototipo móvil para explorar en profundidad cada funcionalidad diseñada.',
+          'El objetivo era validar la claridad de la navegación y la interacción, con especial atención a problemas de accesibilidad y a elementos que habían generado dudas durante el prototipado.',
         ],
         points: [
-          'Participant 1: 30-year-old junior product designer living in Barcelona, very forgetful regarding her relationships.',
-          'Participant 2: 25-year-old UX designer living in Barcelona, small social circle, diagnosed with autism.',
-          'Participant 3: 30-year-old UX/UI designer from Barcelona, usually limited by work stress and accidental social encounters.',
+          'Participante 1: junior product designer de 30 años residente en Barcelona, con tendencia a olvidar el cuidado de sus relaciones.',
+          'Participante 2: UX designer de 25 años residente en Barcelona, con círculo social reducido y diagnóstico de autismo.',
+          'Participante 3: UX/UI designer de 30 años de Barcelona, normalmente limitada por el estrés laboral y los encuentros sociales accidentales.',
         ],
       },
       {
-        title: 'Insights and Revisions',
+        title: 'Aprendizajes e iteraciones',
         paragraphs: [
-          'Users highly appreciated the illustrations and the overall design of the app, especially its minimalist and harmonious tone.',
-          'At the same time, they reported confusion in specific elements such as plant bars, challenge mechanics, and the level system, along with information-retention issues after onboarding.',
-          'These findings led to concrete revisions aimed at clarifying the interface and reducing friction in the product loops.',
+          'Las personas participantes valoraron especialmente las ilustraciones y el diseño general de la app, sobre todo su tono minimalista y armonioso.',
+          'Al mismo tiempo, señalaron confusión en elementos concretos como las barras de planta, la mecánica de retos y el sistema de niveles, además de problemas para retener información después del onboarding.',
+          'Estos aprendizajes llevaron a iteraciones concretas para aclarar la interfaz y reducir fricción en los bucles principales del producto.',
         ],
         points: [
-          'Onboarding optimization to improve clarity and retention.',
-          'Clarification of confusing elements and actions inside the app.',
-          'Additional customization options for each plant.',
-          'Closy’s onboarding was updated to the brand’s main color for a warmer, more cohesive welcome.',
-          'The plant screen removed the status bar because users misread it as a level indicator instead of a health reflection.',
-          'The watering tutorial was redesigned so users understand what to do and why they should do it.',
-          'The home screen added filtering by level, name, type, and status, plus a weekly-actions count for each plant.',
+          'Optimización del onboarding para mejorar claridad y retención.',
+          'Aclaración de elementos y acciones confusas dentro de la app.',
+          'Opciones adicionales de personalización para cada planta.',
+          'El onboarding de Closy se actualizó con el color principal de marca para lograr una bienvenida más cálida y cohesionada.',
+          'La pantalla de planta eliminó la barra de estado porque las personas la interpretaban como un indicador de nivel en lugar de un reflejo de salud.',
+          'El tutorial de riego se rediseñó para que las personas entendieran qué hacer y por qué hacerlo.',
+          'La pantalla de inicio añadió filtrado por nivel, nombre, tipo y estado, además de un contador de acciones semanales por planta.',
         ],
         gallery: [
           {
             src: 'https://framerusercontent.com/images/TRT2IA0pB9DtNunIVAjadjB5Fs.png',
-            alt: 'Closy revised home and relationship-management screens',
+            alt: 'Pantallas revisadas de inicio y gestión de relaciones de Closy',
             hideCaption: true,
           },
           {
             src: 'https://framerusercontent.com/images/lvaia1YEoFtnNYzakM00MYVlWcQ.png',
-            alt: 'Closy iteration pass after testing and onboarding revisions',
+            alt: 'Iteración de Closy tras los tests y la revisión del onboarding',
             hideCaption: true,
           },
         ],
@@ -2249,315 +2249,315 @@ const workDetailContent = {
     ],
   },
   'meeting-room-booking-app': {
-    headline: 'Meeting Room Booking App simplifies room reservations in large offices through quick, real-time booking flows.',
+    headline: 'Una app para simplificar la reserva de salas en oficinas grandes mediante flujos rápidos y disponibilidad en tiempo real.',
     facts: [
-      { label: 'Tipo', value: 'Prototype' },
-      { label: 'Rol', value: 'UX/UI Concept Design' },
-      { label: 'Entorno', value: 'Large offices with multiple rooms and urgent short-term reservations' },
+      { label: 'Tipo', value: 'Prototipo' },
+      { label: 'Rol', value: 'Diseño conceptual UX/UI' },
+      { label: 'Entorno', value: 'Oficinas grandes con varias salas y reservas urgentes de corta duración' },
     ],
-    highlights: ['Real-time availability', 'Quick Book shortcut', 'Reservation management'],
+    highlights: ['Disponibilidad en tiempo real', 'Acceso rápido de reserva', 'Gestión de reservas'],
     visualDeckLayout: 'phones',
     visualDeck: [
       {
         src: 'https://framerusercontent.com/images/LmJiUXQypLANnGYtQHtX4LUYDNw.png',
-        alt: 'Meeting Room Booking sitemap and booking logic overview',
+        alt: 'Mapa de sitio y lógica de reserva de Meeting Room Booking',
         ratio: '1 / 1',
       },
       {
         src: 'https://framerusercontent.com/images/jXYgfPr4fNHsJO9NCkbg5d3jMI.png',
-        alt: 'Meeting Room Booking room list and upcoming reservations',
+        alt: 'Lista de salas y próximas reservas de Meeting Room Booking',
         ratio: '390 / 929',
       },
       {
         src: 'https://framerusercontent.com/images/v8hGuWvoJnTNR35OTNaheeH9M.png',
-        alt: 'Meeting Room Booking room selection and duration step',
+        alt: 'Selección de sala y duración en Meeting Room Booking',
         ratio: '390 / 929',
       },
       {
         src: 'https://framerusercontent.com/images/RGLyFKbQmClRaXXID9ecq4Zg48g.png',
-        alt: 'Meeting Room Booking confirmation screen with facilities and controls',
+        alt: 'Pantalla de confirmación de Meeting Room Booking con equipamiento y controles',
         ratio: '390 / 929',
       },
     ],
     detailSections: [
       {
-        title: 'Overview',
+        title: 'Resumen',
         paragraphs: [
-          'This project focuses on designing a Meeting Room Booking app for large offices, allowing employees to check room availability in real time and reserve spaces quickly and efficiently.',
-          'The app supports both urgent and short-term reservations, around 10 to 15 minutes, while managing multiple meeting rooms across different locations.',
-          'Flexibility and simplicity were central: users can filter by availability, book instantly, manage reservations, and review details such as room location and alternative spaces.',
-          'The MVP was designed to cover the immediate needs of large organizations while leaving room for future scalability.',
+          'El proyecto se centra en diseñar una app de reserva de salas para oficinas grandes, permitiendo consultar disponibilidad en tiempo real y reservar espacios de forma rápida y eficiente.',
+          'La app soporta reservas urgentes y de corta duración, alrededor de 10 o 15 minutos, mientras gestiona varias salas de reunión en distintas ubicaciones.',
+          'La flexibilidad y la simplicidad fueron centrales: las personas pueden filtrar por disponibilidad, reservar al instante, gestionar reservas y revisar detalles como ubicación de la sala o espacios alternativos.',
+          'El MVP se diseñó para cubrir necesidades inmediatas de grandes organizaciones dejando margen para escalar en futuras versiones.',
         ],
       },
       {
-        title: 'Low-fi framing',
+        title: 'Definición low-fi',
         body:
-          'Before going into polished UI, the structure was blocked as a narrow set of screens focused on one operational promise: see availability, reserve fast, and manage the booking with almost no ambiguity.',
+          'Antes de entrar en UI final, la estructura se acotó como un conjunto reducido de pantallas centradas en una promesa operativa: ver disponibilidad, reservar rápido y gestionar la reserva sin ambigüedad.',
         paragraphs: [
-          'The early wireframes already prioritized room lists, proximity, duration, and current reservations. That kept the scope grounded in the real pressure of office life, where many bookings happen on the fly and users need speed more than exploration.',
-          'This first layer also made it easier to decide what should live on the home screen, what should be progressive, and what should only appear once a room is already selected.',
+          'Los primeros wireframes ya priorizaban listado de salas, cercanía, duración y reservas actuales. Eso mantuvo el alcance conectado con la presión real de la vida de oficina, donde muchas reservas ocurren sobre la marcha y se necesita velocidad más que exploración.',
+          'Esta primera capa también facilitó decidir qué debía estar en la home, qué debía aparecer de forma progresiva y qué solo tenía sentido mostrar después de seleccionar una sala.',
         ],
         galleryLayout: 'phones',
         gallery: [
           {
             src: 'https://framerusercontent.com/images/23wUpuSa8kFMrqs1sApLPQIE.png',
-            alt: 'Meeting Room Booking low-fidelity home wireframe',
+            alt: 'Wireframe de baja fidelidad de la home de Meeting Room Booking',
             ratio: '393 / 852',
           },
           {
             src: 'https://framerusercontent.com/images/ZB6vcoADM7h7TzvnoOh6kQXHXk.png',
-            alt: 'Meeting Room Booking low-fidelity room list wireframe',
+            alt: 'Wireframe de baja fidelidad del listado de salas de Meeting Room Booking',
             ratio: '393 / 852',
           },
           {
             src: 'https://framerusercontent.com/images/ODmOJRtEf8LJeHvWdkke3BlrvQo.png',
-            alt: 'Meeting Room Booking low-fidelity booking wireframe',
+            alt: 'Wireframe de baja fidelidad del flujo de reserva de Meeting Room Booking',
             ratio: '393 / 852',
           },
           {
             src: 'https://framerusercontent.com/images/5wQXLmgnAV4yXWUUP54oO5Goq80.png',
-            alt: 'Meeting Room Booking low-fidelity detail wireframe',
+            alt: 'Wireframe de baja fidelidad del detalle de sala de Meeting Room Booking',
             ratio: '393 / 852',
           },
         ],
       },
       {
-        title: 'Site Map',
+        title: 'Mapa de sitio',
         body:
-          'The site map structures the journey from finding an available room to managing an existing booking and makes the core paths visible from the first screen.',
+          'El mapa de sitio estructura el recorrido desde encontrar una sala disponible hasta gestionar una reserva existente, haciendo visibles los caminos principales desde la primera pantalla.',
         points: [
-          'Home: displays the list of rooms with real-time availability.',
-          'Quick Book: a shortcut button to instantly reserve a room.',
-          'My Bookings: view and manage current and past reservations.',
-          'Reserve Room: choose a specific room and duration.',
-          'Cancel Reservation: cancel an existing booking.',
-          'Search Rooms: filter by availability or equipment.',
-          'Booking Details: room info and options to modify the reservation.',
+          'Home: muestra la lista de salas con disponibilidad en tiempo real.',
+          'Reserva rápida: botón de acceso directo para reservar una sala al instante.',
+          'Mis reservas: consulta y gestión de reservas actuales y pasadas.',
+          'Reservar sala: elección de sala específica y duración.',
+          'Cancelar reserva: cancelación de una reserva existente.',
+          'Buscar salas: filtrado por disponibilidad o equipamiento.',
+          'Detalle de reserva: información de la sala y opciones para modificar la reserva.',
         ],
         galleryLayout: 'feature',
         gallery: [
           {
             src: 'https://framerusercontent.com/images/LmJiUXQypLANnGYtQHtX4LUYDNw.png',
-            alt: 'Meeting Room Booking sitemap connecting list, detail, active bookings and confirmation',
+            alt: 'Mapa de sitio de Meeting Room Booking conectando listado, detalle, reservas activas y confirmación',
             ratio: '1 / 1',
           },
         ],
       },
       {
-        title: 'Quick booking flow',
+        title: 'Flujo de reserva rápida',
         paragraphs: [
-          'The core interaction of the product is speed. The central navigation action is dedicated to booking a nearby room on the current floor, reducing time to action in urgent situations and short internal meetings.',
-          'From the room list, the user moves through a progressive sequence: selected room, duration, hour, and confirmation. That breaks a potentially heavy process into lightweight decisions that are easy to scan on mobile.',
-          'This flow also makes room cards do real work: they carry location, capacity, equipment, and availability status before the user even opens the detail view.',
+          'La interacción principal del producto es la velocidad. La acción central de navegación está dedicada a reservar una sala cercana en la planta actual, reduciendo el tiempo de respuesta en situaciones urgentes y reuniones internas cortas.',
+          'Desde el listado de salas, la persona avanza por una secuencia progresiva: sala seleccionada, duración, hora y confirmación. Así, un proceso potencialmente denso se convierte en decisiones ligeras y fáciles de leer en móvil.',
+          'Este flujo también hace que las tarjetas de sala trabajen de verdad: muestran ubicación, capacidad, equipamiento y estado de disponibilidad antes de abrir el detalle.',
         ],
         points: [
-          'Upcoming bookings and rooms available now are visible from the first screen.',
-          'Duration and hour are split into two consecutive decisions.',
-          'The central CTA remains stable across the booking sequence.',
-          'Urgent reservations stay possible without browsing the full inventory.',
+          'Próximas reservas y salas disponibles visibles desde la primera pantalla.',
+          'Duración y hora separadas en dos decisiones consecutivas.',
+          'CTA central estable durante toda la secuencia de reserva.',
+          'Reservas urgentes posibles sin recorrer todo el inventario.',
         ],
         galleryLayout: 'phones',
         gallery: [
           {
             src: 'https://framerusercontent.com/images/jXYgfPr4fNHsJO9NCkbg5d3jMI.png',
-            alt: 'Meeting Room Booking home screen with room cards',
+            alt: 'Pantalla de inicio de Meeting Room Booking con tarjetas de sala',
             ratio: '390 / 929',
           },
           {
             src: 'https://framerusercontent.com/images/v8hGuWvoJnTNR35OTNaheeH9M.png',
-            alt: 'Meeting Room Booking room selection and duration screen',
+            alt: 'Pantalla de selección de sala y duración de Meeting Room Booking',
             ratio: '390 / 929',
           },
           {
             src: 'https://framerusercontent.com/images/IR0La6jp8Z6cgcuVRFiglfkAr7s.png',
-            alt: 'Meeting Room Booking duration selector',
+            alt: 'Selector de duración de Meeting Room Booking',
             ratio: '390 / 929',
           },
           {
             src: 'https://framerusercontent.com/images/D4pkFIiXhXN8Tf7BebWkGyy5Ls.png',
-            alt: 'Meeting Room Booking hour selection screen',
+            alt: 'Pantalla de selección de hora de Meeting Room Booking',
             ratio: '390 / 929',
           },
         ],
       },
       {
-        title: 'Room details and reservation management',
+        title: 'Detalle de sala y gestión de reserva',
         paragraphs: [
-          'Once the booking is confirmed, the room-detail view becomes the operational layer of the product. It answers what matters next: where the room is, what equipment it has, how long the booking lasts, and what can still be changed.',
-          'This makes the app useful after the booking moment itself. It is not just a reservation flow; it is also a lightweight management tool for busy office routines.',
-          'The combination of image, facilities, location text, and explicit actions reduces uncertainty and gives the user enough context to make fast decisions if a change is needed.',
+          'Una vez confirmada la reserva, la vista de detalle de sala se convierte en la capa operativa del producto. Responde a lo importante después: dónde está la sala, qué equipamiento tiene, cuánto dura la reserva y qué se puede modificar.',
+          'Esto hace que la app sea útil más allá del momento de reserva. No es solo un flujo de contratación de sala; también es una herramienta ligera de gestión para rutinas de oficina con poco margen de tiempo.',
+          'La combinación de imagen, equipamiento, texto de ubicación y acciones explícitas reduce incertidumbre y da contexto suficiente para decidir rápido si hace falta cambiar algo.',
         ],
         points: [
-          'Room photo and capacity are immediately visible.',
-          'Facilities are grouped into simple icon cards.',
-          'Location and usage context reduce wayfinding friction.',
-          'Cancel and reschedule actions stay visible instead of hidden behind menus.',
+          'Foto de la sala y capacidad visibles desde el primer nivel.',
+          'Equipamiento agrupado en tarjetas de icono simples.',
+          'Ubicación y contexto de uso para reducir fricción de orientación.',
+          'Acciones de cancelar y reprogramar visibles, sin esconderse detrás de menús.',
         ],
         galleryLayout: 'phones',
         gallery: [
           {
             src: 'https://framerusercontent.com/images/RGLyFKbQmClRaXXID9ecq4Zg48g.png',
-            alt: 'Meeting Room Booking confirmation and facilities view',
+            alt: 'Vista de confirmación y equipamiento de Meeting Room Booking',
             ratio: '390 / 929',
           },
           {
             src: 'https://framerusercontent.com/images/V9kizm9pNjJMLwsLDy12nNxozew.png',
-            alt: 'Meeting Room Booking room detail state',
+            alt: 'Estado de detalle de sala de Meeting Room Booking',
             ratio: '390 / 929',
           },
           {
             src: 'https://framerusercontent.com/images/051WEA05nZc8WDJmSoSqjB7i6M.png',
-            alt: 'Meeting Room Booking reservation management screen',
+            alt: 'Pantalla de gestión de reserva de Meeting Room Booking',
             ratio: '390 / 929',
           },
           {
             src: 'https://framerusercontent.com/images/JBMPkpeXnT8fzVXTIDuiimsE4nY.png',
-            alt: 'Meeting Room Booking booking confirmed interface',
+            alt: 'Interfaz de reserva confirmada de Meeting Room Booking',
             ratio: '390 / 929',
           },
         ],
       },
       {
-        title: 'Final Design',
+        title: 'Diseño final',
         tone: 'blue',
         paragraphs: [
-          'The middle button in the navigation bar is dedicated to quickly booking a nearby room on the current floor, reducing time to action in urgent situations.',
-          'On the home page, users can view upcoming bookings, rooms available now, and a complete list of meeting rooms. Each room displays location, maximum capacity, and available features.',
-          'To book a room, users select duration, date, and time, and a reminder is sent 15 minutes before the meeting.',
-          'For booking management, reservations can be canceled by swiping left or from the room information page, and users can modify date and time from the same flow.',
+          'El botón central de la navegación está dedicado a reservar rápidamente una sala cercana en la planta actual, reduciendo el tiempo de acción en situaciones urgentes.',
+          'En la home, las personas pueden ver próximas reservas, salas disponibles y una lista completa de salas. Cada sala muestra ubicación, capacidad máxima y equipamiento disponible.',
+          'Para reservar una sala, se selecciona duración, fecha y hora, y se envía un recordatorio 15 minutos antes de la reunión.',
+          'Para gestionar reservas, estas se pueden cancelar deslizando hacia la izquierda o desde la página de información de la sala; también se pueden modificar fecha y hora desde el mismo flujo.',
         ],
         galleryLayout: 'feature',
         gallery: [
           {
             src: 'https://framerusercontent.com/images/5JC1cCAp9eoEtQVR7tftMRUR8Ew.png',
-            alt: 'Meeting Room Booking presentation board with final UI',
+            alt: 'Presentación de Meeting Room Booking con la interfaz final',
           },
         ],
       },
     ],
   },
   'inventory-screen-pixel-art-game': {
-    headline: 'A pixel art mobile-game inventory designed to be intuitive, scalable and readable despite high information density.',
+    headline: 'Un inventario para juego móvil pixel art diseñado para ser intuitivo, escalable y legible incluso con alta densidad de información.',
     facts: [
-      { label: 'Tipo', value: 'Feature concept design' },
-      { label: 'Rol', value: 'UX/UI Concept Design' },
-      { label: 'Formato', value: 'Mobile landscape for a pixel art adventure platformer' },
+      { label: 'Tipo', value: 'Diseño conceptual de funcionalidad' },
+      { label: 'Rol', value: 'Diseño conceptual UX/UI' },
+      { label: 'Formato', value: 'Móvil horizontal para un juego de aventura pixel art' },
     ],
-    highlights: ['Crafting and rarity filters', 'Fluid inventory interactions', 'Pixel-art direction with modern usability'],
+    highlights: ['Crafting y filtros de rareza', 'Interacciones fluidas de inventario', 'Dirección pixel art con usabilidad moderna'],
     visualDeck: [
       {
         src: 'https://framerusercontent.com/images/ttcZG47EmCvxu3r3xpD7YYCmSKE.png',
-        alt: 'Inventory sharing screen in the final pixel-art design',
+        alt: 'Pantalla de intercambio del inventario en el diseño final pixel art',
       },
       {
         src: 'https://framerusercontent.com/images/E56bMmXBLOCBrhvzp6swJJpBDe4.png',
-        alt: 'Inventory equipment screen with character and item grid',
+        alt: 'Pantalla de equipamiento del inventario con personaje y retícula de objetos',
       },
       {
         src: 'https://framerusercontent.com/images/7FPE5y8YCmS4o0TuPgyUM3BkzM.png',
-        alt: 'Inventory chest screen with opening flow',
+        alt: 'Pantalla de cofres del inventario con flujo de apertura',
       },
     ],
     detailSections: [
       {
-        title: 'Overview',
+        title: 'Resumen',
         paragraphs: [
-          'As part of a UX challenge, the goal was to design a comprehensive inventory system for a mobile game in landscape mode, featuring a pixel art adventure platformer.',
-          'The objective was to create an intuitive and scalable inventory that met the immediate needs of the game while remaining adaptable for future expansions.',
-          'The design had to support multiple item types such as chests, shards, and candies, each with distinct interactions including opening, merging, and sharing with friends.',
-          'The overall experience drew heavily from indie games to preserve nostalgia while ensuring modern usability.',
+          'Como parte de un reto UX, el objetivo fue diseñar un sistema completo de inventario para un juego móvil en horizontal, con estética pixel art y mecánicas de aventura.',
+          'El objetivo era crear un inventario intuitivo y escalable que resolviera las necesidades inmediatas del juego y siguiera siendo adaptable para futuras expansiones.',
+          'El diseño debía soportar varios tipos de objetos, como cofres, fragmentos y caramelos, cada uno con interacciones distintas: abrir, fusionar y compartir con amistades.',
+          'La experiencia tomó referencias fuertes de juegos indie para conservar nostalgia sin renunciar a una usabilidad moderna.',
         ],
       },
       {
-        title: 'UX Challenge',
+        title: 'Reto UX',
         paragraphs: [
-          'The challenge required careful attention to user experience principles, including user flows, wireframes, and a final high-fidelity design that solved several UX problems.',
-          'The interface had to keep fluidity in interactions, clear hierarchy, and flexibility for different inventory actions without losing readability under load.',
+          'El reto exigía atención a principios de experiencia de usuario, incluyendo user flows, wireframes y un diseño final de alta fidelidad que resolviera varios problemas UX.',
+          'La interfaz debía mantener fluidez en la interacción, jerarquía clara y flexibilidad para distintas acciones de inventario sin perder legibilidad bajo carga.',
         ],
         points: [
-          'The screen had to stay readable despite high information density.',
-          'Different tabs required distinct interaction logic inside one shell.',
-          'Crafting, opening, equipping, and sharing needed different affordances.',
-          'Pixel-art aesthetics had to coexist with modern usability patterns.',
+          'La pantalla debía seguir siendo legible pese a la alta densidad de información.',
+          'Cada pestaña requería una lógica de interacción distinta dentro de una misma estructura.',
+          'Crafting, apertura, equipamiento e intercambio necesitaban affordances diferentes.',
+          'La estética pixel art debía convivir con patrones de usabilidad modernos.',
         ],
       },
       {
-        title: 'Research',
+        title: 'Investigación',
         paragraphs: [
-          'The research phase included analysis of multiple games across PC, mobile, and tablet to gather best practices for inventory-management systems.',
-          'That benchmark layer informed the final balance between game fantasy, legibility, and scalable UI patterns.',
+          'La fase de investigación incluyó análisis de varios juegos en PC, móvil y tablet para recoger buenas prácticas de sistemas de gestión de inventario.',
+          'Esa capa de benchmark ayudó a definir el equilibrio final entre fantasía de juego, legibilidad y patrones UI escalables.',
         ],
         gallery: [
           {
             src: 'https://framerusercontent.com/images/GTGcxxzWHFzyndxXFS4LjzNWO4.png',
-            alt: 'Wireframe reference for inventory tabs and item grid',
+            alt: 'Referencia de wireframe para pestañas de inventario y retícula de objetos',
             ratio: '852 / 394',
           },
           {
             src: 'https://framerusercontent.com/images/V7SaqEXS4UTbMQdXrsiwttBsyl4.png',
-            alt: 'Wireframe reference for equipment distribution',
+            alt: 'Referencia de wireframe para distribución de equipamiento',
             ratio: '852 / 394',
           },
           {
             src: 'https://framerusercontent.com/images/wEzr1S44TF5kLR4gTy2Kfpf9eA.png',
-            alt: 'Wireframe reference for chest interaction',
+            alt: 'Referencia de wireframe para interacción con cofres',
             ratio: '852 / 394',
           },
           {
             src: 'https://framerusercontent.com/images/PkRpdfIBmndGkLIu9nfK2MgARhk.png',
-            alt: 'Animal Crossing inventory reference used during benchmark analysis',
+            alt: 'Referencia de inventario de Animal Crossing usada durante el benchmark',
             ratio: '564 / 372',
           },
         ],
       },
       {
-        title: 'Inventory architecture',
+        title: 'Arquitectura del inventario',
         paragraphs: [
-          'The final interface is organized as a stable shell with persistent navigation across character, equipment, chests, friends, and settings. That keeps the mental model simple even though each tab solves a different kind of task.',
-          'Within that shell, each state is optimized for a specific action: equipment focuses on the avatar and active slots, chests prioritize opening and collecting, crafting explains item combinations, and sharing splits owned items from transferred items.',
-          'This separation helps preserve clarity while making the whole system feel cohesive and game-native.',
+          'La interfaz final se organiza como una estructura estable con navegación persistente entre personaje, equipamiento, cofres, amistades y ajustes. Esto mantiene un modelo mental simple aunque cada pestaña resuelva una tarea diferente.',
+          'Dentro de esa estructura, cada estado se optimiza para una acción específica: equipamiento se centra en avatar y slots activos, cofres prioriza abrir y recoger, crafting explica combinaciones de objetos e intercambio separa objetos propios de objetos transferidos.',
+          'Esta separación ayuda a preservar claridad y hace que todo el sistema se sienta cohesivo y nativo del juego.',
         ],
         gallery: [
           {
             src: 'https://framerusercontent.com/images/E56bMmXBLOCBrhvzp6swJJpBDe4.png',
-            alt: 'Pixel-art inventory equipment tab',
+            alt: 'Pestaña de equipamiento del inventario pixel art',
           },
           {
             src: 'https://framerusercontent.com/images/7FPE5y8YCmS4o0TuPgyUM3BkzM.png',
-            alt: 'Pixel-art inventory chest tab',
+            alt: 'Pestaña de cofres del inventario pixel art',
           },
           {
             src: 'https://framerusercontent.com/images/NjffoJ0ZzHjsFzKMWbqXZT5KYM.png',
-            alt: 'Pixel-art inventory craft tab',
+            alt: 'Pestaña de crafting del inventario pixel art',
           },
           {
             src: 'https://framerusercontent.com/images/A6mT7jJGAbrjYsZf2oDSHHEKDOY.png',
-            alt: 'Pixel-art inventory luxury chest interaction',
+            alt: 'Interacción con cofre de lujo en el inventario pixel art',
           },
         ],
       },
       {
-        title: 'Final UI and interaction logic',
+        title: 'UI final y lógica de interacción',
         tone: 'blue',
         paragraphs: [
-          'The final UI keeps strong fantasy references but avoids ornamental overload. Each action is large enough to read quickly, the hierarchy between tabs and items is explicit, and the active task is always easy to understand.',
-          'That balance between nostalgia and usability is the central value of the project: the inventory feels playful and game-like, but it still behaves like a structured product system.',
+          'La UI final mantiene referencias fuertes de fantasía, pero evita la sobrecarga ornamental. Cada acción tiene tamaño suficiente para leerse rápido, la jerarquía entre pestañas y objetos es explícita, y la tarea activa siempre se entiende con facilidad.',
+          'Ese equilibrio entre nostalgia y usabilidad es el valor central del proyecto: el inventario se siente lúdico y propio de un juego, pero se comporta como un sistema de producto estructurado.',
         ],
         gallery: [
           {
             src: 'https://framerusercontent.com/images/ttcZG47EmCvxu3r3xpD7YYCmSKE.png',
-            alt: 'Pixel-art inventory and item sharing interface',
+            alt: 'Interfaz de inventario pixel art e intercambio de objetos',
           },
           {
             src: 'https://framerusercontent.com/images/a25SWw0LUgkjLCAqdr0hnYmzOg.png',
-            alt: 'Inventory screen presentation board',
+            alt: 'Presentación de la pantalla de inventario',
           },
         ],
       },
     ],
   },
   'joining-made-simple-private-group': {
-    headline: 'Landing conceptual para facilitar la entrada a grupos privados con una narrativa mas amable y directa.',
+    headline: 'Landing conceptual para facilitar la entrada a grupos privados con una narrativa más amable y directa.',
     facts: [
       { label: 'Tipo', value: 'Webpage concept design' },
       { label: 'Rol', value: 'UX/UI Concept Design' },
@@ -2566,22 +2566,22 @@ const workDetailContent = {
       {
         title: 'Objetivo',
         body:
-          'Reducir la friccion inicial de un flujo de acceso privado y convertirlo en una experiencia mas clara, confiable y comprensible.',
+          'Reducir la fricción inicial de un flujo de acceso privado y convertirlo en una experiencia más clara, confiable y comprensible.',
       },
       {
         title: 'Enfoque',
         body:
-          'La direccion del concepto prioriza copy corto, jerarquia fuerte y una secuencia visual directa para explicar el valor del grupo desde arriba.',
+          'La dirección del concepto prioriza copy corto, jerarquía fuerte y una secuencia visual directa para explicar el valor del grupo desde arriba.',
       },
       {
         title: 'Resultado',
         body:
-          'La pieza funciona como una landing de entrada mas ligera y con mejor tono de marca para un acceso que normalmente se percibe demasiado frio.',
+          'La pieza funciona como una landing de entrada más ligera y con mejor tono de marca para un acceso que normalmente se percibe demasiado frío.',
       },
     ],
   },
   'local-flower-shop': {
-    headline: 'Landing editorial para floristeria local con mas calidez de marca y una composicion visual mas expresiva.',
+    headline: 'Landing editorial para floristería local con más calidez de marca y una composición visual más expresiva.',
     facts: [
       { label: 'Tipo', value: 'Webpage concept design' },
       { label: 'Rol', value: 'UX/UI Concept Design' },
@@ -2590,17 +2590,17 @@ const workDetailContent = {
       {
         title: 'Objetivo',
         body:
-          'Explorar una landing ecommerce mas cercana, menos generica y mas apoyada en tono visual que en estructuras tipicas de tienda.',
+          'Explorar una landing de e-commerce más cercana, menos genérica y más apoyada en tono visual que en estructuras típicas de tienda.',
       },
       {
         title: 'Enfoque',
         body:
-          'El trabajo se centra en composicion editorial, color y ritmo visual para reforzar personalidad de marca y convertir el catalogo en una experiencia mas memorable.',
+          'El trabajo se centra en composición editorial, color y ritmo visual para reforzar personalidad de marca y convertir el catálogo en una experiencia más memorable.',
       },
       {
         title: 'Resultado',
         body:
-          'El concepto deja una direccion clara para una tienda local que necesita presencia visual, no solo una lista funcional de productos.',
+          'El concepto deja una dirección clara para una tienda local que necesita presencia visual, no solo una lista funcional de productos.',
       },
     ],
   },
@@ -2714,21 +2714,21 @@ const articleEntries = [
   },
   {
     slug: '10-tecnicas-de-ideacion-en-diseno-ux',
-    title: '10 Tecnicas de ideacion en diseno UX',
-    excerpt: 'Diez tecnicas para desbloquear ideacion, colaborar mejor y convertir sesiones creativas en decisiones de producto mas utiles.',
+    title: '10 Técnicas de ideación en diseño UX',
+    excerpt: 'Diez técnicas para desbloquear ideación, colaborar mejor y convertir sesiones creativas en decisiones de producto más útiles.',
     description:
-      'Descubre 10 tecnicas de ideacion efectivas para diseno UX. Victor Saiz Alfageme comparte metodos innovadores para mejorar tu proceso creativo y colaborativo en proyectos de diseno.',
+      'Descubre 10 técnicas de ideación efectivas para diseño UX. Victor Saiz Alfageme comparte métodos innovadores para mejorar tu proceso creativo y colaborativo en proyectos de diseño.',
     image: 'https://framerusercontent.com/assets/IRvFMorZJkkd7mFhS0dR6BxkcHs.png',
     publishedAt: '2024-05-01T10:00:08.000Z',
     externalUrl: 'https://es.linkedin.com/pulse/10-t%C3%A9cnicas-de-ideaci%C3%B3n-en-dise%C3%B1o-ux-victor-saiz-alfageme-vppef',
     source: 'linkedin',
-    topic: 'Ideacion',
+    topic: 'Ideación',
   },
   {
     slug: 'te-molestan-los-decimales-de-figma-necesitas-este-plugin',
-    title: 'Solucion a los decimales en Figma',
-    excerpt: 'Un plugin sencillo para limpiar decimales, acelerar decisiones y dejar los archivos de Figma mucho mas ordenados.',
-    description: 'El plugin definitivo para manejar decimales en Figma. Simplifica tu diseno y enfocate en crear sin obstaculos.',
+    title: 'Solución a los decimales en Figma',
+    excerpt: 'Un plugin sencillo para limpiar decimales, acelerar decisiones y dejar los archivos de Figma mucho más ordenados.',
+    description: 'El plugin definitivo para manejar decimales en Figma. Simplifica tu diseño y enfócate en crear sin obstáculos.',
     image: 'https://framerusercontent.com/assets/t297oB9q1qOwl69cumkvsV6s.png',
     externalUrl: linkedInPublicProfileUrl,
     source: 'linkedin',
@@ -2737,7 +2737,7 @@ const articleEntries = [
   {
     slug: 'mis-7-plugins-favoritos',
     title: 'Mis 7 plugins imprescindibles en UX/UI',
-    excerpt: 'Una seleccion de plugins que ayudan a iterar mas rapido, automatizar tareas y trabajar con mejor criterio visual.',
+    excerpt: 'Una selección de plugins que ayudan a iterar más rápido, automatizar tareas y trabajar con mejor criterio visual.',
     description:
       'Descubre los 7 plugins favoritos de Victor Saiz para empezar a usar en tu trabajo en UX/UI. Herramientas que marcan la diferencia en cada proyecto.',
     image: 'https://framerusercontent.com/assets/mMpyJpfD0XbRA2zlOO3PGnGNg.png',
@@ -2747,10 +2747,10 @@ const articleEntries = [
   },
   {
     slug: 'la-evolucion-hacia-el-profesional-t-shaped',
-    title: 'La evolucion hacia el profesional T-Shaped',
-    excerpt: 'Por que ampliar mirada sin perder profundidad sigue siendo una ventaja real para moverse entre producto, UX/UI y desarrollo.',
+    title: 'La evolución hacia el profesional T-Shaped',
+    excerpt: 'Por qué ampliar mirada sin perder profundidad sigue siendo una ventaja real para moverse entre producto, UX/UI y desarrollo.',
     description:
-      'Como es la evolucion hacia un perfil T-Shaped? Es la clave para triunfar en el mundo digital. Amplia tus horizontes en UX/UI y desarrollo.',
+      '¿Cómo es la evolución hacia un perfil T-Shaped? Es la clave para triunfar en el mundo digital. Amplía tus horizontes en UX/UI y desarrollo.',
     image: 'https://framerusercontent.com/assets/0WGVAGAoNi1BbGm752sKeIhKYI.png',
     externalUrl: linkedInPublicProfileUrl,
     source: 'linkedin',
@@ -2758,10 +2758,10 @@ const articleEntries = [
   },
   {
     slug: 'como-la-ia-potencia-el-diseno-de-soluciones-tecnologicas',
-    title: 'Como la IA potencia el diseno de soluciones tecnologicas',
-    excerpt: 'Una mirada practica a como la IA puede ayudar a pensar, producir y validar soluciones digitales sin sustituir criterio.',
+    title: 'Cómo la IA potencia el diseño de soluciones tecnológicas',
+    excerpt: 'Una mirada práctica a cómo la IA puede ayudar a pensar, producir y validar soluciones digitales sin sustituir criterio.',
     description:
-      'Explora el poder de la IA en el diseno de soluciones tecnologicas. Innovacion y eficacia al servicio del futuro del diseno UX/UI.',
+      'Explora el poder de la IA en el diseño de soluciones tecnológicas. Innovación y eficacia al servicio del futuro del diseño UX/UI.',
     image: 'https://framerusercontent.com/assets/61YqrWnIkbTYjQHlGdA7xVDMM.png',
     externalUrl: linkedInPublicProfileUrl,
     source: 'linkedin',
@@ -2770,9 +2770,9 @@ const articleEntries = [
   {
     slug: 'no-te-enamores-de-una-herramienta-el-valor-de-aprender-a-usarlas',
     title: 'No te enamores de una herramienta',
-    excerpt: 'Dominar varias herramientas amplifica criterio, adaptacion y velocidad cuando el contexto del proyecto cambia.',
+    excerpt: 'Dominar varias herramientas amplifica criterio, adaptación y velocidad cuando el contexto del proyecto cambia.',
     description:
-      'No te limites a usar una sola herramienta. Descubre como dominarlas para maximizar tu creatividad y eficiencia en el diseno UX/UI.',
+      'No te limites a usar una sola herramienta. Descubre cómo dominarlas para maximizar tu creatividad y eficiencia en el diseño UX/UI.',
     image: 'https://framerusercontent.com/assets/fJxrERFrQbx17ouPoamtZ6dmA4.png',
     externalUrl: linkedInPublicProfileUrl,
     source: 'linkedin',
@@ -2780,10 +2780,10 @@ const articleEntries = [
   },
   {
     slug: 'cultura-deportiva-en-el-mundo-tecnologico',
-    title: 'Cultura deportiva en el mundo tecnologico',
-    excerpt: 'Una reflexion sobre disciplina, mentalidad competitiva y como ciertos habitos del deporte se trasladan al trabajo digital.',
+    title: 'Cultura deportiva en el mundo tecnológico',
+    excerpt: 'Una reflexión sobre disciplina, mentalidad competitiva y cómo ciertos hábitos del deporte se trasladan al trabajo digital.',
     description:
-      'Como influye la cultura deportiva en el ambiente laboral y la productividad? Descubre el impacto positivo de las habilidades deportivas en el mundo laboral, inspirado en Estados Unidos.',
+      '¿Cómo influye la cultura deportiva en el ambiente laboral y la productividad? Descubre el impacto positivo de las habilidades deportivas en el mundo laboral, inspirado en Estados Unidos.',
     image: 'https://framerusercontent.com/assets/JcQAe3UNXW8JQfV6KPTxhtIOc.jpg',
     publishedAt: '2024-04-24T15:38:54.000Z',
     externalUrl: 'https://es.linkedin.com/pulse/cultura-deportiva-en-el-mundo-tecnol%C3%B3gico-c%C3%B3mo-y-la-saiz-alfageme-ip5zf',
@@ -2792,10 +2792,10 @@ const articleEntries = [
   },
   {
     slug: 'inspirate-en-dibujos-animados-para-un-buen-diseno-ux',
-    title: 'Inspirate en dibujos animados para un buen diseno UX',
-    excerpt: 'Referencias visuales poco obvias que ayudan a pensar interfaces mas expresivas, memorables y faciles de entender.',
+    title: 'Inspírate en dibujos animados para un buen diseño UX',
+    excerpt: 'Referencias visuales poco obvias que ayudan a pensar interfaces más expresivas, memorables y fáciles de entender.',
     description:
-      'Aprende como los dibujos animados pueden inspirar innovadores disenos UX. Creatividad sin limites para experiencias de usuario memorables.',
+      'Aprende cómo los dibujos animados pueden inspirar diseños UX innovadores. Creatividad sin límites para experiencias de usuario memorables.',
     image: 'https://framerusercontent.com/assets/RFaUvldNVVWXJDbhD5ZYAY6th0Q.png',
     externalUrl: linkedInPublicProfileUrl,
     source: 'linkedin',
@@ -2803,10 +2803,10 @@ const articleEntries = [
   },
   {
     slug: 'por-que-la-ia-no-puede-reemplazar-la-magia-de-la-ui',
-    title: 'Por que la IA no puede reemplazar la magia de la UI',
+    title: 'Por qué la IA no puede reemplazar la magia de la UI',
     excerpt: 'La IA ayuda a producir, pero el criterio visual y la sensibilidad de interfaz siguen marcando la diferencia.',
     description:
-      'Explora el irremplazable arte de la UI en la era de la IA. Descubre por que la creatividad humana sigue siendo insustituible en el diseno de interfaces.',
+      'Explora el irremplazable arte de la UI en la era de la IA. Descubre por qué la creatividad humana sigue siendo insustituible en el diseño de interfaces.',
     image: 'https://framerusercontent.com/assets/gGrhGe0pW0P5cfSC0gJET4p4e4I.png',
     externalUrl: linkedInPublicProfileUrl,
     source: 'linkedin',
@@ -2814,10 +2814,10 @@ const articleEntries = [
   },
   {
     slug: 'accesibilidad-y-sistemas-de-diseno-en-ux',
-    title: 'Accesibilidad y sistemas de diseno en UX',
-    excerpt: 'Como integrar accesibilidad dentro del sistema y no tratarla como una capa extra o una revision tardia.',
+    title: 'Accesibilidad y sistemas de diseño en UX',
+    excerpt: 'Cómo integrar accesibilidad dentro del sistema y no tratarla como una capa extra o una revisión tardía.',
     description:
-      'Impulsa la accesibilidad en tus proyectos con Victor Saiz. Descubre la integracion de sistemas de diseno en UX para crear aplicaciones inclusivas y universales.',
+      'Impulsa la accesibilidad en tus proyectos con Victor Saiz. Descubre la integración de sistemas de diseño en UX para crear aplicaciones inclusivas y universales.',
     image: 'https://framerusercontent.com/assets/5v2leThZfAb3Jf6iVsVWpR2BAU.jpeg',
     externalUrl: linkedInPublicProfileUrl,
     source: 'linkedin',
@@ -2825,21 +2825,21 @@ const articleEntries = [
   },
   {
     slug: 'la-psicologia-detras-de-un-buen-ux-design',
-    title: 'La psicologia detras de un buen UX design',
-    excerpt: 'Principios de comportamiento y percepcion que ayudan a construir experiencias mas intuitivas y utiles.',
+    title: 'La psicología detrás de un buen UX design',
+    excerpt: 'Principios de comportamiento y percepción que ayudan a construir experiencias más intuitivas y útiles.',
     description:
-      'Sumergete en la mente del usuario con Victor Saiz y descubre como la psicologia mejora el UX Design. Aprende a crear experiencias mas intuitivas y satisfactorias.',
+      'Sumérgete en la mente del usuario con Victor Saiz y descubre cómo la psicología mejora el UX Design. Aprende a crear experiencias más intuitivas y satisfactorias.',
     image: 'https://framerusercontent.com/assets/zAVPZHc9X9CiP8r3qX9TZg3vsm0.png',
     externalUrl: linkedInPublicProfileUrl,
     source: 'linkedin',
-    topic: 'Psicologia',
+    topic: 'Psicología',
   },
   {
     slug: 'autolayout-y-flexbox-como-figma-revoluciona-el-frontend',
-    title: 'AutoLayout y Flexbox: como Figma revoluciona el frontend',
-    excerpt: 'Una conexion clara entre sistemas de layout en diseno y su traduccion real a codigo responsive.',
+    title: 'AutoLayout y Flexbox: cómo Figma revoluciona el frontend',
+    excerpt: 'Una conexión clara entre sistemas de layout en diseño y su traducción real a código responsive.',
     description:
-      'Explora como Figma transforma el frontend con AutoLayout y Flexbox, facilitando disenos responsivos. Unete a Victor Saiz en este viaje tecnico que redefine las reglas del diseno web.',
+      'Explora cómo Figma transforma el frontend con AutoLayout y Flexbox, facilitando diseños responsivos. Únete a Victor Saiz en este viaje técnico que redefine las reglas del diseño web.',
     image: 'https://framerusercontent.com/assets/GBytxwP7SuUQ0XATnYcVDkL5n9o.png',
     externalUrl: linkedInPublicProfileUrl,
     source: 'linkedin',
@@ -2848,9 +2848,9 @@ const articleEntries = [
   {
     slug: 'el-duolingo-del-ux-ui',
     title: 'Aprende UX/UI al estilo Duolingo con Uxcel',
-    excerpt: 'Una recomendacion de aprendizaje mas dinamico para mejorar fundamentos y practicar de forma continua.',
+    excerpt: 'Una recomendación de aprendizaje más dinámico para mejorar fundamentos y practicar de forma continua.',
     description:
-      'Uxcel transforma el aprendizaje de UX/UI en una aventura tan entretenida como efectiva. Sumergite en cursos interactivos que cubren desde los fundamentos hasta tecnicas avanzadas, adaptandose a tu ritmo y convirtiendo el aprendizaje en un juego.',
+      'Uxcel transforma el aprendizaje de UX/UI en una aventura tan entretenida como efectiva. Sumérgete en cursos interactivos que cubren desde los fundamentos hasta técnicas avanzadas, adaptándose a tu ritmo y convirtiendo el aprendizaje en un juego.',
     image: 'https://framerusercontent.com/assets/kQkxWmEtQ8iHrPVPGV1qN3S8Fok.png',
     externalUrl: linkedInPublicProfileUrl,
     source: 'linkedin',
