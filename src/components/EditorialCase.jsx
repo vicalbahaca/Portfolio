@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowLeftIcon } from './Icons'
 import styles from '../styles/InOneExploration.module.css'
 
@@ -82,6 +83,18 @@ export default function EditorialCase({ caseStudy }) {
               <p key={paragraph}>{paragraph}</p>
             ))}
           </div>
+          {content.contextMedia ? (
+            <figure className={styles.finalContextMedia}>
+              <Image
+                src={content.contextMedia.src}
+                alt={content.contextMedia.alt}
+                width={2048}
+                height={1196}
+                sizes="(max-width: 800px) 100vw, 1400px"
+              />
+              {content.contextMedia.caption ? <figcaption>{content.contextMedia.caption}</figcaption> : null}
+            </figure>
+          ) : null}
         </section>
 
         <section className={`${styles.finalSection} ${styles.finalRole}`}>
@@ -163,6 +176,16 @@ export default function EditorialCase({ caseStudy }) {
             </ul>
 
             {content.learning ? <p className={styles.finalRoleLead}>{content.learning}</p> : null}
+
+            {content.resultVideo ? (
+              <figure className={styles.finalResultVideo}>
+                <video controls playsInline preload="metadata">
+                  <source src={content.resultVideo.src} type="video/mp4" />
+                  Tu navegador no permite reproducir este vídeo.
+                </video>
+                <figcaption>{content.resultVideo.caption}</figcaption>
+              </figure>
+            ) : null}
           </section>
         ) : null}
       </div>

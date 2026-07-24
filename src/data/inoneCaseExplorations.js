@@ -247,6 +247,16 @@ export const inoneCase = {
       'InOne es la aplicación de CaixaBank Payments & Consumer para gestionar tarjetas, pagos y financiación desde un único entorno.',
       'El trabajo comenzó en una fase post-lanzamiento, con el producto en crecimiento y una transición progresiva desde experiencias específicas vinculadas a productos como IKEA Visa, MediaMarkt Visa y Visa FNAC. El objetivo era acompañar esa evolución sin perder capacidades relevantes para sus usuarios.',
     ],
+    contextScreens: [
+      {
+        src: '/portfolio-north/inone-public/context-01.png',
+        alt: 'Campaña pública de InOne para gestionar, fraccionar y financiar pagos.',
+      },
+      {
+        src: '/portfolio-north/inone-public/context-02.png',
+        alt: 'Pantalla pública de InOne con resumen de tarjeta, pagos y movimientos.',
+      },
+    ],
     role: {
       lead:
         'Responsabilidad de consultoría y diseño para convertir necesidades de negocio y señales del mercado en decisiones ejecutables que hicieran evolucionar la aplicación.',

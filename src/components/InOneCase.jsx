@@ -106,6 +106,15 @@ export default function InOneCase({ caseStudy }) {
               <p key={paragraph}>{paragraph}</p>
             ))}
           </div>
+          {content.contextScreens?.length ? (
+            <div className={styles.finalContextScreens}>
+              {content.contextScreens.map((screen) => (
+                <figure key={screen.src}>
+                  <img src={screen.src} alt={screen.alt} width="230" height="499" loading="lazy" />
+                </figure>
+              ))}
+            </div>
+          ) : null}
         </section>
 
         <section className={`${styles.finalSection} ${styles.finalRole}`}>

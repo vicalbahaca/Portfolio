@@ -425,6 +425,10 @@ export const portfolioSection = {
           'Facilitea es la plataforma de comercio electrónico de CaixaBank. Reúne productos y servicios de tecnología, movilidad, hogar y viajes, además de propuestas especializadas de coche y vivienda.',
           'La evolución se centró en Facilitea.com y en el servicio interno que permite a las oficinas acompañar operaciones de e-commerce. El alcance conectó catálogo, financiación, checkout y posventa para responder a nuevas necesidades de mercado y negocio.',
         ],
+        contextMedia: {
+          src: '/portfolio-north/facilitea-context.png',
+          alt: 'Página principal de Facilitea con navegación, campaña destacada y catálogo de productos.',
+        },
         role: {
           lead:
             'Responsabilidad de consultoría y diseño para convertir necesidades de negocio y señales del mercado en decisiones ejecutables que hicieran evolucionar el e-commerce.',
@@ -566,6 +570,10 @@ export const portfolioSection = {
           'Control de calidad disponible antes del handoff, no solo al final de la entrega.',
           'Uso interno extendido a PMs y diseñadores de las distintas verticales de Facilitea.',
         ],
+        resultVideo: {
+          src: '/portfolio-north/plugin-workflow.mp4',
+          caption: 'Recorrido del plugin: selección, análisis de textos y generación del entregable.',
+        },
       },
     },
   ],

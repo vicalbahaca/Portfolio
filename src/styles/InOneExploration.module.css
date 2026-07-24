@@ -2339,6 +2339,46 @@
   line-height: 1.36;
 }
 
+.finalContextMedia {
+  width: min(100%, 960px);
+  margin: calc(clamp(104px, 11vw, 152px) + 40px) 0 0;
+}
+
+.finalContextMedia img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-top: 40px;
+  border: 1px solid var(--final-line);
+}
+
+.finalContextMedia figcaption {
+  margin-top: 14px;
+  color: var(--final-muted);
+  font-size: 0.78rem;
+  line-height: 1.45;
+}
+
+.finalContextScreens {
+  width: min(100%, 540px);
+  margin-top: clamp(44px, 6vw, 72px);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(18px, 2vw, 32px);
+}
+
+.finalContextScreens figure {
+  min-width: 0;
+  margin: 0;
+}
+
+.finalContextScreens img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 1px solid var(--final-line);
+}
+
 .finalRoleLead {
   max-width: 1020px;
   margin-bottom: 120px;
@@ -2663,6 +2703,27 @@
 
 .finalResults .storeMetrics {
   margin-top: 0;
+}
+
+.finalResultVideo {
+  width: min(100%, 1180px);
+  margin: calc(clamp(72px, 9vw, 128px) + 40px) 0 0;
+}
+
+.finalResultVideo video {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-top: 40px;
+  background: var(--final-ink);
+  border: 1px solid var(--final-line);
+}
+
+.finalResultVideo figcaption {
+  margin-top: 14px;
+  color: var(--final-muted);
+  font-size: 0.78rem;
+  line-height: 1.45;
 }
 
 @keyframes finalRise {
@@ -3471,6 +3532,11 @@
 
   .finalProse p {
     font-size: 1.3rem;
+  }
+
+  .finalContextScreens {
+    width: min(100%, 230px);
+    grid-template-columns: 1fr;
   }
 
   .finalRoleLead {
