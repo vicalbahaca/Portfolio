@@ -12,13 +12,13 @@ export const portfolioSection = {
       cardUseBackdrop: false,
       accent: '#1d56f0',
       client: 'Producto financiero de consumo',
-      industry: 'Fintech · App nativa',
+      industry: 'Fintech - App nativa',
       role: 'Principal Product Designer',
       scope: 'Rediseño end-to-end, sistema de diseño y despliegue progresivo',
       cardTag: 'Evolución de producto',
       cardDescription:
         'Evolución a largo plazo de un ecosistema financiero: unificación de productos, accesibilidad, Design System y mejora progresiva de la experiencia.',
-      metric: 'Nueva experiencia · Design System · entrega progresiva',
+      metric: 'Nueva experiencia - Design System - entrega progresiva',
       headline:
         'Rediseño de una aplicación financiera para integrar pagos, tarjetas y financiación en una experiencia más clara, consistente y escalable.',
       summary:
@@ -95,13 +95,13 @@ export const portfolioSection = {
       cardUseBackdrop: false,
       accent: '#2962ff',
       client: 'Ecosistema financiero',
-      industry: 'Fintech · Web y app nativa',
-      role: 'Accessibility Lead · Product Designer',
+      industry: 'Fintech - Web y app nativa',
+      role: 'Accessibility Lead - Product Designer',
       scope: 'Auditoría, backlog, documentación, entrega y QA',
       cardTag: 'Ownership de accesibilidad',
       cardDescription:
         'De auditorías externas a una forma de trabajo compartida para productos web, Android e iOS.',
-      metric: '5 activos · 3 webs · 2 aplicaciones nativas',
+      metric: '5 activos - 3 webs - 2 aplicaciones nativas',
       headline:
         'Convertir auditorías externas de accesibilidad en una forma de delivery compartida para cinco productos digitales.',
       summary:
@@ -110,7 +110,7 @@ export const portfolioSection = {
         'El caso se presenta sin pantallas ni información operativa interna. Explica el sistema de trabajo, no el detalle de los productos auditados.',
       editorialCase: {
         contextLabel: 'Servicios financieros regulados',
-        productLabel: '5 activos · 3 webs · 2 aplicaciones nativas',
+        productLabel: '5 activos - 3 webs - 2 aplicaciones nativas',
         context: [
           'La entrada en aplicación del Acta Europea de Accesibilidad situó la accesibilidad como una responsabilidad de producto continua. En servicios financieros, esto afecta a la comprensión, los formularios, la identificación, los pagos y las confirmaciones de operaciones sensibles.',
           'Un workshop común ayudó a alinear a los equipos sobre los principios WCAG: una interfaz debe ser perceptible, operable, comprensible y robusta. El reto real era llevar esos principios a decisiones concretas y repetibles en productos distintos.',
@@ -255,7 +255,7 @@ export const portfolioSection = {
           href: 'https://commission.europa.eu/strategy-and-policy/policies/justice-and-fundamental-rights/disability/european-accessibility-act-eaa_en',
         },
         {
-          label: 'WCAG 2.2 · W3C',
+          label: 'WCAG 2.2 - W3C',
           href: 'https://www.w3.org/TR/WCAG22/',
         },
       ],
@@ -269,7 +269,7 @@ export const portfolioSection = {
       cardUseBackdrop: false,
       accent: '#315cf4',
       client: 'Producto financiero B2B2C',
-      industry: 'Fintech · Captación y contratación',
+      industry: 'Fintech - Captación y contratación',
       role: 'Principal Product Designer',
       scope: 'Service design, arquitectura y modelo operativo',
       cardTag: 'Service design y arquitectura',
@@ -402,13 +402,13 @@ export const portfolioSection = {
       cardUseBackdrop: false,
       accent: '#f20505',
       client: 'E-commerce retail vinculado a CaixaBank',
-      industry: 'Retail · E-commerce · Financiación',
+      industry: 'Retail - E-commerce - Financiación',
       role: 'Product Design Owner',
       scope: 'Oficinas, financiación, checkout y posventa',
       cardTag: 'Evolución de la plataforma',
       cardDescription:
         'Evolución a largo plazo de una plataforma retail: beneficios, financiación, checkout y posventa en una experiencia conectada.',
-      metric: 'E-commerce · Financiación · Posventa',
+      metric: 'E-commerce - Financiación - Posventa',
       headline:
         'Evolucionar un e-commerce retail para conectar catálogo, contratación y posventa sin perder coherencia entre canales.',
       summary:
@@ -483,13 +483,13 @@ export const portfolioSection = {
       cardUseBackdrop: false,
       accent: '#2558e8',
       client: 'Equipo de diseño de producto',
-      industry: 'DesignOps · Herramientas internas',
-      role: 'Product Designer · Product Maker',
+      industry: 'DesignOps - Herramientas internas',
+      role: 'Product Designer - Product Maker',
       scope: 'Detección, diseño, desarrollo y adopción interna',
       cardTag: 'DesignOps',
       cardDescription:
         'Extraer textos de Figma, eliminar duplicados y preparar su revisión de accesibilidad y traducción desde un único flujo.',
-      metric: '1–2 h → ~3 min por extracción',
+      metric: '1-2 h → ~3 min por extracción',
       headline:
         'Convertir la revisión de textos de Figma en un flujo de tres minutos, listo para accesibilidad, traducción y entrega.',
       summary:

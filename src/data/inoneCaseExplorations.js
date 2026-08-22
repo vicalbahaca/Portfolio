@@ -2,7 +2,7 @@ export const inoneCase = {
   title: 'InOne',
   role: 'Principal Product Designer',
   context: 'Evolución post-lanzamiento',
-  product: 'App financiera · iOS y Android',
+  product: 'App financiera - iOS y Android',
   scope: 'Estrategia, experiencia, sistema y delivery',
   client: 'CaixaBank Payments & Consumer',
   tags: ['UX/UI', 'DESIGN SYSTEM', 'ACCESIBILIDAD', 'DESIGN OPS'],
@@ -219,7 +219,7 @@ export const inoneCase = {
     'Herramientas de soporte conectadas con el producto.',
   ],
   publicMetric: {
-    value: '4,6–4,7/5',
+    value: '4,6-4,7/5',
     detail: 'Valoración pública en las stores consultadas',
     qualifier: 'Contexto público del producto consultado el 23/07/2026. No implica causalidad exclusiva del trabajo de diseño.',
   },
@@ -237,7 +237,7 @@ export const inoneCase = {
     {
       label: 'Descargas públicas',
       value: '500K+',
-      detail: 'Google Play · App Store sin cifra pública comparable',
+      detail: 'Google Play - App Store sin cifra pública comparable',
     },
   ],
   resultContext:
@@ -468,11 +468,11 @@ export const inoneCase = {
       href: 'https://play.google.com/store/apps/details?gl=es&hl=es&id=com.caixabankpc.nowpay',
     },
     {
-      label: 'Tarjetas para comercios · CaixaBank Payments & Consumer',
+      label: 'Tarjetas para comercios - CaixaBank Payments & Consumer',
       href: 'https://www.caixabankpc.com/es/comercios/tarjetas',
     },
     {
-      label: 'Apps específicas de IKEA Visa, FNAC Credit y MediaMarkt Club · 2021',
+      label: 'Apps específicas de IKEA Visa, FNAC Credit y MediaMarkt Club - 2021',
       href: 'https://www.caixabankpc.com/documents/444417/480762/Bases%2Blegales%2BSorteo%2BDescarga%2BApp.%2BSorteo%2Bmo%CC%81viles.pdf/672c2144-c135-5771-39b2-a10886dd18dc?t=1673364014643',
     },
   ],

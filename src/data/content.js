@@ -3,7 +3,7 @@ export const siteConfig = {
   role: 'Product Designer',
   heroTitle: 'Victor Saiz',
   heroSubtitle: 'Product Designer',
-  heroEyebrow: 'Barcelona · Product Design · Design + Code',
+  heroEyebrow: 'Barcelona - Product Design - Design + Code',
   heroHeadline: 'Producto, interfaces y sistemas pensados para sentirse claros desde el primer scroll.',
   description:
     'Product Designer con mindset de product maker. Conecto diseño, producto y construcción para lanzar experiencias claras, accesibles y realistas.',
@@ -244,7 +244,7 @@ export const northSection = {
         es: 'Evolución de InOne para simplificar journeys críticos, aumentar claridad operativa y mejorar la consistencia visual del canal prescriptor.',
         en: 'InOne evolution to simplify critical journeys, improve operational clarity, and raise visual consistency in the prescriber channel.',
       },
-      metric: '+16K prescriptores · +1.5M usuarios · rating 2.3 → 4.4',
+      metric: '+16K prescriptores - +1.5M usuarios - rating 2.3 → 4.4',
       headline: {
         es: 'Rediseño de una app financiera con foco en journeys críticos, claridad operativa y una interfaz más consistente para una red masiva de prescriptores.',
         en: 'Redesign of a financial app focused on critical journeys, operational clarity, and a more consistent interface for a large prescriber network.',
@@ -540,7 +540,7 @@ export const northSection = {
         es: 'Consolidación de canales Prescriptor para reducir duplicidades, ordenar flujos equivalentes y dejar una base común más mantenible.',
         en: 'Prescriber channel consolidation to reduce duplication, align equivalent flows, and leave a more maintainable shared foundation.',
       },
-      metric: '+16K prescriptores · menos duplicidad · menos pasos',
+      metric: '+16K prescriptores - menos duplicidad - menos pasos',
       headline: {
         es: 'Unificación de varios canales de prescripción para reducir duplicidad, ordenar journeys equivalentes y dejar una estructura más simple de mantener.',
         en: 'Unification of several prescriber channels to reduce duplication, organise equivalent journeys, and leave a simpler structure to maintain.',
@@ -782,7 +782,7 @@ export const northSection = {
         es: 'Diseño de M2P ChatBot para integrar soporte contextual sin romper la tarea principal y con una base escalable para evolución con IA.',
         en: 'M2P ChatBot design to integrate contextual support without disrupting the main task, with a scalable foundation for AI evolution.',
       },
-      metric: '+2M tarjetas emitidas · +1M clientes únicos · canal 100% digital',
+      metric: '+2M tarjetas emitidas - +1M clientes únicos - canal 100% digital',
       headline: {
         es: 'Diseño de una experiencia conversacional para soporte financiero que acompaña el flujo principal sin romper la tarea ni generar más fricción.',
         en: 'Design of a conversational support experience for financial journeys that supports the main flow without interrupting the task or adding friction.',
@@ -1024,7 +1024,7 @@ export const northSection = {
         es: 'Accesibilidad Facilitea convertida en un sistema documental reutilizable para diseño y desarrollo, con foco en WCAG y handoff claro.',
         en: 'Facilitea accessibility turned into a reusable documentation system for design and engineering, focused on WCAG and clear handoff.',
       },
-      metric: 'Documentación en 1 semana · base reutilizable · foco WCAG',
+      metric: 'Documentación en 1 semana - base reutilizable - foco WCAG',
       headline: {
         es: 'Conversión de criterios dispersos de accesibilidad en un sistema documental claro, reusable y útil para diseño, desarrollo y revisión.',
         en: 'Turning scattered accessibility criteria into a clear, reusable documentation system useful for design, development, and review.',
@@ -1241,7 +1241,7 @@ export const northSection = {
       cardImage: '/north/covers/facilitea-plugin-cover.png',
       cardImageMode: 'contain',
       accent: '#004B5B',
-      client: 'Facilitea · CaixaBank',
+      client: 'Facilitea - CaixaBank',
       industry: {
         es: 'Comercio electrónico, diseño de producto y automatización interna',
         en: 'Ecommerce, product design, and internal automation',
@@ -1263,8 +1263,8 @@ export const northSection = {
         en: 'Design and development of an internal Figma plugin that reduced manual work in B2 review, accessibility checks, and text preparation for development.',
       },
       metric: {
-        es: 'Plugin interno · CSV/XLSX · exportación ES/CAT/EN',
-        en: 'Internal plugin · CSV/XLSX · ES/CAT/EN export',
+        es: 'Plugin interno - CSV/XLSX - exportación ES/CAT/EN',
+        en: 'Internal plugin - CSV/XLSX - ES/CAT/EN export',
       },
       headline: {
         es: 'Diseño y desarrollo de un plugin interno de Figma que convierte la revisión de textos, accesibilidad y exportación multidioma en un flujo único, trazable y mucho más rápido.',

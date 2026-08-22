@@ -37,7 +37,7 @@ export default function Footer({ showContactBand = true }) {
           <div className="footer__site-meta">
             <p className="footer__site-name">{siteConfig.name}</p>
             <p className="footer__site-copy">
-              {copy.site.location} · {year}
+              {copy.site.location} - {year}
             </p>
           </div>
 
