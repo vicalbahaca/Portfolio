@@ -26,7 +26,7 @@ const spanishCopy = {
     ],
     personalEmailAria: 'Correo personal',
     copyEmail: 'Copiar correo electrónico',
-    copiedEmail: 'Copiado en portapapeles',
+    copiedEmail: 'Dirección de correo copiada en portapapeles',
     closeToast: 'Cerrar aviso',
     scroll: 'Navega hacia abajo',
   },

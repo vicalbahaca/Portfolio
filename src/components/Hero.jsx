@@ -6,7 +6,7 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import { useGSAP } from '@gsap/react'
 import { siteConfig } from '../data/siteContent'
 import { useLanguage } from '../lib/i18n'
-import { CloseIcon, CopyIcon } from './Icons'
+import { CheckIcon, CloseIcon, CopyIcon } from './Icons'
 
 gsap.registerPlugin(ScrollTrigger, useGSAP)
 
@@ -20,9 +20,14 @@ export default function Hero() {
   const { copy } = useLanguage()
 
   useEffect(() => {
-    if (copied) {
-      toastCloseRef.current?.focus()
-    }
+    if (!copied) return undefined
+
+    toastCloseRef.current?.focus()
+    const timeoutId = window.setTimeout(() => {
+      setCopied(false)
+    }, 3200)
+
+    return () => window.clearTimeout(timeoutId)
   }, [copied])
 
   useGSAP(
@@ -131,9 +136,10 @@ export default function Hero() {
           </a>
           <button
             type="button"
-            className="hero__copy-button"
+            className={`hero__copy-button${copied ? ' hero__copy-button--copied' : ''}`}
             ref={copyButtonRef}
-            aria-label={copy.hero.copyEmail}
+            aria-label={copied ? copy.hero.copiedEmail : copy.hero.copyEmail}
+            aria-pressed={copied}
             onClick={async () => {
               try {
                 await navigator.clipboard.writeText(siteConfig.email)
@@ -143,7 +149,12 @@ export default function Hero() {
               }
             }}
           >
-            <CopyIcon />
+            <span className="hero__copy-icon hero__copy-icon--copy">
+              <CopyIcon />
+            </span>
+            <span className="hero__copy-icon hero__copy-icon--check">
+              <CheckIcon />
+            </span>
           </button>
         </div>
 

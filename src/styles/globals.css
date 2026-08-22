@@ -6721,6 +6721,7 @@ body.lightbox-open .navbar {
 }
 
 .page-shell--home .hero__copy-button {
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -6733,9 +6734,39 @@ body.lightbox-open .navbar {
   cursor: pointer;
 }
 
-.page-shell--home .hero__copy-button svg {
+.page-shell--home .hero__copy-icon {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease;
+}
+
+.page-shell--home .hero__copy-icon svg {
   width: 32px;
   height: 32px;
+}
+
+.page-shell--home .hero__copy-icon--copy {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+}
+
+.page-shell--home .hero__copy-icon--check {
+  opacity: 0;
+  transform: scale(0.58) rotate(-12deg);
+}
+
+.page-shell--home .hero__copy-button--copied .hero__copy-icon--copy {
+  opacity: 0;
+  transform: scale(0.72) rotate(12deg);
+}
+
+.page-shell--home .hero__copy-button--copied .hero__copy-icon--check {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
 }
 
 .page-shell--home .hero__copy-button:hover {
@@ -6926,7 +6957,7 @@ body.lightbox-open .navbar {
     flex: 0 0 auto;
   }
 
-  .page-shell--home .hero__copy-button svg {
+  .page-shell--home .hero__copy-icon svg {
     width: 20px;
     height: 20px;
   }
