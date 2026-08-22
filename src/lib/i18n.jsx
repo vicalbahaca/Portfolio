@@ -48,24 +48,24 @@ const spanishCopy = {
         company: 'North · Tiempo completo (Barcelona)',
         period: 'Oct 2024 — Actualmente',
         summary:
-          'Responsable del diseño end-to-end de los principales canales de captación y contratación de financiación y pagos al consumo de una entidad financiera líder en España, en entornos B2B, B2C y B2B2C.',
+          'Diseñador end-to-end de los principales canales de captación y contratación de financiación y pagos al consumo de una entidad financiera líder en España, en entornos B2B, B2C y B2B2C.',
         highlights: [
           'Trabajo transversal sobre productos de financiación y pagos, incluyendo canales de captación y áreas privadas (web y app).',
           'Diseño y evolución continua de una aplicación de gestión de productos de financiación con más de 600k usuarios únicos activos.',
           'Trabajo en el rediseño end-to-end del área privada web y app para la gestión de productos de financiación: nueva experiencia, Design System y despliegue progresivo a producción junto a tecnología.',
-          'Responsable de la experiencia de financiación integrada en el checkout (e-commerce) de un activo de retail de una entidad financiera líder, orientada a mejorar conversión y contratación.',
-          'Responsable de accesibilidad en más de cinco productos financieros, preparándolos para el cumplimiento de normativa europea.',
+          'Diseñador principal de la experiencia de financiación integrada en el checkout (e-commerce) de un activo de retail de una entidad financiera líder, orientada a mejorar conversión y contratación.',
+          'Diseño de accesibilidad en más de cinco productos financieros, preparándolos para el cumplimiento de normativa europea.',
           'Impulso aprendizaje mediante workshops internos sobre nuevas herramientas, IA aplicada, accesibilidad y diseño de producto.',
         ],
       },
       {
-        role: 'Product & Engineering · Colaborador',
+        role: 'Product & Engineering · Advisor',
         company: 'Coubber (Startup) · Tiempo parcial (Barcelona)',
         period: 'Ene 2026 — Jun 2026',
         summary:
-          'Colaboración a tiempo parcial en una startup enfocada en generación de informes deportivos a partir de dispositivos de medición.',
+          'Asesoramiento a tiempo parcial en una startup enfocada en generación de informes deportivos a partir de dispositivos de medición.',
         highlights: [
-          'Diseño de la experiencia y lógica de pagos en la plataforma vía API de Stripe: planes, permisos, suscripciones, facturación y cancelaciones.',
+          'Asesoramiento sobre la experiencia y lógica de pagos en la plataforma vía API de Stripe: planes, permisos, suscripciones, facturación y cancelaciones.',
           'IA aplicada al producto para transformar datos de dispositivos en informes de valor para el usuario.',
         ],
       },
@@ -77,7 +77,6 @@ const spanishCopy = {
         highlights: [
           'Definición de un Design System escalable para acelerar la construcción y evolución del producto.',
           'Definición de soluciones digitales para contextos complejos, con foco en requisitos, negocio y trazabilidad documental.',
-          'Documentación técnica y legal asistida por IA para apoyar propuestas y concursos.',
         ],
       },
       {
@@ -86,7 +85,7 @@ const spanishCopy = {
         period: 'Ago 2023 — Jun 2024',
         summary:
           'Diseño de productos digitales y landings orientadas a conversión para empresas de marketing, portfolios y e-commerce.',
-        highlights: ['Mejora de flujos y experiencia de usuario en distintos proyectos, desde la investigación hasta la iteración de la solución.'],
+        highlights: ['Colaboración en diferentes proyectos como experto en usabilidad y patrones de usuario.'],
       },
       {
         role: 'Full Stack Developer & UX Designer & QA',
@@ -99,7 +98,7 @@ const spanishCopy = {
             highlights: [
               'Diseño y desarrollo de funcionalidades combinando visión técnica, UX y producto.',
               'Mejora continua mediante investigación, validación de flujos y QA funcional.',
-              'Responsable de un equipo de tres desarrolladores para refinar flujos y crear funcionalidades centradas en el usuario.',
+              'Responsable de un equipo de tres desarrolladores en varios proyectos end-to-end.',
             ],
           },
           {

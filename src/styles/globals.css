@@ -7226,8 +7226,8 @@ body.lightbox-open .navbar {
 
 .proposal-experience__moves {
   display: grid;
-  gap: 6px;
-  margin: 10px 0 0;
+  gap: 16px;
+  margin: 16px 0 0;
   padding: 0;
   list-style: none;
 }
@@ -7240,17 +7240,19 @@ body.lightbox-open .navbar {
 }
 
 .proposal-experience__move-role {
-  color: rgba(13, 23, 38, 0.72);
-  font-size: 0.92rem;
+  color: #091427;
+  font-size: clamp(1rem, 0.16vw + 0.96rem, 1.08rem);
+  font-weight: 700;
   line-height: 1.45;
+  letter-spacing: -0.02em;
 }
 
 .proposal-experience__move-period {
   flex: 0 0 auto;
-  color: rgba(13, 23, 38, 0.5);
-  font-size: 0.78rem;
-  font-weight: 620;
-  letter-spacing: 0.06em;
+  color: rgba(13, 23, 38, 0.62);
+  font-size: 0.84rem;
+  font-weight: 650;
+  letter-spacing: 0.02em;
   text-transform: none;
 }
 
@@ -7278,7 +7280,13 @@ body.lightbox-open .navbar {
 .proposal-experience__move {
   display: grid;
   gap: 6px;
-  padding-top: 8px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(13, 23, 38, 0.1);
+}
+
+.proposal-experience__move:first-child {
+  padding-top: 0;
+  border-top: 0;
 }
 
 .proposal-experience__move-head {
