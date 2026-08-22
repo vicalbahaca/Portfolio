@@ -63,7 +63,7 @@ const spanishCopy = {
         company: 'Coubber (Startup) - Tiempo parcial (Barcelona)',
         period: 'Ene 2026 — Jun 2026',
         summary:
-          'Asesoramiento a tiempo parcial en una startup enfocada en generación de informes deportivos a partir de dispositivos de medición.',
+          'Asesoramiento en una startup enfocada en generación de informes deportivos a partir de dispositivos de medición.',
         highlights: [
           'Asesoramiento sobre la experiencia y lógica de pagos en la plataforma vía API de Stripe: planes, permisos, suscripciones, facturación y cancelaciones.',
           'IA aplicada al producto para transformar datos de dispositivos en informes de valor para el usuario.',
