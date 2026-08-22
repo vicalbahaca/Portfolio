@@ -401,74 +401,74 @@ export const portfolioSection = {
 export const workshopsPage = {
   title: 'Workshops',
   description:
-    'Sesiones diseñadas para convertir conocimiento complejo en decisiones, prácticas compartidas y formas de trabajo que el equipo puede aplicar al día siguiente.',
+    'Sesiones prácticas para convertir problemas reales en decisiones y formas de trabajo útiles para el equipo.',
   image: '/portfolio-north/covers/workshops.png',
   principles: [
     {
       title: 'Partir de un problema real',
       text:
-        'Todo empieza con una detección: un problema, una fricción o una oportunidad concreta. A partir de ahí decidimos si hace falta un design chapter, un workshop u otro espacio de trabajo para entenderlo mejor y convertirlo en aprendizaje útil.',
+        'Empezamos por un problema, una fricción o una oportunidad concreta. Elegimos el formato adecuado para entenderlo y definir el siguiente paso.',
     },
     {
       title: 'Hacer para aprender',
       text:
-        'Combinamos textos, ejercicios, juegos y casos reales para que todo el mundo pueda detectar los problemas, discutirlos y participar en la construcción de una solución.',
+        'Usamos ejercicios y casos reales para detectar problemas, compartir puntos de vista y probar soluciones.',
     },
     {
       title: 'Aprendizaje constante',
       text:
-        'Cada persona aprende desde su contexto y el grupo comparte lo aprendido para trabajar mejor, crecer como profesionales y construir relaciones más horizontales dentro del equipo.',
+        'Recogemos lo aprendido y lo aplicamos al trabajo diario del equipo.',
     },
   ],
   tracks: [
     {
       title: 'Accesibilidad aplicada',
       summary:
-        'Fundamentos WCAG, HTML semántico, documentación accesible y traducción de auditorías a decisiones de producto.',
+        'WCAG, HTML semántico y documentación para convertir auditorías en decisiones de producto.',
       outcomes: [
-        'Identificar barreras frecuentes desde diseño.',
+        'Detectar barreras frecuentes desde diseño.',
         'Documentar comportamiento, semántica y estados.',
-        'Preparar entregables verificables para desarrollo y QA.',
+        'Preparar entregables claros para desarrollo y QA.',
       ],
     },
     {
       title: 'IA para diseño y producto',
       summary:
-        'Exploración práctica de herramientas de IA para elegir mejor cómo investigar, sintetizar, prototipar y documentar según cada problema.',
+        'Uso práctico de IA para investigar, sintetizar, prototipar y documentar.',
       outcomes: [
-        'Elegir herramientas según el problema y no por novedad.',
-        'Construir prototipos y explorar soluciones con distintos niveles de fidelidad.',
-        'Comparar velocidad, calidad, privacidad y utilidad antes de incorporar una herramienta.',
+        'Elegir herramientas según el problema.',
+        'Prototipar y explorar soluciones.',
+        'Valorar velocidad, calidad, privacidad y utilidad antes de usarlas.',
       ],
     },
     {
       title: 'Design chapters y Figma',
       summary:
-        'Workshops recurrentes para mantenernos al día de Figma, IA y prácticas compartidas que afectan al trabajo diario del equipo.',
+        'Sesiones para compartir novedades de Figma, IA y formas de trabajo.',
       outcomes: [
-        'Explorar actualizaciones como branches, Figma Make y nuevas formas de colaborar.',
-        'Detectar temas comunes y convertirlos en sesiones de aprendizaje compartido.',
-        'Combinar design critiques, prototipado rápido y revisión entre pares.',
+        'Revisar actualizaciones y nuevas formas de colaborar.',
+        'Convertir temas comunes en sesiones de aprendizaje.',
+        'Combinar crítica de diseño, prototipado y revisión entre pares.',
       ],
     },
     {
       title: 'Prototipado con nuevas herramientas',
       summary:
-        'Un espacio para probar herramientas distintas y comprobar cuál se adapta mejor al Design System, a la velocidad del equipo y a sus necesidades cotidianas.',
+        'Prueba de herramientas para elegir las que encajan con el Design System y el trabajo diario.',
       outcomes: [
-        'Construir un prototipo individual con una herramienta diferente.',
-        'Comparar rapidez, calidad de integración y capacidad de reutilización.',
-        'Compartir aprendizajes antes de incorporar nuevas prácticas al equipo.',
+        'Crear un prototipo con una herramienta distinta.',
+        'Comparar rapidez, integración y reutilización.',
+        'Compartir aprendizajes antes de adoptar nuevas prácticas.',
       ],
     },
     {
       title: 'DesignOps y calidad de entrega',
       summary:
-        'Sesiones para mejorar el onboarding, la documentación, la nomenclatura y los happy paths entre equipos multidisciplinares sin añadir esfuerzo innecesario al día a día.',
+        'Mejora de onboarding, documentación y entregables entre diseño, producto y tecnología.',
       outcomes: [
-        'Mejorar el onboarding de nuevas personas dentro del equipo.',
-        'Documentar entregables, nomenclaturas y recorridos compartidos.',
-        'Crear happy paths para distintas áreas sin aumentar la carga operativa.',
+        'Mejorar el onboarding de nuevas personas.',
+        'Documentar entregables, nomenclaturas y recorridos comunes.',
+        'Definir recorridos claros para las distintas áreas.',
       ],
     },
   ],

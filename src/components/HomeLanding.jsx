@@ -246,14 +246,17 @@ export default function HomeLanding() {
               Ver programa de workshops
             </Link>
           </div>
-          <div className="home-workshops__media">
-            <Image
-              src={workshopsPage.image}
-              alt="Personas participando en un workshop de producto"
-              fill
-              sizes="(max-width: 900px) 100vw, 56vw"
-            />
-          </div>
+          <figure className="home-workshops__figure">
+            <div className="home-workshops__media">
+              <Image
+                src={workshopsPage.image}
+                alt="Personas participando en un workshop de producto"
+                fill
+                sizes="280px"
+              />
+            </div>
+            <figcaption>Imagen de referencia. No corresponde a un workshop real.</figcaption>
+          </figure>
         </div>
       </section>
 

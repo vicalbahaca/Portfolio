@@ -31,15 +31,18 @@ export default function WorkshopsPage() {
                 <h1>{workshopsPage.title}</h1>
                 <p>{workshopsPage.description}</p>
               </div>
-              <div className="workshops-hero__media">
-                <Image
-                  src={workshopsPage.image}
-                  alt="Personas participando en una sesión de facilitación de producto"
-                  fill
-                  sizes="100vw"
-                  priority
-                />
-              </div>
+              <figure className="workshops-hero__figure">
+                <div className="workshops-hero__media">
+                  <Image
+                    src={workshopsPage.image}
+                    alt="Personas participando en una sesión de facilitación de producto"
+                    fill
+                    sizes="(max-width: 620px) 280px, 50vw"
+                    priority
+                  />
+                </div>
+                <figcaption>Imagen de referencia. No corresponde a un workshop real.</figcaption>
+              </figure>
             </div>
           </header>
 
@@ -67,7 +70,7 @@ export default function WorkshopsPage() {
                 <span className="workshops-section-heading__index">02</span>
                 <h2 id="workshops-program-title">Líneas de trabajo</h2>
                 <p>
-                  Esta página recoge el marco de trabajo, los temas compartidos y las prácticas que se pueden activar según las necesidades del equipo.
+                  Temas y prácticas que se adaptan a las necesidades de cada equipo.
                 </p>
               </div>
 

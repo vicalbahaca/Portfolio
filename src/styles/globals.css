@@ -8255,11 +8255,22 @@ body.lightbox-open .navbar {
   margin-top: 12px;
 }
 
+.home-workshops__figure,
+.workshops-hero__figure {
+  display: grid;
+  gap: 8px;
+  width: min(100%, 280px);
+  margin: 0;
+}
+
+.home-workshops__figure {
+  justify-self: end;
+}
+
 .home-workshops__media {
   position: relative;
   display: block;
-  width: min(100%, 560px);
-  justify-self: end;
+  width: 100%;
   aspect-ratio: 16 / 10;
   overflow: hidden;
   border: 1px solid rgba(13, 23, 38, 0.08);
@@ -8269,6 +8280,14 @@ body.lightbox-open .navbar {
 
 .home-workshops__media img {
   object-fit: cover;
+}
+
+.home-workshops__figure figcaption,
+.workshops-hero__figure figcaption {
+  margin: 0;
+  color: rgba(13, 23, 38, 0.58);
+  font-size: 0.78rem;
+  line-height: 1.4;
 }
 
 /* Keep every text layer in the North section legible on its black surface. */
@@ -8330,7 +8349,7 @@ body .page-shell--home .home-north .home-project__subtitle {
 
 .workshops-hero__copy {
   display: grid;
-  gap: 18px;
+  gap: 14px;
   width: 100%;
   max-width: none;
 }
@@ -8349,8 +8368,13 @@ body .page-shell--home .home-north .home-project__subtitle {
   max-width: none;
   margin: 0;
   color: rgba(13, 23, 38, 0.72);
-  font-size: clamp(1.08rem, 2vw, 1.34rem);
-  line-height: 1.5;
+  font-size: 1.04rem;
+  line-height: 1.58;
+}
+
+.workshops-hero__figure {
+  justify-self: end;
+  width: min(50%, 560px);
 }
 
 .workshops-hero__media {
@@ -8368,7 +8392,7 @@ body .page-shell--home .home-north .home-project__subtitle {
 
 .workshops-section-heading {
   display: grid;
-  gap: 14px;
+  gap: 12px;
   max-width: 760px;
   margin-bottom: clamp(32px, 5vw, 56px);
 }
@@ -8400,7 +8424,8 @@ body .page-shell--home .home-north .home-project__subtitle {
   max-width: 62ch;
   margin: 0;
   color: rgba(13, 23, 38, 0.68);
-  line-height: 1.62;
+  font-size: 1.04rem;
+  line-height: 1.58;
 }
 
 .workshops-principles__grid {
@@ -8448,6 +8473,7 @@ body .page-shell--home .home-north .home-project__subtitle {
 .workshops-track li {
   margin: 0;
   color: rgba(13, 23, 38, 0.68);
+  font-size: 1.04rem;
   line-height: 1.58;
 }
 
@@ -8525,6 +8551,10 @@ body .page-shell--home .home-north .home-project__subtitle {
   }
 
   .home-workshops__media {
+    margin-top: 0;
+  }
+
+  .home-workshops__figure {
     margin-top: 24px;
     justify-self: start;
   }
@@ -8568,6 +8598,11 @@ body .page-shell--home .home-north .home-project__subtitle {
 
   .workshops-hero__media {
     aspect-ratio: 4 / 3;
+  }
+
+  .workshops-hero__figure {
+    width: min(100%, 280px);
+    justify-self: start;
   }
 
   .workshops-track {
