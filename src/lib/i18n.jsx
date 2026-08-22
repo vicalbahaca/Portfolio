@@ -45,7 +45,7 @@ const spanishCopy = {
     experienceItems: [
       {
         role: 'Principal Product Designer',
-        company: 'North · Tiempo completo (Barcelona)',
+        company: 'North - Tiempo completo (Barcelona)',
         period: 'Oct 2024 — Actualmente',
         summary:
           'Diseñador end-to-end de los principales canales de captación y contratación de financiación y pagos al consumo de una entidad financiera líder en España, en entornos B2B, B2C y B2B2C.',
@@ -59,8 +59,8 @@ const spanishCopy = {
         ],
       },
       {
-        role: 'Product & Engineering · Advisor',
-        company: 'Coubber (Startup) · Tiempo parcial (Barcelona)',
+        role: 'Product & Engineering - Advisor',
+        company: 'Coubber (Startup) - Tiempo parcial (Barcelona)',
         period: 'Ene 2026 — Jun 2026',
         summary:
           'Asesoramiento a tiempo parcial en una startup enfocada en generación de informes deportivos a partir de dispositivos de medición.',
@@ -71,7 +71,7 @@ const spanishCopy = {
       },
       {
         role: 'Product Designer Lead',
-        company: 'Lowerton (Startup) · Tiempo completo (Remoto)',
+        company: 'Lowerton (Startup) - Tiempo completo (Remoto)',
         period: 'Mar 2024 — Oct 2024',
         summary: 'Lideré la conceptualización y diseño de producto en fase early stage, contribuyendo a la entrada del proyecto en Lanzadera, aceleradora de empresas impulsada por Juan Roig.',
         highlights: [
@@ -81,7 +81,7 @@ const spanishCopy = {
       },
       {
         role: 'UX/UI Freelance',
-        company: 'Freelance · Autónomo',
+        company: 'Freelance - Autónomo',
         period: 'Ago 2023 — Jun 2024',
         summary:
           'Diseño de productos digitales y landings orientadas a conversión para empresas de marketing, portfolios y e-commerce.',
@@ -89,7 +89,7 @@ const spanishCopy = {
       },
       {
         role: 'Full Stack Developer & UX Designer & QA',
-        company: 'Deusto SEIDOR S.A · Tiempo completo (Vitoria)',
+        company: 'Deusto SEIDOR S.A - Tiempo completo (Vitoria)',
         period: 'Mar 2021 — Ago 2023',
         moves: [
           {
@@ -120,7 +120,7 @@ const spanishCopy = {
       },
       {
         role: 'Técnico informático - Intern',
-        company: 'NSM Educational Center · Tiempo completo (Vitoria)',
+        company: 'NSM Educational Center - Tiempo completo (Vitoria)',
         period: 'Mar 2019 — Jun 2019',
         highlights: [
           'Rediseño y desarrollo de un sistema en WordPress para gestionar recursos educativos y mejorar la eficiencia diaria.',
