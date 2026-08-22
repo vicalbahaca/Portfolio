@@ -2322,7 +2322,7 @@
 
 .finalSectionHeader p {
   max-width: 68ch;
-  margin-top: 26px;
+  margin-top: 16px;
   font-size: 0.95rem;
   line-height: 1.55;
 }
@@ -2381,14 +2381,14 @@
 
 .finalRoleLead {
   max-width: 1020px;
-  margin-bottom: 120px;
+  margin-bottom: 36px;
   font-family: Georgia, 'Times New Roman', serif;
   font-size: 1.04rem;
   line-height: 1.62;
 }
 
 .finalRole > .finalSectionHeader {
-  margin-bottom: 72px;
+  margin-bottom: 28px;
 }
 
 .finalRoleList {
