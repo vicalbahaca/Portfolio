@@ -2335,8 +2335,8 @@
 
 .finalProse p {
   font-family: Georgia, 'Times New Roman', serif;
-  font-size: clamp(1.3rem, 1.75vw, 1.75rem);
-  line-height: 1.36;
+  font-size: 1.04rem;
+  line-height: 1.62;
 }
 
 .finalContextMedia {
@@ -2383,8 +2383,8 @@
   max-width: 1020px;
   margin-bottom: 120px;
   font-family: Georgia, 'Times New Roman', serif;
-  font-size: clamp(1.6rem, 2.3vw, 2.45rem);
-  line-height: 1.18;
+  font-size: 1.04rem;
+  line-height: 1.62;
 }
 
 .finalRole > .finalSectionHeader {
@@ -2467,7 +2467,7 @@
 .finalChallengeProblem > p:last-child {
   max-width: 72ch;
   margin-top: 22px;
-  font-size: 1.08rem;
+  font-size: 1.04rem;
   line-height: 1.58;
 }
 
@@ -2627,8 +2627,8 @@
 .finalChallengeResult > p:last-child {
   max-width: 68ch;
   font-family: Georgia, 'Times New Roman', serif;
-  font-size: clamp(1.35rem, 2.4vw, 2.2rem);
-  line-height: 1.22;
+  font-size: 1.04rem;
+  line-height: 1.58;
 }
 
 .finalProductDecisionList {
@@ -3562,7 +3562,7 @@
   }
 
   .finalProse p {
-    font-size: 1.3rem;
+    font-size: 1.04rem;
   }
 
   .finalContextScreens {
@@ -3571,7 +3571,7 @@
   }
 
   .finalRoleLead {
-    font-size: 1.8rem;
+    font-size: 1.04rem;
   }
 
   .finalChallenge > header h3 {
@@ -3579,7 +3579,7 @@
   }
 
   .finalChallengeProblem > p:last-child {
-    font-size: 0.94rem;
+    font-size: 1.04rem;
   }
 
   .finalStakeholderRows article {
@@ -3600,7 +3600,7 @@
 
   .finalChallengeResult > p:last-child {
     margin-top: 20px;
-    font-size: 1.3rem;
+    font-size: 1.04rem;
   }
 
   .finalChallenge {
