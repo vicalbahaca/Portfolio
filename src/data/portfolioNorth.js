@@ -112,139 +112,51 @@ export const portfolioSection = {
         contextLabel: 'Servicios financieros regulados',
         productLabel: '5 activos - 3 webs - 2 aplicaciones nativas',
         context: [
-          'La entrada en aplicación del Acta Europea de Accesibilidad situó la accesibilidad como una responsabilidad de producto continua. En servicios financieros, esto afecta a la comprensión, los formularios, la identificación, los pagos y las confirmaciones de operaciones sensibles.',
-          'Un workshop común ayudó a alinear a los equipos sobre los principios WCAG: una interfaz debe ser perceptible, operable, comprensible y robusta. El reto real era llevar esos principios a decisiones concretas y repetibles en productos distintos.',
+          'La entrada en aplicación del **Acta Europea de Accesibilidad** convirtió la accesibilidad en una responsabilidad continua para los productos financieros digitales.',
+          'En verano de 2025, varios partners auditaron **cinco productos digitales: tres webs y dos aplicaciones nativas**. Todos presentaban barreras, aunque con diferente gravedad y naturaleza.',
         ],
         role: {
-          lead:
-            'Coordiné la conversión de auditorías externas en una forma de trabajo común para diseño y tecnología, sin tratar la accesibilidad como una revisión al final del proyecto.',
           bullets: [
-            'Normalizar los hallazgos de cinco activos con barreras y prioridades diferentes.',
-            'Crear el backlog y los criterios de aceptación que conectaban evidencia, diseño, desarrollo y validación.',
-            'Documentar en Figma los requisitos visuales y técnicos: foco, orden de lectura, semántica, estados, etiquetas y contraste.',
-            'Facilitar workshops de aprendizaje y alinear el handoff con equipos tecnológicos diferentes.',
-            'Acompañar QA con teclado y tecnologías de asistencia en web, macOS, iOS y Android.',
+            'Convertí las auditorías en un **backlog común**, con prioridades y fechas de entrega.',
+            'Documenté en Figma los cambios visuales, de comportamiento y semántica necesarios.',
+            'Acompañé el handoff y el **QA con teclado y tecnologías de asistencia**.',
           ],
         },
-        challengesTitle: 'De auditoría a QA',
-        challengesDescription:
-          'Un proceso compartido de cinco fases para que los hallazgos no quedaran aislados entre productos, equipos o plataformas.',
+        challengesTitle: 'Proceso',
+        challengesDescription: '',
         challenges: [
           {
             number: '01',
-            title: 'Convertir hallazgos distintos en un sistema de entrega',
+            title: 'Documentación de accesibilidad',
             problem:
-              'Una empresa externa auditó cinco activos: tres webs y dos aplicaciones nativas. Todos presentaban barreras, aunque de naturaleza y gravedad diferentes. El riesgo era resolver incidencias aisladas sin cambiar la forma de diseñar, implementar y verificar.',
+              'Cada auditoría utilizaba evidencias y niveles de detalle diferentes. El reto era convertir los hallazgos en **decisiones claras, trazables y verificables** para diseño y tecnología.',
             process: [
               {
-                title: 'Auditoría externa',
-                description: 'Recoger evidencia y barreras de cada activo.',
+                title: 'Analizar',
+                description: 'Revisar cada auditoría, los criterios afectados y las pantallas implicadas.',
               },
               {
-                title: 'Análisis y backlog',
-                description: 'Normalizar, priorizar y convertir hallazgos en trabajo trazable.',
+                title: 'Planificar',
+                description: 'Crear el backlog y las **fechas de entrega** de documentación y ajustes visuales.',
               },
               {
-                title: 'Documentación y workshops',
-                description: 'Acordar criterios visuales y técnicos desde Figma.',
+                title: 'Documentar y formar',
+                description: 'Actualizar los archivos de Figma e impartir workshops prácticos al equipo.',
               },
               {
-                title: 'Entrega',
-                description: 'Alinear el handoff con los equipos de tecnología responsables.',
+                title: 'Entregar',
+                description: 'Compartir la documentación con equipos tecnológicos internos y externos.',
               },
               {
                 title: 'QA',
-                description: 'Verificar teclado, lectores de pantalla, estructura y contraste.',
+                description: 'Validar con teclado, lectores de pantalla y otras tecnologías de asistencia.',
               },
             ],
             result:
-              'Los equipos compartieron un backlog, una documentación y una secuencia de validación comunes, adaptables a cada plataforma sin perder trazabilidad.',
+              'Una documentación trazable para cada producto y una validación compartida entre diseño y tecnología.',
           },
-        ],
-        modelTitle: 'Criterios que se hicieron entregables',
-        modelDescription:
-          'La documentación no se limitó a señalar errores: dejó claro cómo debía comportarse cada interfaz y cómo comprobar su implementación.',
-        model: [
-          {
-            title: 'Diseño accesible',
-            description: 'Contraste, foco, contenido no textual, uso de color y estados visibles.',
-          },
-          {
-            title: 'Estructura y semántica',
-            description: 'Encabezados, landmarks, enlaces, botones, formularios y mensajes de error.',
-          },
-          {
-            title: 'Lectura y navegación',
-            description: 'Orden de lectura, navegación por teclado y nombres accesibles en cada flujo.',
-          },
-          {
-            title: 'Validación',
-            description: 'QA con NVDA y VoiceOver, además de comprobaciones de teclado y contraste.',
-          },
-        ],
-        resultsTitle: 'Una práctica común para el equipo',
-        resultsDescription:
-          'El resultado fue una base compartida de trabajo y verificación. No se publican porcentajes de cumplimiento ni incidencias cerradas sin una medición validada.',
-        results: [
-          'Cinco activos abordados con el mismo marco de auditoría, priorización, entrega y QA.',
-          'Documentación en Figma que conectó decisiones visuales, comportamiento y requisitos técnicos.',
-          'Equipos de diseño y tecnología con un lenguaje común para aplicar y revisar criterios de accesibilidad.',
         ],
       },
-      detailSections: [
-        {
-          title: 'Por qué ahora',
-          body:
-            'La Ley 11/2023 trasladó al ordenamiento español el Acta Europea de Accesibilidad y fijó su aplicación efectiva para determinados productos y servicios desde el 28 de junio de 2025.',
-          paragraphs: [
-            'El alcance incluye servicios bancarios para consumidores y comercio electrónico. Para los equipos de producto, esto convirtió la accesibilidad en una responsabilidad continua sobre flujos, contenido, componentes y tecnología, no en una revisión final.',
-          ],
-          points: [
-            'Criterios funcionales para que la experiencia sea perceptible, operable, comprensible y robusta.',
-            'Nivel AA de WCAG como referencia de trabajo para las interfaces digitales.',
-            'Atención especial a identificación, seguridad, formularios y pagos.',
-          ],
-        },
-        {
-          title: 'Cobertura del programa',
-          body:
-            'El trabajo abarcó canales públicos y privados, tanto web como aplicaciones nativas para Android e iOS.',
-          paragraphs: [
-            'Cada plataforma exigía adaptar el criterio: semántica y teclado en web, tecnologías de asistencia y componentes nativos en mobile, y especial cuidado con validaciones, errores y confirmaciones en operativas financieras.',
-          ],
-          points: [
-            'Web pública: captación, información y contratación.',
-            'Web privada: consulta y gestión de productos.',
-            'Apps nativas: navegación, estados, foco, lectura y acciones críticas.',
-          ],
-        },
-        {
-          title: 'De la auditoría al roadmap',
-          body:
-            'Las auditorías externas se transformaron en un inventario único, priorizado y conectado con los equipos responsables.',
-          paragraphs: [
-            'Normalicé los hallazgos para evitar duplicidades, los agrupé por patrón y severidad y los traduje a iniciativas y user stories. Así, cada incidencia podía seguirse desde la evidencia inicial hasta diseño, desarrollo, QA y cierre.',
-          ],
-          points: [
-            'Clasificación por impacto, recurrencia, plataforma y dependencia.',
-            'Roadmaps diferenciados entre correcciones sistémicas y casos de producto.',
-            'Criterios de aceptación verificables para producto y tecnología.',
-          ],
-        },
-        {
-          title: 'Documentación y adopción',
-          body:
-            'La solución solo escalaba si las decisiones quedaban integradas en la forma habitual de diseñar y entregar.',
-          paragraphs: [
-            'Preparé documentación en Figma con comportamiento, semántica, estados y orden de lectura; además, facilité sesiones para que diseño y desarrollo pudieran aplicar los criterios desde el inicio.',
-          ],
-          points: [
-            'Handoffs accesibles con anotaciones funcionales y casos límite.',
-            'Criterios incorporados a componentes y patrones reutilizables.',
-            'Workshops prácticos sobre WCAG, HTML semántico y atributos ARIA.',
-          ],
-        },
-      ],
       sources: [
         {
           label: 'Ley 11/2023 en el BOE',
@@ -268,7 +180,7 @@ export const portfolioSection = {
       cardImageMode: 'cover',
       cardUseBackdrop: false,
       accent: '#315cf4',
-      client: 'Producto financiero B2B2C',
+      client: 'Producto financiero B2C y B2B2C',
       industry: 'Fintech - Captación y contratación',
       role: 'Principal Product Designer',
       scope: 'Service design, arquitectura y modelo operativo',
@@ -283,115 +195,54 @@ export const portfolioSection = {
       description:
         'La información se presenta de forma deliberadamente general: sin marcas, pantallas, reglas de financiación ni detalles operativos. El valor del caso está en cómo se estructuró el problema y se alinearon decisiones entre áreas.',
       editorialCase: {
-        contextLabel: 'Canales de captación B2B2C',
+        contextLabel: 'Canales de captación B2C y B2B2C',
         productLabel: 'Pagos al consumo y financiación',
         context: [
-          'Los canales de prescripción conectan a potenciales clientes con productos de pagos al consumo y financiación a través de compañías que mantienen un acuerdo con la entidad bancaria. Son una vía principal de captación y reúnen contextos online, presenciales, B2B, B2C y B2B2C.',
-          'Con el tiempo, la respuesta a necesidades de prescriptores, servicios y productos concretos había creado varios activos. Compartían parte de la propuesta, pero diferían en rango de financiación, tipo de producto, relación previa con el cliente y operativa. Mantenerlos de forma aislada multiplicaba el esfuerzo de evolución, los cambios normativos y la dificultad para entender el rendimiento conjunto.',
+          'Los canales de prescripción permiten contratar productos de pagos al consumo y financiación en entornos **B2C y B2B2C**.',
+          'Había tres modalidades: **presencial**, desde comercios asociados; **online**, con redirección desde el checkout del comercio; e **híbrida**, iniciando el proceso de forma presencial y terminándolo online.',
+          'Los activos se habían creado ad hoc para diferentes clientes y momentos. Esto generó duplicidades y diferencias en los datos solicitados para contratar un mismo producto.',
         ],
         role: {
           lead:
-            'El equipo de North identificó un número elevado de canales de captación, con capacidades solapadas y un esfuerzo de mantenimiento creciente. A partir de un análisis alineado con negocio, se planteó la unificación progresiva como una iniciativa de servicio priorizable.',
+            'El objetivo fue ordenar un número elevado de canales de captación y preparar una **propuesta de unificación** alineada con negocio.',
           bullets: [
-            'Inventariar los activos, sus capacidades, públicos, productos y particularidades operativas.',
-            'Identificar patrones compartidos, solapamientos y excepciones que no podían resolverse con una única interfaz.',
-            'Traducir el análisis en un modelo común comprensible para negocio, producto, diseño y tecnología.',
-            'Definir una propuesta de fases que tuviera en cuenta capacidad disponible, riesgo de transición y necesidades normativas.',
-            'Presentar el plan de unificación y acompañar el inicio de la primera fase sobre un conjunto acotado de activos.',
+            'Inventarié activos, productos, propiedades, datos solicitados y dependencias.',
+            'Comparé casos de uso para detectar duplicidades y diferencias necesarias.',
+            'Preparé una propuesta común para reducir mantenimiento y costes de evolución.',
           ],
         },
+        challengesTitle: 'Dos retos de la unificación',
+        challengesDescription: 'Análisis del ecosistema y definición de una experiencia común para los canales online.',
         challenges: [
           {
             number: '01',
-            title: 'Entender un servicio que se había repartido entre muchos activos',
+            title: 'Inventariar y analizar los canales actuales',
             problem:
-              'El elevado número de canales no era solo una cuestión visual. Cada uno había evolucionado con prioridades, vocabulario y reglas propias, por lo que antes de decidir qué unificar había que delimitar qué partes respondían realmente al mismo servicio.',
+              'El elevado número de canales no era solo una diferencia visual. Cada activo pedía datos y resolvía la contratación de forma distinta, aunque ofreciera líneas de crédito o préstamos similares.',
             process: [
-              { title: 'Inventariar', description: 'Recoger activos, productos, capacidades, actores y dependencias.' },
-              { title: 'Comparar', description: 'Distinguir recorridos repetidos de diferencias con valor real.' },
-              { title: 'Mapear', description: 'Relacionar tipo de cliente, contexto de contratación y nivel de servicio.' },
-              { title: 'Enmarcar', description: 'Convertir el diagnóstico en una oportunidad concreta para negocio.' },
+              { title: 'Recoger', description: 'Inventariar **activos, productos, propiedades y dependencias**.' },
+              { title: 'Comparar', description: 'Revisar en qué casos se utilizaba cada canal y qué datos pedía.' },
+              { title: 'Diagnosticar', description: 'Separar duplicidades de diferencias necesarias por producto o usuario.' },
             ],
             result:
-              'Una visión compartida del ecosistema, sus solapamientos y las decisiones que requerían una respuesta transversal en lugar de mejoras aisladas.',
+              'Un diagnóstico compartido del ecosistema, sus duplicidades y las decisiones que requerían una solución común.',
           },
           {
             number: '02',
-            title: 'Definir lo común sin borrar diferencias necesarias',
+            title: 'Definir la unificación de los canales online',
             problem:
-              'Los canales debían poder compartir una base de producto, pero no todos atendían al mismo usuario, producto o contexto. Simplificar sin criterio podía eliminar condiciones necesarias para cada prescriptor o tipo de contratación.',
+              'La mayor duplicidad estaba en los canales online. Para unificarlos había que saber qué datos eran obligatorios por normativa, cuáles interesaban a CaixaBank y qué dependencias cambiaban entre clientes y no clientes.',
             process: [
-              { title: 'Separar', description: 'Diferenciar el núcleo de captación de las variantes por producto o perfil.' },
-              { title: 'Normalizar', description: 'Crear un vocabulario y unas capacidades comunes para discutir el servicio.' },
-              { title: 'Modelar', description: 'Plantear una arquitectura que admitiera excepciones explícitas y trazables.' },
-              { title: 'Priorizar', description: 'Ordenar el alcance según valor, recurrencia, riesgo y capacidad de entrega.' },
+              { title: 'Revisar', description: 'Validar uno a uno los canales online y la información solicitada.' },
+              { title: 'Definir datos', description: 'Separar requisitos normativos de datos útiles para el alta y la contratación.' },
+              { title: 'Resolver dependencias', description: 'Distinguir recorridos para **clientes CaixaBank y no clientes**.' },
+              { title: 'Proponer', description: 'Diseñar una experiencia común para reducir activos y mantenimiento.' },
             ],
             result:
-              'Un modelo de producto que permite reutilizar capacidades compartidas y mantener visibles las variantes que sí requieren un tratamiento específico.',
+              'La propuesta de unificación se entregó a dirección y está actualmente en evaluación por parte de negocio.',
           },
-          {
-            number: '03',
-            title: 'Convertir el diagnóstico en una transición viable',
-            problem:
-              'Los cambios normativos debían aplicarse en varios activos y los equipos de diseño y tecnología no tenían capacidad para mantenerlos todos al mismo ritmo. El plan necesitaba reducir carga sin prometer una sustitución inmediata de todo el ecosistema.',
-            process: [
-              { title: 'Contrastar', description: 'Aterrizar dependencias, capacidad disponible y condiciones de transición.' },
-              { title: 'Fasear', description: 'Seleccionar un primer conjunto de activos con una lógica de unificación viable.' },
-              { title: 'Acordar', description: 'Cerrar prioridades, responsables y criterios para avanzar con negocio.' },
-              { title: 'Preparar', description: 'Dejar una secuencia replicable para las siguientes oleadas.' },
-            ],
-            result:
-              'Un plan presentado a negocio y el inicio de la primera fase de consolidación de varios activos en una experiencia común.',
-          },
-        ],
-        results: [
-          'Análisis transversal de canales, actores, productos, capacidades y diferencias relevantes.',
-          'Modelo común para alinear a negocio, producto, diseño y tecnología sobre la misma dirección.',
-          'Plan de unificación presentado a negocio con fases, prioridades y dependencias identificadas.',
-          'Inicio de la primera fase para consolidar varios activos bajo una experiencia compartida.',
         ],
       },
-      detailSections: [
-        {
-          title: 'Un ecosistema de canales sobredimensionado',
-          body:
-            'El equipo de North identificó un número elevado de canales creados en momentos distintos, con necesidades similares resueltas mediante lógicas, vocabulario y niveles de servicio diferentes.',
-          paragraphs: [
-            'Antes de unificar interfaces era necesario entender qué tareas, actores, reglas y dependencias pertenecían realmente al mismo servicio.',
-          ],
-          points: [
-            'Inventario de canales, capacidades y solapamientos.',
-            'Mapa de actores internos y externos.',
-            'Identificación de momentos críticos y rupturas entre canales.',
-          ],
-        },
-        {
-          title: 'Modelo común',
-          body:
-            'La propuesta se construyó alrededor de capacidades compartidas, no alrededor de las limitaciones de cada canal heredado.',
-          paragraphs: [
-            'Se definió una arquitectura funcional y un vocabulario común para que producto, negocio y tecnología pudieran discutir la misma experiencia sin depender de una pantalla concreta.',
-          ],
-          points: [
-            'Principios y reglas comunes para los principales journeys.',
-            'Arquitectura escalable para distintos perfiles y contextos.',
-            'Separación clara entre núcleo compartido y necesidades específicas.',
-          ],
-        },
-        {
-          title: 'Alineación y decisiones',
-          body:
-            'La facilitación fue clave para convertir posiciones de área en decisiones trazables de producto.',
-          paragraphs: [
-            'Los workshops se utilizaron para validar hipótesis, resolver contradicciones y cerrar acuerdos sobre prioridades, ownership y secuencia de entrega.',
-          ],
-          points: [
-            'Sesiones de co-definición con negocio, operaciones y tecnología.',
-            'Matriz de decisiones, dependencias y responsables.',
-            'Roadmap progresivo para reducir riesgo de transición.',
-          ],
-        },
-      ],
     },
     {
       slug: 'facilitea-ecommerce',
@@ -430,13 +281,10 @@ export const portfolioSection = {
           alt: 'Página principal de Facilitea con navegación, campaña destacada y catálogo de productos.',
         },
         role: {
-          lead:
-            'Responsabilidad de consultoría y diseño para convertir necesidades de negocio y señales del mercado en decisiones ejecutables que hicieran evolucionar el e-commerce.',
           bullets: [
-            'Asumir el ownership de la herramienta para oficinas y de los journeys de financiación, checkout y posventa de Facilitea.com.',
-            'Definir necesidades junto a negocio, operaciones, legal, seguridad y tecnología antes de diseñar cada evolución.',
-            'Diseñar y documentar journeys, reglas de interfaz, estados y casos límite para desarrollo.',
-            'Acompañar handoff, QA y las iteraciones posteriores a cada entrada en producción.',
+            'Diseñador principal de la implementación de **cross-selling de seguros y financiación** en el checkout.',
+            'Evolución y mantenimiento del software utilizado por los **gestores de oficinas**.',
+            'Mejora continua de los journeys de **financiación, checkout y posventa** de Facilitea.com.',
           ],
         },
         challengesTitle: 'Dos retos de evolución',
@@ -445,31 +293,33 @@ export const portfolioSection = {
         challenges: [
           {
             number: '01',
-            title: 'Llevar la financiación al momento de compra',
+            title: 'Llevar seguros y financiación al checkout',
             problem:
-              'La financiación debía responder a distintas condiciones de producto y contratación. El reto era que pudiera entenderse y gestionarse desde el checkout, sin obligar a cambiar de canal ni a interpretar información dispersa.',
+              'Las versiones anteriores de Facilitea.com no incorporaban cross-selling de seguros para las distintas tipologías de producto ni una financiación integrada mediante **CaixaBank Payments & Consumer**. El reto era incluir ambas opciones en el momento de compra sin romper el checkout.',
             process: [
-              { title: 'Mapear oferta', description: 'Recoger escenarios de compra, posibilidades de financiación y restricciones relevantes.' },
-              { title: 'Priorizar journeys', description: 'Distinguir los recorridos que requieren una decisión de financiación dentro de la compra.' },
-              { title: 'Diseñar contratación', description: 'Aterrizar una experiencia que mantenga la compra y la contratación en un mismo recorrido.' },
-              { title: 'Alinear viabilidad', description: 'Validar contenido, estados y dependencias con negocio, legal y tecnología.' },
+              { title: 'Benchmark', description: 'Comparar cómo otros e-commerce nacionales e internacionales integraban seguros y financiación.' },
+              { title: 'Analizar journeys', description: 'Revisar usuarios, productos y decisiones de financiación con apoyo de analítica.' },
+              { title: 'Diseñar seguros', description: 'Definir propuestas de cross-selling según la tipología de producto.' },
+              { title: 'Integrar FinOnline', description: 'Incorporar la solicitud de préstamo dentro del checkout de Facilitea.' },
+              { title: 'Validar', description: 'Contrastar la solución con negocio, legal y tecnología antes del handoff.' },
             ],
             result:
-              'Una base de contratación integrada en checkout, preparada para presentar opciones de financiación sin añadir fricción innecesaria.',
+              'Una experiencia de compra preparada para ofrecer **seguros y financiación** dentro del checkout.',
           },
           {
             number: '02',
-            title: 'Convertir la posventa en parte del producto',
+            title: 'Evolucionar la posventa de Facilitea.com',
             problem:
-              'El área privada no reunía de forma clara la gestión de pedidos, pagos, facturas, logística, suscripciones y renting. Había que rediseñar la posventa con el nuevo sistema de diseño y cubrir sus distintas casuísticas de forma accesible.',
+              'El área privada no mostraba toda la información necesaria sobre **pedidos, pagos, facturas, logística, envíos, incidencias y cancelaciones**. Para completar la experiencia era esencial mejorar el tracking, las comunicaciones por correo y las gestiones posteriores a la compra.',
             process: [
-              { title: 'Inventariar servicio', description: 'Ordenar necesidades posteriores a la compra, desde envíos e incidencias hasta cobros y documentación.' },
-              { title: 'Área privada y posventa', description: 'Rediseñar una estructura común para compras, suscripciones y renting.' },
-              { title: 'Validar el servicio', description: 'Contrastar todas las funcionalidades con tecnología, operaciones, empresas externas y logística.' },
-              { title: 'Documentar y entregar', description: 'Cubrir casos de uso, handoff y QA con los equipos responsables.' },
+              { title: 'Inventariar', description: 'Ordenar las casuísticas de posventa para cada tipo de producto.' },
+              { title: 'Rediseñar', description: 'Actualizar área privada y posventa según la nueva marca de Facilitea.' },
+              { title: 'Documentar', description: 'Definir comunicaciones, pantallas, estados y especificaciones para tecnología.' },
+              { title: 'Entregar', description: 'Alinear el handoff con los equipos responsables de cada producto.' },
+              { title: 'QA', description: 'Validar las casuísticas antes y durante la subida a producción.' },
             ],
             result:
-              'Un área privada alineada con la nueva marca de Facilitea y una posventa para que todas las personas puedan consultar información y realizar gestiones sobre compras, renting y suscripciones.',
+              'Un área privada alineada con la marca Facilitea y una posventa con mayor visibilidad sobre el pedido y sus gestiones.',
           },
         ],
       },
@@ -500,69 +350,38 @@ export const portfolioSection = {
         contextLabel: 'Calidad de contenido y accesibilidad',
         productLabel: 'Plugin interno de Figma',
         context: [
-          'En cada nuevo desarrollo y antes de cada subida a producción, diseñadores y PMs deben revisar los nuevos textos de la plataforma: legales, mensajes funcionales y contenido plano. El objetivo es validar su nivel de comprensión, preparar sus traducciones y entregar una base única a desarrollo.',
-          'El proceso obligaba a recorrer manualmente archivos de Figma de distintos flujos y verticales, recuperar cada literal, detectar duplicados y pasar el resultado por herramientas separadas. Una extracción completa podía ocupar entre una y dos horas y convertía un control recurrente en una tarea pesada y propensa a omisiones.',
+          'Los textos de los diferentes canales estaban repartidos entre **varios archivos de Figma**. Antes de cada entrega había que recopilarlos, revisar su comprensión y preparar sus traducciones.',
+          'Diseñadores y PMs realizaban este trabajo de forma manual. El objetivo fue convertirlo en un flujo rápido, repetible y revisable desde el propio archivo de diseño.',
         ],
         role: {
           lead:
-            'Identifiqué una fricción repetida en el flujo de entrega y construí una herramienta interna para transformar la extracción, validación y documentación de textos en un paso breve y reutilizable.',
-          bullets: [
-            'Delimitar el problema junto a PMs y diseño: qué textos debían extraerse, cuándo y con qué resultado útil para cada equipo.',
-            'Diseñar el flujo dentro de Figma para que partiera de una selección explícita y no requiriera preparar archivos aparte.',
-            'Integrar deduplicación, detección de B2 y propuestas de mejora con la licencia gratuita de legible.es.',
-            'Definir un Excel de salida que sirviera a la vez para revisar contenido, traducirlo y entregarlo a desarrollo.',
-            'Acompañar su adopción como control previo a la entrega y como apoyo a PMs y diseñadores de las distintas verticales.',
-          ],
+            'Se detectó una fricción repetida: el equipo necesitaba **exportar textos con rapidez**, pero desarrollo no podía prepararlos dentro de los timings requeridos.',
         },
-        challengesTitle: 'Tres fricciones que había que eliminar',
-        challengesDescription: 'El objetivo era reducir trabajo manual sin esconder el criterio que seguía requiriendo una revisión humana.',
-        modelTitle: 'Un flujo breve dentro de Figma',
-        modelDescription: 'La herramienta parte de la selección de diseño y devuelve un documento preparado para continuar el trabajo de contenido, traducción y entrega.',
-        resultsTitle: 'Entrega y resultado',
-        resultsDescription: 'La comparación de tiempo está declarada por el equipo y se refiere a una extracción completa equivalente; no se presenta como una métrica de producto externa.',
+        challengesTitle: 'La fricción que había que eliminar',
+        challengesDescription: '',
+        modelTitle: 'Cómo funciona el plugin',
+        modelDescription: 'La herramienta parte de una selección en Figma y genera un documento preparado para revisión, traducción y entrega.',
+        resultsTitle: 'Resultado',
+        resultsDescription: '',
         challenges: [
           {
             number: '01',
-            title: 'Extraer todo el contenido sin recorrer pantalla a pantalla',
+            title: 'Automatizar la extracción y revisión de textos',
             problem:
-              'Los textos relevantes estaban repartidos entre muchos archivos, flujos y verticales. Recuperarlos de forma manual exigía inspeccionar cada pantalla y mantenía el riesgo de pasar por alto mensajes, legales o variantes.',
+              'Recuperar manualmente los textos de cada pantalla, ordenarlos en Excel, revisar su nivel B2 y preparar traducciones consumía tiempo de diseñadores y PMs y aumentaba el riesgo de omisiones.',
             process: [
-              { title: 'Seleccionar', description: 'Elegir en Figma los elementos o pantallas que forman parte de la extracción.' },
-              { title: 'Recorrer', description: 'Leer los textos del alcance seleccionado sin copiar contenido uno a uno.' },
-              { title: 'Agrupar', description: 'Preparar un inventario único para trabajar sobre el contenido completo.' },
+              { title: 'Analizar el flujo', description: 'Entender cómo diseño y producto extraían textos y los organizaban en Excel.' },
+              { title: 'Crear el MVP', description: 'Usar **IA** para construir una primera extracción desde una selección de Figma.' },
+              { title: 'Evolucionar', description: 'Procesar más contenido, detectar nivel B2 y generar traducciones simultáneamente.' },
             ],
-            result: 'La extracción de un Figma completo pasa de una revisión manual de una o dos horas a un proceso de alrededor de tres minutos.',
-          },
-          {
-            number: '02',
-            title: 'Detectar duplicados y nivel B2 en el mismo paso',
-            problem:
-              'Una vez recogidos los textos, el equipo aún debía localizar repeticiones y comprobar si el contenido era comprensible. Hacerlo en herramientas independientes añadía pasos y dificultaba mantener una referencia única.',
-            process: [
-              { title: 'Deduplicar', description: 'Filtrar los textos repetidos antes de preparar la entrega.' },
-              { title: 'Analizar', description: 'Usar legible.es para detectar el cumplimiento de B2 en cada literal.' },
-              { title: 'Proponer', description: 'Devolver alternativas para los textos que no alcanzan el nivel esperado.' },
-            ],
-            result: 'La revisión de comprensión deja de ser una comprobación posterior: queda disponible mientras se prepara el mismo listado de textos.',
-          },
-          {
-            number: '03',
-            title: 'Convertir la revisión en un entregable para todos los equipos',
-            problem:
-              'El valor no estaba solo en listar textos. PMs, diseño y desarrollo necesitaban un resultado que evitara nuevas copias, aclaraciones y traducciones hechas sobre versiones distintas.',
-            process: [
-              { title: 'Exportar', description: 'Generar un Excel único con los literales ya filtrados.' },
-              { title: 'Completar', description: 'Incluir las propuestas B2 y las traducciones al catalán e inglés.' },
-              { title: 'Revisar', description: 'Usarlo antes de entregar y como referencia compartida para la implementación.' },
-            ],
-            result: 'Cada extracción produce una base lista para revisión de contenido, traducción y coordinación con desarrollo.',
+            result: 'Un único flujo para extraer, revisar y preparar textos, manteniendo siempre una **revisión humana** antes de la entrega.',
           },
         ],
         model: [
-          { title: 'Selección dentro de Figma', description: 'El equipo marca el alcance real de la revisión sin salir del archivo de diseño.' },
-          { title: 'Inventario sin duplicados', description: 'Los literales se reúnen en un listado único para evitar el trabajo de limpieza posterior.' },
-          { title: 'Análisis B2 y propuestas', description: 'La herramienta identifica los textos a revisar y propone alternativas para los que no cumplen el nivel esperado.' },
-          { title: 'Excel listo para continuar', description: 'El resultado incorpora textos, propuestas y traducciones al catalán e inglés en una única entrega.' },
+          { title: 'Seleccionar', description: 'El equipo marca en Figma las pantallas que quiere revisar.' },
+          { title: 'Extraer', description: 'El plugin reúne los textos y elimina duplicados.' },
+          { title: 'Revisar', description: 'La herramienta detecta el nivel B2 y propone los textos que requieren cambios.' },
+          { title: 'Exportar', description: 'El Excel incorpora los textos y sus traducciones al catalán e inglés.' },
         ],
         results: [
           'Extracción, deduplicación y análisis B2 reunidos en un único flujo de Figma.',

@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from 'next/link'
 import { ArrowLeftIcon } from './Icons'
+import RichText from './RichText'
 import styles from '../styles/InOneExploration.module.css'
 
 function SectionHeader({ number, title, description }) {
@@ -20,7 +21,9 @@ function ProcessRail({ items }) {
         <li key={item.title}>
           <span>{String(index + 1).padStart(2, '0')}</span>
           <h4>{item.title}</h4>
-          <p>{item.description}</p>
+          <p>
+            <RichText text={item.description} />
+          </p>
         </li>
       ))}
     </ol>
@@ -28,36 +31,24 @@ function ProcessRail({ items }) {
 }
 
 function PublicScreens({ caseStudy }) {
+  const screenIndexes = caseStudy.finalVersion.publicScreenIndexes || [1, 2, 3, 4]
+
   return (
     <div className={styles.publicScreenPlate}>
-      {caseStudy.publicScreens.slice(1, 5).map((screen, index) => (
-        <figure key={screen.src}>
-          <img src={screen.src} alt={screen.alt} width="600" height="1300" loading="lazy" />
-          <figcaption>
-            <span>{String(index + 1).padStart(2, '0')}</span>
-            {screen.caption}
-          </figcaption>
-        </figure>
-      ))}
-    </div>
-  )
-}
+      {screenIndexes.map((screenIndex, index) => {
+        const screen = caseStudy.publicScreens[screenIndex]
 
-function StoreMetrics({ caseStudy }) {
-  return (
-    <aside className={styles.storeMetrics}>
-      <p className={styles.storeMetricsLabel}>Resultados públicos actuales</p>
-      <div>
-        {caseStudy.storeMetrics.map((metric) => (
-          <article key={metric.label}>
-            <span>{metric.label}</span>
-            <strong>{metric.value}</strong>
-            <p>{metric.detail}</p>
-          </article>
-        ))}
-      </div>
-      <small>{caseStudy.resultContext}</small>
-    </aside>
+        return (
+          <figure key={screen.src}>
+            <img src={screen.src} alt={screen.alt} width="600" height="1300" loading="lazy" />
+            <figcaption>
+              <span>{String(index + 1).padStart(2, '0')}</span>
+              {screen.caption}
+            </figcaption>
+          </figure>
+        )
+      })}
+    </div>
   )
 }
 
@@ -103,7 +94,9 @@ export default function InOneCase({ caseStudy }) {
           <SectionHeader number="01" title="Contexto" />
           <div className={styles.finalProse}>
             {content.context.map((paragraph) => (
-              <p key={paragraph}>{paragraph}</p>
+              <p key={paragraph}>
+                <RichText text={paragraph} />
+              </p>
             ))}
           </div>
           {content.contextScreens?.length ? (
@@ -119,10 +112,14 @@ export default function InOneCase({ caseStudy }) {
 
         <section className={`${styles.finalSection} ${styles.finalRole}`}>
           <SectionHeader number="02" title="Desafío" />
-          <p className={styles.finalRoleLead}>{content.role.lead}</p>
+          <p className={styles.finalRoleLead}>
+            <RichText text={content.role.lead} />
+          </p>
           <ul className={styles.finalRoleList}>
             {content.role.bullets.map((item) => (
-              <li key={item}>{item}</li>
+              <li key={item}>
+                <RichText text={item} />
+              </li>
             ))}
           </ul>
         </section>
@@ -144,28 +141,15 @@ export default function InOneCase({ caseStudy }) {
 
                 <div className={styles.finalChallengeProblem}>
                   <p className={styles.finalMicroLabel}>Qué había que resolver</p>
-                  <p>{challenge.problem}</p>
+                  <p>
+                    <RichText text={challenge.problem} />
+                  </p>
                 </div>
 
                 <div className={styles.finalChallengeProcess}>
                   <p className={styles.finalMicroLabel}>Proceso y decisiones</p>
                   <ProcessRail items={challenge.process} />
                 </div>
-
-                {challenge.number === '02' ? (
-                  <div className={styles.finalChallengeDetail}>
-                    <p className={styles.finalMicroLabel}>Criterios incorporados al producto</p>
-                    <ol className={styles.finalCriteriaList}>
-                      {caseStudy.accessibilityCriteria.map((criterion, index) => (
-                        <li key={criterion.title}>
-                          <span>{String(index + 1).padStart(2, '0')}</span>
-                          <h4>{criterion.title}</h4>
-                          <p>{criterion.description}</p>
-                        </li>
-                      ))}
-                    </ol>
-                  </div>
-                ) : null}
 
                 {challenge.stakeholderDecisions ? (
                   <div className={styles.finalChallengeDetail}>
@@ -174,7 +158,9 @@ export default function InOneCase({ caseStudy }) {
                       {challenge.stakeholderDecisions.map((item) => (
                         <article key={item.title}>
                           <h4>{item.title}</h4>
-                          <p>{item.description}</p>
+                          <p>
+                            <RichText text={item.description} />
+                          </p>
                         </article>
                       ))}
                     </div>
@@ -184,15 +170,16 @@ export default function InOneCase({ caseStudy }) {
                 {challenge.number === '03' ? (
                   <div className={styles.finalChallengeDetail}>
                     <div className={styles.finalDetailHeading}>
-                      <p className={styles.finalMicroLabel}>Design System</p>
-                      <h4>Una base construida para escalar</h4>
+                      <h4>Design System</h4>
                     </div>
                     <ol className={styles.finalSystemRows}>
                       {content.system.map((item, index) => (
                         <li key={item.title}>
                           <span>{String(index + 1).padStart(2, '0')}</span>
                           <h4>{item.title}</h4>
-                          <p>{item.description}</p>
+                          <p>
+                            <RichText text={item.description} />
+                          </p>
                         </li>
                       ))}
                     </ol>
@@ -201,7 +188,9 @@ export default function InOneCase({ caseStudy }) {
 
                 <div className={styles.finalChallengeResult}>
                   <p className={styles.finalMicroLabel}>Resultado</p>
-                  <p>{challenge.result}</p>
+                  <p>
+                    <RichText text={challenge.result} />
+                  </p>
                 </div>
               </article>
             ))}
@@ -220,7 +209,9 @@ export default function InOneCase({ caseStudy }) {
               <li key={decision.title}>
                 <span>{String(index + 1).padStart(2, '0')}</span>
                 <h3>{decision.title}</h3>
-                <p>{decision.description}</p>
+                <p>
+                  <RichText text={decision.description} />
+                </p>
               </li>
             ))}
           </ol>
@@ -229,21 +220,6 @@ export default function InOneCase({ caseStudy }) {
           <p className={styles.publicAssetNote}>Pantallas de la ficha pública actual de InOne en App Store.</p>
         </section>
 
-        <section className={`${styles.finalSection} ${styles.finalResults}`}>
-          <SectionHeader
-            number="05"
-            title="Resultados"
-            description="Capacidades consolidadas durante la evolución y métricas públicas actuales del producto."
-          />
-
-          <ul className={styles.finalResultList}>
-            {content.results.map((result) => (
-              <li key={result}>{result}</li>
-            ))}
-          </ul>
-
-          <StoreMetrics caseStudy={caseStudy} />
-        </section>
       </div>
 
     </main>

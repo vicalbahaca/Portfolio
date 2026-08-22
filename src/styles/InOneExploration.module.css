@@ -2387,6 +2387,10 @@
   line-height: 1.18;
 }
 
+.finalRole > .finalSectionHeader {
+  margin-bottom: 72px;
+}
+
 .finalRoleList {
   max-width: 1060px;
   list-style: none;
@@ -2663,7 +2667,7 @@
 }
 
 .finalProduct .publicScreenPlate {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 22px;
   padding-top: 56px;
   align-items: start;
@@ -3462,10 +3466,33 @@
     margin-top: 84px;
   }
 
+  .finalProcessRail {
+    display: grid;
+    grid-template-columns: 1fr;
+    overflow: visible;
+    scroll-snap-type: none;
+  }
+
+  .finalProcessRail li {
+    min-width: 0;
+    min-height: 0;
+    padding: 24px 0;
+  }
+
+  .finalProcessRail li + li {
+    padding-left: 0;
+    border-top: 1px solid var(--final-line);
+    border-left: 0;
+  }
+
+  .finalProcessRail li > span {
+    margin-bottom: 24px;
+  }
+
   .finalProduct .publicScreenPlate {
-    grid-template-columns: repeat(4, minmax(200px, 1fr));
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
+    grid-template-columns: 1fr;
+    overflow: visible;
+    scroll-snap-type: none;
   }
 
   .finalProduct .publicScreenPlate figure {
@@ -3602,12 +3629,10 @@
   }
 
   .finalProduct .publicScreenPlate {
-    margin-right: -16px;
-    padding-right: 16px;
     display: grid;
-    grid-auto-flow: column;
-    grid-auto-columns: 78vw;
-    grid-template-columns: none;
+    grid-auto-flow: row;
+    grid-auto-columns: auto;
+    grid-template-columns: 1fr;
   }
 
   .finalProduct .publicScreenPlate figure:hover img {

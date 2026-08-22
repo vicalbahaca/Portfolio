@@ -244,28 +244,16 @@ export const inoneCase = {
     'Datos públicos consultados el 23/07/2026. Se muestran como contexto actual del producto, no como impacto causado exclusivamente por el trabajo de diseño.',
   finalVersion: {
     context: [
-      'InOne es la aplicación de CaixaBank Payments & Consumer para gestionar tarjetas, pagos y financiación desde un único entorno.',
-      'El trabajo comenzó en una fase post-lanzamiento, con el producto en crecimiento y una transición progresiva desde experiencias específicas vinculadas a productos como IKEA Visa, MediaMarkt Visa y Visa FNAC. El objetivo era acompañar esa evolución sin perder capacidades relevantes para sus usuarios.',
-    ],
-    contextScreens: [
-      {
-        src: '/portfolio-north/inone-public/context-01.png',
-        alt: 'Campaña pública de InOne para gestionar, fraccionar y financiar pagos.',
-      },
-      {
-        src: '/portfolio-north/inone-public/context-02.png',
-        alt: 'Pantalla pública de InOne con resumen de tarjeta, pagos y movimientos.',
-      },
+      '**InOne** es la aplicación de CaixaBank Payments & Consumer para gestionar **tarjetas, pagos y financiación** desde un único entorno.',
+      'El proyecto partió de una transición progresiva desde aplicaciones específicas como **IKEA Visa**, **MediaMarkt Visa** y **Visa FNAC**. El objetivo era unificar la experiencia sin perder las capacidades relevantes de cada producto.',
     ],
     role: {
       lead:
-        'Responsabilidad de consultoría y diseño para convertir necesidades de negocio y señales del mercado en decisiones ejecutables que hicieran evolucionar la aplicación.',
+        'El desafío era evolucionar el producto con un **plazo fijo y corto**, limitaciones del **backoffice técnico** y dependencias que afectaban directamente a la experiencia.',
       bullets: [
-        'Definir un diagnóstico combinando analítica, flujos existentes, soporte y restricciones del servicio.',
-        'Traducir hallazgos en prioridades, decisiones de producto y un roadmap de entregas progresivas.',
-        'Diseñar y validar arquitectura, journeys, patrones de interacción y componentes reutilizables.',
-        'Alinear decisiones con negocio, legal, seguridad, tecnología y atención al cliente.',
-        'Acompañar documentación, handoff, QA y evolución después de cada entrega.',
+        'Definí una evolución viable dentro de las **restricciones técnicas** existentes.',
+        'Alineé prioridades y nuevas operativas con **negocio, tecnología y atención al cliente**.',
+        'Organicé un **faseado** para abordar primero las funcionalidades con mayor impacto.',
       ],
     },
     challenges: [
@@ -273,87 +261,71 @@ export const inoneCase = {
         number: '01',
         title: 'Unificar productos sin perder capacidades',
         problem:
-          'La transición hacia InOne debía reunir usuarios y productos que venían de aplicaciones específicas. El riesgo era simplificar la operación a costa de perder funciones, expectativas o comportamientos ya consolidados.',
+          'InOne debía reunir aplicaciones de marca blanca y productos de comercios asociados. Antes de definir la nueva experiencia era necesario entender sus diferencias y decidir qué capacidades debían mantenerse.',
         process: [
           {
-            title: 'Inventario',
-            description: 'Mapear productos, aplicaciones de origen, operativas y particularidades.',
+            title: 'Inventariar',
+            description: 'Recoger **productos, aplicaciones y funcionalidades** existentes.',
           },
           {
-            title: 'Evidencia',
-            description: 'Analizar uso, recorridos, soporte y funcionalidades de mayor valor.',
+            title: 'Comparar',
+            description: 'Detectar diferencias entre operativas y capacidades de cada aplicación.',
           },
           {
-            title: 'Convergencia',
-            description: 'Separar capacidades comunes de excepciones necesarias por producto.',
+            title: 'Validar',
+            description: 'Acordar con stakeholders qué funcionalidades conservar y cuáles retirar.',
           },
           {
-            title: 'Transición',
-            description: 'Priorizar qué debía estar disponible y secuenciar la evolución.',
+            title: 'Fasear',
+            description: 'Definir un **MVP común** y priorizar el resto en un backlog progresivo.',
           },
         ],
         result:
-          'Una base común para gestionar productos diferentes y un criterio claro para conservar, adaptar o replantear cada capacidad durante la transición.',
+          'Una base común para unificar los activos y un backlog acordado para incorporar el resto de capacidades por fases.',
       },
       {
         number: '02',
-        title: 'Convertir accesibilidad en un sistema de entrega',
+        title: 'Hacer la aplicación accesible',
         problem:
-          'Una auditoría externa identificó barreras que debían convivir con nuevas iniciativas de negocio, requisitos legales y dependencias técnicas. Corregir pantallas de forma aislada no era suficiente.',
+          'Antes de unificar los activos, la aplicación general pasó por una **auditoría externa de accesibilidad**. Sus hallazgos se utilizaron desde el inicio del rediseño para aplicar los criterios WCAG en producto y delivery.',
         process: [
           {
-            title: 'Normalizar',
-            description: 'Ordenar hallazgos por patrón, severidad, recurrencia y plataforma.',
-          },
-          {
-            title: 'Priorizar',
-            description: 'Separar correcciones sistémicas, componentes y casos específicos.',
+            title: 'Identificar y resolver',
+            description: 'Revisar dónde aplicaba cada criterio y definir una solución consistente.',
           },
           {
             title: 'Documentar',
-            description: 'Definir foco, lectura, semántica, contraste, estados y contenido accesible.',
+            description: 'Incorporar accesibilidad al **Design System** y a las pantallas preparadas para handoff.',
           },
           {
-            title: 'Acelerar con IA',
-            description: 'Apoyar la primera síntesis y la consistencia documental con revisión humana.',
-          },
-          {
-            title: 'Entregar y validar',
-            description: 'Integrar criterios en el handoff, la implementación y el QA continuo.',
+            title: 'Handoff y QA',
+            description: 'Acompañar a desarrollo y validar de forma continua la implementación.',
           },
         ],
         result:
-          'La accesibilidad pasó a formar parte del Design System, la documentación de producto y el roadmap, con criterios trazables para diseño y tecnología.',
+          'La accesibilidad quedó integrada en el sistema, la documentación y el QA del producto.',
       },
       {
         number: '03',
         title: 'Rediseñar la experiencia de extremo a extremo',
         problem:
-          'La navegación acumulaba pasos y cambios de contexto, mientras el producto debía incorporar nuevas operativas sobre servicios poco flexibles. La evolución necesitaba ser familiar, viable y progresiva.',
+          'Tras un año en el mercado, negocio priorizó una evolución visual y funcional alineada con el ecosistema CaixaBank. InOne se había lanzado como una aplicación diferenciada y necesitaba acercarse a los patrones de **CaixaBankNow**.',
         process: [
           {
-            title: 'Arquitectura',
-            description: 'Reordenar tareas y simplificar recorridos con patrones más directos.',
+            title: 'Analizar el ecosistema',
+            description: 'Revisar CaixaBankNow y los patrones compartidos entre productos.',
           },
           {
-            title: 'Prioridad',
-            description: 'Dar visibilidad a tarjeta, movimientos, fraccionamiento, pagos y wallet.',
+            title: 'Alinear la experiencia',
+            description: 'Acercar navegación, light mode y usabilidad a **CaixaBankNow**.',
           },
           {
-            title: 'Patrones',
-            description: 'Alinear navegación y comportamientos con el ecosistema CaixaBank.',
+            title: 'Priorizar',
+            description: 'Rediseñar primero las funcionalidades con mayor impacto para negocio y usuarios.',
           },
           {
-            title: 'Sistema',
-            description: 'Construir light mode, foundations, componentes y casos de uso.',
-          },
-          {
-            title: 'Delivery',
-            description: 'Fasear sistema y producto, validar viabilidad y acompañar el QA.',
-          },
-          {
-            title: 'Aprendizaje',
-            description: 'Recoger motivos de abandono y solicitar valoración tras acciones completas.',
+            title: 'Delivery y QA',
+            description: 'Entregar por fases y acompañar a tecnología hasta la subida a producción.',
           },
         ],
         stakeholderDecisions: [
@@ -375,11 +347,11 @@ export const inoneCase = {
           },
           {
             title: 'Atención al cliente',
-            description: 'Documentar happy paths y conectar soporte, dudas y señales de abandono.',
+            description: 'Conectar soporte, dudas y señales de abandono con la evolución del producto.',
           },
         ],
         result:
-          'Una navegación más simple, patrones familiares, un sistema visual preparado para crecer y un ciclo de aprendizaje conectado con el uso real del producto.',
+          'Una experiencia más cercana a CaixaBankNow, con navegación más clara y una evolución preparada para llegar a producción por fases.',
       },
     ],
     system: [
@@ -402,29 +374,19 @@ export const inoneCase = {
     ],
     productDecisions: [
       {
-        title: 'Patrones familiares',
-        description: 'Una interacción alineada con el ecosistema para reducir aprendizaje.',
-      },
-      {
-        title: 'Navegación más simple',
-        description: 'Menos profundidad, pasos más directos y contexto visible.',
+        title: 'Navegación familiar',
+        description: 'Patrones alineados con CaixaBankNow para facilitar el uso desde el primer acceso.',
       },
       {
         title: 'Operativas prioritarias',
-        description: 'Tarjeta, movimientos, fraccionamiento y pagos en primer nivel.',
+        description: '**Tarjetas, movimientos y pagos** visibles en los primeros niveles.',
       },
       {
-        title: 'Sistema preparado para crecer',
-        description: 'Modo claro, componentes reutilizables y entrega progresiva.',
+        title: 'Gestión de pagos',
+        description: 'Acciones directas para consultar, aplazar y gestionar pagos sin perder contexto.',
       },
     ],
-    results: [
-      'Convergencia progresiva de productos y capacidades en una experiencia común.',
-      'Accesibilidad integrada en decisiones, componentes, documentación y QA.',
-      'Arquitectura y navegación más coherentes con el ecosistema.',
-      'Design System reutilizable y preparado para nuevas evoluciones.',
-      'Señales de abandono y valoración conectadas con el ciclo de mejora.',
-    ],
+    publicScreenIndexes: [1, 3, 4],
   },
   publicScreens: [
     {
@@ -435,7 +397,7 @@ export const inoneCase = {
     {
       src: '/portfolio-north/inone-public/app-store-02.jpg',
       alt: 'Pantalla pública de InOne con balance, movimientos y accesos financieros.',
-      caption: 'Información y acciones prioritarias',
+      caption: 'Navegación y operativas prioritarias',
     },
     {
       src: '/portfolio-north/inone-public/app-store-03.jpg',
@@ -445,12 +407,12 @@ export const inoneCase = {
     {
       src: '/portfolio-north/inone-public/app-store-04.jpg',
       alt: 'Pantalla pública de InOne para elegir una modalidad de pago.',
-      caption: 'Elección de modalidad de pago',
+      caption: 'Opciones para gestionar pagos',
     },
     {
       src: '/portfolio-north/inone-public/app-store-05.jpg',
       alt: 'Pantalla pública de InOne para pasar dinero a una cuenta.',
-      caption: 'Transferencia a cuenta',
+      caption: 'Gestión directa del dinero disponible',
     },
     {
       src: '/portfolio-north/inone-public/app-store-06.jpg',

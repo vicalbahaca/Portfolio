@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowLeftIcon } from './Icons'
+import RichText from './RichText'
 import styles from '../styles/InOneExploration.module.css'
 
 function SectionHeader({ number, title, description }) {
@@ -20,7 +21,9 @@ function ProcessRail({ items }) {
         <li key={item.title}>
           <span>{String(index + 1).padStart(2, '0')}</span>
           <h4>{item.title}</h4>
-          <p>{item.description}</p>
+          <p>
+            <RichText text={item.description} />
+          </p>
         </li>
       ))}
     </ol>
@@ -29,17 +32,17 @@ function ProcessRail({ items }) {
 
 export default function EditorialCase({ caseStudy }) {
   const { editorialCase: content } = caseStudy
-  const challengesTitle = content.challengesTitle || 'Tres retos de la unificación'
+  const challengesTitle = content.challengesTitle ?? 'Tres retos de la unificación'
   const challengesDescription =
-    content.challengesDescription ||
+    content.challengesDescription ??
     'Los frentes que concentraron el análisis, la definición del modelo y la preparación de la primera fase.'
-  const modelTitle = content.modelTitle || 'Una dirección común, entregable por fases'
+  const modelTitle = content.modelTitle ?? 'Una dirección común, entregable por fases'
   const modelDescription =
-    content.modelDescription ||
+    content.modelDescription ??
     'El plan no buscaba homogeneizar por completo el servicio, sino definir qué debía ser común y qué requería una variante explícita.'
-  const resultsTitle = content.resultsTitle || 'Entrega y resultado'
+  const resultsTitle = content.resultsTitle ?? 'Entrega y resultado'
   const resultsDescription =
-    content.resultsDescription ||
+    content.resultsDescription ??
     'El resultado del trabajo fue una base de decisión y ejecución; no se presentan métricas de ahorro, conversión o cumplimiento sin una medición validada.'
   const hasResults = Boolean(content.results?.length)
   return (
@@ -80,7 +83,9 @@ export default function EditorialCase({ caseStudy }) {
           <SectionHeader number="01" title="Contexto" />
           <div className={styles.finalProse}>
             {content.context.map((paragraph) => (
-              <p key={paragraph}>{paragraph}</p>
+              <p key={paragraph}>
+                <RichText text={paragraph} />
+              </p>
             ))}
           </div>
           {content.contextMedia ? (
@@ -99,12 +104,20 @@ export default function EditorialCase({ caseStudy }) {
 
         <section className={`${styles.finalSection} ${styles.finalRole}`}>
           <SectionHeader number="02" title={content.roleTitle || 'Retos'} />
-          <p className={styles.finalRoleLead}>{content.role.lead}</p>
-          <ul className={styles.finalRoleList}>
-            {content.role.bullets.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
+          {content.role.lead ? (
+            <p className={styles.finalRoleLead}>
+              <RichText text={content.role.lead} />
+            </p>
+          ) : null}
+          {content.role.bullets?.length ? (
+            <ul className={styles.finalRoleList}>
+              {content.role.bullets.map((item) => (
+                <li key={item}>
+                  <RichText text={item} />
+                </li>
+              ))}
+            </ul>
+          ) : null}
         </section>
 
         <section className={`${styles.finalSection} ${styles.finalChallenges}`}>
@@ -124,7 +137,9 @@ export default function EditorialCase({ caseStudy }) {
 
                 <div className={styles.finalChallengeProblem}>
                   <p className={styles.finalMicroLabel}>Qué había que resolver</p>
-                  <p>{challenge.problem}</p>
+                  <p>
+                    <RichText text={challenge.problem} />
+                  </p>
                 </div>
 
                 <div className={styles.finalChallengeProcess}>
@@ -134,7 +149,9 @@ export default function EditorialCase({ caseStudy }) {
 
                 <div className={styles.finalChallengeResult}>
                   <p className={styles.finalMicroLabel}>Resultado</p>
-                  <p>{challenge.result}</p>
+                  <p>
+                    <RichText text={challenge.result} />
+                  </p>
                 </div>
               </article>
             ))}
@@ -154,7 +171,9 @@ export default function EditorialCase({ caseStudy }) {
                 <li key={item.title}>
                   <span>{String(index + 1).padStart(2, '0')}</span>
                   <h3>{item.title}</h3>
-                  <p>{item.description}</p>
+                  <p>
+                    <RichText text={item.description} />
+                  </p>
                 </li>
               ))}
             </ol>
@@ -171,7 +190,9 @@ export default function EditorialCase({ caseStudy }) {
 
             <ul className={styles.finalResultList}>
               {content.results.map((item) => (
-                <li key={item}>{item}</li>
+                <li key={item}>
+                  <RichText text={item} />
+                </li>
               ))}
             </ul>
 
