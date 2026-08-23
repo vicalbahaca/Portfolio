@@ -2673,10 +2673,12 @@
 }
 
 .finalProduct .publicScreenPlate {
+  width: 70%;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 22px;
   padding-top: 56px;
   align-items: start;
+  justify-content: start;
 }
 
 .finalProduct .publicScreenPlate figure {
@@ -3496,6 +3498,7 @@
   }
 
   .finalProduct .publicScreenPlate {
+    width: 100%;
     grid-template-columns: 1fr;
     overflow: visible;
     scroll-snap-type: none;
