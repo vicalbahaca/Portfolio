@@ -8007,6 +8007,15 @@ body.lightbox-open .navbar {
   margin-top: 8px;
 }
 
+.proposal-experience__moves,
+.proposal-experience__move,
+.proposal-experience__move-head,
+.proposal-experience__move-highlights {
+  width: 100%;
+  min-width: 0;
+  max-width: none;
+}
+
 .proposal-experience__highlights li {
   width: 100%;
   max-width: none;
