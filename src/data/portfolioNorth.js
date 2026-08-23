@@ -174,7 +174,7 @@ export const portfolioSection = {
     },
     {
       slug: 'channel-unification',
-      title: 'Canales de prescripción',
+      title: 'Canales prescriptor',
       image: '/portfolio-north/covers/channel-unification.png',
       cardImage: '/portfolio-north/covers/channel-unification.png',
       cardImageMode: 'cover',
