@@ -2408,6 +2408,10 @@
   line-height: 1.45;
 }
 
+.finalRoleList li:last-child {
+  border-bottom: 0;
+}
+
 .finalRoleList li::before {
   content: '';
   width: 7px;
@@ -2488,8 +2492,6 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
   list-style: none;
-  border-top: 1px solid var(--final-ink);
-  border-bottom: 1px solid var(--final-ink);
 }
 
 .finalProcessRail li {
@@ -2552,10 +2554,6 @@
   line-height: 0.95;
 }
 
-.finalStakeholderRows {
-  border-top: 1px solid var(--final-ink);
-}
-
 .finalStakeholderRows article {
   min-height: 84px;
   padding: 20px 0;
@@ -2564,6 +2562,10 @@
   gap: 32px;
   align-items: center;
   border-bottom: 1px solid var(--final-line);
+}
+
+.finalStakeholderRows article:last-child {
+  border-bottom: 0;
 }
 
 .finalStakeholderRows h4 {
@@ -2581,7 +2583,6 @@
 .finalCriteriaList,
 .finalSystemRows {
   list-style: none;
-  border-top: 1px solid var(--final-ink);
 }
 
 .finalCriteriaList li,
@@ -2593,6 +2594,11 @@
   gap: 18px 30px;
   align-items: start;
   border-bottom: 1px solid var(--final-ink);
+}
+
+.finalCriteriaList li:last-child,
+.finalSystemRows li:last-child {
+  border-bottom: 0;
 }
 
 .finalCriteriaList span,
@@ -2640,7 +2646,6 @@
   margin-top: 24px;
   margin-bottom: 132px;
   list-style: none;
-  border-top: 1px solid var(--final-ink);
 }
 
 .finalProductDecisionList li {
@@ -2651,6 +2656,10 @@
   gap: 20px 30px;
   align-items: start;
   border-bottom: 1px solid var(--final-line);
+}
+
+.finalProductDecisionList li:last-child {
+  border-bottom: 0;
 }
 
 .finalProductDecisionList span {
@@ -2693,7 +2702,6 @@
   margin-top: 24px;
   margin-bottom: 132px;
   list-style: none;
-  border-top: 1px solid var(--final-ink);
 }
 
 .finalResultList li {
@@ -2701,6 +2709,10 @@
   position: relative;
   border-bottom: 1px solid var(--final-line);
   font-size: 0.88rem;
+}
+
+.finalResultList li:last-child {
+  border-bottom: 0;
 }
 
 .finalResultList li::before {

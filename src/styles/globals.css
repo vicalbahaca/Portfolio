@@ -8337,6 +8337,10 @@ body .page-shell--home .home-north .home-project__subtitle {
   font-weight: 650;
 }
 
+.work-case-sources__list li:last-child a {
+  border-bottom: 0;
+}
+
 .work-case-sources__list a::after {
   content: '↗';
   flex: 0 0 auto;
@@ -8444,8 +8448,6 @@ body .page-shell--home .home-north .home-project__subtitle {
 .workshops-principles__grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  border-top: 1px solid rgba(13, 23, 38, 0.14);
-  border-bottom: 1px solid rgba(13, 23, 38, 0.14);
 }
 
 .workshops-principles__grid article {
@@ -8496,7 +8498,6 @@ body .page-shell--home .home-north .home-project__subtitle {
 
 .workshops-program__list {
   display: grid;
-  border-top: 1px solid rgba(13, 23, 38, 0.14);
 }
 
 .workshops-track {
@@ -8506,6 +8507,10 @@ body .page-shell--home .home-north .home-project__subtitle {
   align-items: start;
   padding: 28px 0 32px;
   border-bottom: 1px solid rgba(13, 23, 38, 0.14);
+}
+
+.workshops-track:last-child {
+  border-bottom: 0;
 }
 
 .workshops-track__body {
