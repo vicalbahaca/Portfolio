@@ -2148,8 +2148,11 @@
   --final-ink: #0a0a0a;
   --final-line: rgba(10, 10, 10, 0.22);
   --final-gutter: max(48px, calc((100vw - 1400px) / 2));
+  --final-copy-max: min(100%, 960px);
+  --final-copy-width: var(--final-copy-max);
   background: var(--final-paper);
   color: var(--final-ink);
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .finalHero {
@@ -2212,7 +2215,7 @@
 
 .finalHeroCopy > p {
   width: 100%;
-  max-width: none;
+  max-width: var(--final-copy-max);
   margin-top: 64px;
   color: rgba(255, 255, 255, 0.82);
   font-size: clamp(1rem, 1.65vw, 1.35rem);
@@ -2321,14 +2324,14 @@
 }
 
 .finalSectionHeader p {
-  max-width: 68ch;
+  max-width: var(--final-copy-max);
   margin-top: 16px;
   font-size: 0.95rem;
   line-height: 1.55;
 }
 
 .finalProse {
-  max-width: 1020px;
+  max-width: var(--final-copy-width);
   display: grid;
   gap: 28px;
 }
@@ -2353,6 +2356,7 @@
 }
 
 .finalContextMedia figcaption {
+  max-width: var(--final-copy-max);
   margin-top: 14px;
   color: var(--final-muted);
   font-size: 0.78rem;
@@ -2380,7 +2384,7 @@
 }
 
 .finalRoleLead {
-  max-width: 1020px;
+  max-width: var(--final-copy-width);
   margin-bottom: 36px;
   font-family: Georgia, 'Times New Roman', serif;
   font-size: 1.04rem;
@@ -2392,7 +2396,7 @@
 }
 
 .finalRoleList {
-  max-width: 1060px;
+  max-width: var(--final-copy-width);
   list-style: none;
 }
 
@@ -2460,13 +2464,14 @@
 }
 
 .finalChallengeProblem {
-  max-width: 1020px;
+  max-width: var(--final-copy-width);
   padding: 28px 0 42px;
 }
 
 .finalChallengeProblem > p:last-child {
-  max-width: 72ch;
+  max-width: var(--final-copy-max);
   margin-top: 22px;
+  font-family: Georgia, 'Times New Roman', serif;
   font-size: 1.04rem;
   line-height: 1.58;
 }
@@ -2568,7 +2573,7 @@
 }
 
 .finalStakeholderRows p {
-  max-width: 70ch;
+  max-width: var(--final-copy-max);
   font-size: 0.82rem;
   line-height: 1.5;
 }
@@ -2607,7 +2612,7 @@
 
 .finalCriteriaList p,
 .finalSystemRows p {
-  max-width: 70ch;
+  max-width: var(--final-copy-max);
   font-size: 0.78rem;
   line-height: 1.45;
 }
@@ -2625,7 +2630,7 @@
 }
 
 .finalChallengeResult > p:last-child {
-  max-width: 68ch;
+  max-width: var(--final-copy-max);
   font-family: Georgia, 'Times New Roman', serif;
   font-size: 1.04rem;
   line-height: 1.58;
@@ -2662,6 +2667,7 @@
 }
 
 .finalProductDecisionList p {
+  max-width: var(--final-copy-max);
   font-size: 0.72rem;
   line-height: 1.45;
 }
@@ -3652,4 +3658,9 @@
   .finalProcessRail li {
     transition: none;
   }
+}
+
+/* The editorial headings keep their display treatment; all supporting copy is Arial. */
+.finalCase :is(p, li, dt, dd, a, button, span, strong) {
+  font-family: Arial, Helvetica, sans-serif !important;
 }

@@ -50,7 +50,7 @@ html {
 body {
   background: var(--page-bg);
   color: var(--ink);
-  font-family: 'Instrument Sans', sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
@@ -5701,7 +5701,7 @@ body {
 
 .work-case-page--recent .work-case-section__index {
   color: #1052fe;
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 1.3rem;
   line-height: 1;
 }
@@ -5762,7 +5762,7 @@ body {
 .work-case-footer strong {
   display: block;
   margin-bottom: 8px;
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 1.35rem;
   font-weight: 400;
 }
@@ -8333,6 +8333,8 @@ body .page-shell--home .home-north .home-project__subtitle {
 }
 
 .workshops-page {
+  --text-max: min(100%, 81ch);
+  --case-copy-max: min(100%, 81ch);
   background: #ffffff;
   color: #091427;
 }
@@ -8349,7 +8351,7 @@ body .page-shell--home .home-north .home-project__subtitle {
 
 .workshops-hero__copy {
   display: grid;
-  gap: 14px;
+  gap: 24px;
   width: 100%;
   max-width: none;
 }
@@ -8373,7 +8375,7 @@ body .page-shell--home .home-north .home-project__subtitle {
 }
 
 .workshops-hero__figure {
-  justify-self: end;
+  justify-self: start;
   width: min(50%, 560px);
 }
 
@@ -8393,20 +8395,20 @@ body .page-shell--home .home-north .home-project__subtitle {
 .workshops-section-heading {
   display: grid;
   gap: 12px;
-  max-width: 760px;
+  max-width: min(100%, 1100px);
   margin-bottom: clamp(32px, 5vw, 56px);
 }
 
 .workshops-section-heading__index {
   color: #1052fe;
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 1.3rem;
   line-height: 1;
 }
 
 .workshops-section-heading h2,
 .workshops-next h2 {
-  max-width: 13ch;
+  max-inline-size: min(100%, 25ch);
   margin: 0;
   color: #091427;
   font-size: clamp(2.4rem, 5vw, 5rem);
@@ -8421,7 +8423,7 @@ body .page-shell--home .home-north .home-project__subtitle {
 
 .workshops-section-heading > p:last-child,
 .workshops-next__inner > p {
-  max-width: 62ch;
+  max-width: var(--case-copy-max);
   margin: 0;
   color: rgba(13, 23, 38, 0.68);
   font-size: 1.04rem;
@@ -8488,7 +8490,7 @@ body .page-shell--home .home-north .home-project__subtitle {
 
 .workshops-track {
   display: grid;
-  grid-template-columns: 52px minmax(240px, 0.86fr) minmax(280px, 1.14fr);
+  grid-template-columns: 52px minmax(0, 1fr);
   gap: clamp(20px, 4vw, 54px);
   align-items: start;
   padding: 28px 0 32px;
@@ -8519,7 +8521,24 @@ body .page-shell--home .home-north .home-project__subtitle {
   display: grid;
   gap: 8px;
   margin: 0;
-  padding-left: 20px;
+  padding: 0;
+  list-style: none;
+}
+
+.workshops-track li {
+  position: relative;
+  padding-left: 14px;
+}
+
+.workshops-track li::before {
+  position: absolute;
+  top: 0.65em;
+  left: 0;
+  width: 5px;
+  height: 5px;
+  background: #1052fe;
+  border-radius: 50%;
+  content: '';
 }
 
 .workshops-next {
@@ -8582,9 +8601,6 @@ body .page-shell--home .home-north .home-project__subtitle {
     grid-template-columns: 42px minmax(0, 1fr);
   }
 
-  .workshops-track > ul {
-    grid-column: 2;
-  }
 }
 
 @media (max-width: 620px) {
@@ -8608,10 +8624,6 @@ body .page-shell--home .home-north .home-project__subtitle {
   .workshops-track {
     grid-template-columns: 1fr;
     gap: 14px;
-  }
-
-  .workshops-track > ul {
-    grid-column: 1;
   }
 
 }
@@ -8649,6 +8661,8 @@ body :is(h1, h2, h3) {
 /* Recent work cases use the same light editorial language as Workshops. */
 .work-case-page--recent,
 .work-case-page--recent .work-case-section {
+  --text-max: min(100%, 960px);
+  --case-copy-max: min(100%, 960px);
   background: #ffffff;
   color: #091427;
 }
@@ -8684,7 +8698,7 @@ body :is(h1, h2, h3) {
 }
 
 .work-case-page--recent .work-case-hero__headline {
-  max-width: none;
+  max-width: var(--case-copy-max);
   color: rgba(13, 23, 38, 0.72);
   font-size: clamp(1.08rem, 2vw, 1.34rem);
   line-height: 1.5;
@@ -8707,19 +8721,19 @@ body :is(h1, h2, h3) {
 }
 
 .work-case-page--recent .work-case-problem__statement {
-  max-width: 27ch;
+  max-width: var(--case-copy-max);
   margin: 0;
-  color: #091427;
-  font-size: clamp(1.45rem, 2.8vw, 2.4rem);
+  color: rgba(13, 23, 38, 0.72);
+  font-size: 1.04rem;
   font-weight: 400;
-  line-height: 1.08;
-  letter-spacing: -0.04em;
+  line-height: 1.58;
+  letter-spacing: normal;
 }
 
 .work-case-page--recent .work-case-problem__solution {
   display: grid;
   gap: 10px;
-  max-width: 62ch;
+  max-width: var(--case-copy-max);
   margin-top: clamp(24px, 3vw, 40px);
 }
 
@@ -8734,7 +8748,7 @@ body :is(h1, h2, h3) {
 }
 
 .work-case-page--recent .work-case-section .section-heading {
-  max-width: 13ch;
+  max-inline-size: min(100%, 25ch);
   color: #091427;
   font-size: clamp(2.4rem, 5vw, 5rem);
   line-height: 0.96;
@@ -8748,6 +8762,17 @@ body :is(h1, h2, h3) {
   color: rgba(13, 23, 38, 0.72);
 }
 
+.work-case-page--recent .detail-copy--lead {
+  font-size: 1.04rem;
+  line-height: 1.58;
+  letter-spacing: normal;
+}
+
+.work-case-page--recent .work-case-section__body,
+.work-case-page--recent .work-case-section__points {
+  max-width: var(--case-copy-max);
+}
+
 .work-case-page--recent .work-case-deck,
 .work-case-page--recent .work-case-section__gallery {
   gap: clamp(20px, 3vw, 32px);
@@ -8758,7 +8783,7 @@ body :is(h1, h2, h3) {
   display: grid;
   grid-template-columns: 28px minmax(0, 1fr);
   gap: 10px;
-  max-width: 68ch;
+  max-width: var(--case-copy-max);
   color: rgba(13, 23, 38, 0.62);
   font-size: 0.84rem;
   line-height: 1.5;
@@ -8767,7 +8792,7 @@ body :is(h1, h2, h3) {
 .work-case-page--recent .work-case-deck__figure figcaption span,
 .work-case-page--recent .work-case-section__figure figcaption span {
   color: #1052fe;
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 @media (max-width: 620px) {

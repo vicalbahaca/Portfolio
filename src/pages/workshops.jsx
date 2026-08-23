@@ -83,12 +83,12 @@ export default function WorkshopsPage() {
                         <h3>{track.title}</h3>
                       </div>
                       <p>{track.summary}</p>
+                      <ul>
+                        {track.outcomes.map((outcome) => (
+                          <li key={outcome}>{outcome}</li>
+                        ))}
+                      </ul>
                     </div>
-                    <ul>
-                      {track.outcomes.map((outcome) => (
-                        <li key={outcome}>{outcome}</li>
-                      ))}
-                    </ul>
                   </article>
                 ))}
               </div>
