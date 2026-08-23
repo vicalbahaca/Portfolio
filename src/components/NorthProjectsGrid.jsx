@@ -34,7 +34,6 @@ export default function NorthProjectsGrid({ className = '', trackId, trackRef })
                 <Image src={project.cardImage} alt={project.title} fill sizes="(max-width: 960px) 100vw, 50vw" />
               </div>
               <div className="home-project__copy">
-                <p className="home-project__meta">{project.cardTag}</p>
                 <h3>{project.title}</h3>
                 <p className="home-project__subtitle">{project.cardDescription}</p>
               </div>

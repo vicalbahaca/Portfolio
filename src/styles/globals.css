@@ -8270,10 +8270,11 @@ body.lightbox-open .navbar {
 .home-workshops__media {
   position: relative;
   display: block;
-  width: 100%;
+  width: min(100%, 560px);
+  justify-self: end;
   aspect-ratio: 16 / 10;
   overflow: hidden;
-  border: 1px solid rgba(13, 23, 38, 0.08);
+  border: 0;
   border-radius: 8px;
   background: #0d1728;
 }
