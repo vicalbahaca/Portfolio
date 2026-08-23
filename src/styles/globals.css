@@ -6830,14 +6830,14 @@ body.lightbox-open .navbar {
   grid-area: statement;
   align-self: start;
   justify-self: start;
-  width: min(100%, 760px);
+  width: 100%;
   max-width: none;
   padding-top: 18px;
 }
 
 .page-shell--home .hero__statement p {
   color: #091427;
-  max-width: 26ch;
+  max-width: none;
   margin: 0;
   margin-left: 0;
   font-size: clamp(1.45rem, 2.1vw, 2rem);
@@ -6897,7 +6897,7 @@ body.lightbox-open .navbar {
   }
 
   .page-shell--home .hero__statement p {
-    max-width: 24ch;
+    max-width: none;
     font-size: clamp(1.24rem, 2.5vw, 1.72rem);
   }
 
@@ -6981,7 +6981,7 @@ body.lightbox-open .navbar {
   }
 
   .page-shell--home .hero__statement p {
-    max-width: 20ch;
+    max-width: none;
     margin-left: 0;
     font-size: clamp(1.08rem, 5.8vw, 1.38rem);
   }

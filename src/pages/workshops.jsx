@@ -41,7 +41,6 @@ export default function WorkshopsPage() {
                     priority
                   />
                 </div>
-                <figcaption>Imagen de referencia. No corresponde a un workshop real.</figcaption>
               </figure>
             </div>
           </header>
